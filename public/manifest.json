@@ -1,0 +1,48 @@
+{
+  "theme_color": "#3A86FF",
+  "background_color": "#F2F7FF",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/",
+  "name": "StudyCrew",
+  "short_name": "studycrew",
+  "description": "Making education more accessible, collaborative, and engaging.",
+  "icons": [
+    {
+      "src": "/assets/maskable_icon_x48",
+      "type": "image/png",
+      "sizes": "48x48",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/maskable_icon_x72",
+      "type": "image/png",
+      "sizes": "72x72",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/maskable_icon_x96.png",
+      "type": "image/png",
+      "sizes": "96x96",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/maskable_icon_x128.png",
+      "type": "image/png",
+      "sizes": "128x128",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/maskable_icon_x192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/maskable_icon_x384.png",
+      "type": "image/png",
+      "sizes": "384x384",
+      "purpose": "any maskable"
+    }
+  ]
+}

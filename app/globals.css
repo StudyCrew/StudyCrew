@@ -1,0 +1,79 @@
+/* @tailwind base; */
+@tailwind components;
+@tailwind utilities;
+
+@layer tailwind {
+  @tailwind base;
+}
+
+/* @import "@mantine/core/styles.layer.css"; */
+@import "@mantine/core/styles.css";
+@import "@mantine/dates/styles.css";
+
+/* styles/fonts.css */
+@font-face {
+  font-family: 'DM Sans';
+  src: url('/fonts/DMSans-VariableFont_opsz,wght.ttf') format('truetype supports variations');
+  /* Include variable font format and define variations */
+  font-weight: 1 1000; /* Define the available font weight range */
+  font-stretch: 25% 200%; /* Define the available font stretch range */
+  font-style: normal;
+  font-named-instance: 'Regular'; /* Optional: named instance for variations */
+}
+
+/* Apply DM Sans variable font to desired elements */
+* {
+  font-family: 'DM Sans', sans-serif;
+  /* Utilize variations */
+  font-weight: 400; /* Set font weight */
+  font-stretch: 100%; /* Set font stretch */
+}
+
+
+
+
+
+
+
+
+
+
+@media screen and (min-width: 768px) {
+  .header {
+    margin: 56px auto 0;
+  }
+}
+.animated {
+  width: 24px;
+  height: 24px;
+  background-color: #1a1a1a;
+  background: linear-gradient(to right, #1a1a1a 10%, #111 40%, #1a1a1a 70%);
+  animation: placeholderShimmer 20s linear 0s infinite normal forwards;
+  border-radius: 5px;
+}
+.avatar {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+}
+.avatar:before {
+  position: absolute;
+  left: 0;
+  content: '';
+  background: #fff;
+  height: 40px;
+}
+
+.avatar-image {
+  width: 40px;
+  height: 40px;
+}
+
+@keyframes placeholderShimmer {
+  0% {
+    background-position: -500px 0;
+  }
+  100% {
+    background-position: 500px 0;
+  }
+}
