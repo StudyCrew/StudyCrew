@@ -1,16 +1,16 @@
 'use client'
 
 import { usePathname, useRouter } from 'next/navigation'
-import React, { useState } from 'react'
-import Image from 'next/image'
+import React, { type ChangeEvent, useState } from 'react'
 import { type IUser } from '@/lib/models/user'
 import { updateUser } from '@/lib/actions/user.actions'
 import { useForm } from '@mantine/form'
 import { type formUser } from '@/lib/interface/formUser'
 import { type AccountProfileProps } from '@/lib/interface/components/accountProfile'
-import Button from '../ui/button'
-import TextInput from '../ui/textinput'
+import Image from 'next/image'
+import { Input } from '../ui/input'
 import Textarea from '../ui/textarea'
+import Button from '../ui/button'
 import FileInput from '../ui/fileinput'
 
 const AccountProfile = (props: AccountProfileProps): JSX.Element => {
@@ -48,23 +48,28 @@ const AccountProfile = (props: AccountProfileProps): JSX.Element => {
 		}
 	}
 
-	const handleImage = (e: File | string): void => {
-		if (typeof e === 'string') return
+	const handleImage = (e: ChangeEvent<HTMLInputElement>): void => {
+		const target = event?.target as HTMLInputElement
+		const file: File = (target.files as FileList)[0]
 
-		const fileReader = new FileReader()
+		if (file) {
+			const reader = new FileReader()
 
-		if (!e.type.includes('image')) return
+			reader.onloadend = () => {
+				// Access the image data via reader.result
+				const imageData: string | ArrayBuffer | null = reader.result
+				if (imageData) {
+					// Do something with the image data here
+					if (typeof imageData === 'string') {
+						const stringResult = imageData.toString() ?? ''
+						setImageString(stringResult)
+						form.values.image = stringResult
+					}
+				}
+			}
 
-		fileReader.onload = () => {
-			const base64String = fileReader.result
-			const stringResult = base64String?.toString() ?? ''
-
-			setImageString(stringResult)
-			console.log(stringResult)
-			form.values.image = stringResult
+			reader.readAsDataURL(file)
 		}
-
-		fileReader.readAsDataURL(e)
 	}
 
 	return (
@@ -93,40 +98,30 @@ const AccountProfile = (props: AccountProfileProps): JSX.Element => {
 					/>
 				)}
 			<FileInput
-				label="Profile Picture"
-				required={false}
-				placeholder="Upload files"
-				extensions='image/png,image/jpeg'
-				clearable={true}
-				cb={(file: File | null) => { handleImage(file ?? '') }}
-			/>
-			{/* <FileInput
-				accept="image/*"
+				label='Profile picture'
 				placeholder="Add profile photo"
 				className="account-form_image-input"
-				onChange={(e) => { handleImage(e ?? '') }}
-			/> */}
-			<TextInput
+				accept='image/*'
+				cb={(e) => { handleImage(e) }}
+			/>
+			<Input
 				label="Name:"
 				required={true}
-				placeholder="Jordan..."
-				val={form.values.name}
-				cb={(value: string) => { form.values.name = value }}
+				placeholder="Enter your name here..."
+				{...form.getInputProps('name')}
 			/>
-			<TextInput
+			<Input
 				label="Mail:"
 				required={true}
 				placeholder="Enter your email address here..."
-				val={form.values.username}
-				cb={(value: string) => { form.values.username = value }}
+				{...form.getInputProps('username')}
 			/>
 			<Textarea
 				label="Bio"
 				required={false}
 				placeholder="Tell me a little bit about yourself..."
-				minRows={8}
-				val={form.values.bio}
-				cb={(value: string) => { form.values.bio = value }}
+				rows={8}
+				{...form.getInputProps('bio')}
 			/>
 			<Button text="Submit" />
 		</form>
