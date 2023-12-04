@@ -3,10 +3,10 @@ import '../globals.css'
 import React from 'react'
 import { ClerkProvider } from '@clerk/nextjs'
 import type { Metadata, Viewport } from 'next'
-import { MantineProvider, ColorSchemeScript } from '@mantine/core'
-import '@mantine/core/styles.css'
 import Head from 'next/head'
 import Link from 'next/link'
+import { ThemeProvider } from '@/components/theme-provider'
+
 export const viewport: Viewport = {
 	themeColor: '#3A86FF'
 }
@@ -87,16 +87,20 @@ export default function RootLayout ({
 		<ClerkProvider>
 			<html lang="en">
 				<Head>
-					<ColorSchemeScript />
 					<Link rel="shortcut icon" href="/public/assets/favicon.ico" />
 				</Head>
 				<body
 					className='flex min-h-screen flex-1 flex-col
           items-center px-6 pb-10 pt-28 max-md:pb-32 sm:px-10'
 				>
-					<MantineProvider>
+					<ThemeProvider
+						attribute="class"
+						defaultTheme="system"
+						enableSystem
+						disableTransitionOnChange
+					>
 						{children}
-					</MantineProvider>
+					</ThemeProvider>
 				</body>
 			</html>
 		</ClerkProvider>

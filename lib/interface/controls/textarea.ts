@@ -1,8 +1,4 @@
-export interface TextAreaProps {
-	required: boolean
+export interface TextareaProps
+	extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
 	label: string
-	placeholder: string
-	minRows: number
-	val: string
-	cb: (event: string) => void
 }
