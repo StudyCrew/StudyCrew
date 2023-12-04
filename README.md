@@ -35,14 +35,20 @@ CLERK_SECRET_KEY=[YOUR SECRET KEY FROM CLERK]
 
 To run the project locally, you need to:
 
-1. 
-
 1. `pnpm i` the required dependencies.
 
 1. `pnpm build-dev` to launch the development server.
 
 ## Contributing
 Interested in contributing? Check out our contribution guide to learn how you can get involved and contribute to StudyCrew's development.
+
+Before contributing please read the style guidelines from the [Figma documentation](https://www.figma.com/file/BJG9JmbThqdp8p8IWs7gNG/StudyCrew-Prototypes-(Copy)?type=design&node-id=8%3A98&mode=design&t=uwHVDf3Ihi12lro3-1) carefully. 
+
+If you have to create a new component, please study existing components so these are kept consistent with the rest of the project. 
+
+If you are unsure about anything, just ask! We are more than happy to help and would love to have you are part of the community. 😊
+
+
 
 ## Join Our Community
 Join our community on Discord for discussions, support, and more! Join our Discord!
