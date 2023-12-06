@@ -5,7 +5,7 @@ import { getUserInfo } from '@/lib/actions/user.actions'
 import { UserButton, currentUser } from '@clerk/nextjs'
 import { redirect } from 'next/navigation'
 
-async function Page (): Promise<JSX.Element> {
+async function Page (): Promise<JSX.Element | null> {
 	const user = await currentUser()
 	if (!user) return null
 
