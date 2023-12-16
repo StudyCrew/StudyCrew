@@ -16,20 +16,30 @@ function Features (): JSX.Element {
 
 		if (owlCarousel.current) {
 			const ele = owlCarousel.current.children
+			console.log(ele)
 			switch (id) {
 				case 'stage-1':
+					ele[1].classList.remove('none')
 					ele[1].classList.add('grid')
+					ele[3].classList.remove('grid')
 					ele[3].classList.add('none')
+					ele[5].classList.remove('grid')
 					ele[5].classList.add('none')
 					break
 				case 'stage-2':
+					ele[1].classList.remove('grid')
 					ele[1].classList.add('none')
+					ele[3].classList.remove('none')
 					ele[3].classList.add('grid')
+					ele[5].classList.remove('grid')
 					ele[5].classList.add('none')
 					break
 				case 'stage-3':
+					ele[1].classList.remove('grid')
 					ele[1].classList.add('none')
+					ele[3].classList.remove('grid')
 					ele[3].classList.add('none')
+					ele[5].classList.remove('none')
 					ele[5].classList.add('grid')
 					break
 				default:
