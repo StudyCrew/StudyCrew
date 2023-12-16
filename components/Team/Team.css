@@ -81,11 +81,6 @@ h5 {
 	margin-bottom: 20px;
 }
 
-.join-team-button {
-	position: relative;
-	top: 1500px;
-}
-
 .team-cards::-webkit-scrollbar {
     height: 10px;
 }

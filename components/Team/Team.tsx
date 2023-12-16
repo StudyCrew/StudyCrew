@@ -29,6 +29,10 @@ const Team = (): JSX.Element => {
 		scrollHorizontally()
 	}, [])
 
+	const handleClick = (): void => {
+		window.location.href = 'https://forms.gle/CBKSjovcWeRGWbg2A'
+	}
+
 	// Duplicate team members for a continuous effect
 	const allMembers = [...teamMembers, ...teamMembers]
 
@@ -57,7 +61,9 @@ const Team = (): JSX.Element => {
 
 			<div className="join-team-section">
 				<p>Interested in becoming part of our team?</p>
-				<Button className="join-team-button">Join Us</Button>
+				<Button
+					onClick={() => { handleClick() }}
+				>Join Us</Button>
 			</div>
 		</div>
 	)
