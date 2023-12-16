@@ -1,0 +1,194 @@
+/* Styling for the header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* position: sticky; */
+  top: 0;
+  z-index: 100;
+  padding: 0 10px; /* Adjust padding as needed */
+  height: 60px; /* Adjust the height as needed */
+  width: 100%;
+}
+
+/* Centering content inside the header */
+header > * {
+  margin: auto;
+}
+
+/* Styling for header items, e.g. logo and application name */
+.header-items {
+  display: inline-flex;
+  flex-direction: row;
+  border-radius: 0px 0px 5px 5px;
+  width: fit-content;
+  position: relative;
+  padding-top: 15px;
+  top: -10px;
+  box-shadow: 0 0 10px 0 #ddd;
+  align-items: center;
+  max-height: 50px;
+  background-color: rgba(255, 255, 255, 0.78); /* Semi-transparent background */
+  backdrop-filter: blur(12px); /* Blur effect for the content behind the nav */
+}
+
+/* Styling for the logo inside header items */
+.header-items > .logo-1 {
+  width: 25px;
+  height: 25px;
+}
+
+/* Styling for links inside header items */
+.header-items > a {
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #0C1B33;
+  transition: 0.25s;
+  padding: 10px 20px 10px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+/* Hover effect for the links */
+.header-items > a:hover {
+  color: #3A86FF;
+}
+
+/* Active link styling */
+.header-items > a.active {
+  /* color: #3A86FF; */
+  /* border-bottom: solid 5px #3A86FF; */
+  border-radius: 5px;
+}
+
+.hamburger-menu {
+  display: none;
+}
+
+/* Show regular navbar on larger screens */
+header .navbar {
+  display: block;
+}
+
+.logo-name {
+  display: block;
+}
+
+  
+  /* Toggle the mobile navbar */
+.mobile-navbar.open {
+  transform: translateX(0); /* Slide into view */
+  transition: transform 3s ease;
+}
+
+.header-items {
+  backdrop-filter: none;
+}
+
+  /* Initial state of the mobile navbar - off-screen */
+.mobile-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  transform: translateX(-100%); /* Initially off-screen */
+  transition: transform 3s ease; /* Smooth transition for sliding in/out */
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+/* Media query for mobile screens */
+@media (max-width: 768px) {
+
+  .header-items {
+    background: none;
+  }
+  .logo {
+    background: none;
+  }
+  /* Show hamburger menu on mobile screens */
+  .hamburger-menu {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    z-index: 100;
+    justify-self: start;
+    margin-left: 30px;
+    font-size: 25px;
+  }
+  .header-items svg {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .logo-name {
+    display: none;
+  }
+
+  .header-items {
+    justify-self: center; /* Align logo to the center */
+    flex-grow: 1;
+    justify-content: center;
+    background: none;
+    box-shadow: none;
+    padding: none;
+  }
+
+  .hamburger-menu {
+    flex: 1; /* Flex grow to push adjacent elements to the sides */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Aligns the hamburger menu to the left */
+  }  
+  .header-logo {
+    flex: 1; /* Flex grow to push adjacent elements to the sides */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centers the logo */
+  }  
+  /* Adjust header grid layout for mobile */
+  header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* Three equal columns */
+    align-items: center;
+    justify-content: space-between;
+    top: 0;
+    z-index: 100;
+    height: 70px;
+    background-color: rgba(255, 255, 255, 0.78);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 0 10px 0 #ddd;
+  }
+
+  .waitlist-container Button {
+    background: none;
+    color: var(--primary-color);
+    margin-top: 4px;
+  }
+
+  /* Styling for the logo container */
+.logo-1 {
+  flex: 1;
+  text-align: center;
+  width: 100%;
+  }
+
+  .waitlistLink {
+    justify-self: end; /* Align Join Waitlist to the right */
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    margin-right: 30px;
+  }
+  
+  .desktop-navbar {
+    display: none;
+  }
+}
