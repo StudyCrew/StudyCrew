@@ -1,5 +1,165 @@
+/* Font Imports */
+/* Importing Rubik font for headings */
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,500&display=swap");
+
+/* Importing DM Sans font for standard text */
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,200;0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,200;1,9..40,300;1,9..40,400;1,9..40,600&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,500&display=swap");
+
 @tailwind components;
 @tailwind utilities;
 @layer tailwind {
   @tailwind base;
+}
+
+* {
+  box-sizing: unset;
+}
+
+/* Define Variables */
+:root {
+  --primary-color: #3a86ff;
+  --primary-gradient-color: #8338ec;
+  --light-background-color: #f2f7ff;
+  --primary-text-color: #0c1b33;
+  --secondary-text-color: #434c59;
+  --heading-font: "Rubik", sans-serif;
+  --text-font: "DM Sans", sans-serif;
+  --white-text-color: #f2f7ff;
+}
+
+/* Global Styles */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+/* Typography */
+/* Applying heading font and primary text color to headings and buttons */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button {
+  font-family: var(--heading-font);
+  color: var(--primary-text-color);
+}
+
+/* Applying text font to body, paragraphs, spans, inputs, and textareas */
+body,
+p,
+span,
+input,
+textarea {
+  font-family: var(--text-font);
+}
+
+h3 {
+  font-family: var(--text-font);
+  font-weight: 300;
+  font-size: 22px;
+}
+
+h2 {
+  font-weight: 500;
+  font-size: 50px;
+  font-family: var(--heading-font);
+}
+
+h2 span {
+  color: var(--primary-color);
+  font-family: var(--heading-font);
+}
+
+p {
+  font-size: 19px;
+  letter-spacing: 0.1px;
+}
+
+/* Utility Classes */
+/* Utility class for applying heading font */
+.heading-font {
+  font-family: var(--heading-font);
+}
+
+.white-text-color {
+  color: #f2f7ff;
+}
+
+.text-gradient {
+  background: -webkit-linear-gradient(
+    right,
+    var(--primary-gradient-color),
+    var(--primary-color)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Utility class for applying text font */
+.text-font {
+  font-family: var(--text-font);
+}
+
+/* Utility class for applying primary text color */
+.primary-text-color {
+  color: var(--primary-text-color);
+}
+
+/* Utility class for applying secondary text color */
+.secondary-text-color {
+  color: var(--secondary-text-color);
+}
+
+/* Neon Mist */
+.blue-neon-mist {
+  background: linear-gradient(90deg, #bcd5ff 0%, #bcd5ff 100%);
+  filter: blur(300px);
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+}
+
+.fade-in-section {
+  opacity: 1; /* This should start as 1 */
+  transform: translateY(0); /* No transformation to start */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out,
+    visibility 0.6s ease-out;
+}
+
+.fade-in-section:not(.is-visible) {
+  opacity: 0;
+  transform: translateY(50px);
+  visibility: hidden;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 1s forwards;
+}
+
+.no-scroll {
+  overflow: hidden;
+  height: 100%; /* Prevents the body from expanding */
+  width: 100%; /* Prevents the body from expanding */
+  position: fixed; /* Fixes the body position */
 }
