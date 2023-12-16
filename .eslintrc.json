@@ -21,7 +21,6 @@
     "no-throw-literal": "warn",
     "semi": ["error", "never"],
     "linebreak-style": ["error", "windows"],
-    "indent": ["error", "tab"],
     "@typescript-eslint/indent": ["error", "tab"],
     "no-tabs": "off",
     "quotes": ["error", "single"],

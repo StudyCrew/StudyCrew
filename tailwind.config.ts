@@ -18,6 +18,18 @@ module.exports = {
 			}
 		},
 		extend: {
+			zIndex: {
+				200: '200'
+			},
+			rounded: {
+				10: '10'
+			},
+			translate: {
+				icon: '5%'
+			},
+			padding: {
+				5.5: '22px'
+			},
 			colors: {
 				primary: {
 					50: '#EEF6FF',
