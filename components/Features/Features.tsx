@@ -4,8 +4,8 @@ import stages from '../../lib/data/featureData'
 import Image from 'next/image'
 
 function Features (): JSX.Element {
-	const owlCarousel = useRef()
-	const cardsContainer = useRef()
+	const owlCarousel = useRef<HTMLDivElement | null>(null)
+	const cardsContainer = useRef<HTMLDivElement | null>(null)
 	const [cardWidth, setCardWidth] = useState(0)
 	const [currentStage, setCurrentStage] = useState('stage-1')
 
@@ -14,26 +14,28 @@ function Features (): JSX.Element {
 		setCurrentStage(id)
 		setCardWidth(0)
 
-		const ele = owlCarousel.current.children
-		switch (id) {
-			case 'stage-1':
-				ele[1].style.display = 'grid'
-				ele[3].style.display = 'none'
-				ele[5].style.display = 'none'
-				break
-			case 'stage-2':
-				ele[1].style.display = 'none'
-				ele[3].style.display = 'grid'
-				ele[5].style.display = 'none'
-				break
-			case 'stage-3':
-				ele[1].style.display = 'none'
-				ele[3].style.display = 'none'
-				ele[5].style.display = 'grid'
-				break
-			default:
-				console.warn('Unexpected id:', id)
-				break
+		if (owlCarousel.current) {
+			const ele = owlCarousel.current.children
+			switch (id) {
+				case 'stage-1':
+					ele[1].classList.add('grid')
+					ele[3].classList.add('none')
+					ele[5].classList.add('none')
+					break
+				case 'stage-2':
+					ele[1].classList.add('none')
+					ele[3].classList.add('grid')
+					ele[5].classList.add('none')
+					break
+				case 'stage-3':
+					ele[1].classList.add('none')
+					ele[3].classList.add('none')
+					ele[5].classList.add('grid')
+					break
+				default:
+					console.warn('Unexpected id:', id)
+					break
+			}
 		}
 	}
 
