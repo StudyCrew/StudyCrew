@@ -28,7 +28,7 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
     "dayjs": "^1.11.10",
-    "lucide-react": "^0.294.0",
+    "lucide-react": "^0.298.0",
     "mongoose": "^8.0.2",
     "next": "14.0.3",
     "next-themes": "^0.2.1",
