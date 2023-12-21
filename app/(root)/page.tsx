@@ -1,9 +1,7 @@
 'use client'
 
-// React specific imports
 import React, { useEffect, useState } from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
-
 import Header from './../../components/Header/Header'
 import Hero from './../../components/Hero/Hero'
 import Mission from './../../components/Mission/Mission'
@@ -13,17 +11,17 @@ import SignUp from './../../components/SignUp/Signup'
 import Team from './../../components/Team/Team'
 import Footer from './../../components/Footer/Footer'
 import Faqs from './../../components/FAQs/Faqs'
-
 import useScrollFadeIn from './../../lib/hooks/useFadeIn'
-const FadingHero = useScrollFadeIn(Hero)
-const FadingMission = useScrollFadeIn(Mission)
-const FadingFeatures = useScrollFadeIn(Features)
-const FadingProject = useScrollFadeIn(Project)
-const FadingSignUp = useScrollFadeIn(SignUp)
-const FadingTeam = useScrollFadeIn(Team)
-const FadingFAQ = useScrollFadeIn(Faqs)
+import scrollToRef from '@/lib/hooks/scrollTo'
+
 
 function App (): JSX.Element {
+	const handleLearnMoreClick = (): void => {
+		setActivePage('features')
+		scrollToRef(featuresRef)
+	}
+	const animatedItem = useScrollFadeIn();
+
 	// State for the active page section
 	const [activePage, setActivePage] = useState('')
 
@@ -122,30 +120,33 @@ function App (): JSX.Element {
 			</div>
 
 			{/* Various site sections */}
-			<FadingHero id="hero" delay={100} />
+			<Hero
+				handleLearnMoreClick={handleLearnMoreClick}
+				{...animatedItem}
+			/>
 
 			<div className="mission-component" ref={missionRef}>
-				<FadingMission id="mission" />
+				<Mission {...animatedItem} />
 			</div>
 
 			<div className="features-component" ref={featuresRef}>
-				<FadingFeatures id="features" />
+				<Features {...animatedItem} />
 			</div>
 
 			<div className="project-component" ref={projectRef}>
-				<FadingProject id="project" />
+				<Project {...animatedItem} />
 			</div>
 
 			<div className="empower-component" ref={signupRef}>
-				<FadingSignUp id="sign-up" />
+				<SignUp {...animatedItem} />
 			</div>
 
 			<div className="team-component" ref={teamRef}>
-				<FadingTeam id="team" />
+				<Team {...animatedItem} />
 			</div>
 
 			<div className="faq-component" ref={faqRef}>
-				<FadingFAQ id="faq" />
+				<Faqs {...animatedItem} />
 			</div>
 
 			{/* Footer */}
@@ -164,4 +165,5 @@ function App (): JSX.Element {
 		</Router>
 	)
 }
+
 export default App

@@ -1,6 +1,7 @@
 import React from 'react'
 import { FaFacebookF, FaLinkedin, FaGithubSquare, FaTwitter, FaDiscord } from 'react-icons/fa'
 import './Footer.css'
+import scrollToRef from '@/lib/hooks/scrollTo'
 
 interface FooterProps {
 	activePage: string
@@ -25,14 +26,7 @@ const Footer = ({
 }: FooterProps): JSX.Element => {
 	// Helper function to determine if a link is active
 	const isActive = (name: string): string => activePage === name ? 'activeNavLink' : ''
-	// Scrolls smoothly to the provided reference
-	const scrollToRef = (ref: React.MutableRefObject<null>): void => {
-		const refContainerCurrent = ref.current as HTMLDivElement | null
-		if (refContainerCurrent) {
-			const y = refContainerCurrent.getBoundingClientRect().top + window.scrollY + -60
-			window.scrollTo({ top: y, behavior: 'smooth' })
-		}
-	}
+
 	// Handles the navigation link click based on the section's name
 	const handleNavLinkClick = (name: string): void => {
 		let ref
