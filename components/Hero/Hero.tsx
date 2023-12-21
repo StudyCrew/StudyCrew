@@ -21,7 +21,8 @@ import { FaChevronRight, FaChevronDown } from 'react-icons/fa'
 const words = ['Collaborative', 'Accessible', 'Engaging']
 
 const Hero = (props: {
-	handleLearnMoreClick: () => void,
+	handleLearnMoreClick: () => void
+	handleJoinWaitlistClick: () => void
 }): JSX.Element => {
 	// Change word in header
 	const [currentWord, setCurrentWord] = useState('Collaborative')
@@ -72,7 +73,12 @@ const Hero = (props: {
 
 				{/* Group of buttons with different styles and sizes */}
 				<div className="button-group">
-					<Button onClick={props.handleLearnMoreClick} variant="outline" size="big-outline">Learn More
+					<Button onClick={props.handleJoinWaitlistClick}
+						size="big">Join Waitlist
+						<FaChevronDown className="icon-inline" />
+					</Button>
+					<Button onClick={props.handleLearnMoreClick} variant="outline"
+						size="big-outline">Learn More
 						<FaChevronDown className="icon-inline" />
 					</Button>
 				</div>
