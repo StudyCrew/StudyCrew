@@ -119,27 +119,27 @@ const Footer = ({
 			{/* Footer menu */}
 			<div className="footer-menu">
 				<ul>
-					<li className={isActive('mission')} onClick={() => {
+					<li className={`${isActive('mission')} hover:cursor-pointer`} onClick={() => {
 						handleNavLinkClick('mission')
 						setActivePage('mission')
 					}}>Mission</li>
-					<li className={isActive('features')} onClick={() => {
+					<li className={`${isActive('features')} hover:cursor-pointer`} onClick={() => {
 						handleNavLinkClick('features')
 						setActivePage('features')
 					}}>Features</li>
-					<li className={isActive('project')} onClick={() => {
+					<li className={`${isActive('project')} hover:cursor-pointer`} onClick={() => {
 						handleNavLinkClick('project')
 						setActivePage('project')
 					}}>Project</li>
-					<li className={isActive('signup')} onClick={() => {
+					<li className={`${isActive('signup')} hover:cursor-pointer`} onClick={() => {
 						handleNavLinkClick('signup')
 						setActivePage('signup')
 					}}>Sign Up</li>
-					<li className={isActive('team')} onClick={() => {
+					<li className={`${isActive('team')} hover:cursor-pointer`} onClick={() => {
 						handleNavLinkClick('team')
 						setActivePage('team')
 					}}>Team</li>
-					<li className={isActive('faq')} onClick={() => {
+					<li className={`${isActive('faq')} hover:cursor-pointer`} onClick={() => {
 						handleNavLinkClick('faq')
 						setActivePage('faq')
 					}}>FAQs</li>
