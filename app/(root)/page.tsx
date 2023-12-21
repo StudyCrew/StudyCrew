@@ -14,13 +14,16 @@ import Faqs from './../../components/FAQs/Faqs'
 import useScrollFadeIn from './../../lib/hooks/useFadeIn'
 import scrollToRef from '@/lib/hooks/scrollTo'
 
-
 function App (): JSX.Element {
 	const handleLearnMoreClick = (): void => {
 		setActivePage('features')
 		scrollToRef(featuresRef)
 	}
-	const animatedItem = useScrollFadeIn();
+	const handleJoinWaitlistClick = (): void => {
+		setActivePage('signup')
+		scrollToRef(signupRef)
+	}
+	const animatedItem = useScrollFadeIn()
 
 	// State for the active page section
 	const [activePage, setActivePage] = useState('')
@@ -122,6 +125,7 @@ function App (): JSX.Element {
 			{/* Various site sections */}
 			<Hero
 				handleLearnMoreClick={handleLearnMoreClick}
+				handleJoinWaitlistClick={handleJoinWaitlistClick}
 				{...animatedItem}
 			/>
 
