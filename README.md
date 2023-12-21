@@ -60,7 +60,7 @@ To run the project locally, you need to:
 
 1. `pnpm i` the required dependencies.
 
-1. `pnpm build-dev` to launch the development server.
+1. `pnpm dev` to launch the development server.
 
 ## Contributing
 Interested in contributing? Check out our contribution guide to learn how you can get involved and contribute to StudyCrew's development.
