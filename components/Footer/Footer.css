@@ -2,7 +2,11 @@
   background-color: #f2f7ff;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  padding: 30px 150px;
+  padding-left: 150px;
+  padding-right: 150px;
+  padding-left: 150px;
+  padding-top: 25px;
+  padding-bottom: 20px;
 }
 
 /* Logo styling */
@@ -11,15 +15,10 @@
   display: flex;
 }
 
-.footer .footer-logo h3 {
-  margin-left: 14px;
-  margin-top: 5px;
-}
-
 /* Social media icons styling */
 .social-media-icons {
   grid-column: span 2;
-  margin-top: 10px;
+  margin-top: 11px;
 }
 
 
@@ -36,7 +35,7 @@
 .footer-menu {
   grid-column: span 2;
   margin-right: auto;
-  margin-top: 10px;
+  margin-top: 11px;
   margin-left: 25px;
 }
 
@@ -72,9 +71,10 @@
 }
 
 .footer-title {
-  font-size: 1.5rem;
+  font-size: 18px;
   font-weight: 500;
-  margin-bottom: 10px;
+  margin-left: 14px;
+  margin-top: 7px;
 }
 
 /* Media query for smaller screens */

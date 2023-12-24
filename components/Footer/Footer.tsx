@@ -60,7 +60,7 @@ const Footer = ({
 				{/* Footer logo */}
 				<div className="footer-logo">
 					{/* SVG Logo */}
-					<svg width="50" height="50" viewBox="0 0 446 445" fill="none"
+					<svg width="40" height="40" viewBox="0 0 446 445" fill="none"
 						xmlns="http://www.w3.org/2000/svg" className="footer-logo-1"
 						preserveAspectRatio="xMidYMid meet">
 						<circle cx="384.372" cy="61.4726" r="41.8014" fill='#3A86FF' fillOpacity="0.9"/>
