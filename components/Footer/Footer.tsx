@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaFacebookF, FaLinkedin, FaGithubSquare, FaTwitter, FaDiscord } from 'react-icons/fa'
+import { FaFacebookF, FaInstagram, FaLinkedin, FaGithubSquare, FaTwitter, FaDiscord, FaTiktok, FaYoutube } from 'react-icons/fa';
 import './Footer.css'
 import scrollToRef from '@/lib/hooks/scrollTo'
 
@@ -151,19 +151,29 @@ const Footer = ({
 				<div className="social-media-icons">
 					<ul>
 						<li>
-							<FaFacebookF />
+							<FaGithubSquare size={20}/>
 						</li>
 						<li>
-							<FaLinkedin />
+							<FaInstagram size={20}/>
 						</li>
 						<li>
-							<FaGithubSquare />
+							<FaYoutube size={20}/>
 						</li>
 						<li>
-							<FaTwitter />
+							<FaFacebookF size={20}/>
+						</li>
+						<li>
+							<FaLinkedin size={20}/>
+						</li>
+						<li>
+							<FaTiktok size={20}/>
+						</li>
+						<li>
+							<FaDiscord size={20}/>
 						</li>
 					</ul>
 				</div>
+		
 		</div>
 	)
 }

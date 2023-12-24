@@ -19,12 +19,25 @@
 /* Social media icons styling */
 .social-media-icons {
   grid-column: span 2;
+  margin-top: 10px;
+}
+
+
+.social-media-icons li {
+  cursor: pointer;
+}
+
+.social-media-icons li:hover {
+  color: var(--primary-color);
+  transition: all 0.3s ease-in-out;
 }
 
 /* Footer menu styling */
 .footer-menu {
   grid-column: span 2;
   margin-right: auto;
+  margin-top: 10px;
+  margin-left: 25px;
 }
 
 /* Styling for lists inside footer menu and social media icons */
@@ -56,24 +69,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-/* Button styling */
-.footer-join-discord button {
-  height: 60%;
-  padding: 0 20px;
-}
-
-/* Button styling */
-.footer-join-discord button {
-  background-color: #3a86ff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
 }
 
 .footer-title {
