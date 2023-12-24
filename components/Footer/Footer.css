@@ -62,13 +62,6 @@
   justify-content: flex-end;
 }
 
-/* Styling for 'Join Discord' section in footer */
-.footer-join-discord {
-  grid-column: span 4;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
 
 .footer-title {
   font-size: 18px;

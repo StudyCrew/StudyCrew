@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaFacebookF, FaInstagram, FaLinkedin, FaGithubSquare, FaTwitter, FaDiscord, FaTiktok, FaYoutube } from 'react-icons/fa';
+import { FaFacebookF, FaInstagram, FaLinkedin, FaGithubSquare, FaDiscord, FaTiktok, FaYoutube } from 'react-icons/fa';
 import './Footer.css'
 import scrollToRef from '@/lib/hooks/scrollTo'
 
