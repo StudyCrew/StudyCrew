@@ -1,14 +1,19 @@
-/* Footer styling */
 .footer {
   background-color: #f2f7ff;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  padding: 30px;
+  padding: 30px 150px;
 }
 
 /* Logo styling */
 .footer .footer-logo {
-  grid-row: span 2;
+  grid: none;
+  display: flex;
+}
+
+.footer .footer-logo h3 {
+  margin-left: 14px;
+  margin-top: 5px;
 }
 
 /* Social media icons styling */
@@ -26,13 +31,13 @@
 .footer-menu ul,
 .social-media-icons ul {
   display: flex;
-  gap: 10px;
+  gap: 20px;
   list-style: none;
 }
 
 /* Horizontal line styling in footer menu */
 .footer-menu hr {
-  width: 76vw;
+  width: 100%;
 }
 
 /* Padding for lists inside footer menu */
@@ -69,6 +74,12 @@
   justify-content: center;
   align-items: center;
   gap: 10px;
+}
+
+.footer-title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 10px;
 }
 
 /* Media query for smaller screens */
