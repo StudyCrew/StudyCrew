@@ -56,9 +56,9 @@ const Footer = ({
 	}
 
 	return (
-		<div className="footer">
+		<div className="bg-[#f2f7ff] grid grid-cols-3 lg:grid-cols-5 gap-4 px-6 lg:px-[150px] py-6 items-center">
 				{/* Footer logo */}
-				<div className="footer-logo">
+				<div className="flex items-center justify-center lg:justify-start col-span-1">
 					{/* SVG Logo */}
 					<svg width="40" height="40" viewBox="0 0 446 445" fill="none"
 						xmlns="http://www.w3.org/2000/svg" className="footer-logo-1"
@@ -111,14 +111,14 @@ const Footer = ({
 			227.962 201.073H177.962C177.962 237.534 207.519 267.091 243.98 267.091V217.091Z" fill='#3A86FF'
 						fillOpacity="1" mask="url(#path-4-inside-1_387_2)" />
 					</svg>
-					<h3 className="footer-title heading-font">
+					<h3 className="footer-title heading-font ml-4 font-semibold">
 						StudyCrew
 					</h3>
 				</div>
 
 				{/* Footer menu */}
-				<div className="footer-menu">
-					<ul>
+				<div className="col-span-1 lg:col-span-2 ml-12">
+					<ul className="flex justify-center lg:justify-start gap-4">
 						<li className={`${isActive('mission')} hover:cursor-pointer`} onClick={() => {
 							handleNavLinkClick('mission')
 							setActivePage('mission')
@@ -148,8 +148,8 @@ const Footer = ({
 				</div>
 
 				{/* Social media icons */}
-				<div className="social-media-icons">
-					<ul>
+				<div className="col-span-1 lg:col-span-2">
+        			<ul className="flex justify-center lg:justify-end gap-4">
 						<li>
 							<FaGithubSquare size={20}/>
 						</li>
