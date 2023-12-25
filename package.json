@@ -57,7 +57,7 @@
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-react": "^7.33.2",
     "postcss": "8.4.32",
-    "postcss-preset-mantine": "^1.12.0",
+    "postcss-preset-mantine": "^1.12.2",
     "postcss-simple-vars": "^7.0.1"
   }
 }
