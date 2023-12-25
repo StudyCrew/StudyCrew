@@ -50,7 +50,7 @@ const AccountProfile = (props: AccountProfileProps): JSX.Element => {
 
 	const handleImage = (e: ChangeEvent<HTMLInputElement>): void => {
 		const target = event?.target as HTMLInputElement
-		const file: File = (target.files as FileList)[0]
+		const file: File = (target.files!)[0]
 
 		if (file) {
 			const reader = new FileReader()
