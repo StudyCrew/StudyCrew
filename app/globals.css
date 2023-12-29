@@ -24,7 +24,6 @@
   --secondary-text-color: #434c59;
   --heading-font: "Rubik", sans-serif;
   --text-font: "DM Sans", sans-serif;
-  --white-text-color: #f2f7ff;
 }
 
 /* Global Styles */
@@ -90,10 +89,6 @@ p {
 /* Utility class for applying heading font */
 .heading-font {
   font-family: var(--heading-font);
-}
-
-.white-text-color {
-  color: #f2f7ff;
 }
 
 .text-gradient {
