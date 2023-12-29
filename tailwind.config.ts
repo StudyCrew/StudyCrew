@@ -19,6 +19,7 @@ module.exports = {
 		},
 		extend: {
 			zIndex: {
+				1: '1',
 				200: '200'
 			},
 			rounded: {
@@ -31,6 +32,9 @@ module.exports = {
 				5.5: '22px'
 			},
 			colors: {
+				gradient: {
+					500: '#8338ec'
+				},
 				primary: {
 					50: '#EEF6FF',
 					100: '#D9EAFF',
@@ -103,6 +107,14 @@ module.exports = {
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out'
+			},
+			spacing: {
+				'85vh': '85vh',
+				'20vh': '20vh',
+				'5%': '5%'
+			},
+			maxWidth: {
+				'100vw': '100vw'
 			}
 		}
 	},
