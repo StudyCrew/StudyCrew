@@ -133,6 +133,10 @@ public/workbox-*
 
 # Sentry Auth Token
 .sentryclirc
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
 
 .env*
 .flaskenv*
