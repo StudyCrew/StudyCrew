@@ -1,4 +1,4 @@
-{
+module.exports = {
   "env": {
     "browser": true,
     "es2021": true
@@ -20,7 +20,10 @@
     "eqeqeq": "warn",
     "no-throw-literal": "warn",
     "semi": ["error", "never"],
-    "linebreak-style": ["error", "windows"],
+    "linebreak-style": [
+      "error",
+      process.platform === "win32" ? "windows" : "unix"
+    ],
     "@typescript-eslint/indent": ["error", "tab"],
     "no-tabs": "off",
     "quotes": ["error", "single"],
@@ -33,7 +36,7 @@
       "error",
       {
         "selector": "variable",
-        "format": ["camelCase", "PascalCase"]
+        "format": ["camelCase", "PascalCase", "UPPER_CASE"],
       },
       {
         "selector": "typeProperty",

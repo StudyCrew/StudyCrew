@@ -1,44 +1,50 @@
-.faqs-head,
-.faqs-des {
+.sc-component-faqs,
+.sc-component-faqs-description {
     text-align: center;
 }
 
-.faqs-head span {
+.sc-component-faqs-heading span {
     text-transform: uppercase;
     color: #3A86FF;
 }
 
-.questions-list {
+.sc-component-faqs-questions-list {
     padding: 0 150px; /* Adjust padding for smaller screens */
     margin-top: 25px;
 }
 
-.question {
+.cs-component-faqs-question {
     background-color: #EEF4FF;
     padding: 10px;
     border-radius: 7px;
     box-shadow: 0 2px 1px rgba(128, 128, 128, 0.472);
     margin-bottom: 15px;
-    transition: all 0.3s ease; /* Smooth transition for background and box-shadow */
+
+    /* Smooth transition for background and box-shadow */
+    transition: all 0.3s ease;
 }
 
-.question[open] {
-    background-color: #FFF; /* Lighter background when open */
-    box-shadow: 0 4px 2px rgba(128, 128, 128, 0.472); /* Larger shadow when open */
+.cs-component-faqs-question[open] {
+    /* Lighter background when open */
+    background-color: #FFF;
+
+    /* Larger shadow when open */
+    box-shadow: 0 4px 2px rgba(128, 128, 128, 0.472);
 }
 
-.question[open] .question-head {
+.sc-component-faqs-question[open] summary {
     padding-bottom: 5px;
     border-bottom: 0.5px black dashed;
 }
 
-.question-head {
+.sc-component-faqs-question summary {
     font-size: 1.2rem;
     font-weight: 500;
     cursor: pointer;
+    padding: 4px 25px;
 }
 
-.question-des {
+.sc-component-faqs-question-description {
     padding: 20px 25px;
     text-align: left;
     list-style: none;
@@ -48,41 +54,38 @@
     font-size: 17px;
 }
 
-details[open] .question-des {
-    max-height: 1000px; /* Set a max-height for the open state */
+.sc-component-faqs-question[open] .sc-component-faqs-question-description {
+    max-height: 1000px;
 }
 
-summary {
-    padding: 4px 25px;
-}
-
-.faqs-heading {
+.sc-component-faqs h2 {
     width: 100%;
     text-align: center;
 }
 
-.faq-mist-1 {
+.sc-component-faqs-mist-1 {
     position: absolute;
     height: 300px;
     width: 300px;
-    left: 50%; /* Center the element horizontally */
+    left: 50%;
     top: 300px;
-    transform: translateX(-50%); /* Center the element horizontally */
+    transform: translateX(-50%);
     z-index: -1;
 }
 
 /* Media query for smaller screens */
 @media screen and (max-width: 600px) {
-    .questions-list {
+    .sc-component-faqs-questions-list {
         padding: 0 20px;
     }
 
-    .faq-mist-1 {
+    .sc-component-faqs-mist-1 {
         left: 50%;
         top: 100px;
         transform: translateX(-50%);
     }
 }
+
 a {
     @apply underline text-blue-600 hover:text-blue-800 visited:text-purple-600;
 }
