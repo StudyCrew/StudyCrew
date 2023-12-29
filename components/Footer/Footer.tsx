@@ -1,6 +1,7 @@
 import React from 'react'
 import { FaFacebookF, FaLinkedin, FaGithubSquare, FaTwitter, FaDiscord } from 'react-icons/fa'
 import './Footer.css'
+import scrollToRef from '@/lib/hooks/scrollTo'
 
 interface FooterProps {
 	activePage: string
@@ -25,14 +26,7 @@ const Footer = ({
 }: FooterProps): JSX.Element => {
 	// Helper function to determine if a link is active
 	const isActive = (name: string): string => activePage === name ? 'activeNavLink' : ''
-	// Scrolls smoothly to the provided reference
-	const scrollToRef = (ref: React.MutableRefObject<null>): void => {
-		const refContainerCurrent = ref.current as HTMLDivElement | null
-		if (refContainerCurrent) {
-			const y = refContainerCurrent.getBoundingClientRect().top + window.scrollY + -60
-			window.scrollTo({ top: y, behavior: 'smooth' })
-		}
-	}
+
 	// Handles the navigation link click based on the section's name
 	const handleNavLinkClick = (name: string): void => {
 		let ref
@@ -125,27 +119,27 @@ const Footer = ({
 			{/* Footer menu */}
 			<div className="footer-menu">
 				<ul>
-					<li className={isActive('mission')} onClick={() => {
+					<li className={`${isActive('mission')} hover:cursor-pointer`} onClick={() => {
 						handleNavLinkClick('mission')
 						setActivePage('mission')
 					}}>Mission</li>
-					<li className={isActive('features')} onClick={() => {
+					<li className={`${isActive('features')} hover:cursor-pointer`} onClick={() => {
 						handleNavLinkClick('features')
 						setActivePage('features')
 					}}>Features</li>
-					<li className={isActive('project')} onClick={() => {
+					<li className={`${isActive('project')} hover:cursor-pointer`} onClick={() => {
 						handleNavLinkClick('project')
 						setActivePage('project')
 					}}>Project</li>
-					<li className={isActive('signup')} onClick={() => {
+					<li className={`${isActive('signup')} hover:cursor-pointer`} onClick={() => {
 						handleNavLinkClick('signup')
 						setActivePage('signup')
 					}}>Sign Up</li>
-					<li className={isActive('team')} onClick={() => {
+					<li className={`${isActive('team')} hover:cursor-pointer`} onClick={() => {
 						handleNavLinkClick('team')
 						setActivePage('team')
 					}}>Team</li>
-					<li className={isActive('faq')} onClick={() => {
+					<li className={`${isActive('faq')} hover:cursor-pointer`} onClick={() => {
 						handleNavLinkClick('faq')
 						setActivePage('faq')
 					}}>FAQs</li>

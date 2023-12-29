@@ -1,3 +1,4 @@
+import scrollToRef from '@/lib/hooks/scrollTo'
 import './Navbar.css'
 
 import React from 'react'
@@ -27,15 +28,6 @@ const Navbar = ({
 }: NavbarProps): JSX.Element => {
 	// Helper function to determine if a link is active
 	const isActive = (name: string): string => activePage === name ? 'activeNavLink' : ''
-
-	// Scrolls smoothly to the provided reference
-	const scrollToRef = (ref: React.MutableRefObject<null>): void => {
-		const refContainerCurrent = ref.current as HTMLDivElement | null
-		if (refContainerCurrent) {
-			const y = refContainerCurrent.getBoundingClientRect().top + window.scrollY + -60
-			window.scrollTo({ top: y, behavior: 'smooth' })
-		}
-	}
 
 	// Handles the navigation link click based on the section's name
 	const handleNavLinkClick = (name: string): void => {
@@ -71,27 +63,27 @@ const Navbar = ({
 		<nav>
 			{/* Navigation links for different sections */}
 			{/* When clicked, the view scrolls to the respective section */}
-			<div className={isActive('mission')} onClick={() => {
+			<div className={`${isActive('mission')} hover:cursor-pointer`} onClick={() => {
 				handleNavLinkClick('mission')
 				setActivePage('mission')
 			}}>Mission</div>
-			<div className={isActive('features')} onClick={() => {
+			<div className={`${isActive('features')} hover:cursor-pointer`} onClick={() => {
 				handleNavLinkClick('features')
 				setActivePage('features')
 			}}>Features</div>
-			<div className={isActive('project')} onClick={() => {
+			<div className={`${isActive('project')} hover:cursor-pointer`} onClick={() => {
 				handleNavLinkClick('project')
 				setActivePage('project')
 			}}>Project</div>
-			<div className={isActive('signup')} onClick={() => {
+			<div className={`${isActive('signup')} hover:cursor-pointer`} onClick={() => {
 				handleNavLinkClick('signup')
 				setActivePage('signup')
 			}}>Sign Up</div>
-			<div className={isActive('team')} onClick={() => {
+			<div className={`${isActive('team')} hover:cursor-pointer`} onClick={() => {
 				handleNavLinkClick('team')
 				setActivePage('team')
 			}}>Team</div>
-			<div className={isActive('faq')} onClick={() => {
+			<div className={`${isActive('faq')} hover:cursor-pointer`} onClick={() => {
 				handleNavLinkClick('faq')
 				setActivePage('faq')
 			}}>FAQs</div>

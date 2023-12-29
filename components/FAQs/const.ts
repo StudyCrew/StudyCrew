@@ -1,4 +1,7 @@
-const faqsData = [
+import { type FAQEntry } from './types'
+
+export const CLASS_NAME = 'sc-component-faqs'
+export const FAQS_DATA: FAQEntry[] = [
 	{
 		question: 'How can I contribute to the project?',
 		answer: `
@@ -88,5 +91,3 @@ const faqsData = [
         `
 	}
 ]
-
-export default faqsData

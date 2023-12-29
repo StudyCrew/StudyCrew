@@ -138,3 +138,7 @@ public/workbox-*
 /blob-report/
 /playwright/.cache/
 
+.env*
+.flaskenv*
+!.env.project
+!.env.vault
