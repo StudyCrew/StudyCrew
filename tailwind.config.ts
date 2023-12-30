@@ -109,6 +109,8 @@ module.exports = {
 				'accordion-up': 'accordion-up 0.2s ease-out'
 			},
 			spacing: {
+				'75vh': '75vh',
+				'80vh': '80vh',
 				'85vh': '85vh',
 				'20vh': '20vh',
 				'5%': '5%'
