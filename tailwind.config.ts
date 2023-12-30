@@ -115,6 +115,10 @@ module.exports = {
 			},
 			maxWidth: {
 				'100vw': '100vw'
+			},
+			lineHeight: {
+				11: '2.75rem',
+				12: '3rem'
 			}
 		}
 	},
