@@ -61,7 +61,7 @@ function Features (): JSX.Element {
 				<p className="des">Lorem ipsum dolor sit amet consectetur adipisicing elit.
 					Explicabo at a dolor voluptatum.</p>
 			</div>
-			<div className="container">
+			<div className="flex align-middle justify-end gap-2.5 mt-12 mx-0">
 				<div className="stages">
 					{stages.map(stage => (
 						<div key={stage.id} className={`stage ${stage.id === currentStage

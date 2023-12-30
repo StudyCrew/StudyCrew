@@ -26,18 +26,7 @@
   color: var(--secondary-text-color);
 }
 
-.container {
-  /* Flex container */
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 10px;
-  margin-top: 50px;
-  margin-left: 0;
-  margin-right: 0;
-}
-
-.container .stages .stage {
+.stages .stage {
   /* Stage styles */
   text-align: center;
   margin-bottom: 10px;
@@ -49,8 +38,7 @@
   color: var(--secondary-text-color);
   border-radius: 5px;
 }
-
-.container .stages .stage h3 {
+.stages .stage h3 {
   /* Stage title */
   font-size: 28px;
   font-weight: bold;

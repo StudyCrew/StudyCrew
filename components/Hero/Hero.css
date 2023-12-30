@@ -14,16 +14,6 @@
     margin-top: 25px;
 }
 
-.hero-mist-1 {
-    position: absolute;
-    height: 400px;
-    width: 400px;
-    left: 150px;
-    top: 300px;
-    z-index: -1;
-    overflow: hidden;
-}
-
 /* Main title styles */
 .title {
     margin: auto;
