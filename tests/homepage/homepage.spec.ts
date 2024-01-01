@@ -1,14 +1,15 @@
 import { test, expect } from '@playwright/test'
+import { Page } from '@playwright/test'
 
-test('has title', async ({ page }) => {
-	await page.goto(process.env.BASE_URL ?? 'http://localhost:3000')
+test("has title", async ({ page }: { page: Page }) => {
+  await page.goto("/");
 
-	// Expect a title "to contain" a substring.
-	await expect(page).toHaveTitle(/StudyCrew/)
-})
+  // Expect a title "to contain" a substring.
+  await expect(page).toHaveTitle(/StudyCrew/);
+});
 
-test('has stages', async ({ page }) => {
-	await page.goto(process.env.BASE_URL ?? 'http://localhost:3000')
+test('has stages', async ({ page }: { page: Page }) => {
+	await page.goto('/')
 
 	await page
 		.locator(

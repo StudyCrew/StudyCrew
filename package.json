@@ -1,12 +1,13 @@
 {
-  "name": "StudyCrew",
+  "name": "studycrew",
   "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint --fix . --ext .ts,.tsx"
+    "lint": "eslint --fix . --ext .ts,.tsx",
+    "test": "pnpm exec playwright test"
   },
   "dependencies": {
     "@clerk/nextjs": "^4.28.1",
