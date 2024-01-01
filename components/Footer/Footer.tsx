@@ -1,13 +1,5 @@
 import React from 'react'
-import {
-	FaFacebookF,
-	FaInstagram,
-	FaLinkedin,
-	FaGithubSquare,
-	FaDiscord,
-	FaTiktok,
-	FaYoutube
-} from 'react-icons/fa'
+import { FaFacebookF, FaInstagram, FaLinkedin, FaGithubSquare, FaDiscord, FaTiktok, FaYoutube } from 'react-icons/fa'
 import scrollToRef from '@/lib/hooks/scrollTo'
 
 interface FooterProps {
@@ -31,8 +23,10 @@ const Footer = ({
 	signupRef,
 	faqRef
 }: FooterProps): JSX.Element => {
+	// Helper function to determine if a link is active
 	const isActive = (name: string): string => activePage === name ? 'activeNavLink' : ''
 
+	// Handles the navigation link click based on the section's name
 	const handleNavLinkClick = (name: string): void => {
 		let ref
 		switch (name) {
@@ -62,10 +56,10 @@ const Footer = ({
 
 
 	return (
-		<div className="bg-[#f2f7ff] grid grid-cols-3 lg:grid-cols-5 gap-4 px-6 lg:px-[150px] py-6 items-center">
-			{/* Footer Logo */}
+		<div className="bg-zircon-50 grid grid-cols-3 lg:grid-cols-5 gap-4 px-6 lg:px-[150px] py-6 items-center">
+			{/* Footer logo */}
 			<div className="flex items-center justify-center lg:justify-start col-span-1">
-				{/* Logo SVG */}
+				{/* SVG Logo */}
 				<svg width="40" height="40" viewBox="0 0 446 445" fill="none"
 					xmlns="http://www.w3.org/2000/svg" className="footer-logo-1"
 					preserveAspectRatio="xMidYMid meet">
