@@ -17,13 +17,13 @@ const Project = (): JSX.Element => {
 			{/* Left column containing project description */}
 			<div className="project-left-column">
 				<div className="project-text">
-					<h3 className="project-mission-header white-text-color">
+					<h3 className="project-mission-header text-zircon-50">
             OUR PROJECT
 					</h3>
-					<h2 className="project-mission-title white-text-color slogan">
+					<h2 className="project-mission-title text-zircon-50 slogan">
             Transforming Education Together.
 					</h2>
-					<p className="project-mission-text white-text-color">
+					<p className="project-mission-text text-zircon-50">
             Dedicated to transforming the educational landscape, our platform
             prioritizes accessibility, collaboration, and engagement. We are
             committed to ensure quality education is in everyone’s reach.
