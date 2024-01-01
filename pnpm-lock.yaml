@@ -12,8 +12,8 @@ dependencies:
     specifier: ^1.7.9
     version: 1.7.9(react@18.2.0)
   '@ducanh2912/next-pwa':
-    specifier: ^10.0.0
-    version: 10.0.0(next@14.0.4)(webpack@5.89.0)
+    specifier: ^10.0.2
+    version: 10.0.2(next@14.0.4)(webpack@5.89.0)
   '@hookform/resolvers':
     specifier: ^3.3.2
     version: 3.3.2(react-hook-form@7.48.2)
@@ -1454,8 +1454,8 @@ packages:
       csstype: 3.1.1
     dev: false
 
-  /@ducanh2912/next-pwa@10.0.0(next@14.0.4)(webpack@5.89.0):
-    resolution: {integrity: sha512-6VWpF0IzP9Az9n0jmqL9XH8iWA6LYJrC72b8GDEn7Swfi1mR+hYPItNFKJnraqwJheIqeeZXIHAqs5/VdyDF5A==}
+  /@ducanh2912/next-pwa@10.0.2(next@14.0.4)(webpack@5.89.0):
+    resolution: {integrity: sha512-6/6+l0L+xHCD9TluaoXlwKHl65iZ0OlvTO2L1YPV9zyZjN9sl4DbEjQ7JbOADnUGGbGVicPE4MhViGJA0+ezjQ==}
     peerDependencies:
       next: '>=14.0.0'
       webpack: '>=5.9.0'
