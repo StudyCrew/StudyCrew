@@ -1,6 +1,16 @@
 import React from 'react'
-import { FaFacebookF, FaInstagram, FaLinkedin, FaGithubSquare, FaDiscord, FaTiktok, FaYoutube } from 'react-icons/fa'
+import { 
+    FaFacebookF, 
+    FaInstagram, 
+    FaLinkedin, 
+    FaGithubSquare, 
+    FaDiscord, 
+    FaTiktok, 
+    FaYoutube 
+} from 'react-icons/fa';
 import scrollToRef from '@/lib/hooks/scrollTo'
+import Image from 'next/image'
+import Logo from '../../public/assets/Logo.svg'
 
 interface FooterProps {
 	activePage: string
@@ -56,11 +66,23 @@ const Footer = ({
 
 
 	return (
-		<div className="bg-zircon-50 grid grid-cols-3 lg:grid-cols-5 gap-4 px-6 lg:px-[150px] py-6 items-center">
+		<div 
+			className="
+				bg-zircon-50 
+				grid 
+				grid-cols-3 
+				lg:grid-cols-5 
+				gap-4 
+				px-6 
+				lg:px-[150px] 
+				py-6 
+				items-center
+			"
+		>
 			{/* Footer logo */}
 			<div className="flex items-center justify-center lg:justify-start col-span-1">
 				{/* SVG Logo */}
-				<img src="/assets/Logo.svg" alt="Logo" className='w-10'/>
+				<Image alt='Logo' src={Logo} className='w-10' />
 				<h3 className="footer-title heading-font ml-4 font-semibold">
 					StudyCrew
 				</h3>
