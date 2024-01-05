@@ -11,7 +11,10 @@
 	width: 100%;
 	margin-block: 100px;
 	margin-top: 100px;
+<<<<<<< HEAD
 	overflow:hidden !important;
+=======
+>>>>>>> f420b95bf4e3a91acce93d6e182448b488b0051d
 }
 
 .text-component h5,
@@ -74,7 +77,11 @@ h5 {
 .join-team-section {
 	width: 100vw;
 	border-top: 2px solid #F2F7FF;
+<<<<<<< HEAD
 	border-bottom: 2px solid #F2F7FF; 
+=======
+	border-bottom: 2px solid #F2F7FF;
+>>>>>>> f420b95bf4e3a91acce93d6e182448b488b0051d
 	padding: 25px 0px;
 }
 
@@ -93,6 +100,7 @@ h5 {
 
 .team-cards::-webkit-scrollbar-thumb:hover {
     background: #555; 
+<<<<<<< HEAD
 }
 
 /* Media query for smaller screens */
@@ -108,3 +116,6 @@ h5 {
 	}
 	
 	
+=======
+}
+>>>>>>> f420b95bf4e3a91acce93d6e182448b488b0051d

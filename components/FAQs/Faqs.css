@@ -82,6 +82,7 @@ summary {
         top: 100px;
         transform: translateX(-50%);
     }
+<<<<<<< HEAD
     .faqs-heading {
         font-size: 33px;
     }
@@ -125,6 +126,8 @@ summary {
     .question-des {
         font-size: 12px; /* Adjusted font size for question-des */
     }
+=======
+>>>>>>> f420b95bf4e3a91acce93d6e182448b488b0051d
 }
 a {
     @apply underline text-blue-600 hover:text-blue-800 visited:text-purple-600;

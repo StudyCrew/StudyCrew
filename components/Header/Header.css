@@ -109,7 +109,10 @@ header .navbar {
 
   .header-items {
     background: none;
+<<<<<<< HEAD
     width: 100%;
+=======
+>>>>>>> f420b95bf4e3a91acce93d6e182448b488b0051d
   }
   .logo {
     background: none;
