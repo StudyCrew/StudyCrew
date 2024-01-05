@@ -11,6 +11,7 @@
 	width: 100%;
 	margin-block: 100px;
 	margin-top: 100px;
+	overflow:hidden !important;
 }
 
 .text-component h5,
@@ -73,7 +74,7 @@ h5 {
 .join-team-section {
 	width: 100vw;
 	border-top: 2px solid #F2F7FF;
-	border-bottom: 2px solid #F2F7FF;
+	border-bottom: 2px solid #F2F7FF; 
 	padding: 25px 0px;
 }
 
@@ -93,3 +94,17 @@ h5 {
 .team-cards::-webkit-scrollbar-thumb:hover {
     background: #555; 
 }
+
+/* Media query for smaller screens */
+@media screen and (max-width: 600px) {
+	.heading {
+		font-size: 33px;
+		font-weight: 500;
+	}
+	.head-title p {
+		font-size: 17px;
+		font-weight: 400;
+	}
+	}
+	
+	

@@ -16,7 +16,7 @@
 
 .features-head .title span {
   /* Color for the span */
-  color: #3a86ff;
+  color: #3A86FF;
   /* Font family for the span */
   font-family: var(--heading-font);
 }
@@ -33,8 +33,6 @@
   justify-content: flex-end;
   gap: 10px;
   margin-top: 50px;
-  margin-left: 0;
-  margin-right: 0;
 }
 
 .container .stages .stage {
@@ -54,10 +52,6 @@
   /* Stage title */
   font-size: 28px;
   font-weight: bold;
-}
-
-h3 {
-  margin: 22px 0px;
 }
 
 .stage p {
@@ -91,8 +85,8 @@ h3 {
   /* grid-auto-columns: calc((100% / 3)); */
   gap: 30px;
   transition: 0.5s ease-in;
-  overflow-x: auto;
-  white-space: nowrap;
+  overflow-x: auto; 
+  white-space: nowrap; 
   scroll-behavior: smooth;
   padding-bottom: 10px;
 }
@@ -146,7 +140,7 @@ h3 {
 
 .arrow-icons {
   position: absolute;
-  bottom: -3.5%;
+  bottom: -3.5%; 
   left: 50%;
   transform: translateX(-50%);
 }
@@ -169,76 +163,121 @@ h3 {
 }
 
 .active-stage {
-  background-color: var(
-    --light-background-color
-  ); /* This can be any color or styling you want */
+  background-color: var(--light-background-color); /* This can be any color or styling you want */
 }
 
 @media screen and (max-width: 1040px) {
   .arrow-icons {
-    /* Adjusted styles for smaller screens */
-    justify-content: start;
+      /* Adjusted styles for smaller screens */
+      justify-content: start;
+  }
+  .features {
+    width: 100%;
   }
 }
 
 @media screen and (max-width: 860px) {
   /* Adjusted styles for smaller screens */
   .card {
-    padding: 15px 15px;
-    max-width: 30%;
-    max-height: 100%;
+      padding: 15px 15px;
+      max-width: 30%;
+      max-height: 100%;
   }
   .card-description {
-    max-width: 50%;
+      max-width: 50%;
   }
   .container {
-    justify-content: center;
+      justify-content: center;
   }
   .container .stages {
-    display: none;
+      display: none;
   }
   .stage {
-    display: block;
-    cursor: pointer;
-    user-select: none;
+      display: block;
+      cursor: pointer;
+      user-select: none;
   }
   .card-image {
-    width: 50%;
-    height: 25%;
+      width:50%; 
+      height: 25%;
   }
   .owl-carousel-wrapper {
-    border-radius: 20px;
+      border-radius: 20px;
   }
   .owl-carousel .cards {
-    grid-auto-columns: calc((100% / 2));
+      grid-auto-columns: calc((100% / 2));
   }
   .features {
-    margin-right: 50px;
-    margin-left: 50px;
+      margin-right: 50px;
+      margin-left: 50px;
   }
 }
 
-@media screen and (max-width: 520px) {
+@media screen and (max-width: 600px) {
   /* Adjusted styles for smaller screens */
+ 
+
+   
   .owl-carousel .cards {
-    grid-auto-columns: calc((100%));
+      grid-auto-columns: calc(225.33px + 10px); /* 10px is for margin between cards */
+      padding: 20px;
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+       width: 700px;
   }
-}
+  
 
-.owl-carousel .cards::-webkit-scrollbar {
-  height: 10px;
-}
-
-.owl-carousel .cards::-webkit-scrollbar-thumb {
-  background: #959da6;
-  border-radius: 5px;
-}
-
-.owl-carousel .cards::-webkit-scrollbar-thumb:hover {
-  background: #434c59;
-}
-@media (min-width: 1400px) {
-  .container {
-    max-width: 100%;
+  .card {
+      flex: 0 0 auto;
+      width: 225.33px; /* Fixed width for mobile */
+      height: 350px; /* Fixed height for mobile */
+      scroll-snap-align: start;
+      margin-right: 10px; /* Add margin between cards if needed */
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 40px; /* Adjust padding as needed */
+      font-size: 10px; /* Adjust base font size */
+      overflow:hidden !important;
   }
+ 
+  .card-image {
+      /* Adjusted styles for the card image */
+      display: block;
+      height: 100px; 
+      width: auto;
+      max-width: 100%;
+      margin: auto;
+      border-radius: 10px;
+      object-fit: cover;
+      margin-bottom: 10px; 
+  }
+
+  .card-title {
+      /* Adjusted styles for the card title */
+      font-size: 17px; 
+      font-weight: bold;
+      margin-bottom: 5px;
+  }
+
+  .card-description {
+      /* Adjusted styles for the card description */
+      font-size: 13px;
+      color: var(--secondary-text-color);
+      overflow: hidden; /* or overflow: auto; */
+  }
+
+  .owl-carousel .cards::-webkit-scrollbar {
+      display: none; /* Hide the scrollbar on mobile */
+  }
+
+  .arrow-icons {
+      display: none; /* Hide arrows on mobile */
+  }
+  .features-head {
+      font-size: 33px;
+  }
+  
 }

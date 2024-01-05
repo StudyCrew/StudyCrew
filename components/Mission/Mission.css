@@ -11,14 +11,14 @@
     /* top: 400px; */
     height: 200px;
     width: 100vw;
-    z-index: 5;
+    z-index: -1;
 }
 
 /* White background for the chevron */
 .chevron-white {
     position: absolute;
     height: 200px;
-    z-index: 3;
+    z-index: 2;
     top: 50px;
 }
 
@@ -27,7 +27,7 @@
     position: absolute;
     height: 200px;
     top: 100px;
-    z-index: 5;
+    z-index: 1; /*send the Z-index to back so The header can be shown */
 }
 
 /* Gradient color definitions for the chevron */
@@ -56,6 +56,7 @@
     top: 150px;
     padding: 0px 150px;
     z-index: 1;
+    overflow:hidden !important;
 }
 
 /* Header inside the main content */
@@ -63,6 +64,7 @@
     position: relative;
     top: 20vh;
     margin-right: 5%;
+    z-index: 5;
 }
 
 /* Left column of the main content */
@@ -81,7 +83,7 @@
 /* Mission description text style */
 .mission-text {
     position: absolute;
-    top: 450px;
+    top: 350px;
     margin-right: 5%;
     color: #FFF;
 }
@@ -106,8 +108,8 @@
 }
 .logo-3 {
     position: relative;
-    top: -55%;
-    left: 40%;
+    top: -25%;
+    left: 22%;
     transform: rotate(30deg);
 }
 @media screen and (max-width: 750px) {
@@ -121,14 +123,25 @@
 }
 @media screen and (max-width: 500px) {
 
+
     .left-column{
         top: -70px;
+        width: fit-content;
     }
     .main-div{
         padding: 0px 20px;
         width: auto;
         height: 457px;
     }
+    .mission-text {
+        position: absolute;
+        align-items: center;
+        top: 300px;
+    }
+    .mission-header {
+        line-height: 1; /* reduce spacing */
+    }
+  
     .main-div p {
         font-size: 15px;
         letter-spacing: 0.1px;
@@ -139,6 +152,7 @@
         font-weight: 500;
         font-size: 36px;
         font-family: var(--heading-font);
+        top: 190px;
      }
      .main-div h3 {
         font-size: 13px;
@@ -153,5 +167,20 @@
     .left-column {
       width: 100%;
     }
-
+    .mission-text {
+        position: absolute;
+        align-items: center;
+        top: 280px;
+        font-size: 15px;
+        margin-bottom: 40px;
+    }
+      .mission-header {
+        top: 180px;
+      }
+    .main-div h2 {
+        font-weight: 500;
+        font-size: 36px;
+        font-family: var(--heading-font);
+        top: 190px;
+     }
   }
