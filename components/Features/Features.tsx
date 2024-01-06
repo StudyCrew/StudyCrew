@@ -58,8 +58,7 @@ function Features (): JSX.Element {
 		<div className="features">
 			<div className="features-head">
 				<h2>Our <span>Features</span></h2>
-				<p className="des">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-					Explicabo at a dolor voluptatum.</p>
+				<p className="des">Discover powerful tools that help you study.</p>
 			</div>
 			<div className="flex align-middle justify-end gap-2.5 mt-12 mx-0">
 				<div className="stages">
