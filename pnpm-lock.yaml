@@ -12,8 +12,8 @@ dependencies:
     specifier: ^1.7.9
     version: 1.7.9(react@18.2.0)
   '@ducanh2912/next-pwa':
-    specifier: ^10.0.0
-    version: 10.0.0(next@14.0.4)(webpack@5.89.0)
+    specifier: ^10.1.0
+    version: 10.1.0(next@14.0.4)(webpack@5.89.0)
   '@hookform/resolvers':
     specifier: ^3.3.2
     version: 3.3.2(react-hook-form@7.48.2)
@@ -1454,8 +1454,8 @@ packages:
       csstype: 3.1.1
     dev: false
 
-  /@ducanh2912/next-pwa@10.0.0(next@14.0.4)(webpack@5.89.0):
-    resolution: {integrity: sha512-6VWpF0IzP9Az9n0jmqL9XH8iWA6LYJrC72b8GDEn7Swfi1mR+hYPItNFKJnraqwJheIqeeZXIHAqs5/VdyDF5A==}
+  /@ducanh2912/next-pwa@10.1.0(next@14.0.4)(webpack@5.89.0):
+    resolution: {integrity: sha512-4jrV+bEiiqP2CQGqRQ3Gx4rpYjRai4bAkTUZLdAMTFXVPFEy825IOL55mj7BESdRQXb4YtpUULr80gREm7sXIA==}
     peerDependencies:
       next: '>=14.0.0'
       webpack: '>=5.9.0'
@@ -1464,7 +1464,7 @@ packages:
       fast-glob: 3.3.2
       next: 14.0.4(@babel/core@7.23.3)(react-dom@18.2.0)(react@18.2.0)
       semver: 7.5.4
-      terser-webpack-plugin: 5.3.9(webpack@5.89.0)
+      terser-webpack-plugin: 5.3.10(webpack@5.89.0)
       webpack: 5.89.0
       workbox-build: 7.0.0
       workbox-core: 7.0.0
@@ -6923,6 +6923,30 @@ packages:
       unique-string: 2.0.0
     dev: false
 
+  /terser-webpack-plugin@5.3.10(webpack@5.89.0):
+    resolution: {integrity: sha512-BKFPWlPDndPs+NGGCr1U59t0XScL5317Y0UReNrHaw9/FwhPENlq6bfgs+4yPfyP51vqC1bQ4rp1EfXW5ZSH9w==}
+    engines: {node: '>= 10.13.0'}
+    peerDependencies:
+      '@swc/core': '*'
+      esbuild: '*'
+      uglify-js: '*'
+      webpack: ^5.1.0
+    peerDependenciesMeta:
+      '@swc/core':
+        optional: true
+      esbuild:
+        optional: true
+      uglify-js:
+        optional: true
+    dependencies:
+      '@jridgewell/trace-mapping': 0.3.20
+      jest-worker: 27.5.1
+      schema-utils: 3.3.0
+      serialize-javascript: 6.0.1
+      terser: 5.26.0
+      webpack: 5.89.0
+    dev: false
+
   /terser-webpack-plugin@5.3.9(webpack@5.89.0):
     resolution: {integrity: sha512-ZuXsqE07EcggTWQjXUj+Aot/OMcD0bMKGgF63f7UxYcu5/AJF53aIpK1YoP5xR9l6s/Hy2b+t1AM0bLNPRuhwA==}
     engines: {node: '>= 10.13.0'}
@@ -6949,6 +6973,17 @@ packages:
 
   /terser@5.24.0:
     resolution: {integrity: sha512-ZpGR4Hy3+wBEzVEnHvstMvqpD/nABNelQn/z2r0fjVWGQsN3bpOLzQlqDxmb4CDZnXq5lpjnQ+mHQLAOpfM5iw==}
+    engines: {node: '>=10'}
+    hasBin: true
+    dependencies:
+      '@jridgewell/source-map': 0.3.5
+      acorn: 8.11.2
+      commander: 2.20.3
+      source-map-support: 0.5.21
+    dev: false
+
+  /terser@5.26.0:
+    resolution: {integrity: sha512-dytTGoE2oHgbNV9nTzgBEPaqAWvcJNl66VZ0BkJqlvp71IjO8CxdBx/ykCNb47cLnCmCvRZ6ZR0tLkqvZCdVBQ==}
     engines: {node: '>=10'}
     hasBin: true
     dependencies:
