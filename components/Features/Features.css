@@ -209,7 +209,7 @@ h3 {
 @media screen and (max-width: 520px) {
   /* Adjusted styles for smaller screens */
   .owl-carousel .cards {
-    grid-auto-columns: calc((100%));
+    grid-auto-columns: calc(100%);
   }
 }
 
@@ -225,6 +225,7 @@ h3 {
 .owl-carousel .cards::-webkit-scrollbar-thumb:hover {
   background: #434c59;
 }
+
 @media (min-width: 1400px) {
   .container {
     max-width: 100%;

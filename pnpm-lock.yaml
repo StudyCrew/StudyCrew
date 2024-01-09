@@ -50,6 +50,9 @@ dependencies:
   autoprefixer:
     specifier: 10.4.16
     version: 10.4.16(postcss@8.4.32)
+  class-names:
+    specifier: ^1.0.0
+    version: 1.0.0
   class-variance-authority:
     specifier: ^0.7.0
     version: 0.7.0
@@ -3711,6 +3714,12 @@ packages:
   /chrome-trace-event@1.0.3:
     resolution: {integrity: sha512-p3KULyQg4S7NIHixdwbGX+nFHkoBiA4YQmyWtjb8XngSKV124nJmRysgAeujbUVb15vh+RvFUfCPqU7rXk+hZg==}
     engines: {node: '>=6.0'}
+    dev: false
+
+  /class-names@1.0.0:
+    resolution: {integrity: sha512-AQL0OLcu6D5hTwPcY78UgQ0JMS5cR1eYFV60C6V9WNMKVgyXi+CSGYuuWUAVo/6+Z2JRk6VBTn1XO5U94SqBww==}
+    dependencies:
+      classnames: 2.3.2
     dev: false
 
   /class-variance-authority@0.7.0:
