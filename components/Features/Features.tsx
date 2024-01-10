@@ -37,7 +37,7 @@ const getStageForID = (id: string): FeaturesStage => {
 	}
 }
 
-const Features: React.FC<void> = (): JSX.Element => {
+const Features: React.FC<any> = (): JSX.Element => {
 	const { width: windowWidth } = useWindowSize()
 	const isMobile = windowWidth <= MOBILE_WIDTH_BREAKPOINT
 
