@@ -19,6 +19,8 @@ import profile from './../../public/assets/features/profile.svg'
 
 import { type FeaturesStage } from './types'
 
+export const MOBILE_WIDTH_BREAKPOINT = 950 // eslint-disable-line
+
 export const FEATURES_STAGE_ONE: FeaturesStage = { // eslint-disable-line
 	id: 'stage-1',
 	title: 'Stage 1',
