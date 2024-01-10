@@ -3,9 +3,11 @@ module.exports = {
 	darkMode: ['class'],
 	content: [
 		'./pages/**/*.{ts,tsx}',
+		'./components/*.{ts,tsx}',
 		'./components/**/*.{ts,tsx}',
 		'./app/**/*.{ts,tsx}',
-		'./src/**/*.{ts,tsx}'
+		'./src/**/*.{ts,tsx}',
+		'./lib/interface/controls/**/*.{ts,tsx}'
 	],
 	theme: {
 		container: {
@@ -16,7 +18,23 @@ module.exports = {
 			}
 		},
 		extend: {
+			zIndex: {
+				1: '1',
+				200: '200'
+			},
+			rounded: {
+				10: '10'
+			},
+			translate: {
+				icon: '5%'
+			},
+			padding: {
+				5.5: '22px'
+			},
 			colors: {
+				gradient: {
+					500: '#8338ec'
+				},
 				primary: {
 					50: '#EEF6FF',
 					100: '#D9EAFF',
@@ -74,10 +92,71 @@ module.exports = {
 					800: '#1E38AF',
 					900: '#1E348A',
 					950: '#172254'
+				},
+				error: {
+					50: '#FFEDED',
+					100: '#FFE4E4',
+					200: '#FFDBDB',
+					300: '#FFBDBD',
+					400: '#F89898',
+					500: '#F06C6C',
+					600: '#E83B3B',
+					700: '#AC1C1C',
+					800: '#6F0808',
+					900: '#330000',
+				},
+				success: {
+					50: '#F4FFF3',
+					100: '#E5FFE2',
+					200: '#D6FFD2',
+					300: '#B8F8B2',
+					400: '#98ED91',
+					500: '#76E36D',
+					600: '#51D845',
+					700: '#3DA434',
+					800: '#286F22',
+					900: '#153B12',
+				},
+				alert: {
+					50: '#FFFFFF',
+					100: '#FFFFF5',
+					200: '#FFFFEA',
+					300: '#FFF8CF',
+					400: '#FCEBAF',
+					500: '#F5DD87',
+					600: '#EECB51',
+					700: '#B1911F',
+					800: '#755B00',
+					900: '#382C00',
 				}
 			},
-			borderRadius: {
-				mantineMedium: '10px'
+			keyframes: {
+				'accordion-down': {
+					from: { height: 0 },
+					to: { height: 'var(--radix-accordion-content-height)' }
+				},
+				'accordion-up': {
+					from: { height: 'var(--radix-accordion-content-height)' },
+					to: { height: 0 }
+				}
+			},
+			animation: {
+				'accordion-down': 'accordion-down 0.2s ease-out',
+				'accordion-up': 'accordion-up 0.2s ease-out'
+			},
+			spacing: {
+				'75vh': '75vh',
+				'80vh': '80vh',
+				'85vh': '85vh',
+				'20vh': '20vh',
+				'5%': '5%'
+			},
+			maxWidth: {
+				'100vw': '100vw'
+			},
+			lineHeight: {
+				11: '2.75rem',
+				12: '3rem'
 			}
 		}
 	},

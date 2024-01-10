@@ -6,16 +6,16 @@ import { type IUser } from '@/lib/models/user'
 import { getUserInfo } from '@/lib/actions/user.actions'
 import AccountProfile from '@/components/forms/AccountProfile'
 
-export default async function page (): Promise<JSX.Element> {
+export default async function page (): Promise<JSX.Element | null> {
 	const user = await currentUser()
 	if (!user) return null
 
-	const userInfo: IUser = await getUserInfo(user.id)
+	const userInfo: IUser | null = await getUserInfo(user.id)
 	if (userInfo?.onboarded) redirect('/')
 
 	const userData: IUser = {
 		clerkId: user.id,
-		_id: userInfo?._id,
+		_id: userInfo?._id ?? '',
 		username: userInfo ? userInfo?.username : user.emailAddresses[0].emailAddress,
 		name: userInfo?.name ? userInfo?.name : user.firstName ?? '',
 		bio: userInfo?.bio ? userInfo?.bio : '',

@@ -31,13 +31,36 @@ NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=[YOUR PUBLISHABLE KEY FROM CLERK]
 CLERK_SECRET_KEY=[YOUR SECRET KEY FROM CLERK]
 ```
 
+### Sentry exception handling
+If you would like to handle exceptions like we do, just create a free Sentry.io account and replace the `dsn` key with your own in the following files:
+
+1. sentry.client.config.ts
+1. sentry.edge.config.ts
+1. sentry.server.config.ts
+
+Here is an example:
+
+```typescript
+import * as Sentry from '@sentry/nextjs'
+
+Sentry.init({
+	dsn: '[YOUR DSN HERE]',
+
+	// Adjust this value in production, or use tracesSampler for greater control
+	tracesSampleRate: 1,
+
+	// Setting this option to true will print useful information
+	// to the console while you're setting up Sentry.
+	debug: false
+})
+```
 ### Running the project locally:
 
 To run the project locally, you need to:
 
 1. `pnpm i` the required dependencies.
 
-1. `pnpm build-dev` to launch the development server.
+1. `pnpm dev` to launch the development server.
 
 ## Contributing
 Interested in contributing? Check out our contribution guide to learn how you can get involved and contribute to StudyCrew's development.
