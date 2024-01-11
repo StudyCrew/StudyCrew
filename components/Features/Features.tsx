@@ -3,19 +3,17 @@ import classNames from 'classnames'
 import { useWindowSize } from '@uidotdev/usehooks'
 import React, { useMemo, useState, useCallback } from 'react'
 import {
-	FaChevronUp,
 	FaChevronLeft,
-	FaChevronDown,
 	FaChevronRight
 } from 'react-icons/fa'
 
 import { type FeaturesStage, FeaturesStageID } from './types'
 import {
-	FEATURES_STAGES,
-	FEATURES_STAGE_ONE,
-	FEATURES_STAGE_TWO,
-	FEATURES_STAGE_THREE,
-	MOBILE_WIDTH_BREAKPOINT
+	featuresStages,
+	featuresStageOne,
+	featuresStageTwo,
+	featuresStageThree,
+	mobileWidthBreakpoint
 } from './const'
 
 import './Features.css'
@@ -24,22 +22,22 @@ import './Features.css'
 const getStageForID = (id: string): FeaturesStage => {
 	switch (id) {
 		case FeaturesStageID.StageOne:
-			return FEATURES_STAGE_ONE
+			return featuresStageOne
 
 		case FeaturesStageID.StageTwo:
-			return FEATURES_STAGE_TWO
+			return featuresStageTwo
 
 		case FeaturesStageID.StageThree:
-			return FEATURES_STAGE_THREE
+			return featuresStageThree
 
 		default:
-			return FEATURES_STAGE_ONE // TODO: Refactor to return null here
+			return featuresStageOne // TODO: Refactor to return null here
 	}
 }
 
 const Features: React.FC<any> = (): JSX.Element => {
 	const { width: windowWidth } = useWindowSize()
-	const isMobile = windowWidth <= MOBILE_WIDTH_BREAKPOINT
+	const isMobile = windowWidth <= mobileWidthBreakpoint
 
 	const [cardWidth, setCardWidth] = useState<number>(0)
 	const [stageOpenStatuses, setStageOpenStatuses] = useState<boolean[]>([
@@ -122,13 +120,13 @@ const Features: React.FC<any> = (): JSX.Element => {
 				<p className="des">Discover powerful tools that help you study.</p>
 			</div>
 
-			<div className={classNames("align-middle justify-end gap-2.5 mt-12 mx-0", {
+			<div className={classNames('align-middle justify-end gap-2.5 mt-12 mx-0', {
 				flex: !isMobile,
 				'flex-column': isMobile
 			})}>
 				{!isMobile && (
 					<div className="stages">
-						{FEATURES_STAGES.map(({ id, title, description }, i: number) => (
+						{featuresStages.map(({ id, title, description }, i: number) => (
 							<div
 								key={`stage-${i}-${id}`}
 								onClick={onStageClick.bind(null, id)}
@@ -167,7 +165,7 @@ const Features: React.FC<any> = (): JSX.Element => {
 					</div>
 				)}
 
-				{isMobile && FEATURES_STAGES.map(({ id, title, description, cards }, i: number) => (
+				{isMobile && featuresStages.map(({ id, title, description, cards }, i: number) => (
 					<div
 						key={`stage-${i}-${id}`}
 						className="mobile-stage-wrapper"

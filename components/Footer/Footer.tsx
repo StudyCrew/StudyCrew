@@ -1,13 +1,13 @@
 import React from 'react'
-import { 
-    FaFacebookF, 
-    FaInstagram, 
-    FaLinkedin, 
-    FaGithubSquare, 
-    FaDiscord, 
-    FaTiktok, 
-    FaYoutube 
-} from 'react-icons/fa';
+import {
+	FaFacebookF,
+	FaInstagram,
+	FaLinkedin,
+	FaGithubSquare,
+	FaDiscord,
+	FaTiktok,
+	FaYoutube
+} from 'react-icons/fa'
 import scrollToRef from '@/lib/hooks/scrollTo'
 import Image from 'next/image'
 import Logo from '../../public/assets/Logo.svg'
@@ -64,18 +64,17 @@ const Footer = ({
 		scrollToRef(ref)
 	}
 
-
 	return (
-		<div 
+		<div
 			className="
-				bg-zircon-50 
-				grid 
-				grid-cols-3 
-				lg:grid-cols-5 
-				gap-4 
-				px-6 
-				lg:px-[150px] 
-				py-6 
+				bg-zircon-50
+				grid
+				grid-cols-3
+				lg:grid-cols-5
+				gap-4
+				px-6
+				lg:px-[150px]
+				py-6
 				items-center
 			"
 		>

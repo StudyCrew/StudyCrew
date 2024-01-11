@@ -1,9 +1,8 @@
 // Importing necessary libraries and components
-import { Link } from 'react-router-dom'
 import React, { useState, useEffect } from 'react'
 import Button from '../Button/Button'
 import './Hero.css' // Importing styling specific to the Hero component
-import { FaChevronRight, FaChevronDown } from 'react-icons/fa'
+import { FaChevronDown } from 'react-icons/fa'
 
 /**
  * Hero Component
