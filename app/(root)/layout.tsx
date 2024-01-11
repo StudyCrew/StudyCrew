@@ -2,7 +2,6 @@ import React from 'react'
 import type { Metadata, Viewport } from 'next'
 import { ClerkProvider } from '@clerk/nextjs'
 import { dark } from '@clerk/themes'
-import { MantineProvider, ColorSchemeScript } from '@mantine/core'
 import Head from 'next/head'
 import Link from 'next/link'
 import '../globals.css'
@@ -48,11 +47,10 @@ export default async function RootLayout({
     >
       <html lang="en">
         <Head>
-          <ColorSchemeScript />
           <Link rel="shortcut icon" href="/public/assets/favicon.ico" />
         </Head>
         <body>
-          <MantineProvider>{children}</MantineProvider>
+          {children}
         </body>
       </html>
     </ClerkProvider>
