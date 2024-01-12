@@ -20,27 +20,33 @@ nav > div {
   font-size: 16px;
   font-weight: 600;
   text-decoration: none;
-  color: #0C1B33;
+  color: #0c1b33;
   padding: 15px 20px 10px;
   border-radius: 5px;
   margin-bottom: 5px;
   text-align: center;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  transition: color 0.2s ease, margin-bottom 0.2s ease, border-bottom 0.2s ease;
+  transition:
+    color 0.2s ease,
+    margin-bottom 0.2s ease,
+    border-bottom 0.2s ease;
 }
 
 /* Styling for hovering over a navigation link */
 nav > div:hover {
-  color: #3A86FF;
-  transition: color 0.2s ease, margin-bottom 0.2s ease, border-bottom 0.2s ease;
+  color: #3a86ff;
+  transition:
+    color 0.2s ease,
+    margin-bottom 0.2s ease,
+    border-bottom 0.2s ease;
 }
 
 /* Styling for the active navigation link */
 nav > div.activeNavLink {
-  color: #3A86FF;
+  color: #3a86ff;
   margin-bottom: 0;
-  border-bottom: solid 5px #3A86FF; /* Highlight bottom border for the active link */
+  border-bottom: solid 5px #3a86ff; /* Highlight bottom border for the active link */
 }
 
 @media (max-width: 768px) {
@@ -52,10 +58,10 @@ nav > div.activeNavLink {
     align-items: center;
     height: 100vh; /* Full screen height */
     width: 100vw; /* Full screen width */
-    position: fixed; 
+    position: fixed;
     top: 0;
     left: 0;
-    z-index: 1000; 
+    z-index: 1000;
     background-color: rgba(255, 255, 255, 0.9);
     z-index: 5000;
   }

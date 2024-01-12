@@ -1,51 +1,51 @@
 .project-margin {
-    margin-top: 40px;
+  margin-top: 40px;
 }
 
 .mission-component {
-    position: relative;
+  position: relative;
 }
 
 .features-component {
-    position: relative;
-    margin-top: 250px;
+  position: relative;
+  margin-top: 250px;
 }
 
 .project-component {
-    margin-top: 150px;
+  margin-top: 150px;
 }
 
-.faqs-component{
+.faqs-component {
   margin-bottom: 30px;
 }
 
 .empower-component {
-    margin-top: 75px;
-    margin-bottom: 40px;
+  margin-top: 75px;
+  margin-bottom: 40px;
 }
 
 .team-component {
-    position: relative;
-    top: 50px;
+  position: relative;
+  top: 50px;
 }
 
 .faq-component {
-    position: relative;
-    top: -220px;
+  position: relative;
+  top: -220px;
 }
 
 .header {
-    position: sticky;
-    top: 0;
-    width: 100%;
-    z-index: 200;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 200;
 }
 
-@media (max-width: 768px) { 
-    .header {
-        position: fixed !important;
-        top: 0;
-        width: 100vw;
-        z-index: 200;
-    }    
+@media (max-width: 768px) {
+  .header {
+    position: fixed !important;
+    top: 0;
+    width: 100vw;
+    z-index: 200;
+  }
 }

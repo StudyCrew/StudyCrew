@@ -12,54 +12,53 @@ import robots from '@/lib/metadata/robot'
 import twitter from '@/lib/metadata/twitter'
 
 export const viewport: Viewport = {
-	themeColor: '#3A86FF'
+  themeColor: '#3A86FF'
 }
 
 export const metadata: Metadata = {
-	title: 'StudyCrew',
-	description:
-    'Making education more accessible, collaborative, and engaging.',
-	applicationName: 'StudyCrew',
-	manifest: '/manifest.json',
-	icons,
-	appleWebApp: {
-		capable: true,
-		statusBarStyle: 'default',
-		title: 'StudyCrew'
-	},
-	formatDetection: {
-		telephone: false
-	},
-	openGraph,
-	robots,
-	twitter
+  title: 'StudyCrew',
+  description: 'Making education more accessible, collaborative, and engaging.',
+  applicationName: 'StudyCrew',
+  manifest: '/manifest.json',
+  icons,
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'default',
+    title: 'StudyCrew'
+  },
+  formatDetection: {
+    telephone: false
+  },
+  openGraph,
+  robots,
+  twitter
 }
 
 export default function RootLayout ({
-	children
+  children
 }: {
-	children: React.ReactNode
+  children: React.ReactNode
 }): JSX.Element {
-	return (
-		<ClerkProvider>
-			<html lang="en">
-				<Head>
-					<Link rel="shortcut icon" href="/public/assets/favicon.ico" />
-				</Head>
-				<body
-					className='flex min-h-screen flex-1 flex-col
-          items-center px-6 pb-10 pt-28 max-md:pb-32 sm:px-10'
-				>
-					<ThemeProvider
-						attribute="class"
-						defaultTheme="system"
-						enableSystem
-						disableTransitionOnChange
-					>
-						{children}
-					</ThemeProvider>
-				</body>
-			</html>
-		</ClerkProvider>
-	)
+  return (
+    <ClerkProvider>
+      <html lang="en">
+        <Head>
+          <Link rel="shortcut icon" href="/public/assets/favicon.ico" />
+        </Head>
+        <body
+          className="flex min-h-screen flex-1 flex-col
+          items-center px-6 pb-10 pt-28 max-md:pb-32 sm:px-10"
+        >
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            {children}
+          </ThemeProvider>
+        </body>
+      </html>
+    </ClerkProvider>
+  )
 }

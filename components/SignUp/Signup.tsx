@@ -6,66 +6,66 @@ import { addToWaitlist, getSpotsLeft } from '@/lib/actions/waitlist.actions'
 
 /* Define the Empower component */
 function SignUp (): JSX.Element {
-	const [email, setEmail] = useState<string>('')
-	const [message, setMessage] = useState<string>('')
-	const [spotsLeft, setSpotsLeft] = useState<number>(0)
+  const [email, setEmail] = useState<string>('')
+  const [message, setMessage] = useState<string>('')
+  const [spotsLeft, setSpotsLeft] = useState<number>(0)
 
-	const handleJoinWaitlist = async (): Promise<void> => {
-		try {
-			if (!email) {
-				setMessage('Please enter your email address.')
-				return
-			}
-			if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email)) {
-				setMessage('Invalid email address')
-			}
-			// Perform input validation if needed
-			const response = await addToWaitlist(email)
-			if (!response) {
-				setMessage('Failed to join waitlist. Please try again.')
-				return
-			}
-			setMessage('Successfully joined waitlist!')
-			setEmail('') // Clear the input after successful operation
-			await fetchSpotsLeft()
-		} catch (error) {
-			setMessage('Failed to join waitlist. Please try again.')
-		}
-	}
+  const handleJoinWaitlist = async (): Promise<void> => {
+    try {
+      if (!email) {
+        setMessage('Please enter your email address.')
+        return
+      }
+      if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email)) {
+        setMessage('Invalid email address')
+      }
+      // Perform input validation if needed
+      const response = await addToWaitlist(email)
+      if (!response) {
+        setMessage('Failed to join waitlist. Please try again.')
+        return
+      }
+      setMessage('Successfully joined waitlist!')
+      setEmail('') // Clear the input after successful operation
+      await fetchSpotsLeft()
+    } catch (error) {
+      setMessage('Failed to join waitlist. Please try again.')
+    }
+  }
 
-	const fetchSpotsLeft = async (): Promise<void> => {
-		try {
-			const response = await getSpotsLeft()
-			console.log(response)
-			setSpotsLeft(response)
-		} catch (error) {
-			console.error('Error fetching spots left:', error)
-		}
-	}
+  const fetchSpotsLeft = async (): Promise<void> => {
+    try {
+      const response = await getSpotsLeft()
+      console.log(response)
+      setSpotsLeft(response)
+    } catch (error) {
+      console.error('Error fetching spots left:', error)
+    }
+  }
 
-	useEffect(() => {
-		const fetchData = async (): Promise<void> => {
-			await fetchSpotsLeft()
-		}
-		fetchData()
-			.catch((error) => {
-				console.log(error)
-			})
-	}, [])
+  useEffect(() => {
+    const fetchData = async (): Promise<void> => {
+      await fetchSpotsLeft()
+    }
+    fetchData().catch((error) => {
+      console.log(error)
+    })
+  }, [])
 
-	return (
-		<div className="empower">
-			<div className="left-wing">
-				{/* Left-wing SVG illustration */}
-				<svg
-					width="230"
-					height="500"
-					viewBox="0 0 634 1212"
-					fill="none"
-					xmlns="http://www.w3.org/2000/svg">
-					{/* SVG path and other code for the left-wing */}
-					<path
-						d="M161.894 206.894C188.066 199.246 210.095 136.408 214.631 107.927C220.137
+  return (
+    <div className="empower">
+      <div className="left-wing">
+        {/* Left-wing SVG illustration */}
+        <svg
+          width="230"
+          height="500"
+          viewBox="0 0 634 1212"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          {/* SVG path and other code for the left-wing */}
+          <path
+            d="M161.894 206.894C188.066 199.246 210.095 136.408 214.631 107.927C220.137
 						73.3587 225.722 33.0125 192.545 8.69199C159.369 -15.6285 130.092 19.4869
 						120.774 54.1786C109.116 82.7338 110.794 157.784 134 191.926C133.857 207.585
 						133.836 222.98 133.943 238.124C131.25 233.825 128.652 230.02 126.287 226.889C105.189
@@ -105,59 +105,63 @@ function SignUp (): JSX.Element {
 						318.907 243.285 304.821 204.638C290.735 165.99 246.884 178.933 219.868 202.606C201.61
 						214.947 175.833 250.805 162.725 285.33C162.05 259.973 161.781 233.851 161.894
 						206.894Z"
-						fill="url(#paint0_linear_0_99)"
-					/>
-					<defs>
-						<linearGradient
-							id="paint0_linear_0_99"
-							x1="1013.7"
-							y1="610.657"
-							x2="146.961"
-							y2="-9.35913"
-							gradientUnits="userSpaceOnUse">
-							<stop stopColor="#4D8EFB" />
-							<stop offset="1" stopColor="#3833A6" />
-						</linearGradient>
-					</defs>
-				</svg>
-			</div>
+            fill="url(#paint0_linear_0_99)"
+          />
+          <defs>
+            <linearGradient
+              id="paint0_linear_0_99"
+              x1="1013.7"
+              y1="610.657"
+              x2="146.961"
+              y2="-9.35913"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stopColor="#4D8EFB" />
+              <stop offset="1" stopColor="#3833A6" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
 
-			<div className="blue-neon-mist signup-mist-1"></div>
+      <div className="blue-neon-mist signup-mist-1"></div>
 
-			<div className="user-email">
-				<h2>
+      <div className="user-email">
+        <h2>
           Empowering <span>You</span>
-				</h2>
-				<p className="subtitle">Ready to Transform Your Learning Experience?</p>
-				<p className="spots-left">
-					{spotsLeft !== null
-						? `Spots left for Version 1.0: ${spotsLeft}`
-						: 'Loading spots...'}
-				</p>
-				<div className="email-input">
-					<input
-						type="email"
-						placeholder="Enter your email"
-						value={email}
-						onChange={(e) => { setEmail(e.target.value) }}
-					/>
-					<Button onClick={handleJoinWaitlist}>Join WaitList</Button>
-				</div>
-				{message && <p>{message}</p>}
-			</div>
+        </h2>
+        <p className="subtitle">Ready to Transform Your Learning Experience?</p>
+        <p className="spots-left">
+          {spotsLeft !== null
+            ? `Spots left for Version 1.0: ${spotsLeft}`
+            : 'Loading spots...'}
+        </p>
+        <div className="email-input">
+          <input
+            type="email"
+            placeholder="Enter your email"
+            value={email}
+            onChange={(e) => {
+              setEmail(e.target.value)
+            }}
+          />
+          <Button onClick={handleJoinWaitlist}>Join WaitList</Button>
+        </div>
+        {message && <p>{message}</p>}
+      </div>
 
-			<div className="right-wing">
-				{/* Right-wing SVG illustration */}
-				<svg
-					width="230"
-					height="500"
-					viewBox="0 0 633 1211"
-					fill="none"
-					xmlns="http://www.w3.org/2000/svg"
-					className="margin-right-wing">
-					{/* SVG path and other code for the right-wing */}
-					<path
-						d="M471.838 206.594C445.666 198.944 423.642 136.105 419.108 107.624C413.604 73.0548
+      <div className="right-wing">
+        {/* Right-wing SVG illustration */}
+        <svg
+          width="230"
+          height="500"
+          viewBox="0 0 633 1211"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="margin-right-wing"
+        >
+          {/* SVG path and other code for the right-wing */}
+          <path
+            d="M471.838 206.594C445.666 198.944 423.642 136.105 419.108 107.624C413.604 73.0548
 						408.022 32.7081 441.2 8.38994C474.378 -15.9283 503.653 19.1891 512.969
 						53.8814C524.624 82.4373 522.941 157.487 499.733 191.628C499.875 207.286 499.895
 						222.682 499.786 237.826C502.48 233.527 505.079 229.723 507.443 226.592C528.543
@@ -198,24 +202,25 @@ function SignUp (): JSX.Element {
 						321.363 365.648 299.115C341.872 273.425 314.823 242.974 328.911 204.328C343
 						165.681 386.85 178.627 413.865 202.302C432.121 214.644 457.896 250.504 471.001
 						285.03C471.679 259.673 471.949 233.551 471.838 206.594Z"
-						fill="url(#paint0_linear_0_100)"
-					/>
-					<defs>
-						<linearGradient
-							id="paint0_linear_0_100"
-							x1="471.748"
-							y1="-13.9991"
-							x2="-380.387"
-							y2="625.946"
-							gradientUnits="userSpaceOnUse">
-							<stop stopColor="#3833A6" />
-							<stop offset="1" stopColor="#4D8EFB" />
-						</linearGradient>
-					</defs>
-				</svg>
-			</div>
-		</div>
-	)
+            fill="url(#paint0_linear_0_100)"
+          />
+          <defs>
+            <linearGradient
+              id="paint0_linear_0_100"
+              x1="471.748"
+              y1="-13.9991"
+              x2="-380.387"
+              y2="625.946"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stopColor="#3833A6" />
+              <stop offset="1" stopColor="#4D8EFB" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+    </div>
+  )
 }
 
 export default SignUp
