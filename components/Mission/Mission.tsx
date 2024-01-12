@@ -124,7 +124,7 @@ const Mission = (props: any): JSX.Element => {
               We support education for all.
             </h2>
             <p className="absolute mr-5% lg:top-80 top-60 text-white">
-              StudyCrew is committed to make education more accessible,
+              StudyCrew is committed to making education accessible,
               collaborative, and engaging through innovative learning platforms.
               Our vision is to provide every student with the resources and
               community they need to reach their full potential.
