@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint --fix . --ext .ts,.tsx",
+    "format": "prettier --write .",
     "test": "pnpm exec playwright test"
   },
   "dependencies": {

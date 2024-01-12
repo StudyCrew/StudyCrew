@@ -1,0 +1,5 @@
+/.github
+/tests
+pnpm-lock.yaml
+*.config.*
+*.md
