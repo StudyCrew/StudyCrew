@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "eslint --fix . --ext .ts,.tsx",
     "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "test": "pnpm exec playwright test",
     "prepare": "husky install"
   },
