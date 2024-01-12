@@ -66,19 +66,7 @@ const Footer = ({
   }
 
   return (
-    <div
-      className="
-				bg-zircon-50
-				grid
-				grid-cols-3
-				lg:grid-cols-5
-				gap-4
-				px-6
-				lg:px-[150px]
-				py-6
-				items-center
-			"
-    >
+    <div className="bg-zircon-50 grid grid-cols-3 lg:grid-cols-5 gap-4 px-6 lg:px-[150px] py-6 items-center">
       {/* Footer logo */}
       <div className="flex items-center justify-center lg:justify-start col-span-1">
         {/* SVG Logo */}

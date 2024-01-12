@@ -4,7 +4,7 @@ import React from 'react'
 import { SignOutButton, SignedIn } from '@clerk/nextjs'
 import { useRouter } from 'next/navigation'
 
-export default function Logout (props: { placement: string }): JSX.Element {
+export default function Logout(props: { placement: string }): JSX.Element {
   const router = useRouter()
   return (
     <SignedIn>

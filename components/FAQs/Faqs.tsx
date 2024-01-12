@@ -2,7 +2,7 @@ import React from 'react'
 import './Faqs.css'
 import faqsData from '../../lib/data/faqsData'
 
-function Faqs (): JSX.Element {
+function Faqs(): JSX.Element {
   return (
     <div className="faqs">
       <div className="blue-neon-mist faq-mist-1"></div>

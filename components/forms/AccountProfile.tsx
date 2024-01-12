@@ -48,9 +48,16 @@ const AccountProfile = (props: AccountProfileProps): JSX.Element => {
     }
   }
 
-  const handleImage = (e: ChangeEvent<HTMLInputElement>): void => {
+  const handleImage = (
+    e: ChangeEvent<HTMLInputElement>
+  ): JSX.Element | undefined => {
     const target = event?.target as HTMLInputElement
-    const file: File = (target.files!)[0]
+
+    if (target.files === null) {
+      return
+    }
+
+    const file: File = target.files[0]
 
     if (file) {
       const reader = new FileReader()
@@ -74,13 +81,14 @@ const AccountProfile = (props: AccountProfileProps): JSX.Element => {
 
   return (
     <form
-      onSubmit={form.onSubmit(async (values) => {
-        await onSubmit(values)
+      onSubmit={form.onSubmit((values) => {
+        onSubmit(values).catch((err: Error) => {
+          console.error(err)
+        })
       })}
       className="flex flex-col justify-start gap-10"
     >
-      {form.values.image
-        ? (
+      {form.values.image ? (
         <Image
           src={imageString}
           alt="profile_icon"
@@ -89,8 +97,7 @@ const AccountProfile = (props: AccountProfileProps): JSX.Element => {
           priority
           className="rounded-full object-contain"
         />
-          )
-        : (
+      ) : (
         <Image
           src="/assets/profile.svg"
           alt="profile_icon"
@@ -98,7 +105,7 @@ const AccountProfile = (props: AccountProfileProps): JSX.Element => {
           height={24}
           className="object-contain"
         />
-          )}
+      )}
       <FileInput
         label="Profile picture"
         placeholder="Add profile photo"

@@ -6,7 +6,7 @@ import { type IUser } from '@/lib/models/user'
 import { getUserInfo } from '@/lib/actions/user.actions'
 import AccountProfile from '@/components/forms/AccountProfile'
 
-export default async function page (): Promise<JSX.Element | null> {
+export default async function page(): Promise<JSX.Element | null> {
   const user = await currentUser()
   if (!user) return null
 

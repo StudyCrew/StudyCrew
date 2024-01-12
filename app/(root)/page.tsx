@@ -14,7 +14,7 @@ import Faqs from './../../components/FAQs/Faqs'
 import useScrollFadeIn from './../../lib/hooks/useFadeIn'
 import scrollToRef from '@/lib/hooks/scrollTo'
 
-function App (): JSX.Element {
+function App(): JSX.Element {
   const handleLearnMoreClick = (): void => {
     setActivePage('features')
     scrollToRef(featuresRef)

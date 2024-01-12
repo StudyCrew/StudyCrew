@@ -7,6 +7,6 @@ export const metadata: Metadata = {
   description: 'Sign up now to start your journey to a better education.'
 }
 
-export default function Page (): JSX.Element {
+export default function Page(): JSX.Element {
   return <SignUp />
 }

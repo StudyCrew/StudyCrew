@@ -6,7 +6,7 @@ import { connectToDB } from '../mongoose'
 import { clerkClient } from '@clerk/nextjs'
 import { convertBase64ToFile } from '../utils'
 
-export async function getUserInfo (id: string): Promise<IUser | null> {
+export async function getUserInfo(id: string): Promise<IUser | null> {
   try {
     await connectToDB()
 
@@ -19,7 +19,7 @@ export async function getUserInfo (id: string): Promise<IUser | null> {
   }
 }
 
-export async function updateUser (userData: IUser, path: string): Promise<void> {
+export async function updateUser(userData: IUser, path: string): Promise<void> {
   try {
     await connectToDB()
 

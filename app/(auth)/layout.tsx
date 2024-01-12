@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   twitter
 }
 
-export default function RootLayout ({
+export default function RootLayout({
   children
 }: {
   children: React.ReactNode

@@ -113,20 +113,11 @@ const Mission = (props: any): JSX.Element => {
       </svg>
 
       {/* Main content */}
-      <div
-        className="bg-gradient-to-r from-primary-500 to-gradient-500 2xl:h-85vh h-75vh
-			max-w-100vw relative flex top-36 px-6 lg:px-36 z-1"
-      >
+      <div className="bg-gradient-to-r from-primary-500 to-gradient-500 2xl:h-85vh h-75vh max-w-100vw relative flex top-36 px-6 lg:px-36 z-1">
         {/* Left column with text */}
-        <div
-          className="top-28 lg:top-20vh relative w-full lg:w-1/2 sm:text-sm md:text-base lg:text-lg
-				xl:text-xl"
-        >
+        <div className="top-28 lg:top-20vh relative w-full lg:w-1/2 sm:text-sm md:text-base lg:text-lg xl:text-xl">
           <div className="flex flex-col">
-            <h3
-              className="text-zircon-50 lg:pb-4 pb-1 mb-0
-						2xl:top-24 lg:top-16 relative"
-            >
+            <h3 className="text-zircon-50 lg:pb-4 pb-1 mb-0 2xl:top-24 lg:top-16 relative">
               OUR MISSION
             </h3>
             <h2 className="text-zircon-50 slogan 2xl:top-24 lg:top-16 relative leading-12">

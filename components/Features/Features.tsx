@@ -2,12 +2,7 @@ import Image from 'next/image'
 import classNames from 'classnames'
 import { useWindowSize } from '@uidotdev/usehooks'
 import React, { useMemo, useState, useCallback } from 'react'
-import {
-  FaChevronUp,
-  FaChevronLeft,
-  FaChevronDown,
-  FaChevronRight
-} from 'react-icons/fa'
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'
 
 import { type FeaturesStage, FeaturesStageID } from './types'
 import {
@@ -49,7 +44,7 @@ const Features: React.FC<any> = (): JSX.Element => {
   ])
 
   const [stageActiveCardIndexes, setStageActiveCardIndexes] = useState<
-  number[]
+    number[]
   >([0, 0, 0])
 
   const [currentStageID, setCurrentStageID] = useState<FeaturesStageID>(
