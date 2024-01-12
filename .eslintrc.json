@@ -25,6 +25,7 @@
   "rules": {
     "@typescript-eslint/strict-boolean-expressions": 0,
     "@typescript-eslint/triple-slash-reference": 0,
-    "@typescript-eslint/no-explicit-any": 0
+    "@typescript-eslint/no-explicit-any": 0,
+    "@typescript-eslint/space-before-function-paren": 0
   }
 }

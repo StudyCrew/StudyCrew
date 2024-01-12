@@ -43,9 +43,8 @@ const Features: React.FC<any> = (): JSX.Element => {
     false
   ])
 
-  const [stageActiveCardIndexes, setStageActiveCardIndexes] = useState<
-    number[]
-  >([0, 0, 0])
+  // prettier-ignore
+  const [stageActiveCardIndexes, setStageActiveCardIndexes] = useState<number[]>([0, 0, 0])
 
   const [currentStageID, setCurrentStageID] = useState<FeaturesStageID>(
     FeaturesStageID.StageOne

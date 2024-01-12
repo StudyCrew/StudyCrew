@@ -7,11 +7,8 @@ import { type VariantProps } from 'class-variance-authority'
 import { cn } from '@/lib/utils'
 import { labelVariants } from '@/lib/variance/label'
 
-const Label = React.forwardRef<
-  React.ElementRef<typeof LabelPrimitive.Root>,
-  React.ComponentPropsWithoutRef<typeof LabelPrimitive.Root> &
-    VariantProps<typeof labelVariants>
->(({ className, ...props }, ref) => (
+// prettier-ignore
+const Label = React.forwardRef<React.ElementRef<typeof LabelPrimitive.Root>, React.ComponentPropsWithoutRef<typeof LabelPrimitive.Root> & VariantProps<typeof labelVariants>>(({ className, ...props }, ref) => ( // eslint-disable-line
   <LabelPrimitive.Root
     ref={ref}
     className={cn(labelVariants(), className)}

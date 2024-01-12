@@ -79,6 +79,7 @@ const AccountProfile = (props: AccountProfileProps): JSX.Element => {
     }
   }
 
+  // prettier-ignore
   return (
     <form
       onSubmit={form.onSubmit((values) => {
@@ -88,24 +89,26 @@ const AccountProfile = (props: AccountProfileProps): JSX.Element => {
       })}
       className="flex flex-col justify-start gap-10"
     >
-      {form.values.image ? (
-        <Image
-          src={imageString}
-          alt="profile_icon"
-          width={96}
-          height={96}
-          priority
-          className="rounded-full object-contain"
-        />
-      ) : (
-        <Image
-          src="/assets/profile.svg"
-          alt="profile_icon"
-          width={24}
-          height={24}
-          className="object-contain"
-        />
-      )}
+      {form.values.image
+        ? (
+          <Image
+            src={imageString}
+            alt="profile_icon"
+            width={96}
+            height={96}
+            priority
+            className="rounded-full object-contain"
+          />
+          )
+        : (
+          <Image
+            src="/assets/profile.svg"
+            alt="profile_icon"
+            width={24}
+            height={24}
+            className="object-contain"
+          />
+          )}
       <FileInput
         label="Profile picture"
         placeholder="Add profile photo"
