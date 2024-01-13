@@ -14,7 +14,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@clerk/nextjs": "^4.29.1",
+    "@clerk/nextjs": "^4.29.3",
     "@clerk/themes": "^1.7.9",
     "@ducanh2912/next-pwa": "^10.1.0",
     "@hookform/resolvers": "^3.3.2",
