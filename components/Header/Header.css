@@ -43,7 +43,7 @@ header > * {
   font-size: 16px;
   font-weight: 600;
   text-decoration: none;
-  color: #0C1B33;
+  color: #0c1b33;
   transition: 0.25s;
   padding: 10px 20px 10px;
   border-radius: 5px;
@@ -52,7 +52,7 @@ header > * {
 
 /* Hover effect for the links */
 .header-items > a:hover {
-  color: #3A86FF;
+  color: #3a86ff;
 }
 
 /* Active link styling */
@@ -75,8 +75,7 @@ header .navbar {
   display: block;
 }
 
-  
-  /* Toggle the mobile navbar */
+/* Toggle the mobile navbar */
 .mobile-navbar.open {
   transform: translateX(0); /* Slide into view */
   transition: transform 3s ease;
@@ -86,7 +85,7 @@ header .navbar {
   backdrop-filter: none;
 }
 
-  /* Initial state of the mobile navbar - off-screen */
+/* Initial state of the mobile navbar - off-screen */
 .mobile-navbar {
   position: fixed;
   top: 0;
@@ -106,7 +105,6 @@ header .navbar {
 }
 /* Media query for mobile screens */
 @media (max-width: 768px) {
-
   .header-items {
     background: none;
   }
@@ -146,13 +144,13 @@ header .navbar {
     display: flex;
     align-items: center;
     justify-content: flex-start; /* Aligns the hamburger menu to the left */
-  }  
+  }
   .header-logo {
     flex: 1; /* Flex grow to push adjacent elements to the sides */
     display: flex;
     align-items: center;
     justify-content: center; /* Centers the logo */
-  }  
+  }
   /* Adjust header grid layout for mobile */
   header {
     display: grid;
@@ -174,10 +172,10 @@ header .navbar {
   }
 
   /* Styling for the logo container */
-.logo-1 {
-  flex: 1;
-  text-align: center;
-  width: 100%;
+  .logo-1 {
+    flex: 1;
+    text-align: center;
+    width: 100%;
   }
 
   .waitlistLink {
@@ -187,7 +185,7 @@ header .navbar {
     text-decoration: none;
     margin-right: 30px;
   }
-  
+
   .desktop-navbar {
     display: none;
   }

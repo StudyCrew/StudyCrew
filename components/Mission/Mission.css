@@ -1,55 +1,55 @@
 /* Chevron Styles */
 .chevron {
-    width: 100%;
-    max-height: 50px; 
-    fill: url(#gradient);
+  width: 100%;
+  max-height: 50px;
+  fill: url(#gradient);
 }
 
 /* Gradient background for the chevron */
 .chevron-gradient {
-    position: absolute;
-    /* top: 400px; */
-    height: 200px;
-    width: 100vw;
-    z-index: 5;
+  position: absolute;
+  /* top: 400px; */
+  height: 200px;
+  width: 100vw;
+  z-index: 5;
 }
 
 /* White background for the chevron */
 .chevron-white {
-    position: absolute;
-    height: 200px;
-    z-index: 3;
-    top: 50px;
+  position: absolute;
+  height: 200px;
+  z-index: 3;
+  top: 50px;
 }
 
 /* Second gradient background for the chevron */
 .second-chevron-gradient {
-    position: absolute;
-    height: 200px;
-    top: 100px;
-    z-index: 5;
+  position: absolute;
+  height: 200px;
+  top: 100px;
+  z-index: 5;
 }
 
 /* Gradient color definitions for the chevron */
 .chevron-gradient stop:first-child {
-    stop-color: var(--primary-gradient-color);
+  stop-color: var(--primary-gradient-color);
 }
 .chevron-gradient stop:last-child {
-    stop-color: var(--primary-color);
+  stop-color: var(--primary-color);
 }
 
 /* White color definitions for the chevron */
 .chevron-white stop:first-child {
-    stop-color: #ffffff;
+  stop-color: #ffffff;
 }
 .chevron-white stop:last-child {
-    stop-color: #ffffff;
+  stop-color: #ffffff;
 }
 
 /* Left column of the main content */
 .left-column {
-    position: relative;
-    width: 50%;
+  position: relative;
+  width: 50%;
 }
 
 /* Slogan text style */
@@ -61,21 +61,21 @@
 
 /* Logo styles with different positions and rotations */
 .logo-1 {
-    position: relative;
-    top: 8%;
-    left: 8%;
-    transform: rotate(-30deg);
+  position: relative;
+  top: 8%;
+  left: 8%;
+  transform: rotate(-30deg);
 }
 .logo-2 {
-    position: relative;
-    top: 12%;
-    left: 14%;
+  position: relative;
+  top: 12%;
+  left: 14%;
 }
 .logo-3 {
-    position: relative;
-    top: -55%;
-    left: 40%;
-    transform: rotate(30deg);
+  position: relative;
+  top: -55%;
+  left: 40%;
+  transform: rotate(30deg);
 }
 /*@media screen and (max-width: 750px) {
     .right-column{

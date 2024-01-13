@@ -1,4 +1,4 @@
 export interface TextareaProps
-	extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
-	label: string
+  extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
+  label: string
 }

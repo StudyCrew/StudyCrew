@@ -7,54 +7,88 @@ import React, { useState, useEffect } from 'react'
 import { FaBars } from 'react-icons/fa'
 
 interface HeaderProps {
-	activePage: string
-	setActivePage: React.Dispatch<React.SetStateAction<string>>
-	missionRef: React.MutableRefObject<null>
-	featuresRef: React.MutableRefObject<null>
-	projectRef: React.MutableRefObject<null>
-	teamRef: React.MutableRefObject<null>
-	signupRef: React.MutableRefObject<null>
-	faqRef: React.MutableRefObject<null>
+  activePage: string
+  setActivePage: React.Dispatch<React.SetStateAction<string>>
+  missionRef: React.MutableRefObject<null>
+  featuresRef: React.MutableRefObject<null>
+  projectRef: React.MutableRefObject<null>
+  teamRef: React.MutableRefObject<null>
+  signupRef: React.MutableRefObject<null>
+  faqRef: React.MutableRefObject<null>
 }
 
 const Header = ({
-	activePage,
-	setActivePage,
-	missionRef,
-	featuresRef,
-	projectRef,
-	teamRef,
-	signupRef,
-	faqRef
+  activePage,
+  setActivePage,
+  missionRef,
+  featuresRef,
+  projectRef,
+  teamRef,
+  signupRef,
+  faqRef
 }: HeaderProps): JSX.Element => {
-	const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
-	useEffect(() => {
-		if (isMenuOpen) {
-			document.body.classList.add('no-scroll')
-		} else {
-			document.body.classList.remove('no-scroll')
-		}
-	}, [isMenuOpen])
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.classList.add('no-scroll')
+    } else {
+      document.body.classList.remove('no-scroll')
+    }
+  }, [isMenuOpen])
 
-	const toggleMenu = (): void => { setIsMenuOpen(!isMenuOpen) }
+  const toggleMenu = (): void => {
+    setIsMenuOpen(!isMenuOpen)
+  }
 
-	return (
-		<header>
-			<div className="hamburger-menu" onClick={toggleMenu}>
-				<FaBars />
-			</div>
-			{/* Logo and application name section */}
-			<div onClick={() => { setActivePage('') }} className="header-items logo-container">
-				<svg width="200" height="200" viewBox="0 0 446 445" fill="none"
-					xmlns="http://www.w3.org/2000/svg"
-					className='logo-1' preserveAspectRatio="xMidYMid meet">
-					<circle cx="384.372" cy="61.4726" r="41.8014" fill="#3A86FF" fillOpacity="0.9"/>
-					<circle cx="42.092" cy="169.665" r="41.8014" fill="#3A86FF" fillOpacity="0.9"/>
-					<ellipse cx="283.556" cy="403.753" rx="41.3097" ry="40.8179" fill="#3A86FF"
-						fillOpacity="0.9" />
-					<mask id="path-4-inside-1_387_2" fill="white">
-						<path fillRule="evenodd" clipRule="evenodd" d="M445.846 201.871C445.846 278.765
+  return (
+    <header>
+      <div className="hamburger-menu" onClick={toggleMenu}>
+        <FaBars />
+      </div>
+      {/* Logo and application name section */}
+      <div
+        onClick={() => {
+          setActivePage('')
+        }}
+        className="header-items logo-container"
+      >
+        <svg
+          width="200"
+          height="200"
+          viewBox="0 0 446 445"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="logo-1"
+          preserveAspectRatio="xMidYMid meet"
+        >
+          <circle
+            cx="384.372"
+            cy="61.4726"
+            r="41.8014"
+            fill="#3A86FF"
+            fillOpacity="0.9"
+          />
+          <circle
+            cx="42.092"
+            cy="169.665"
+            r="41.8014"
+            fill="#3A86FF"
+            fillOpacity="0.9"
+          />
+          <ellipse
+            cx="283.556"
+            cy="403.753"
+            rx="41.3097"
+            ry="40.8179"
+            fill="#3A86FF"
+            fillOpacity="0.9"
+          />
+          <mask id="path-4-inside-1_387_2" fill="white">
+            <path
+              fillRule="evenodd"
+              clipRule="evenodd"
+              d="M445.846 201.871C445.846 278.765
             402.854
             345.617
             339.596 379.703C330.258 357.898 308.604 342.622 283.382 342.622C250.011 342.622 222.887 369.365
@@ -64,9 +98,11 @@ const Header = ({
             61.1242C323.601 94.8822 350.968 122.248 384.726 122.248C399.263 122.248 412.614 117.174 423.106
             108.699C437.634 136.573 445.846 168.263 445.846 201.871ZM243.98 242.091C266.633 242.091 284.997
             223.726 284.997 201.073C284.997 178.42 266.633 160.055 243.98 160.055C221.326 160.055 202.962
-            178.42 202.962 201.073C202.962 223.726 221.326 242.091 243.98 242.091Z"/>
-					</mask>
-					<path d="M339.596 379.703L316.615 389.545L327.381 414.683L351.455 401.711L339.596
+            178.42 202.962 201.073C202.962 223.726 221.326 242.091 243.98 242.091Z"
+            />
+          </mask>
+          <path
+            d="M339.596 379.703L316.615 389.545L327.381 414.683L351.455 401.711L339.596
           379.703ZM222.269
           402.588L219.611 427.447L246.757 430.349L247.265 403.053L222.269 402.588ZM44.1611 230.794L43.3345
           205.807L15.4527 206.73L19.4145 234.344L44.1611 230.794ZM63.0354 112.257L40.6409 101.145L28.2197
@@ -94,58 +130,72 @@ const Header = ({
           185.055 259.997 192.227 259.997 201.073H309.997C309.997 164.613 280.44 135.055 243.98
           135.055V185.055ZM227.962 201.073C227.962 192.227 235.133 185.055 243.98 185.055V135.055C207.519
           135.055 177.962 164.613 177.962 201.073H227.962ZM243.98 217.091C235.133 217.091 227.962 209.919
-          227.962 201.073H177.962C177.962 237.534 207.519 267.091 243.98 267.091V217.091Z" fill="#3A86FF"
-					fillOpacity="0.9" mask="url(#path-4-inside-1_387_2)" />
-				</svg>
-				<Link to="/" className='logo-name'>StudyCrew</Link>
-			</div>
+          227.962 201.073H177.962C177.962 237.534 207.519 267.091 243.98 267.091V217.091Z"
+            fill="#3A86FF"
+            fillOpacity="0.9"
+            mask="url(#path-4-inside-1_387_2)"
+          />
+        </svg>
+        <Link to="/" className="logo-name">
+          StudyCrew
+        </Link>
+      </div>
 
-			{/* Conditionally render this div based on isMenuOpen state */}
-			{isMenuOpen && (
-				<div className={`mobile-navbar ${isMenuOpen ? 'open' : ''}`}>
-					<Navbar
-						activePage={activePage}
-						setActivePage={setActivePage}
-						missionRef={missionRef}
-						featuresRef={featuresRef}
-						projectRef={projectRef}
-						teamRef={teamRef}
-						signupRef={signupRef}
-						faqRef={faqRef}
-						setIsMenuOpen={setIsMenuOpen}
-					/>
-				</div>
-			)}
+      {/* Conditionally render this div based on isMenuOpen state */}
+      {isMenuOpen && (
+        <div className={`mobile-navbar ${isMenuOpen ? 'open' : ''}`}>
+          <Navbar
+            activePage={activePage}
+            setActivePage={setActivePage}
+            missionRef={missionRef}
+            featuresRef={featuresRef}
+            projectRef={projectRef}
+            teamRef={teamRef}
+            signupRef={signupRef}
+            faqRef={faqRef}
+            setIsMenuOpen={setIsMenuOpen}
+          />
+        </div>
+      )}
 
-			{/* This will always be rendered, but hidden on mobile */}
-			<div className="desktop-navbar">
-				<Navbar
-					activePage={activePage}
-					setActivePage={setActivePage}
-					missionRef={missionRef}
-					featuresRef={featuresRef}
-					projectRef={projectRef}
-					teamRef={teamRef}
-					signupRef={signupRef}
-					faqRef={faqRef}
-					setIsMenuOpen={setIsMenuOpen}
-				/>
-			</div>
+      {/* This will always be rendered, but hidden on mobile */}
+      <div className="desktop-navbar">
+        <Navbar
+          activePage={activePage}
+          setActivePage={setActivePage}
+          missionRef={missionRef}
+          featuresRef={featuresRef}
+          projectRef={projectRef}
+          teamRef={teamRef}
+          signupRef={signupRef}
+          faqRef={faqRef}
+          setIsMenuOpen={setIsMenuOpen}
+        />
+      </div>
 
-			<div className='header-items waitlist-container'>
-				<Link className="waitlistLink" to="/">
-					<Button onClick={() => {
-						setActivePage('signup')
-						const refContainerCurrent = signupRef.current as HTMLDivElement | null
-						if (refContainerCurrent) {
-							const y = refContainerCurrent.getBoundingClientRect().top + window.scrollY + -60
-							window.scrollTo({ top: y, behavior: 'smooth' })
-						}
-					}} size='small'>Join Waitlist</Button>
-				</Link>
-			</div>
-		</header>
-	)
+      <div className="header-items waitlist-container">
+        <Link className="waitlistLink" to="/">
+          <Button
+            onClick={() => {
+              setActivePage('signup')
+              const refContainerCurrent =
+                signupRef.current as HTMLDivElement | null
+              if (refContainerCurrent) {
+                const y =
+                  refContainerCurrent.getBoundingClientRect().top +
+                  window.scrollY +
+                  -60
+                window.scrollTo({ top: y, behavior: 'smooth' })
+              }
+            }}
+            size="small"
+          >
+            Join Waitlist
+          </Button>
+        </Link>
+      </div>
+    </header>
+  )
 }
 
 export default Header
