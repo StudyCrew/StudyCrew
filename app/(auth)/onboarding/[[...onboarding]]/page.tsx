@@ -4,7 +4,7 @@ import { redirect } from 'next/navigation'
 import Logout from '@/components/shared/Logout'
 import { type IUser } from '@/lib/models/user'
 import { getUserInfo } from '@/lib/actions/user.actions'
-import AccountProfile from '@/components/forms/AccountProfile'
+//import AccountProfile from '@/components/forms/AccountProfile'
 
 export default async function page(): Promise<JSX.Element | null> {
   const user = await currentUser()
@@ -36,7 +36,7 @@ export default async function page(): Promise<JSX.Element | null> {
         Complete your profile now to join the StudyCrew
       </p>
       <section className="mt-9 p-10">
-        <AccountProfile user={userData} btnTitle="Continue" />
+        {/*<AccountProfile user={userData} btnTitle="Continue" />*/}
       </section>
     </main>
   )
