@@ -1,22 +1,29 @@
 import React from 'react'
+import classNames from 'classnames'
 
 import { CLASS_NAME } from './const'
-import { type ButtonProps } from './types'
+import { ButtonVariant, ButtonSize, type ButtonProps } from './types'
 
-import './style.css'
+import './style.scss'
 
 const Button: React.FC<ButtonProps> = (props: ButtonProps): JSX.Element => {
-  const { onClick, variant = 'primary', size, children } = props
+  const {
+    size,
+    onClick,
+    children,
+    className,
+    variant = ButtonVariant.Primary
+  } = props
 
-  let className = CLASS_NAME
-
-  if (variant === 'outline') className += ' button-outline'
-  if (size === 'big') className += ' button-big'
-  if (size === 'small') className += ' button-small'
-  if (size === 'big-outline') className += ' button-big-outline'
+  const finalClassName = classNames(CLASS_NAME, className, {
+    outline: variant === ButtonVariant.Outline,
+    big: size === ButtonSize.Big,
+    small: size === ButtonSize.Small,
+    'big-outline': size === ButtonSize.BigOutline
+  })
 
   return (
-    <button className={className} onClick={onClick}>
+    <button className={finalClassName} onClick={onClick}>
       {children}
     </button>
   )

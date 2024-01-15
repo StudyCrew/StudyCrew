@@ -1,0 +1,48 @@
+.button {
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.15s ease-in-out;
+
+  &:hover {
+    cursor: pointer;
+    border-radius: 10px;
+  }
+
+  &.big {
+    font-size: 18px;
+    padding: 12px 24px;
+  }
+
+  &.outline {
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    background: none;
+    transition: all 0.2s ease;
+  }
+
+  &.big-outline {
+    font-size: 18px;
+    padding: 11px 23px;
+
+    &:hover {
+      border-radius: 10px;
+      cursor: pointer;
+    }
+  }
+
+  .icon-inline {
+    vertical-align: middle;
+    transform: translateY(-5%);
+    display: inline;
+  }
+
+  &.small {
+    padding: 8px 18px;
+    font-size: 14px;
+  }
+}
