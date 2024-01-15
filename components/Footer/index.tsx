@@ -4,20 +4,22 @@ import React, { useState, useCallback } from 'react'
 import { FaYoutube, FaLinkedin, FaFacebookF, FaInstagram } from 'react-icons/fa'
 
 import scrollToRef from '@/lib/hooks/scrollTo'
-import Logo from '../../public/assets/Logo.svg'
 import { addToWaitlist } from '@/lib/actions/waitlist.actions'
 
 import { type FooterProps } from './types'
+import Logo from '../../public/assets/Logo.svg'
 
+// TODO: Use activePage prop to highlight active page link
+// TODO: Use <button> element instead of <a> for navigation links
 const Footer: React.FC<FooterProps> = (props: FooterProps): JSX.Element => {
   const {
-    setActivePage,
-    missionRef,
-    featuresRef,
-    projectRef,
+    faqRef,
     teamRef,
     signupRef,
-    faqRef
+    missionRef,
+    projectRef,
+    featuresRef,
+    setActivePage
   } = props
 
   const [waitlistEmail, setWaitlistEmail] = useState<string>('')
@@ -64,7 +66,6 @@ const Footer: React.FC<FooterProps> = (props: FooterProps): JSX.Element => {
       })
   }, [handleJoinWaitlist, waitlistEmail])
 
-  // Handles the navigation link click based on the section's name
   const handleNavLinkClick = (name: string): void => {
     let ref
     switch (name) {
@@ -93,8 +94,8 @@ const Footer: React.FC<FooterProps> = (props: FooterProps): JSX.Element => {
   }
 
   return (
-    <div className="bg-zircon-50 flex-column lg:flex">
-      <div className="flex-column items-center lg:pl-16 lg:mr-16 py-6 lg:w-full">
+    <div className="bg-zircon-50 grid grid-cols-3 lg:grid-cols-5 gap-4 px-6 lg:px-[150px] py-6 items-center">
+      <div className="flex items-center justify-center lg:justify-start col-span-1">
         <Image alt="Logo" src={Logo} className="mx-auto w-10" />
         <h3 className="footer-title heading-font text-center mt-2 mb-0 font-semibold">
           StudyCrew
@@ -286,13 +287,15 @@ const Footer: React.FC<FooterProps> = (props: FooterProps): JSX.Element => {
         <p className="text-sm mb-4">
           Ready to transform Your Learning Experience?
         </p>
+
         <input
           type="email"
           value={waitlistEmail}
           placeholder="Enter your email"
           onChange={onChangeWaitlistEmail}
-          className="mr-4 lg:mr-0 mb-4 border-2 border-blue-300 px-4 py-2 rounded-lg px-4 w-3/4"
+          className="mr-4 lg:mr-0 mb-4 border-2 border-blue-300 px-4 py-2 rounded-lg w-3/4"
         />
+
         <button
           onClick={onSubmitWaitlistEmail}
           className="text-white bg-blue-500 px-4 rounded-lg text-center py-2"
