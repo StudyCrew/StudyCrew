@@ -1,8 +1,10 @@
 /* Import React and necessary components */
 import React, { useCallback, useEffect, useState } from 'react'
-import './Signup.css'
-import Button from '../Button/Button'
 import { addToWaitlist, getSpotsLeft } from '@/lib/actions/waitlist.actions'
+
+import Button from '../Button'
+
+import './style.css'
 
 /* Define the Empower component */
 function SignUp(): JSX.Element {

@@ -1,7 +1,10 @@
 import React, { useEffect, useRef } from 'react'
-import './Team.css'
-import Button from '../Button/Button'
+
 import teamMembers from '../../lib/data/teamData'
+
+import Button from '../Button'
+
+import './style.css'
 
 const Team = (): JSX.Element => {
   const scrollContainer = useRef(null)

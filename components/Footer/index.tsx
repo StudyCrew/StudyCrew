@@ -1,4 +1,6 @@
 import React from 'react'
+import Image from 'next/image'
+import scrollToRef from '@/lib/hooks/scrollTo'
 import {
   FaFacebookF,
   FaInstagram,
@@ -8,31 +10,23 @@ import {
   FaTiktok,
   FaYoutube
 } from 'react-icons/fa'
-import scrollToRef from '@/lib/hooks/scrollTo'
-import Image from 'next/image'
+
 import Logo from '../../public/assets/Logo.svg'
 
-interface FooterProps {
-  activePage: string
-  setActivePage: React.Dispatch<React.SetStateAction<string>>
-  missionRef: React.MutableRefObject<null>
-  featuresRef: React.MutableRefObject<null>
-  projectRef: React.MutableRefObject<null>
-  teamRef: React.MutableRefObject<null>
-  signupRef: React.MutableRefObject<null>
-  faqRef: React.MutableRefObject<null>
-}
+import { type FooterProps } from './types'
 
-const Footer = ({
-  activePage,
-  setActivePage,
-  missionRef,
-  featuresRef,
-  projectRef,
-  teamRef,
-  signupRef,
-  faqRef
-}: FooterProps): JSX.Element => {
+const Footer: React.FC<FooterProps> = (props: FooterProps): JSX.Element => {
+  const {
+    activePage,
+    setActivePage,
+    missionRef,
+    featuresRef,
+    projectRef,
+    teamRef,
+    signupRef,
+    faqRef
+  } = props
+
   // Helper function to determine if a link is active
   const isActive = (name: string): string =>
     activePage === name ? 'activeNavLink' : ''

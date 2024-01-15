@@ -1,31 +1,22 @@
-import scrollToRef from '@/lib/hooks/scrollTo'
-import './Navbar.css'
-
 import React from 'react'
+import scrollToRef from '@/lib/hooks/scrollTo'
 
-interface NavbarProps {
-  activePage: string
-  setActivePage: React.Dispatch<React.SetStateAction<string>>
-  missionRef: React.MutableRefObject<null>
-  featuresRef: React.MutableRefObject<null>
-  projectRef: React.MutableRefObject<null>
-  teamRef: React.MutableRefObject<null>
-  signupRef: React.MutableRefObject<null>
-  faqRef: React.MutableRefObject<null>
-  setIsMenuOpen: React.Dispatch<React.SetStateAction<boolean>> // Add this line
-}
+import { type NavbarProps } from './types'
+import './style.css'
 
-const Navbar = ({
-  activePage,
-  setActivePage,
-  missionRef,
-  featuresRef,
-  projectRef,
-  teamRef,
-  signupRef,
-  faqRef,
-  setIsMenuOpen // Add this line
-}: NavbarProps): JSX.Element => {
+const Navbar: React.FC<NavbarProps> = (props: NavbarProps): JSX.Element => {
+  const {
+    activePage,
+    setActivePage,
+    missionRef,
+    featuresRef,
+    projectRef,
+    teamRef,
+    signupRef,
+    faqRef,
+    setIsMenuOpen
+  } = props
+
   // Helper function to determine if a link is active
   const isActive = (name: string): string =>
     activePage === name ? 'activeNavLink' : ''

@@ -1,7 +1,9 @@
 import React from 'react'
-import './Project.css'
-import project_image from '../../public/assets/project-image.jpg'
 import Image from 'next/image'
+
+import project_image from '../../public/assets/project-image.jpg'
+
+import './style.css'
 
 /**
  * Project Component
