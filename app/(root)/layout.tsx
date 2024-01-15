@@ -1,6 +1,8 @@
 import React from 'react'
+import _isEmpty from 'lodash/isEmpty'
 import type { Metadata, Viewport } from 'next'
 import { ClerkProvider } from '@clerk/nextjs'
+import { GoogleAnalytics } from '@next/third-parties/google'
 import { dark } from '@clerk/themes'
 import { MantineProvider, ColorSchemeScript } from '@mantine/core'
 import Head from 'next/head'
@@ -11,6 +13,8 @@ import icons from '@/lib/metadata/icons'
 import openGraph from '@/lib/metadata/openGraph'
 import robots from '@/lib/metadata/robot'
 import twitter from '@/lib/metadata/twitter'
+
+const { GOOGLE_ANALYTICS_ID } = process.env
 
 export const viewport: Viewport = {
   themeColor: '#3A86FF'
@@ -54,6 +58,10 @@ export default async function RootLayout({
         <body>
           <MantineProvider>{children}</MantineProvider>
         </body>
+
+        {process.browser && !_isEmpty(GOOGLE_ANALYTICS_ID) && (
+          <GoogleAnalytics gaId={GOOGLE_ANALYTICS_ID} />
+        )}
       </html>
     </ClerkProvider>
   )
