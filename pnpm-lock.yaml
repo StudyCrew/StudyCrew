@@ -35,6 +35,9 @@ dependencies:
   '@mantine/next':
     specifier: ^6.0.21
     version: 6.0.21(@emotion/react@11.11.1)(@emotion/server@11.11.0)(next@14.0.4)(react-dom@18.2.0)(react@18.2.0)
+  '@next/third-parties':
+    specifier: ^14.0.4
+    version: 14.0.4(next@14.0.4)(react@18.2.0)
   '@radix-ui/react-dropdown-menu':
     specifier: ^2.0.6
     version: 2.0.6(@types/react-dom@18.2.18)(@types/react@18.2.48)(react-dom@18.2.0)(react@18.2.0)
@@ -65,6 +68,9 @@ dependencies:
   dayjs:
     specifier: ^1.11.10
     version: 1.11.10
+  lodash:
+    specifier: ^4.17.21
+    version: 4.17.21
   lucide-react:
     specifier: ^0.309.0
     version: 0.309.0(react@18.2.0)
@@ -112,6 +118,9 @@ devDependencies:
   '@playwright/test':
     specifier: ^1.40.1
     version: 1.40.1
+  '@types/lodash':
+    specifier: ^4.14.202
+    version: 4.14.202
   '@types/node':
     specifier: ^20.11.0
     version: 20.11.0
@@ -1946,6 +1955,17 @@ packages:
     dev: false
     optional: true
 
+  /@next/third-parties@14.0.4(next@14.0.4)(react@18.2.0):
+    resolution: {integrity: sha512-K17BnacV2QOnI2o5DpeuwW/hnRjIgb8TSSMJC+y36330zh4skERb10FRhdc/0QTVuUc6k8jVJhURxdJu097GOQ==}
+    peerDependencies:
+      next: ^13.0.0 || ^14.0.0
+      react: ^18.2.0
+    dependencies:
+      next: 14.0.4(@babel/core@7.23.3)(react-dom@18.2.0)(react@18.2.0)
+      react: 18.2.0
+      third-party-capital: 1.0.20
+    dev: false
+
   /@nodelib/fs.scandir@2.1.5:
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
     engines: {node: '>= 8'}
@@ -2847,6 +2867,10 @@ packages:
   /@types/keygrip@1.0.6:
     resolution: {integrity: sha512-lZuNAY9xeJt7Bx4t4dx0rYCDqGPW8RXhQZK1td7d4H6E9zYbLoOtjBvfwdTKpsyxQI/2jv+armjX/RW+ZNpXOQ==}
     dev: false
+
+  /@types/lodash@4.14.202:
+    resolution: {integrity: sha512-OvlIYQK9tNneDlS0VN54LLd5uiPCBOp7gS5Z0f1mjoJYBrtStzgmJBxONW3U6OZqdtNzZPmn9BS/7WI7BFFcFQ==}
+    dev: true
 
   /@types/mime@1.3.5:
     resolution: {integrity: sha512-/pyBZWSLD2n0dcHE3hq8s8ZvcETHtEuF+3E7XVt0Ig2nvsVQXdghHVcEkIWjy9A0wKfTn97a/PSDYohKIlnP/w==}
@@ -6975,6 +6999,10 @@ packages:
     resolution: {integrity: sha512-RVZSIV5IG10Hk3enotrhvz0T9em6cyHBLkH/YAZuKqd8hRkKhSfCGIcP2KUY0EPxndzANBmNllzWPwak+bheSw==}
     dependencies:
       any-promise: 1.3.0
+    dev: false
+
+  /third-party-capital@1.0.20:
+    resolution: {integrity: sha512-oB7yIimd8SuGptespDAZnNkzIz+NWaJCu2RMsbs4Wmp9zSDUM8Nhi3s2OOcqYuv3mN4hitXc8DVx+LyUmbUDiA==}
     dev: false
 
   /through2@0.4.2:
