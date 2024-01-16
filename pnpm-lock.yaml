@@ -12,8 +12,8 @@ dependencies:
     specifier: ^1.7.9
     version: 1.7.9(react@18.2.0)
   '@ducanh2912/next-pwa':
-    specifier: ^10.1.0
-    version: 10.1.0(next@14.0.4)(webpack@5.89.0)
+    specifier: ^10.2.2
+    version: 10.2.2(next@14.0.4)(webpack@5.89.0)
   '@hookform/resolvers':
     specifier: ^3.3.2
     version: 3.3.2(react-hook-form@7.48.2)
@@ -1472,8 +1472,8 @@ packages:
       csstype: 3.1.1
     dev: false
 
-  /@ducanh2912/next-pwa@10.1.0(next@14.0.4)(webpack@5.89.0):
-    resolution: {integrity: sha512-4jrV+bEiiqP2CQGqRQ3Gx4rpYjRai4bAkTUZLdAMTFXVPFEy825IOL55mj7BESdRQXb4YtpUULr80gREm7sXIA==}
+  /@ducanh2912/next-pwa@10.2.2(next@14.0.4)(webpack@5.89.0):
+    resolution: {integrity: sha512-4WCMTI8aGQlLbxBVmXlGQuTTvSkAUdxvZl6o18znW1jcOd64K7SmJcMbh+MdJDw6s5eqG/uAKfbmA0JMC/c9iQ==}
     peerDependencies:
       next: '>=14.0.0'
       webpack: '>=5.9.0'
@@ -6469,7 +6469,7 @@ packages:
       jest-worker: 26.6.2
       rollup: 2.79.1
       serialize-javascript: 4.0.0
-      terser: 5.24.0
+      terser: 5.26.0
     dev: false
 
   /rollup@2.78.0:
@@ -6959,17 +6959,6 @@ packages:
       serialize-javascript: 6.0.1
       terser: 5.26.0
       webpack: 5.89.0
-    dev: false
-
-  /terser@5.24.0:
-    resolution: {integrity: sha512-ZpGR4Hy3+wBEzVEnHvstMvqpD/nABNelQn/z2r0fjVWGQsN3bpOLzQlqDxmb4CDZnXq5lpjnQ+mHQLAOpfM5iw==}
-    engines: {node: '>=10'}
-    hasBin: true
-    dependencies:
-      '@jridgewell/source-map': 0.3.5
-      acorn: 8.11.2
-      commander: 2.20.3
-      source-map-support: 0.5.21
     dev: false
 
   /terser@5.26.0:
