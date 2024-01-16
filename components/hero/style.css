@@ -1,0 +1,112 @@
+@keyframes scHeroFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.sc-hero {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  .sc-hero-container {
+    margin: auto;
+    max-width: 71.25rem;
+    padding: 4rem 1rem;
+    text-align: center;
+    margin-top: 25px;
+  }
+
+  .sc-hero-title {
+    margin: auto;
+    max-width: 64vw;
+    font-size: 70px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+
+  .sc-hero-huge-font {
+    font-size: 80px;
+  }
+
+  .sc-hero-title-sm {
+    font-size: 4.5rem;
+  }
+
+  .sc-hero-blue-wave {
+    position: absolute;
+    top: 66.66%;
+    left: 0;
+    height: 0.58em;
+    width: 100%;
+    fill: rgba(173, 216, 230, 0.7);
+  }
+
+  .sc-hero-relative-span {
+    position: relative;
+  }
+
+  .sc-hero-text-primary {
+    color: var(--primary-color);
+  }
+
+  .sc-hero-description {
+    margin: auto;
+    margin-top: 1.5rem;
+    max-width: 60rem;
+    font-size: 20px;
+    letter-spacing: -0.01em;
+    color: var(--secondary-text-color);
+  }
+
+  .sc-hero-button-group {
+    margin-top: 2.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .sc-hero-text-transition {
+    transition: opacity 0.5s;
+  }
+
+  .sc-hero-text-gradient {
+    animation: scHeroFadeIn 0.5s;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .sc-hero {
+    .sc-hero-container {
+      max-width: 80vw;
+      margin-top: 25px;
+    }
+
+    .sc-hero-title {
+      max-width: 80vw;
+      font-size: 45px;
+    }
+
+    .sc-hero-huge-font {
+      font-size: 45px;
+    }
+
+    .sc-hero-description {
+      margin-top: 1.5rem;
+      max-width: 60rem;
+      font-size: 20px;
+    }
+
+    .sc-hero-button-group {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .sc-hero-join-waitlist-button {
+      width: 80vw;
+    }
+  }
+}

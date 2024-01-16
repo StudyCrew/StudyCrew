@@ -1,0 +1,92 @@
+.sc-team {
+  min-height: 1000px;
+  text-align: center;
+  width: 100%;
+  margin-block: 100px;
+  margin-top: 100px;
+
+  p {
+    max-width: 800px;
+    margin: auto;
+    opacity: 0.7;
+  }
+
+  .sc-team-wrapper {
+    background: url('../../public/assets/arrow_bg.png') top/cover;
+    background-size: 100% 100%;
+    margin-bottom: 50px;
+  }
+
+  .sc-team-header {
+    span,
+    h2 {
+      color: #3a86ff;
+    }
+
+    h2 {
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  .sc-team-cards {
+    display: flex;
+    overflow-x: hidden;
+    align-items: center;
+    gap: 30px;
+
+    img {
+      width: 100%;
+      max-width: 110px;
+    }
+
+    .sc-team-card {
+      flex: 0 0 auto;
+      padding: 10px;
+      padding-block: 50px;
+      margin: 10px;
+      display: grid;
+      place-items: center;
+      min-width: 280px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.7);
+      box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+      backdrop-filter: blur(25px);
+
+      img,
+      h5,
+      p {
+        flex-shrink: 0;
+      }
+
+      h5 {
+        font-size: 22px;
+        margin: 15px;
+      }
+    }
+
+    &::-webkit-scrollbar {
+      height: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #888;
+      border-radius: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+  }
+
+  .sc-team-join {
+    width: 100vw;
+    border-top: 2px solid #f2f7ff;
+    border-bottom: 2px solid #f2f7ff;
+    padding: 25px 0px;
+
+    p {
+      margin-bottom: 20px;
+    }
+  }
+}

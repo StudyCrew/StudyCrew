@@ -1,0 +1,173 @@
+.sc-signup-empower {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sc-signup-user-email {
+  text-align: center;
+  margin: 0 -120px;
+
+  h2 {
+    margin-bottom: 20px;
+  }
+
+  h1 span {
+    color: #4c88f6;
+  }
+
+  .sc-signup-email-input {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+
+    input {
+      margin-right: -4%;
+      font-size: 16px;
+      padding: 9px 60px 9px 20px;
+      min-width: 220px;
+      background-color: white;
+
+      &::placeholder {
+        position: relative;
+        color: #6b7380;
+        opacity: 75%;
+        left: 0px;
+      }
+    }
+
+    button,
+    input {
+      border-radius: 10px;
+      border: 1px solid #4c88f6;
+      outline: none;
+    }
+  }
+}
+
+.sc-signup-subtitle {
+  position: relative;
+  width: 40vw;
+  left: 0;
+  text-align: center;
+  top: -10px;
+  margin: 0 50px;
+  color: var(--secondary-text-color);
+}
+
+.sc-signup-mist {
+  position: absolute;
+  height: 400px;
+  width: 400px;
+  left: 550px;
+  top: 300px;
+  z-index: -1;
+}
+
+.sc-signup-left-wing,
+.sc-signup-right-wing {
+  margin-bottom: -120px;
+}
+
+@media screen and (max-width: 740px) {
+  .sc-signup-left-wing,
+  .sc-signup-right-wing {
+    display: none;
+  }
+
+  .sc-signup-empower {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .sc-signup-user-email {
+    text-align: center;
+    margin: 0 -20px;
+
+    h2 {
+      margin-bottom: 10px;
+    }
+
+    h1 span {
+      color: #4c88f6;
+    }
+
+    .sc-signup-email-input {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 15px;
+
+      input {
+        margin-bottom: 10px;
+        font-size: 16px;
+        padding: 10px;
+        min-width: 220px;
+        background-color: white;
+
+        &::placeholder {
+          position: relative;
+          color: #6b7380;
+          opacity: 75%;
+          left: 0px;
+        }
+      }
+
+      button,
+      input {
+        border-radius: 10px;
+        border: 1px solid #4c88f6;
+        outline: none;
+      }
+    }
+  }
+
+  .sc-signup-left-wing,
+  .sc-signup-right-wing {
+    margin-bottom: -20px;
+  }
+
+  .sc-signup-subtitle {
+    position: relative;
+    width: 80vw;
+    text-align: center;
+    top: -10px;
+    margin: 0 20px;
+    color: var(--secondary-text-color);
+  }
+
+  .sc-signup-mist {
+    position: absolute;
+    height: 200px;
+    width: 200px;
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    z-index: -1;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .sc-signup-user-email {
+    h2 {
+      font-size: 24px;
+    }
+
+    p {
+      font-size: 14px;
+      max-width: 276px;
+    }
+
+    .sc-signuo-email-input {
+      width: 100%;
+    }
+  }
+}

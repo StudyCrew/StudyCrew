@@ -1,0 +1,147 @@
+.sc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  top: 0;
+  z-index: 100;
+  padding: 0 10px;
+  height: 60px;
+  width: 100%;
+
+  & > * {
+    margin: auto;
+  }
+
+  .sc-navbar {
+    display: block;
+  }
+
+  .sc-header-items {
+    display: inline-flex;
+    flex-direction: row;
+    border-radius: 0px 0px 5px 5px;
+    width: fit-content;
+    position: relative;
+    padding-top: 15px;
+    top: -10px;
+    box-shadow: 0 0 10px 0 #ddd;
+    align-items: center;
+    max-height: 50px;
+    background-color: rgba(255, 255, 255, 0.78);
+    backdrop-filter: none;
+
+    & > a {
+      font-size: 16px;
+      font-weight: 600;
+      text-decoration: none;
+      color: #0c1b33;
+      transition: 0.25s;
+      padding: 10px 20px 10px;
+      border-radius: 5px;
+      margin-bottom: 5px;
+    }
+
+    & > a:hover {
+      color: #3a86ff;
+    }
+
+    & > a.active {
+      border-radius: 5px;
+    }
+  }
+
+  .sc-header-hamburger-menu {
+    display: none;
+  }
+
+  .sc-header-mobile-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    transform: translateX(-100%);
+    transition: transform 3s ease;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+
+    &.open {
+      transform: translateX(0);
+      transition: transform 3s ease;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .sc-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    justify-content: space-between;
+    top: 0;
+    z-index: 100;
+    height: 70px;
+    background-color: rgba(255, 255, 255, 0.78);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 0 10px 0 #ddd;
+
+    .sc-header-items {
+      background: none;
+      justify-self: center;
+      flex-grow: 1;
+      justify-content: center;
+      box-shadow: none;
+      padding: none;
+
+      svg {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+
+    .sc-header-logo {
+      background: none;
+    }
+
+    .sc-header-hamburger-menu {
+      position: relative;
+      cursor: pointer;
+      z-index: 100;
+      justify-self: start;
+      margin-left: 30px;
+      font-size: 25px;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .sc-header-logo-name {
+      display: none;
+    }
+
+    .sc-header-waitlist-container Button {
+      background: none;
+      color: var(--primary-color);
+      margin-top: 4px;
+    }
+
+    .sc-header-waitlist-link {
+      justify-self: end;
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      margin-right: 30px;
+    }
+
+    .sc-header-desktop-navbar {
+      display: none;
+    }
+  }
+}

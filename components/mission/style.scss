@@ -1,0 +1,38 @@
+.sc-mission {
+  .sc-mission-chevron-gradient {
+    position: absolute;
+    height: 200px;
+    width: 100vw;
+    z-index: 5;
+
+    stop:first-child {
+      stop-color: var(--primary-gradient-color);
+    }
+
+    stop:last-child {
+      stop-color: var(--primary-color);
+    }
+  }
+
+  .sc-mission-chevron-white {
+    position: absolute;
+    height: 200px;
+    z-index: 3;
+    top: 50px;
+
+    stop:first-child {
+      stop-color: #ffffff;
+    }
+
+    stop:last-child {
+      stop-color: #ffffff;
+    }
+  }
+
+  .sc-mission-second-chevron-gradient {
+    position: absolute;
+    height: 200px;
+    top: 100px;
+    z-index: 5;
+  }
+}

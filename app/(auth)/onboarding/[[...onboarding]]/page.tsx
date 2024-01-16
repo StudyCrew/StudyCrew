@@ -1,7 +1,7 @@
 import { currentUser } from '@clerk/nextjs'
 import React from 'react'
 import { redirect } from 'next/navigation'
-import Logout from '@/components/shared/Logout'
+import Logout from '@/components/logout'
 import { type IUser } from '@/lib/models/user'
 import { getUserInfo } from '@/lib/actions/user.actions'
 // import AccountProfile from '@/components/forms/AccountProfile'

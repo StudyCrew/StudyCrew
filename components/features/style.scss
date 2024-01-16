@@ -1,0 +1,229 @@
+.sc-features {
+  margin-right: 150px;
+  margin-left: 150px;
+
+  .sc-features-head {
+    text-align: center;
+
+    h2 {
+      text-transform: capitalize;
+
+      span {
+        color: #3a86ff;
+        font-family: var(--heading-font);
+      }
+    }
+
+    p {
+      color: var(--secondary-text-color);
+    }
+  }
+
+  .sc-features-stages {
+    h3 {
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .sc-features-stage {
+      text-align: center;
+      margin-bottom: 10px;
+      margin-top: 10px;
+      cursor: pointer;
+      user-select: none;
+      margin-right: 28px;
+      padding: 12px;
+      color: var(--secondary-text-color);
+      border-radius: 5px;
+
+      p {
+        margin-top: -25px;
+        font-size: 16px;
+        padding-bottom: 15px;
+      }
+
+      &.active-stage {
+        background-color: var(--light-background-color);
+      }
+
+      h3 {
+        margin: 22px 0px;
+      }
+    }
+  }
+
+  .mobile-stage-wrapper {
+    background-color: var(--light-background-color);
+
+    .sc-features-stage {
+      padding: 0 64px;
+
+      h3 {
+        font-size: 36px;
+        font-weight: bold;
+      }
+    }
+
+    .sc-features-card-wrapper {
+      width: 100%;
+      justify-content: center;
+      padding: 16px 0;
+    }
+
+    .sc-features-carousel-wrapper {
+      width: 100%;
+    }
+
+    .sc-features-stage-nav {
+      align-items: center;
+      padding: 0 16px;
+
+      &.disabled {
+        opacity: 0.25;
+      }
+    }
+
+    .sc-features-stage-nav-dots {
+      margin: 16px 0;
+      justify-content: center;
+    }
+
+    .sc-features-stage-nav-dot {
+      width: 8px !important;
+      height: 8px !important;
+
+      border-radius: 50%;
+      background: #999;
+
+      margin-right: 16px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &.active {
+        background: #000;
+      }
+    }
+  }
+
+  .sc-features-carousel-wrapper {
+    background-color: var(--light-background-color);
+    width: 75%;
+    padding: 30px;
+    border-radius: 25px;
+    z-index: 10;
+    transition: 1s ease-in;
+    overflow: hidden;
+  }
+
+  .sc-features-carousel .sc-features-cards {
+    display: grid;
+    height: 1;
+    grid-auto-flow: column;
+    gap: 30px;
+    transition: 0.5s ease-in;
+    overflow-x: auto;
+    white-space: nowrap;
+    scroll-behavior: smooth;
+    padding-bottom: 10px;
+  }
+
+  .sc-features-card {
+    background-color: white;
+    border-radius: 20px;
+    padding: 25px 25px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    width: 240px;
+    display: inline-block;
+    white-space: normal;
+  }
+
+  .sc-features-card-image {
+    display: block;
+    height: 140px;
+    width: auto;
+    max-width: 100%;
+    margin: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-bottom: 20px;
+  }
+
+  .sc-features-card-title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 0px;
+  }
+
+  .sc-features-card-description {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: var(--secondary-text-color);
+  }
+
+  .sc-features-carousel {
+    position: relative;
+    padding-bottom: 0px;
+  }
+}
+
+@media screen and (max-width: 860px) {
+  .sc-features-card {
+    padding: 15px 15px;
+    max-height: 100%;
+  }
+
+  .container {
+    justify-content: center;
+
+    .sc-features-stages {
+      display: none;
+    }
+  }
+
+  .sc-features-stage {
+    display: block;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .sc-features-card-image {
+    width: 50%;
+    height: 25%;
+  }
+
+  .sc-features-carousel-wrapper {
+    border-radius: 20px;
+  }
+
+  .sc-features-carousel .sc-features-cards {
+    grid-auto-columns: calc((100% / 2));
+  }
+
+  .sc-features {
+    margin-right: 50px;
+    margin-left: 50px;
+  }
+
+  .sc-features-carousel .sc-features-cards {
+    &::webkit-scrollbar {
+      height: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #959da6;
+      border-radius: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: #434c59;
+    }
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .sc-features .sc-features-carousel .sc-features-cards {
+    grid-auto-columns: calc(100%);
+  }
+}
