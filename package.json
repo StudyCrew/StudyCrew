@@ -16,7 +16,7 @@
   "dependencies": {
     "@clerk/nextjs": "^4.29.3",
     "@clerk/themes": "^1.7.9",
-    "@ducanh2912/next-pwa": "^10.1.0",
+    "@ducanh2912/next-pwa": "^10.2.2",
     "@hookform/resolvers": "^3.3.2",
     "@mantine/core": "^7.2.2",
     "@mantine/dates": "^7.2.2",
