@@ -14,10 +14,11 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  metadataBase: new URL(`https://${process.env.NEXT_PUBLIC_VERCEL_URL ?? 'localhost:3000'}`),
+  metadataBase: new URL(
+    `https://${process.env.NEXT_PUBLIC_VERCEL_URL ?? 'localhost:3000'}`
+  ),
   title: 'StudyCrew',
-  description:
-    'Making education more accessible, collaborative, and engaging.',
+  description: 'Making education more accessible, collaborative, and engaging.',
   applicationName: 'StudyCrew',
   manifest: '/manifest.json',
   icons,
@@ -43,8 +44,8 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <body
-          className='flex min-h-screen flex-1 flex-col
-          items-center px-6 pb-10 pt-28 max-md:pb-32 sm:px-10'
+          className="flex min-h-screen flex-1 flex-col
+          items-center px-6 pb-10 pt-28 max-md:pb-32 sm:px-10"
         >
           <ThemeProvider
             attribute="class"
