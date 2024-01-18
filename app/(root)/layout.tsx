@@ -53,9 +53,7 @@ export default async function RootLayout({
         <Head>
           <Link rel="shortcut icon" href="/public/assets/favicon.ico" />
         </Head>
-        <body>
-          {children}
-        </body>
+        <body>{children}</body>
 
         {process.browser && !_isEmpty(GOOGLE_ANALYTICS_ID) && (
           <GoogleAnalytics gaId={GOOGLE_ANALYTICS_ID} />
