@@ -1,7 +1,9 @@
 import React from 'react'
-import './Mission.css'
 import Image from 'next/image'
+
 import LogoGroup from '../../public/assets/mission/LogoGroup.svg'
+
+import './style.css'
 
 /**
  * Project Component

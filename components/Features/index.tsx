@@ -13,7 +13,7 @@ import {
   MOBILE_WIDTH_BREAKPOINT
 } from './const'
 
-import './Features.css'
+import './style.css'
 
 // TODO: Extract
 const getStageForID = (id: string): FeaturesStage => {

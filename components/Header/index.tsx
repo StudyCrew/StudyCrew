@@ -1,32 +1,26 @@
 // Importing necessary CSS and components
-import './Header.css'
 import { Link } from 'react-router-dom'
-import Navbar from '../Navbar/Navbar'
-import Button from '../Button/Button'
-import React, { useState, useEffect } from 'react'
 import { FaBars } from 'react-icons/fa'
+import React, { useState, useEffect } from 'react'
 
-interface HeaderProps {
-  activePage: string
-  setActivePage: React.Dispatch<React.SetStateAction<string>>
-  missionRef: React.MutableRefObject<null>
-  featuresRef: React.MutableRefObject<null>
-  projectRef: React.MutableRefObject<null>
-  teamRef: React.MutableRefObject<null>
-  signupRef: React.MutableRefObject<null>
-  faqRef: React.MutableRefObject<null>
-}
+import Navbar from '../Navbar'
+import Button from '../Button'
 
-const Header = ({
-  activePage,
-  setActivePage,
-  missionRef,
-  featuresRef,
-  projectRef,
-  teamRef,
-  signupRef,
-  faqRef
-}: HeaderProps): JSX.Element => {
+import { type HeaderProps } from './types'
+import './style.css'
+
+const Header: React.FC<HeaderProps> = (props: HeaderProps): JSX.Element => {
+  const {
+    activePage,
+    setActivePage,
+    missionRef,
+    featuresRef,
+    projectRef,
+    teamRef,
+    signupRef,
+    faqRef
+  } = props
+
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   useEffect(() => {

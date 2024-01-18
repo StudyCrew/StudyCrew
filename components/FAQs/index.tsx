@@ -1,10 +1,19 @@
 import React from 'react'
-import './Faqs.css'
+import classNames from 'classnames'
+
 import faqsData from '../../lib/data/faqsData'
 
-function Faqs(): JSX.Element {
+import { CLASS_NAME } from './const'
+import { type FAQsProps } from './types'
+
+import './style.css'
+
+const FAQs: React.FC<FAQsProps> = (props: FAQsProps): JSX.Element => {
+  const { className } = props
+  const finalClassName = classNames(CLASS_NAME, className)
+
   return (
-    <div className="faqs">
+    <div className={finalClassName}>
       <div className="blue-neon-mist faq-mist-1"></div>
       <h2 className="faqs-heading">
         <span>FAQ</span>s
@@ -26,4 +35,4 @@ function Faqs(): JSX.Element {
   )
 }
 
-export default Faqs
+export default FAQs

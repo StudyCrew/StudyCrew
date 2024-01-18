@@ -1,7 +1,10 @@
-import React, { useState, useEffect } from 'react'
-import Button from '../Button/Button'
-import './Hero.css' // Importing styling specific to the Hero component
 import { FaChevronDown } from 'react-icons/fa'
+import React, { useState, useEffect } from 'react'
+
+import Button from '../Button'
+
+import { type HeroProps } from './types'
+import './style.css' // Importing styling specific to the Hero component
 
 /**
  * Hero Component
@@ -18,11 +21,8 @@ import { FaChevronDown } from 'react-icons/fa'
 
 const words = ['Collaborative', 'Accessible', 'Engaging']
 
-const Hero = (props: {
-  handleLearnMoreClick: () => void
-  handleJoinWaitlistClick: () => void
-}): JSX.Element => {
-  // Change word in header
+const Hero: React.FC<HeroProps> = (props: HeroProps): JSX.Element => {
+  const { handleLearnMoreClick, handleJoinWaitlistClick } = props
   const [currentWord, setCurrentWord] = useState('Collaborative')
   const [opacity, setOpacity] = useState(1)
 
@@ -85,12 +85,12 @@ const Hero = (props: {
 
         {/* Group of buttons with different styles and sizes */}
         <div className="button-group">
-          <Button onClick={props.handleJoinWaitlistClick} size="big">
+          <Button onClick={handleJoinWaitlistClick} size="big">
             Join Waitlist
             <FaChevronDown className="icon-inline" />
           </Button>
           <Button
-            onClick={props.handleLearnMoreClick}
+            onClick={handleLearnMoreClick}
             variant="outline"
             size="big-outline"
           >
