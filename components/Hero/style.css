@@ -33,16 +33,6 @@
   font-size: 4.5rem;
 }
 
-/* Blue wave SVG decoration for the title */
-.blue-wave {
-  position: absolute;
-  top: 66.66%;
-  left: 0;
-  height: 0.58em;
-  width: 100%;
-  fill: rgba(173, 216, 230, 0.7);
-}
-
 /* Relative positioning container for inline elements */
 .relative-span {
   position: relative;

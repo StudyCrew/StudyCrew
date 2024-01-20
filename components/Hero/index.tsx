@@ -52,22 +52,10 @@ const Hero: React.FC<HeroProps> = (props: HeroProps): JSX.Element => {
         <h1 className="title title-sm">
           The{' '}
           <span className="relative-span">
-            <svg
-              aria-hidden="true"
-              viewBox="0 0 418 42"
-              className="blue-wave"
-              preserveAspectRatio="none"
-            ></svg>
             <span className="relative-span heading-font">Future </span>
           </span>
           of Education is <br />
           <span className="relative-span">
-            <svg
-              aria-hidden="true"
-              viewBox="0 0 418 42"
-              className="blue-wave"
-              preserveAspectRatio="none"
-            ></svg>
             <span
               className="relative-span heading-font text-transition text-gradient huge-font"
               style={{ opacity }}
