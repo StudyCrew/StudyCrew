@@ -1,12 +1,12 @@
 /* Import React and necessary components */
 import React, { useCallback, useEffect, useState } from 'react'
 import { addToWaitlist, getSpotsLeft } from '@/lib/actions/waitlist.actions'
-import LeftWing from './LeftWing'
-import RightWing from './RightWing'
 
 import Button from '../Button'
 
 import './style.css'
+import LeftWing from '../homepage/Leftwing'
+import RightWing from '../homepage/Rightwing'
 
 /* Define the Empower component */
 function SignUp(): JSX.Element {

@@ -4,6 +4,9 @@ import Image from 'next/image'
 import LogoGroup from '../../public/assets/mission/LogoGroup.svg'
 
 import './style.css'
+import MissionChevronColour from '../homepage/MissionChevronColour'
+import MissionChevronWhite from '../homepage/MissionChevronWhite'
+import MissionChevronLowerColour from '../homepage/MissionChevronLowerColour'
 
 /**
  * Project Component
@@ -20,99 +23,15 @@ const Mission = (props: any): JSX.Element => {
       {/* This SVG creates a chevron with a gradient fill. */}
       {/* The gradient colors are defined by "stop-first" and "#stop-second", which seem
       to be placeholders and might need to be replaced with actual color values. */}
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 2628 376"
-        fill="none"
-        style={{ width: '100%' }}
-        className="chevron-gradient"
-        {...props}
-        preserveAspectRatio="none"
-      >
-        <path
-          fill="url(#a)"
-          d="m0 0 1297.2 264.759c8.37 1.708 12.56 2.563 16.8 2.563s8.43-.855 16.8-2.563L2628
-          0v105.002L1330.88 370.545c-8.41 1.722-12.62 2.582-16.88 2.581-4.26-.001-8.47-.865-16.87-2.592L0
-          104.085V0Z"
-        />
-        <defs>
-          <linearGradient
-            id="a"
-            x1={2628}
-            x2={-13.254}
-            y1={0}
-            y2={169.679}
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop stopColor="stop-first" />
-            <stop offset={1} stopColor="#stop-second" />
-          </linearGradient>
-        </defs>
-      </svg>
+      <MissionChevronColour />
 
       {/* Space Chevron */}
       {/* This SVG creates a white chevron. */}
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 2628 376"
-        fill="none"
-        style={{ width: '100%' }}
-        className="chevron-white"
-        {...props}
-        preserveAspectRatio="none"
-      >
-        <path
-          fill="url(#b)"
-          d="m0 0 1297.2 264.759c8.37 1.708 12.56 2.563 16.8 2.563s8.43-.855 16.8-2.563L2628
-          0v105.002L1330.88 370.545c-8.41 1.722-12.62 2.582-16.88 2.581-4.26-.001-8.47-.865-16.87-2.592L0
-          104.085V0Z"
-        />
-        <defs>
-          <linearGradient
-            id="b"
-            x1={2628}
-            x2={-13.254}
-            y1={0}
-            y2={169.679}
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop stopColor="#FFFFFF" />
-            <stop offset={1} stopColor="#FFFFFF" />
-          </linearGradient>
-        </defs>
-      </svg>
+      <MissionChevronWhite />
 
       {/* Second gradient chevron */}
       {/* This SVG is similar to the first gradient chevron. */}
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 2628 376"
-        fill="none"
-        style={{ width: '100%' }}
-        className="second-chevron-gradient"
-        {...props}
-        preserveAspectRatio="none"
-      >
-        <path
-          fill="url(#a)"
-          d="m0 0 1297.2 264.759c8.37 1.708 12.56 2.563 16.8 2.563s8.43-.855 16.8-2.563L2628
-          0v105.002L1330.88 370.545c-8.41 1.722-12.62 2.582-16.88 2.581-4.26-.001-8.47-.865-16.87-2.592L0
-          104.085V0Z"
-        />
-        <defs>
-          <linearGradient
-            id="a"
-            x1={2628}
-            x2={-13.254}
-            y1={0}
-            y2={169.679}
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop stopColor="stop-first" />
-            <stop offset={1} stopColor="#stop-second" />
-          </linearGradient>
-        </defs>
-      </svg>
+      <MissionChevronLowerColour />
 
       {/* Main content */}
       <div className="bg-gradient-to-r from-primary-500 to-gradient-500 2xl:h-85vh h-75vh max-w-100vw relative flex top-36 px-6 lg:px-36 z-1">
