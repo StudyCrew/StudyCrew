@@ -1,15 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import scrollToRef from '@/lib/hooks/scrollTo'
-import {
-  FaFacebookF,
-  FaInstagram,
-  FaLinkedin,
-  FaGithubSquare,
-  FaDiscord,
-  FaTiktok,
-  FaYoutube
-} from 'react-icons/fa'
+import { FaTwitter, FaLinkedin, FaFacebookF, FaInstagram } from 'react-icons/fa'
 
 import Logo from '../../public/assets/Logo.svg'
 
@@ -60,48 +52,78 @@ const Footer: React.FC<FooterProps> = (props: FooterProps): JSX.Element => {
   }
 
   return (
-    <div className="bg-zircon-50 grid grid-cols-3 lg:grid-cols-5 gap-4 px-6 lg:px-[150px] py-6 items-center">
+    <div className="bg-zircon-50 flex-column lg:flex">
       {/* Footer logo */}
-      <div className="flex items-center justify-center lg:justify-start col-span-1">
+      <div className="flex-column items-center lg:pl-16 lg:mr-16 py-6">
         {/* SVG Logo */}
-        <Image alt="Logo" src={Logo} className="w-10" />
-        <h3 className="footer-title heading-font ml-4 font-semibold">
+        <Image alt="Logo" src={Logo} className="mx-auto w-10" />
+        <h3 className="footer-title heading-font text-center mt-2 mb-0 font-semibold">
           StudyCrew
         </h3>
+        <a
+          target="blank"
+          href="mailto:info@studycrew.world"
+          className="block text-center text-sm mb-4 text-black hover:text-black"
+        >
+          info@studycrew.world
+        </a>
+        <ul className="flex justify-center mx-auto">
+          <li className="mr-4">
+            <FaFacebookF size={20} />
+          </li>
+          <li className="mr-4">
+            <FaTwitter size={20} />
+          </li>
+          <li className="mr-4">
+            <FaInstagram size={20} />
+          </li>
+          <li>
+            <FaLinkedin size={20} />
+          </li>
+        </ul>
       </div>
 
-      {/* Footer menu */}
-      <div className="col-span-1 lg:col-span-2 ml-12">
-        <ul className="flex justify-center lg:justify-start gap-4">
-          <li
-            className={`${isActive('mission')} hover:cursor-pointer`}
-            onClick={() => {
-              handleNavLinkClick('mission')
-              setActivePage('mission')
-            }}
-          >
-            Mission
+      <div className="lg:mr-16 py-6 flex-column text-center lg:text-left">
+        <h3 className="font-bold mt-0 mb-2">Navigation</h3>
+        <ul className="flex-column">
+          <li className="hover:underline hover:cursor-pointer">
+            <a
+              href="#"
+              className="text-black hover:underline hover:cursor-pointer hover:text-black no-underline"
+              onClick={() => {
+                handleNavLinkClick('mission')
+                setActivePage('mission')
+              }}
+            >
+              Mission
+            </a>
+          </li>
+          <li className="hover:underline hover:cursor-pointer">
+            <a
+              href="#"
+              className="text-black hover:underline hover:cursor-pointer hover:text-black no-underline"
+              onClick={() => {
+                handleNavLinkClick('features')
+                setActivePage('features')
+              }}
+            >
+              Features
+            </a>
+          </li>
+          <li className="hover:underline hover:cursor-pointer">
+            <a
+              href="#"
+              className="text-black hover:underline hover:cursor-pointer hover:text-black no-underline"
+              onClick={() => {
+                handleNavLinkClick('project')
+                setActivePage('project')
+              }}
+            >
+              Project
+            </a>
           </li>
           <li
-            className={`${isActive('features')} hover:cursor-pointer`}
-            onClick={() => {
-              handleNavLinkClick('features')
-              setActivePage('features')
-            }}
-          >
-            Features
-          </li>
-          <li
-            className={`${isActive('project')} hover:cursor-pointer`}
-            onClick={() => {
-              handleNavLinkClick('project')
-              setActivePage('project')
-            }}
-          >
-            Project
-          </li>
-          <li
-            className={`${isActive('signup')} hover:cursor-pointer`}
+            className={`${isActive('signup')} hover:underline hover:cursor-pointer`}
             onClick={() => {
               handleNavLinkClick('signup')
               setActivePage('signup')
@@ -109,53 +131,102 @@ const Footer: React.FC<FooterProps> = (props: FooterProps): JSX.Element => {
           >
             Sign Up
           </li>
-          <li
-            className={`${isActive('team')} hover:cursor-pointer`}
-            onClick={() => {
-              handleNavLinkClick('team')
-              setActivePage('team')
-            }}
-          >
-            Team
+          <li className="hover:underline hover:cursor-pointer">
+            <a
+              href="#"
+              className="text-black hover:underline hover:cursor-pointer hover:text-black no-underline"
+              onClick={() => {
+                handleNavLinkClick('signup')
+                setActivePage('signup')
+              }}
+            >
+              Sign Up
+            </a>
           </li>
-          <li
-            className={`${isActive('faq')} hover:cursor-pointer`}
-            onClick={() => {
-              handleNavLinkClick('faq')
-              setActivePage('faq')
-            }}
-          >
-            FAQs
+          <li className="hover:underline hover:cursor-pointer">
+            <a
+              href="#"
+              className="text-black hover:underline hover:cursor-pointer hover:text-black no-underline"
+              onClick={() => {
+                handleNavLinkClick('team')
+                setActivePage('team')
+              }}
+            >
+              Team
+            </a>
+          </li>
+          <li className="hover:underline hover:cursor-pointer">
+            <a
+              href="#"
+              className="text-black hover:underline hover:cursor-pointer hover:text-black no-underline"
+              onClick={() => {
+                handleNavLinkClick('faq')
+                setActivePage('faq')
+              }}
+            >
+              FAQ
+            </a>
           </li>
         </ul>
-        <hr />
       </div>
 
-      {/* Social media icons */}
-      <div className="col-span-1 lg:col-span-2">
-        <ul className="flex justify-center lg:justify-end gap-4">
-          <li>
-            <FaGithubSquare size={20} />
+      <div className="lg:mr-16 py-6 text-center lg:text-left">
+        <h3 className="font-bold mt-0 mb-2">Contribute</h3>
+        <ul className="flex-column">
+          <li className="hover:underline hover:cursor-pointer">
+            <a
+              className="text-black hover:underline hover:cursor-pointer hover:text-black no-underline"
+              href="#"
+            >
+              Github
+            </a>
           </li>
-          <li>
-            <FaInstagram size={20} />
+          <li className="hover:underline hover:cursor-pointer">
+            <a
+              className="text-black hover:underline hover:cursor-pointer hover:text-black no-underline"
+              href="#"
+            >
+              Discord
+            </a>
           </li>
-          <li>
-            <FaYoutube size={20} />
-          </li>
-          <li>
-            <FaFacebookF size={20} />
-          </li>
-          <li>
-            <FaLinkedin size={20} />
-          </li>
-          <li>
-            <FaTiktok size={20} />
-          </li>
-          <li>
-            <FaDiscord size={20} />
+          <li className="hover:underline hover:cursor-pointer">
+            <a
+              className="text-black hover:underline hover:cursor-pointer hover:text-black no-underline"
+              href="#"
+            >
+              Join Team
+            </a>
           </li>
         </ul>
+      </div>
+
+      <div className="lg:mr-16 py-6 text-center lg:text-left">
+        <h3 className="font-bold mt-0 mb-2">Collaborations</h3>
+        <ul className="flex-column">
+          <li className="hover:underline hover:cursor-pointer">
+            <a
+              className="text-black hover:underline hover:cursor-pointer hover:text-black no-underline"
+              href="#"
+            >
+              Aquin
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div className="flex-column lg:px-16 bg-blue-200 pt-6 pb-8 w-full text-center lg:text-left">
+        <h3 className="font-bold mt-0 mb-2">Sign Up</h3>
+        <p className="text-sm mb-4">
+          Ready to transform Your Learning Experience?
+        </p>
+        <input
+          className="mr-4 lg:mr-0 mb-4 border-2 border-blue-300 px-4 py-2 rounded-lg px-4"
+          type="email"
+          placeholder="Enter your email"
+        />
+        <button className="text-white bg-blue-500 px-4 rounded-lg text-center py-2">
+          Join Waitlist
+        </button>
       </div>
     </div>
   )
