@@ -16,6 +16,6 @@ const waitlistSchema = new mongoose.Schema<WaitlistClass>({
 })
 
 const Waitlist =
-  mongoose.models.Waitlist || mongoose.model('Waitlist', waitlistSchema)
+  mongoose.models?.Waitlist || mongoose.model('Waitlist', waitlistSchema)
 
 export default Waitlist

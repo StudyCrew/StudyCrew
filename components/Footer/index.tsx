@@ -1,9 +1,11 @@
-import React from 'react'
 import Image from 'next/image'
-import scrollToRef from '@/lib/hooks/scrollTo'
-import { FaTwitter, FaLinkedin, FaFacebookF, FaInstagram } from 'react-icons/fa'
+import _isEmpty from 'lodash/isEmpty'
+import React, { useState, useCallback } from 'react'
+import { FaYoutube, FaLinkedin, FaFacebookF, FaInstagram } from 'react-icons/fa'
 
+import scrollToRef from '@/lib/hooks/scrollTo'
 import Logo from '../../public/assets/Logo.svg'
+import { addToWaitlist } from '@/lib/actions/waitlist.actions'
 
 import { type FooterProps } from './types'
 
@@ -18,6 +20,50 @@ const Footer: React.FC<FooterProps> = (props: FooterProps): JSX.Element => {
     signupRef,
     faqRef
   } = props
+
+  const [waitlistEmail, setWaitlistEmail] = useState<string>('')
+  const [waitlistErrorMessage, setWaitlistErrorMessage] = useState<string>('')
+  const onChangeWaitlistEmail = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      setWaitlistEmail(e.target.value)
+    },
+    [setWaitlistEmail]
+  )
+
+  const handleJoinWaitlist = useCallback(async (): Promise<void> => {
+    try {
+      if (!waitlistEmail) {
+        setWaitlistErrorMessage('Please enter your email address.')
+        return
+      } else if (
+        !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(waitlistEmail)
+      ) {
+        setWaitlistErrorMessage('Invalid email address')
+        return
+      }
+
+      const res = await addToWaitlist(waitlistEmail)
+
+      if (!res) {
+        setWaitlistErrorMessage('Failed to join waitlist. Please try again.')
+      } else {
+        setWaitlistErrorMessage('Successfully joined waitlist!')
+        setWaitlistEmail('')
+      }
+    } catch (error) {
+      setWaitlistErrorMessage('Failed to join waitlist. Please try again.')
+    }
+  }, [waitlistEmail, setWaitlistErrorMessage, setWaitlistEmail])
+
+  const onSubmitWaitlistEmail = useCallback(() => {
+    handleJoinWaitlist()
+      .then(() => {
+        setWaitlistEmail('')
+      })
+      .catch((err: Error) => {
+        console.error(err.stack)
+      })
+  }, [handleJoinWaitlist, waitlistEmail])
 
   // Helper function to determine if a link is active
   const isActive = (name: string): string =>
@@ -53,9 +99,7 @@ const Footer: React.FC<FooterProps> = (props: FooterProps): JSX.Element => {
 
   return (
     <div className="bg-zircon-50 flex-column lg:flex">
-      {/* Footer logo */}
-      <div className="flex-column items-center lg:pl-16 lg:mr-16 py-6">
-        {/* SVG Logo */}
+      <div className="flex-column items-center lg:pl-16 lg:mr-16 py-6 lg:w-full">
         <Image alt="Logo" src={Logo} className="mx-auto w-10" />
         <h3 className="footer-title heading-font text-center mt-2 mb-0 font-semibold">
           StudyCrew
@@ -69,16 +113,40 @@ const Footer: React.FC<FooterProps> = (props: FooterProps): JSX.Element => {
         </a>
         <ul className="flex justify-center mx-auto">
           <li className="mr-4">
-            <FaFacebookF size={20} />
+            <a
+              href="https://www.facebook.com/profile.php?id=61555998230454"
+              className="text-black hover:text-black"
+              target="blank"
+            >
+              <FaFacebookF size={20} />
+            </a>
           </li>
           <li className="mr-4">
-            <FaTwitter size={20} />
+            <a
+              href="https://www.youtube.com/channel/UCpeI7Q-WPZ88Uv1KCqs814Q"
+              className="text-black hover:text-black"
+              target="blank"
+            >
+              <FaYoutube size={20} />
+            </a>
           </li>
           <li className="mr-4">
-            <FaInstagram size={20} />
+            <a
+              href="https://www.instagram.com/studycrew.world/"
+              className="text-black hover:text-black"
+              target="blank"
+            >
+              <FaInstagram size={20} />
+            </a>
           </li>
           <li>
-            <FaLinkedin size={20} />
+            <a
+              href="https://www.linkedin.com/company/studycrewofficial"
+              className="text-black hover:text-black"
+              target="blank"
+            >
+              <FaLinkedin size={20} />
+            </a>
           </li>
         </ul>
       </div>
@@ -176,7 +244,8 @@ const Footer: React.FC<FooterProps> = (props: FooterProps): JSX.Element => {
           <li className="hover:underline hover:cursor-pointer">
             <a
               className="text-black hover:underline hover:cursor-pointer hover:text-black no-underline"
-              href="#"
+              href="https://github.com/StudyCrew"
+              target="blank"
             >
               Github
             </a>
@@ -220,13 +289,22 @@ const Footer: React.FC<FooterProps> = (props: FooterProps): JSX.Element => {
           Ready to transform Your Learning Experience?
         </p>
         <input
-          className="mr-4 lg:mr-0 mb-4 border-2 border-blue-300 px-4 py-2 rounded-lg px-4"
           type="email"
+          value={waitlistEmail}
           placeholder="Enter your email"
+          onChange={onChangeWaitlistEmail}
+          className="mr-4 lg:mr-0 mb-4 border-2 border-blue-300 px-4 py-2 rounded-lg px-4 w-3/4"
         />
-        <button className="text-white bg-blue-500 px-4 rounded-lg text-center py-2">
+        <button
+          onClick={onSubmitWaitlistEmail}
+          className="text-white bg-blue-500 px-4 rounded-lg text-center py-2"
+        >
           Join Waitlist
         </button>
+
+        {!_isEmpty(waitlistErrorMessage) && (
+          <p className="text-red-500 text-sm mt-4">{waitlistErrorMessage}</p>
+        )}
       </div>
     </div>
   )

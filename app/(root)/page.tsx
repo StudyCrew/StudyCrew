@@ -12,6 +12,7 @@ import Team from './../../components/Team'
 import Footer from './../../components/Footer'
 import Faqs from './../../components/FAQs'
 import useScrollFadeIn from './../../lib/hooks/useFadeIn'
+
 import scrollToRef from '@/lib/hooks/scrollTo'
 
 function App(): JSX.Element {
