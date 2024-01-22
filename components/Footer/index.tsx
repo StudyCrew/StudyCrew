@@ -11,7 +11,6 @@ import { type FooterProps } from './types'
 
 const Footer: React.FC<FooterProps> = (props: FooterProps): JSX.Element => {
   const {
-    activePage,
     setActivePage,
     missionRef,
     featuresRef,
@@ -65,10 +64,6 @@ const Footer: React.FC<FooterProps> = (props: FooterProps): JSX.Element => {
       })
   }, [handleJoinWaitlist, waitlistEmail])
 
-  // Helper function to determine if a link is active
-  const isActive = (name: string): string =>
-    activePage === name ? 'activeNavLink' : ''
-
   // Handles the navigation link click based on the section's name
   const handleNavLinkClick = (name: string): void => {
     let ref
@@ -108,7 +103,7 @@ const Footer: React.FC<FooterProps> = (props: FooterProps): JSX.Element => {
           target="_blank"
           rel="noreferrer"
           href="mailto:info@studycrew.world"
-          className="block text-center text-sm mb-4 text-black hover:text-black"
+          className="block text-center text-sm mb-4 text-black visited:text-black hover:text-black"
         >
           info@studycrew.world
         </a>
@@ -116,7 +111,7 @@ const Footer: React.FC<FooterProps> = (props: FooterProps): JSX.Element => {
           <li className="mr-4">
             <a
               href="https://www.facebook.com/profile.php?id=61555998230454"
-              className="text-black hover:text-black"
+              className="text-black visited:text-black hover:text-black"
               rel="noreferrer"
               target="_blank"
             >
@@ -126,7 +121,7 @@ const Footer: React.FC<FooterProps> = (props: FooterProps): JSX.Element => {
           <li className="mr-4">
             <a
               href="https://www.youtube.com/channel/UCpeI7Q-WPZ88Uv1KCqs814Q"
-              className="text-black hover:text-black"
+              className="text-black visited:text-black hover:text-black"
               rel="noreferrer"
               target="_blank"
             >
@@ -136,7 +131,7 @@ const Footer: React.FC<FooterProps> = (props: FooterProps): JSX.Element => {
           <li className="mr-4">
             <a
               href="https://www.instagram.com/studycrew.world/"
-              className="text-black hover:text-black"
+              className="text-black visited:text-black hover:text-black"
               rel="noreferrer"
               target="_blank"
             >
@@ -146,7 +141,7 @@ const Footer: React.FC<FooterProps> = (props: FooterProps): JSX.Element => {
           <li>
             <a
               href="https://www.linkedin.com/company/studycrewofficial"
-              className="text-black hover:text-black"
+              className="text-black visited:text-black hover:text-black"
               rel="noreferrer"
               target="_blank"
             >
@@ -162,7 +157,7 @@ const Footer: React.FC<FooterProps> = (props: FooterProps): JSX.Element => {
           <li className="hover:underline hover:cursor-pointer">
             <a
               href="#"
-              className="text-black hover:underline hover:cursor-pointer hover:text-black no-underline"
+              className="text-black hover:underline hover:cursor-pointer hover:text-black visited:text-black no-underline"
               onClick={() => {
                 handleNavLinkClick('mission')
                 setActivePage('mission')
@@ -174,7 +169,7 @@ const Footer: React.FC<FooterProps> = (props: FooterProps): JSX.Element => {
           <li className="hover:underline hover:cursor-pointer">
             <a
               href="#"
-              className="text-black hover:underline hover:cursor-pointer hover:text-black no-underline"
+              className="text-black hover:underline hover:cursor-pointer hover:text-black visited:text-black no-underline"
               onClick={() => {
                 handleNavLinkClick('features')
                 setActivePage('features')
@@ -186,7 +181,7 @@ const Footer: React.FC<FooterProps> = (props: FooterProps): JSX.Element => {
           <li className="hover:underline hover:cursor-pointer">
             <a
               href="#"
-              className="text-black hover:underline hover:cursor-pointer hover:text-black no-underline"
+              className="text-black hover:underline hover:cursor-pointer hover:text-black visited:text-black no-underline"
               onClick={() => {
                 handleNavLinkClick('project')
                 setActivePage('project')
@@ -195,19 +190,10 @@ const Footer: React.FC<FooterProps> = (props: FooterProps): JSX.Element => {
               Project
             </a>
           </li>
-          <li
-            className={`${isActive('signup')} hover:underline hover:cursor-pointer`}
-            onClick={() => {
-              handleNavLinkClick('signup')
-              setActivePage('signup')
-            }}
-          >
-            Sign Up
-          </li>
           <li className="hover:underline hover:cursor-pointer">
             <a
               href="#"
-              className="text-black hover:underline hover:cursor-pointer hover:text-black no-underline"
+              className="text-black hover:underline hover:cursor-pointer hover:text-black visited:text-black no-underline"
               onClick={() => {
                 handleNavLinkClick('signup')
                 setActivePage('signup')
@@ -219,7 +205,7 @@ const Footer: React.FC<FooterProps> = (props: FooterProps): JSX.Element => {
           <li className="hover:underline hover:cursor-pointer">
             <a
               href="#"
-              className="text-black hover:underline hover:cursor-pointer hover:text-black no-underline"
+              className="text-black hover:underline hover:cursor-pointer hover:text-black visited:text-black no-underline"
               onClick={() => {
                 handleNavLinkClick('team')
                 setActivePage('team')
@@ -231,7 +217,7 @@ const Footer: React.FC<FooterProps> = (props: FooterProps): JSX.Element => {
           <li className="hover:underline hover:cursor-pointer">
             <a
               href="#"
-              className="text-black hover:underline hover:cursor-pointer hover:text-black no-underline"
+              className="text-black hover:underline hover:cursor-pointer hover:text-black visited:text-black no-underline"
               onClick={() => {
                 handleNavLinkClick('faq')
                 setActivePage('faq')
@@ -248,7 +234,7 @@ const Footer: React.FC<FooterProps> = (props: FooterProps): JSX.Element => {
         <ul className="flex-column">
           <li className="hover:underline hover:cursor-pointer">
             <a
-              className="text-black hover:underline hover:cursor-pointer hover:text-black no-underline"
+              className="text-black hover:underline hover:cursor-pointer hover:text-black visited:text-black no-underline"
               href="https://github.com/StudyCrew"
               rel="noreferrer"
               target="_blank"
@@ -258,7 +244,7 @@ const Footer: React.FC<FooterProps> = (props: FooterProps): JSX.Element => {
           </li>
           <li className="hover:underline hover:cursor-pointer">
             <a
-              className="text-black hover:underline hover:cursor-pointer hover:text-black no-underline"
+              className="text-black hover:underline hover:cursor-pointer hover:text-black visited:text-black no-underline"
               href="https://discord.gg/j5d7PMes"
               rel="noreferrer"
               target="_blank"
@@ -268,7 +254,7 @@ const Footer: React.FC<FooterProps> = (props: FooterProps): JSX.Element => {
           </li>
           <li className="hover:underline hover:cursor-pointer">
             <a
-              className="text-black hover:underline hover:cursor-pointer hover:text-black no-underline"
+              className="text-black hover:underline hover:cursor-pointer hover:text-black visited:text-black no-underline"
               href="https://forms.gle/CBKSjovcWeRGWbg2A"
               rel="noreferrer"
               target="_blank"
@@ -284,7 +270,7 @@ const Footer: React.FC<FooterProps> = (props: FooterProps): JSX.Element => {
         <ul className="flex-column">
           <li className="hover:underline hover:cursor-pointer">
             <a
-              className="text-black hover:underline hover:cursor-pointer hover:text-black no-underline"
+              className="text-black hover:underline hover:cursor-pointer hover:text-black visited:text-black no-underline"
               href="https://aquin.app/"
               rel="noreferrer"
               target="_blank"
