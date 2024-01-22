@@ -105,7 +105,8 @@ const Footer: React.FC<FooterProps> = (props: FooterProps): JSX.Element => {
           StudyCrew
         </h3>
         <a
-          target="blank"
+          target="_blank"
+          rel="noreferrer"
           href="mailto:info@studycrew.world"
           className="block text-center text-sm mb-4 text-black hover:text-black"
         >
@@ -116,7 +117,8 @@ const Footer: React.FC<FooterProps> = (props: FooterProps): JSX.Element => {
             <a
               href="https://www.facebook.com/profile.php?id=61555998230454"
               className="text-black hover:text-black"
-              target="blank"
+              rel="noreferrer"
+              target="_blank"
             >
               <FaFacebookF size={20} />
             </a>
@@ -125,7 +127,8 @@ const Footer: React.FC<FooterProps> = (props: FooterProps): JSX.Element => {
             <a
               href="https://www.youtube.com/channel/UCpeI7Q-WPZ88Uv1KCqs814Q"
               className="text-black hover:text-black"
-              target="blank"
+              rel="noreferrer"
+              target="_blank"
             >
               <FaYoutube size={20} />
             </a>
@@ -134,7 +137,8 @@ const Footer: React.FC<FooterProps> = (props: FooterProps): JSX.Element => {
             <a
               href="https://www.instagram.com/studycrew.world/"
               className="text-black hover:text-black"
-              target="blank"
+              rel="noreferrer"
+              target="_blank"
             >
               <FaInstagram size={20} />
             </a>
@@ -143,7 +147,8 @@ const Footer: React.FC<FooterProps> = (props: FooterProps): JSX.Element => {
             <a
               href="https://www.linkedin.com/company/studycrewofficial"
               className="text-black hover:text-black"
-              target="blank"
+              rel="noreferrer"
+              target="_blank"
             >
               <FaLinkedin size={20} />
             </a>
@@ -245,7 +250,8 @@ const Footer: React.FC<FooterProps> = (props: FooterProps): JSX.Element => {
             <a
               className="text-black hover:underline hover:cursor-pointer hover:text-black no-underline"
               href="https://github.com/StudyCrew"
-              target="blank"
+              rel="noreferrer"
+              target="_blank"
             >
               Github
             </a>
@@ -253,7 +259,9 @@ const Footer: React.FC<FooterProps> = (props: FooterProps): JSX.Element => {
           <li className="hover:underline hover:cursor-pointer">
             <a
               className="text-black hover:underline hover:cursor-pointer hover:text-black no-underline"
-              href="#"
+              href="https://discord.gg/j5d7PMes"
+              rel="noreferrer"
+              target="_blank"
             >
               Discord
             </a>
@@ -261,7 +269,9 @@ const Footer: React.FC<FooterProps> = (props: FooterProps): JSX.Element => {
           <li className="hover:underline hover:cursor-pointer">
             <a
               className="text-black hover:underline hover:cursor-pointer hover:text-black no-underline"
-              href="#"
+              href="https://forms.gle/CBKSjovcWeRGWbg2A"
+              rel="noreferrer"
+              target="_blank"
             >
               Join Team
             </a>
@@ -275,7 +285,9 @@ const Footer: React.FC<FooterProps> = (props: FooterProps): JSX.Element => {
           <li className="hover:underline hover:cursor-pointer">
             <a
               className="text-black hover:underline hover:cursor-pointer hover:text-black no-underline"
-              href="#"
+              href="https://aquin.app/"
+              rel="noreferrer"
+              target="_blank"
             >
               Aquin
             </a>
