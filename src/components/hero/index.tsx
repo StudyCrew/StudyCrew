@@ -2,10 +2,11 @@ import classNames from 'classnames'
 import { FaChevronDown } from 'react-icons/fa'
 import React, { useState, useEffect } from 'react'
 
-import Button, { ButtonSize, ButtonVariant } from '../Button'
+import Button, { ButtonSize, ButtonVariant } from '@/components/button'
 
 import { HeroWord, type HeroProps } from './types'
 import { CLASS_NAME, WORDS } from './const'
+
 import './style.scss'
 
 const Hero: React.FC<HeroProps> = (props: HeroProps): JSX.Element => {

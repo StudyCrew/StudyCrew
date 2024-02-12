@@ -1,8 +1,8 @@
 import classNames from 'classnames'
 import React, { useCallback, useEffect, useState } from 'react'
-import { addToWaitlist, getSpotsLeft } from '@/lib/actions/waitlist.actions'
+import { addEmailToWaitlist, getSpotsLeft } from '@/actions/waitlist.actions'
 
-import Button from '../Button'
+import Button from '../button'
 
 import { type SignUpProps } from './types'
 import { CLASS_NAME } from './const'
@@ -20,8 +20,8 @@ const SignUp: React.FC<SignUpProps> = (props: SignUpProps): JSX.Element => {
 
   const fetchSpotsLeft = useCallback(() => {
     getSpotsLeft()
-      .then((response) => {
-        setSpotsLeft(response)
+      .then((spotsLeft: number) => {
+        setSpotsLeft(spotsLeft)
       })
       .catch((err: Error) => {
         console.error(`Error fetching spots left: ${err.message}`)
@@ -38,7 +38,7 @@ const SignUp: React.FC<SignUpProps> = (props: SignUpProps): JSX.Element => {
       setMessage('Invalid email address')
     }
 
-    addToWaitlist(email)
+    addEmailToWaitlist(email)
       .then((response) => {
         if (!response) {
           setMessage('Failed to join waitlist. Please try again.')

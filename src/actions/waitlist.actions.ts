@@ -1,48 +1,39 @@
 'use server'
 
-import Waitlist from '../models/waitlist'
-import { connectToDB } from '../mongoose'
+import Waitlist from '@/models/waitlist'
+import { MAX_WAITLIST_SPOTS } from '@/const'
 
-const maxSpots = 2500
-
+// TODO: Use custom error class
 export const getTotalWaitlistCount = async (): Promise<number> => {
   try {
-    await connectToDB()
-
-    const count = await Waitlist.countDocuments()
-    return count
+    return await Waitlist.countDocuments()
   } catch (error: any) {
     throw new Error(`Failed to get waitlist count: ${error.message}`)
   }
 }
 
-export const addToWaitlist = async (
+// TODO: Use custom error class
+// TODO: Extract
+export const addEmailToWaitlist = async (
   email: string
 ): Promise<typeof Waitlist> => {
   try {
-    await connectToDB()
-
-    const waitlistRecord = await Waitlist.findOneAndUpdate(
-      {
-        email
-      },
-      {
-        email
-      },
+    return await Waitlist.findOneAndUpdate(
+      { email },
+      { email },
       { upsert: true, new: true }
     )
-    return waitlistRecord
   } catch (error: any) {
     throw new Error(`Failed to add to waitlist: ${error.message}`)
   }
 }
 
+// TODO: Use custom error class
 export const getSpotsLeft = async (): Promise<number> => {
   try {
-    await connectToDB()
-
     const totalWaitlistCount = await getTotalWaitlistCount()
-    return maxSpots - totalWaitlistCount
+
+    return Math.max(MAX_WAITLIST_SPOTS - totalWaitlistCount, 0)
   } catch (error: any) {
     throw new Error(`Failed to get waitlist count: ${error.message}`)
   }

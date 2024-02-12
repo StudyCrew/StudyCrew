@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 import { FaBars } from 'react-icons/fa'
 import React, { useCallback, useState, useEffect } from 'react'
 
-import Navbar from '../Navbar'
-import Button, { ButtonSize } from '../Button'
+import Navbar from '@/components/navbar'
+import Button, { ButtonSize } from '@/components/button'
 
 import { CLASS_NAME } from './const'
 import { type HeaderProps } from './types'

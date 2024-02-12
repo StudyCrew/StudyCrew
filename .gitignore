@@ -20,7 +20,7 @@ pids
 lib-cov
 
 # Coverage directory used by tools like istanbul
-coverage
+jcoverage
 *.lcov
 
 # nyc test coverage
@@ -144,3 +144,5 @@ public/workbox-*
 !.env.vault
 # Sentry Config File
 .sentryclirc
+
+notes

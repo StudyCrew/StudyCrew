@@ -6,7 +6,7 @@ import * as U from './utils'
 
 import { NavbarLink, type NavbarProps } from './types'
 import { LINKS, CLASS_NAME } from './const'
-import './style.css'
+import './style.scss'
 
 const Navbar: React.FC<NavbarProps> = (props: NavbarProps): JSX.Element => {
   const {

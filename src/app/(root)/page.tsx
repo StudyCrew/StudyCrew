@@ -1,44 +1,42 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
+import { Page } from '@/types'
+import Hero from '@/components/hero'
+import Team from '@/components/team'
+import Faqs from '@/components/faqs'
+import Header from '@/components/header'
+import Footer from '@/components/footer'
+import SignUp from '@/components/sign_up'
+import Mission from '@/components/mission'
+import Project from '@/components/project'
+import scrollToRef from '@/hooks/scrollTo'
+import Features from '@/components/features'
+import useScrollFadeIn from '@/hooks/useFadeIn'
 import { BrowserRouter as Router } from 'react-router-dom'
-import Header from './../../components/header'
-import Hero from './../../components/hero'
-import Mission from './../../components/mission'
-import Features from './../../components/features'
-import Project from './../../components/project'
-import SignUp from './../../components/sign_up'
-import Team from './../../components/team'
-import Footer from './../../components/footer'
-import Faqs from './../../components/faqs'
-import useScrollFadeIn from './../../lib/hooks/useFadeIn'
-
-import scrollToRef from '@/lib/hooks/scrollTo'
+import React, { useRef, useEffect, useState, useCallback } from 'react'
 
 function App(): JSX.Element {
-  const handleLearnMoreClick = (): void => {
-    setActivePage('features')
-    scrollToRef(featuresRef)
-  }
-  const handleJoinWaitlistClick = (): void => {
-    setActivePage('signup')
-    scrollToRef(signupRef)
-  }
+  const faqRef = useRef(null)
+  const teamRef = useRef(null)
+  const signupRef = useRef(null)
+  const missionRef = useRef(null)
+  const projectRef = useRef(null)
+  const featuresRef = useRef(null)
+
   const animatedItem = useScrollFadeIn()
+  const [activePage, setActivePage] = useState<Page>(Page.Mission)
 
-  // State for the active page section
-  const [activePage, setActivePage] = useState('')
+  const handleLearnMoreClick = useCallback((): void => {
+    setActivePage(Page.Features)
+    scrollToRef(featuresRef)
+  }, [featuresRef])
 
-  // Refs to target elements for the IntersectionObserver
-  const missionRef = React.useRef(null)
-  const featuresRef = React.useRef(null)
-  const projectRef = React.useRef(null)
-  const teamRef = React.useRef(null)
-  const signupRef = React.useRef(null)
-  const faqRef = React.useRef(null)
+  const handleJoinWaitlistClick = useCallback((): void => {
+    setActivePage(Page.SignUp)
+    scrollToRef(signupRef)
+  }, [signupRef])
 
   useEffect(() => {
-    // Cached ref nodes
     const missionNode = missionRef.current
     const featuresNode = featuresRef.current
     const projectNode = projectRef.current
@@ -53,22 +51,22 @@ function App(): JSX.Element {
           // Setting the active page based on the intersecting component
           switch (entry.target.className) {
             case 'mission-component':
-              setActivePage('mission')
+              setActivePage(Page.Mission)
               break
             case 'features-component':
-              setActivePage('features')
+              setActivePage(Page.Features)
               break
             case 'project-component':
-              setActivePage('project')
+              setActivePage(Page.Project)
               break
             case 'empower-component':
-              setActivePage('signup')
+              setActivePage(Page.SignUp)
               break
             case 'team-component':
-              setActivePage('team')
+              setActivePage(Page.Team)
               break
             case 'faq-component':
-              setActivePage('faq')
+              setActivePage(Page.FAQ)
               break
             default:
               break
@@ -77,31 +75,59 @@ function App(): JSX.Element {
       })
     }
 
-    // Options for IntersectionObserver
-    const options = {
-      rootMargin: '-50% 0px -50% 0px', // The callback is triggered when half of the target is visible.
+    const observer = new IntersectionObserver(callback, {
+      rootMargin: '-50% 0px -50% 0px',
       threshold: 0
+    })
+
+    if (missionNode) {
+      observer.observe(missionNode)
     }
 
-    // Setting up the IntersectionObserver
-    const observer = new IntersectionObserver(callback, options)
+    if (featuresNode) {
+      observer.observe(featuresNode)
+    }
 
-    // Observing the refs
-    if (missionNode) observer.observe(missionNode)
-    if (featuresNode) observer.observe(featuresNode)
-    if (projectNode) observer.observe(projectNode)
-    if (teamNode) observer.observe(teamNode)
-    if (signupNode) observer.observe(signupNode)
-    if (faqNode) observer.observe(faqNode)
+    if (projectNode) {
+      observer.observe(projectNode)
+    }
 
-    // Cleanup function to unobserve the refs
+    if (teamNode) {
+      observer.observe(teamNode)
+    }
+
+    if (signupNode) {
+      observer.observe(signupNode)
+    }
+
+    if (faqNode) {
+      observer.observe(faqNode)
+    }
+
     return () => {
-      if (missionNode) observer.unobserve(missionNode)
-      if (featuresNode) observer.unobserve(featuresNode)
-      if (projectNode) observer.unobserve(projectNode)
-      if (teamNode) observer.unobserve(teamNode)
-      if (signupNode) observer.unobserve(signupNode)
-      if (faqNode) observer.unobserve(faqNode)
+      if (missionNode) {
+        observer.unobserve(missionNode)
+      }
+
+      if (featuresNode) {
+        observer.unobserve(featuresNode)
+      }
+
+      if (projectNode) {
+        observer.unobserve(projectNode)
+      }
+
+      if (teamNode) {
+        observer.unobserve(teamNode)
+      }
+
+      if (signupNode) {
+        observer.unobserve(signupNode)
+      }
+
+      if (faqNode) {
+        observer.unobserve(faqNode)
+      }
     }
   }, [])
 
