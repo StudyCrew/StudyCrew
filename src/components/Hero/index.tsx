@@ -19,11 +19,11 @@ const Hero: React.FC<HeroProps> = (props: HeroProps): JSX.Element => {
         const nextIndex = (words.indexOf(prevWord) + 1) % words.length
         return words[nextIndex]
       })
-      setOpacity(1) // Fade in the new word
+      setOpacity(1)
     }
 
     const interval = setInterval(() => {
-      setOpacity(0) // Fade out the current word
+      setOpacity(0)
       setTimeout(changeWord, 200)
     }, 3500)
 

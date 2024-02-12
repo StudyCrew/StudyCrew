@@ -34,15 +34,11 @@ module.exports = {
           200: '#BCDBFF',
           300: '#8EC6FF',
           400: '#59A5FF',
-          // Primary used for buttons, controls etc.
           500: '#3A86FF',
-          // Hover applied to all primary controls
           600: '#4E92FF',
-          // Active applied to all primary controls
           700: '#3376E0',
           800: '#173DB6',
           900: '#19388F',
-          // Text applied to all standard text
           950: '#0C1B33'
         },
         secondary: {
@@ -53,14 +49,12 @@ module.exports = {
           400: '#FF5D98',
           500: '#FF247A',
           600: '#FF1A7D',
-          // Text applied to all secondary text
           700: '#E00061',
           800: '#B40056',
           900: '#990250',
           950: '#570026'
         },
         'secondary-text': {
-          // Background for site
           50: '#F6F7F9',
           100: '#EDEEF1',
           200: '#D7DBE0',

@@ -6,7 +6,7 @@ export function cn(...inputs: ClassValue[]): string {
 }
 
 export const convertBase64ToFile = (base64String: string): File => {
-  const imageData = base64String.split(',')[1] // Remove "data:image/jpeg;base64," part
+  const imageData = base64String.split(',')[1]
   const binaryImageData = atob(imageData)
   const uint8Array = new Uint8Array(binaryImageData.length)
 

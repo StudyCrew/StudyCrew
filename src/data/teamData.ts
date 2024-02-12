@@ -1,5 +1,3 @@
-// teamData.js
-
 import dew from 'public/assets/avatars/dew.svg'
 import zai from 'public/assets/avatars/zai.svg'
 import jona from 'public/assets/avatars/jona.svg'
