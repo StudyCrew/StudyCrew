@@ -8,7 +8,6 @@ import './style.css'
 const Team = (): JSX.Element => {
   const scrollContainer = useRef(null)
 
-  // Function to continuously scroll horizontally
   const scrollHorizontally = (): void => {
     if (scrollContainer.current) {
       const step = (): void => {
@@ -24,7 +23,7 @@ const Team = (): JSX.Element => {
         ) {
           scrollContainerCurrent.scrollLeft = 0
         }
-        setTimeout(requestAnimationFrame.bind(null, step), 10) // Add a delay of 100 milliseconds
+        setTimeout(requestAnimationFrame.bind(null, step), 10)
       }
 
       requestAnimationFrame(step)
@@ -39,7 +38,6 @@ const Team = (): JSX.Element => {
     window.location.href = 'https://forms.gle/CBKSjovcWeRGWbg2A'
   }
 
-  // Duplicate team members for a continuous effect
   const allMembers = [...teamMembers, ...teamMembers]
 
   return (

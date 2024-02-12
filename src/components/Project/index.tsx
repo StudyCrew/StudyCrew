@@ -5,18 +5,9 @@ import project_image from 'public/assets/project-image.jpg'
 
 import './style.css'
 
-/**
- * Project Component
- *
- * This component displays information about the project, including:
- * - A description of the project's mission and goals.
- * - An image representing the project.
- * - A subtitle overlay on the image with a quote from the founder.
- */
 const Project = (): JSX.Element => {
   return (
     <div className="project-main-div">
-      {/* Left column containing project description */}
       <div className="project-left-column">
         <div className="project-text">
           <h3 className="project-mission-header text-zircon-50">OUR PROJECT</h3>
@@ -35,7 +26,6 @@ const Project = (): JSX.Element => {
         </div>
       </div>
 
-      {/* Right column containing project image and subtitle */}
       <div className="project-right-column">
         <Image
           src={project_image}

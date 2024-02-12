@@ -1,5 +1,4 @@
 .bg {
-  /* margin-top: 50px; */
   background: url('../../../public/assets/arrow_bg.png') top/cover;
   background-size: 100% 100%;
   margin-bottom: 50px;
@@ -53,7 +52,7 @@ h5 {
 }
 
 .team-card {
-  flex: 0 0 auto; /* Adjust this to control the card width */
+  flex: 0 0 auto;
   padding: 10px;
   padding-block: 50px;
   margin: 10px;

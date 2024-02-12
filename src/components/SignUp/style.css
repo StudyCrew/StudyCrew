@@ -1,27 +1,22 @@
-/* Flex container to center child elements */
 .empower {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* Email sign-up container styles */
 .user-email {
   text-align: center;
-  margin: 0 -120px; /* Negative margin for design aesthetics */
+  margin: 0 -120px;
 }
 
-/* Additional margin for the heading */
 .user-email h2 {
   margin-bottom: 20px;
 }
 
-/* Highlight color for specific parts of the heading */
 .user-email h1 span {
   color: #4c88f6;
 }
 
-/* Styling for the email input and button container */
 .user-email .email-input {
   position: relative;
   display: flex;
@@ -30,7 +25,6 @@
   margin-top: 15px;
 }
 
-/* Styling for the email input field */
 .user-email .email-input input {
   margin-right: -4%;
   font-size: 16px;
@@ -39,7 +33,6 @@
   background-color: white;
 }
 
-/* Common styling for the email input and submit button */
 .user-email .email-input button,
 .user-email .email-input input {
   border-radius: 10px;
@@ -47,7 +40,6 @@
   outline: none;
 }
 
-/* Styling for the email input placeholder */
 .user-email .email-input input::placeholder {
   position: relative;
   color: #6b7380;
@@ -55,7 +47,6 @@
   left: 0px;
 }
 
-/* Styling for section subtitle */
 .subtitle {
   position: relative;
   width: 40vw;
@@ -75,63 +66,54 @@
   z-index: -1;
 }
 
-/* Negative margin for wings to achieve a specific design aesthetic */
 .left-wing,
 .right-wing {
   margin-bottom: -120px;
 }
 
-/* Media query to hide wings on small screens */
 @media screen and (max-width: 740px) {
   .left-wing,
   .right-wing {
     display: none;
   }
 
-  /* Flex container to center child elements */
   .empower {
     display: flex;
-    flex-direction: column; /* Stack items vertically on small screens */
+    flex-direction: column;
     justify-content: center;
     align-items: center;
   }
 
-  /* Email sign-up container styles */
   .user-email {
     text-align: center;
-    margin: 0 -20px; /* Reduced negative margin for better responsiveness */
+    margin: 0 -20px;
   }
 
-  /* Additional margin for the heading */
   .user-email h2 {
-    margin-bottom: 10px; /* Reduced margin for better responsiveness */
+    margin-bottom: 10px;
   }
 
-  /* Highlight color for specific parts of the heading */
   .user-email h1 span {
     color: #4c88f6;
   }
 
-  /* Styling for the email input and button container */
   .user-email .email-input {
     position: relative;
     display: flex;
-    flex-direction: column; /* Stack items vertically */
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-top: 15px;
   }
 
-  /* Styling for the email input field */
   .user-email .email-input input {
-    margin-bottom: 10px; /* Added margin for better spacing */
+    margin-bottom: 10px;
     font-size: 16px;
-    padding: 10px; /* Adjusted padding for better spacing */
+    padding: 10px;
     min-width: 220px;
     background-color: white;
   }
 
-  /* Common styling for the email input and submit button */
   .user-email .email-input button,
   .user-email .email-input input {
     border-radius: 10px;
@@ -139,7 +121,6 @@
     outline: none;
   }
 
-  /* Styling for the email input placeholder */
   .user-email .email-input input::placeholder {
     position: relative;
     color: #6b7380;
@@ -147,47 +128,42 @@
     left: 0px;
   }
 
-  /* Negative margin for wings to achieve a specific design aesthetic */
   .left-wing,
   .right-wing {
-    margin-bottom: -20px; /* Reduced negative margin for better responsiveness */
+    margin-bottom: -20px;
   }
 
-  /* Styling for section subtitle */
   .subtitle {
     position: relative;
-    width: 80vw; /* Adjusted width for better responsiveness */
+    width: 80vw;
     text-align: center;
     top: -10px;
-    margin: 0 20px; /* Adjusted margin for better responsiveness */
+    margin: 0 20px;
     color: var(--secondary-text-color);
   }
 
   .signup-mist-1 {
     position: absolute;
-    height: 200px; /* Adjusted height for better responsiveness */
-    width: 200px; /* Adjusted width for better responsiveness */
-    left: 50%; /* Center the element horizontally */
-    top: 50%; /* Center the element vertically */
-    transform: translate(
-      -50%,
-      -50%
-    ); /* Center the element both horizontally and vertically */
+    height: 200px;
+    width: 200px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     z-index: -1;
   }
 }
 
 @media screen and (max-width: 500px) {
   .user-email h2 {
-    font-size: 24px; /* Adjusted font size for smaller screens */
+    font-size: 24px;
   }
 
   .user-email p {
-    font-size: 14px; /* Adjusted font size for smaller screens */
+    font-size: 14px;
     max-width: 276px;
   }
 
   .user-email .email-input {
-    width: 100%; /* Make the input full width on smaller screens */
+    width: 100%;
   }
 }

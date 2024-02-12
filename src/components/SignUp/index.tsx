@@ -5,7 +5,6 @@ import Button from '@/components/Button'
 
 import './style.css'
 
-/* Define the Empower component */
 function SignUp(): JSX.Element {
   const [email, setEmail] = useState<string>('')
   const [message, setMessage] = useState<string>('')
@@ -20,14 +19,14 @@ function SignUp(): JSX.Element {
       if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email)) {
         setMessage('Invalid email address')
       }
-      // Perform input validation if needed
+
       const response = await addToWaitlist(email)
       if (!response) {
         setMessage('Failed to join waitlist. Please try again.')
         return
       }
       setMessage('Successfully joined waitlist!')
-      setEmail('') // Clear the input after successful operation
+      setEmail('')
       await fetchSpotsLeft()
     } catch (error) {
       setMessage('Failed to join waitlist. Please try again.')
@@ -62,7 +61,6 @@ function SignUp(): JSX.Element {
   return (
     <div className="empower">
       <div className="left-wing">
-        {/* Left-wing SVG illustration */}
         <svg
           width="230"
           height="500"
@@ -70,7 +68,6 @@ function SignUp(): JSX.Element {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          {/* SVG path and other code for the left-wing */}
           <path
             d="M161.894 206.894C188.066 199.246 210.095 136.408 214.631 107.927C220.137
             73.3587 225.722 33.0125 192.545 8.69199C159.369 -15.6285 130.092 19.4869
@@ -157,7 +154,6 @@ function SignUp(): JSX.Element {
       </div>
 
       <div className="right-wing">
-        {/* Right-wing SVG illustration */}
         <svg
           width="230"
           height="500"
@@ -166,7 +162,6 @@ function SignUp(): JSX.Element {
           xmlns="http://www.w3.org/2000/svg"
           className="margin-right-wing"
         >
-          {/* SVG path and other code for the right-wing */}
           <path
             d="M471.838 206.594C445.666 198.944 423.642 136.105 419.108 107.624C413.604 73.0548
             408.022 32.7081 441.2 8.38994C474.378 -15.9283 503.653 19.1891 512.969

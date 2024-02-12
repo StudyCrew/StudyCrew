@@ -1,8 +1,4 @@
-/* Font Imports */
-/* Importing Rubik font for headings */
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,500&display=swap');
-
-/* Importing DM Sans font for standard text */
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,200;0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,200;1,9..40,300;1,9..40,400;1,9..40,600&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,500&display=swap');
 
 @tailwind components;
@@ -15,7 +11,6 @@
   box-sizing: unset;
 }
 
-/* Define Variables */
 :root {
   --primary-color: #3a86ff;
   --primary-gradient-color: #8338ec;
@@ -26,7 +21,6 @@
   --text-font: 'DM Sans', sans-serif;
 }
 
-/* Global Styles */
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -41,8 +35,6 @@ code {
     monospace;
 }
 
-/* Typography */
-/* Applying heading font and primary text color to headings and buttons */
 h1,
 h2,
 h3,
@@ -54,7 +46,6 @@ button {
   color: var(--primary-text-color);
 }
 
-/* Applying text font to body, paragraphs, spans, inputs, and textareas */
 body,
 p,
 span,
@@ -85,8 +76,6 @@ p {
   letter-spacing: 0.1px;
 }
 
-/* Utility Classes */
-/* Utility class for applying heading font */
 .heading-font {
   font-family: var(--heading-font);
 }
@@ -101,22 +90,18 @@ p {
   -webkit-text-fill-color: transparent;
 }
 
-/* Utility class for applying text font */
 .text-font {
   font-family: var(--text-font);
 }
 
-/* Utility class for applying primary text color */
 .primary-text-color {
   color: var(--primary-text-color);
 }
 
-/* Utility class for applying secondary text color */
 .secondary-text-color {
   color: var(--secondary-text-color);
 }
 
-/* Neon Mist */
 .blue-neon-mist {
   background: linear-gradient(90deg, #bcd5ff 0%, #bcd5ff 100%);
   filter: blur(300px);
@@ -127,8 +112,8 @@ p {
 }
 
 .fade-in-section {
-  opacity: 1; /* This should start as 1 */
-  transform: translateY(0); /* No transformation to start */
+  opacity: 1;
+  transform: translateY(0);
   transition:
     opacity 0.6s ease-out,
     transform 0.6s ease-out,
@@ -156,7 +141,7 @@ p {
 
 .no-scroll {
   overflow: hidden;
-  height: 100%; /* Prevents the body from expanding */
-  width: 100%; /* Prevents the body from expanding */
-  position: fixed; /* Fixes the body position */
+  height: 100%;
+  width: 100%;
+  position: fixed;
 }

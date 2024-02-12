@@ -1,6 +1,5 @@
 import mongoose from 'mongoose'
 
-// 1. Create an interface representing a document in MongoDB.
 export interface IUser {
   _id: string
   clerkId: string
@@ -10,6 +9,7 @@ export interface IUser {
   image: string
   onboarded: boolean
 }
+
 interface UserClass {
   _id: mongoose.Types.ObjectId
   clerkId: string
@@ -19,6 +19,7 @@ interface UserClass {
   image: string
   onboarded: boolean
 }
+
 const userSchema = new mongoose.Schema<UserClass>({
   _id: { type: mongoose.Schema.Types.ObjectId },
   clerkId: { type: String },

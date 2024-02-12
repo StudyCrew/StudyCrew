@@ -25,10 +25,8 @@ function App(): JSX.Element {
   }
   const animatedItem = useScrollFadeIn()
 
-  // State for the active page section
   const [activePage, setActivePage] = useState('')
 
-  // Refs to target elements for the IntersectionObserver
   const missionRef = React.useRef(null)
   const featuresRef = React.useRef(null)
   const projectRef = React.useRef(null)
@@ -37,7 +35,6 @@ function App(): JSX.Element {
   const faqRef = React.useRef(null)
 
   useEffect(() => {
-    // Cached ref nodes
     const missionNode = missionRef.current
     const featuresNode = featuresRef.current
     const projectNode = projectRef.current
@@ -45,11 +42,9 @@ function App(): JSX.Element {
     const signupNode = signupRef.current
     const faqNode = faqRef.current
 
-    // Callback to handle what happens when the elements intersect
     const callback = (entries: any): void => {
       entries.forEach((entry: any) => {
         if (entry.isIntersecting) {
-          // Setting the active page based on the intersecting component
           switch (entry.target.className) {
             case 'mission-component':
               setActivePage('mission')
@@ -76,16 +71,13 @@ function App(): JSX.Element {
       })
     }
 
-    // Options for IntersectionObserver
     const options = {
-      rootMargin: '-50% 0px -50% 0px', // The callback is triggered when half of the target is visible.
+      rootMargin: '-50% 0px -50% 0px',
       threshold: 0
     }
 
-    // Setting up the IntersectionObserver
     const observer = new IntersectionObserver(callback, options)
 
-    // Observing the refs
     if (missionNode) observer.observe(missionNode)
     if (featuresNode) observer.observe(featuresNode)
     if (projectNode) observer.observe(projectNode)
@@ -93,7 +85,6 @@ function App(): JSX.Element {
     if (signupNode) observer.observe(signupNode)
     if (faqNode) observer.observe(faqNode)
 
-    // Cleanup function to unobserve the refs
     return () => {
       if (missionNode) observer.unobserve(missionNode)
       if (featuresNode) observer.unobserve(featuresNode)
@@ -104,11 +95,8 @@ function App(): JSX.Element {
     }
   }, [])
 
-  // Component render
   return (
     <Router>
-      {/* Header with page navigation props */}
-
       <div className="header">
         <Header
           missionRef={missionRef}
@@ -122,7 +110,6 @@ function App(): JSX.Element {
         />
       </div>
 
-      {/* Various site sections */}
       <Hero
         handleLearnMoreClick={handleLearnMoreClick}
         handleJoinWaitlistClick={handleJoinWaitlistClick}
@@ -153,7 +140,6 @@ function App(): JSX.Element {
         <Faqs {...animatedItem} />
       </div>
 
-      {/* Footer */}
       <div className="footer-component">
         <Footer
           missionRef={missionRef}

@@ -1,4 +1,3 @@
-// Importing necessary CSS and components
 import { Link } from 'react-router-dom'
 import { FaBars } from 'react-icons/fa'
 import React, { useState, useEffect } from 'react'
@@ -40,7 +39,7 @@ const Header: React.FC<HeaderProps> = (props: HeaderProps): JSX.Element => {
       <div className="hamburger-menu" onClick={toggleMenu}>
         <FaBars />
       </div>
-      {/* Logo and application name section */}
+
       <div
         onClick={() => {
           setActivePage('')
@@ -135,7 +134,6 @@ const Header: React.FC<HeaderProps> = (props: HeaderProps): JSX.Element => {
         </Link>
       </div>
 
-      {/* Conditionally render this div based on isMenuOpen state */}
       {isMenuOpen && (
         <div className={`mobile-navbar ${isMenuOpen ? 'open' : ''}`}>
           <Navbar
@@ -152,7 +150,6 @@ const Header: React.FC<HeaderProps> = (props: HeaderProps): JSX.Element => {
         </div>
       )}
 
-      {/* This will always be rendered, but hidden on mobile */}
       <div className="desktop-navbar">
         <Navbar
           activePage={activePage}
