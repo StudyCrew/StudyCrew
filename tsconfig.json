@@ -20,14 +20,16 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./src/*"],
+      "public/*": ["./public/*"]
     }
   },
   "include": [
     "next-env.d.ts",
-    "declarations.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
+    "src/declarations.d.ts",
+    "*.ts",
+    "src/**/*.ts",
+    "src/**/*.tsx",
     ".next/types/**/*.ts"
   ],
   "exclude": ["node_modules"]
