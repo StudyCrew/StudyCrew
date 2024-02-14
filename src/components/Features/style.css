@@ -1,33 +1,26 @@
 .features {
-  /* Margins */
   margin-right: 150px;
   margin-left: 150px;
 }
 
 .features-head {
-  /* Center align text */
   text-align: center;
 }
 
 .features-head .title {
-  /* Capitalize text */
   text-transform: capitalize;
 }
 
 .features-head .title span {
-  /* Color for the span */
   color: #3a86ff;
-  /* Font family for the span */
   font-family: var(--heading-font);
 }
 
 .features-head .des {
-  /* Secondary text color for description */
   color: var(--secondary-text-color);
 }
 
 .stages .stage {
-  /* Stage styles */
   text-align: center;
   margin-bottom: 10px;
   margin-top: 10px;
@@ -38,8 +31,8 @@
   color: var(--secondary-text-color);
   border-radius: 5px;
 }
+
 .stages .stage h3 {
-  /* Stage title */
   font-size: 28px;
   font-weight: bold;
 }
@@ -49,7 +42,6 @@ h3 {
 }
 
 .stage p {
-  /* Margin for stage title and paragraph */
   margin-top: -25px;
   font-size: 16px;
   padding-bottom: 15px;
@@ -111,12 +103,10 @@ h3 {
 }
 
 .active {
-  /* Active class */
   height: 100% !important;
 }
 
 .owl-carousel-wrapper {
-  /* Owl carousel wrapper */
   background-color: var(--light-background-color);
   width: 75%;
   padding: 30px;
@@ -127,11 +117,10 @@ h3 {
 }
 
 .owl-carousel .cards {
-  /* Owl carousel cards */
   display: grid;
   height: 1;
   grid-auto-flow: column;
-  /* grid-auto-columns: calc((100% / 3)); */
+
   gap: 30px;
   transition: 0.5s ease-in;
   overflow-x: auto;
@@ -141,12 +130,10 @@ h3 {
 }
 
 .none {
-  /* Hide element */
   display: none;
 }
 
 .card {
-  /* Card styles */
   background-color: white;
   border-radius: 20px;
   padding: 25px 25px;
@@ -157,7 +144,6 @@ h3 {
 }
 
 .card-image {
-  /* Card image styles */
   display: block;
   height: 140px;
   width: auto;
@@ -169,21 +155,19 @@ h3 {
 }
 
 .card-title {
-  /* Card title styles */
   font-size: 22px;
   font-weight: bold;
   margin-bottom: 0px;
 }
 
 .card-description {
-  /* Card description styles */
   font-size: 14px;
   margin-bottom: 5px;
   color: var(--secondary-text-color);
 }
 
 .owl-carousel {
-  position: relative; /* Ensure the positioning context */
+  position: relative;
   padding-bottom: 0px;
 }
 
@@ -195,7 +179,6 @@ h3 {
 }
 .arrow-right,
 .arrow-left {
-  /* Arrow styles */
   margin-top: 20px;
   margin-bottom: -10px;
   size: 300px;
@@ -207,25 +190,20 @@ h3 {
 
 .arrow-right:hover,
 .arrow-left:hover {
-  /* Hover styles for arrows */
   cursor: pointer;
 }
 
 .active-stage {
-  background-color: var(
-    --light-background-color
-  ); /* This can be any color or styling you want */
+  background-color: var(--light-background-color);
 }
 
 @media screen and (max-width: 1040px) {
   .arrow-icons {
-    /* Adjusted styles for smaller screens */
     justify-content: start;
   }
 }
 
 @media screen and (max-width: 860px) {
-  /* Adjusted styles for smaller screens */
   .card {
     padding: 15px 15px;
     max-height: 100%;
@@ -258,7 +236,6 @@ h3 {
 }
 
 @media screen and (max-width: 520px) {
-  /* Adjusted styles for smaller screens */
   .owl-carousel .cards {
     grid-auto-columns: calc(100%);
   }

@@ -9,5 +9,5 @@ export interface NavbarProps {
   teamRef: React.MutableRefObject<null>
   signupRef: React.MutableRefObject<null>
   faqRef: React.MutableRefObject<null>
-  setIsMenuOpen: React.Dispatch<React.SetStateAction<boolean>> // Add this line
+  setIsMenuOpen: React.Dispatch<React.SetStateAction<boolean>>
 }

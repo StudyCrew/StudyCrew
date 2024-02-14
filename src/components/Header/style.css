@@ -1,22 +1,19 @@
-/* Styling for the header */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* position: sticky; */
+
   top: 0;
   z-index: 100;
-  padding: 0 10px; /* Adjust padding as needed */
-  height: 60px; /* Adjust the height as needed */
+  padding: 0 10px;
+  height: 60px;
   width: 100%;
 }
 
-/* Centering content inside the header */
 header > * {
   margin: auto;
 }
 
-/* Styling for header items, e.g. logo and application name */
 .header-items {
   display: inline-flex;
   flex-direction: row;
@@ -28,17 +25,15 @@ header > * {
   box-shadow: 0 0 10px 0 #ddd;
   align-items: center;
   max-height: 50px;
-  background-color: rgba(255, 255, 255, 0.78); /* Semi-transparent background */
-  backdrop-filter: blur(12px); /* Blur effect for the content behind the nav */
+  background-color: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(12px);
 }
 
-/* Styling for the logo inside header items */
 .header-items > .logo-1 {
   width: 25px;
   height: 25px;
 }
 
-/* Styling for links inside header items */
 .header-items > a {
   font-size: 16px;
   font-weight: 600;
@@ -50,15 +45,11 @@ header > * {
   margin-bottom: 5px;
 }
 
-/* Hover effect for the links */
 .header-items > a:hover {
   color: #3a86ff;
 }
 
-/* Active link styling */
 .header-items > a.active {
-  /* color: #3A86FF; */
-  /* border-bottom: solid 5px #3A86FF; */
   border-radius: 5px;
 }
 
@@ -66,7 +57,6 @@ header > * {
   display: none;
 }
 
-/* Show regular navbar on larger screens */
 header .navbar {
   display: block;
 }
@@ -75,9 +65,8 @@ header .navbar {
   display: block;
 }
 
-/* Toggle the mobile navbar */
 .mobile-navbar.open {
-  transform: translateX(0); /* Slide into view */
+  transform: translateX(0);
   transition: transform 3s ease;
 }
 
@@ -85,15 +74,14 @@ header .navbar {
   backdrop-filter: none;
 }
 
-/* Initial state of the mobile navbar - off-screen */
 .mobile-navbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100vh;
-  transform: translateX(-100%); /* Initially off-screen */
-  transition: transform 3s ease; /* Smooth transition for sliding in/out */
+  transform: translateX(-100%);
+  transition: transform 3s ease;
   z-index: 1000;
   display: flex;
   flex-direction: column;
@@ -103,15 +91,16 @@ header .navbar {
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
 }
-/* Media query for mobile screens */
+
 @media (max-width: 768px) {
   .header-items {
     background: none;
   }
+
   .logo {
     background: none;
   }
-  /* Show hamburger menu on mobile screens */
+
   .hamburger-menu {
     display: block;
     position: relative;
@@ -121,6 +110,7 @@ header .navbar {
     margin-left: 30px;
     font-size: 25px;
   }
+
   .header-items svg {
     left: 50%;
     transform: translateX(-50%);
@@ -131,7 +121,7 @@ header .navbar {
   }
 
   .header-items {
-    justify-self: center; /* Align logo to the center */
+    justify-self: center;
     flex-grow: 1;
     justify-content: center;
     background: none;
@@ -140,21 +130,22 @@ header .navbar {
   }
 
   .hamburger-menu {
-    flex: 1; /* Flex grow to push adjacent elements to the sides */
+    flex: 1;
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* Aligns the hamburger menu to the left */
+    justify-content: flex-start;
   }
+
   .header-logo {
-    flex: 1; /* Flex grow to push adjacent elements to the sides */
+    flex: 1;
     display: flex;
     align-items: center;
-    justify-content: center; /* Centers the logo */
+    justify-content: center;
   }
-  /* Adjust header grid layout for mobile */
+
   header {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr; /* Three equal columns */
+    grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
     justify-content: space-between;
     top: 0;
@@ -171,7 +162,6 @@ header .navbar {
     margin-top: 4px;
   }
 
-  /* Styling for the logo container */
   .logo-1 {
     flex: 1;
     text-align: center;
@@ -179,7 +169,7 @@ header .navbar {
   }
 
   .waitlistLink {
-    justify-self: end; /* Align Join Waitlist to the right */
+    justify-self: end;
     display: inline-flex;
     align-items: center;
     text-decoration: none;

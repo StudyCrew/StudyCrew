@@ -64,7 +64,6 @@ const Footer: React.FC<FooterProps> = (props: FooterProps): JSX.Element => {
       })
   }, [handleJoinWaitlist, waitlistEmail])
 
-  // Handles the navigation link click based on the section's name
   const handleNavLinkClick = (name: string): void => {
     let ref
     switch (name) {
@@ -291,7 +290,7 @@ const Footer: React.FC<FooterProps> = (props: FooterProps): JSX.Element => {
           value={waitlistEmail}
           placeholder="Enter your email"
           onChange={onChangeWaitlistEmail}
-          className="mr-4 lg:mr-0 mb-4 border-2 border-blue-300 px-4 py-2 rounded-lg px-4 w-3/4"
+          className="mr-4 lg:mr-0 mb-4 border-2 border-blue-300 px-4 py-2 rounded-lg w-3/4"
         />
         <button
           onClick={onSubmitWaitlistEmail}

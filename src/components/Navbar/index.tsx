@@ -17,11 +17,9 @@ const Navbar: React.FC<NavbarProps> = (props: NavbarProps): JSX.Element => {
     setIsMenuOpen
   } = props
 
-  // Helper function to determine if a link is active
   const isActive = (name: string): string =>
     activePage === name ? 'activeNavLink' : ''
 
-  // Handles the navigation link click based on the section's name
   const handleNavLinkClick = (name: string): void => {
     setIsMenuOpen(false)
 
@@ -53,8 +51,6 @@ const Navbar: React.FC<NavbarProps> = (props: NavbarProps): JSX.Element => {
 
   return (
     <nav>
-      {/* Navigation links for different sections */}
-      {/* When clicked, the view scrolls to the respective section */}
       <div
         className={`${isActive('mission')} hover:cursor-pointer`}
         onClick={() => {

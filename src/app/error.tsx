@@ -9,7 +9,6 @@ const ErrorPage = ({
   error: Error & { digest?: string }
 }): JSX.Element => {
   useEffect(() => {
-    // Log the error to Sentry
     Sentry.captureException(error)
   }, [error])
 

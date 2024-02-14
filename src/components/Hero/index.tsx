@@ -4,20 +4,7 @@ import React, { useState, useEffect } from 'react'
 import Button from '@/components/Button'
 
 import { type HeroProps } from './types'
-import './style.css' // Importing styling specific to the Hero component
-
-/**
- * Hero Component
- *
- * This component represents the hero section of a webpage, typically used
- * on the landing page. It contains a title, a description, and a group of buttons.
- *
- * The title has decorative SVG elements and the description emphasizes certain words
- * with a primary text color. The buttons navigate to the waitlist page and have different
- * styles and sizes.
- *
- * @returns {React.Element} The rendered Hero component.
- */
+import './style.css'
 
 const words = ['Collaborative', 'Accessible', 'Engaging']
 
@@ -32,11 +19,11 @@ const Hero: React.FC<HeroProps> = (props: HeroProps): JSX.Element => {
         const nextIndex = (words.indexOf(prevWord) + 1) % words.length
         return words[nextIndex]
       })
-      setOpacity(1) // Fade in the new word
+      setOpacity(1)
     }
 
     const interval = setInterval(() => {
-      setOpacity(0) // Fade out the current word
+      setOpacity(0)
       setTimeout(changeWord, 200)
     }, 3500)
 
@@ -48,7 +35,6 @@ const Hero: React.FC<HeroProps> = (props: HeroProps): JSX.Element => {
   return (
     <div className="hero">
       <div className="hero-container">
-        {/* Title with decorative SVG elements */}
         <h1 className="title title-sm">
           The{' '}
           <span className="relative-span">
@@ -78,12 +64,10 @@ const Hero: React.FC<HeroProps> = (props: HeroProps): JSX.Element => {
           </span>
         </h1>
 
-        {/* Description with emphasized words */}
         <p className="description">
           Opening doors to new learning experiences for everyone.
         </p>
 
-        {/* Group of buttons with different styles and sizes */}
         <div className="button-group">
           <Button onClick={handleJoinWaitlistClick} size="big">
             Join Waitlist
@@ -103,5 +87,4 @@ const Hero: React.FC<HeroProps> = (props: HeroProps): JSX.Element => {
   )
 }
 
-// Exporting the Hero component for use in other files
 export default Hero
