@@ -1,4 +1,8 @@
 /** @type {import('tailwindcss').Config} */
+
+// TODO: Extract color codes as constants with descriptive names. Currently
+//       only a few are commented and therefore documented. It is unclear what
+///      the others are meant for.
 module.exports = {
   darkMode: ['class'],
   content: ['./src/**/*.{ts,tsx}'],
@@ -34,12 +38,12 @@ module.exports = {
           200: '#BCDBFF',
           300: '#8EC6FF',
           400: '#59A5FF',
-          500: '#3A86FF',
-          600: '#4E92FF',
-          700: '#3376E0',
+          500: '#3A86FF', // Primary used for buttons, controls etc.
+          600: '#4E92FF', // Hover applied to all primary controls
+          700: '#3376E0', // Active applied to all primary controls
           800: '#173DB6',
           900: '#19388F',
-          950: '#0C1B33'
+          950: '#0C1B33' // Text applied to all standard text
         },
         secondary: {
           50: '#FFEFF3',
@@ -49,13 +53,13 @@ module.exports = {
           400: '#FF5D98',
           500: '#FF247A',
           600: '#FF1A7D',
-          700: '#E00061',
+          700: '#E00061', // Text applied to all secondary text
           800: '#B40056',
           900: '#990250',
           950: '#570026'
         },
         'secondary-text': {
-          50: '#F6F7F9',
+          50: '#F6F7F9', // Background for site
           100: '#EDEEF1',
           200: '#D7DBE0',
           300: '#B3BCC6',
