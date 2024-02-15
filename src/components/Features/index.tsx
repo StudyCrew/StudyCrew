@@ -1,5 +1,6 @@
+import cn from 'clsx'
 import Image from 'next/image'
-import classNames from 'classnames'
+import _isNil from 'lodash/isNil'
 import { useWindowSize } from '@uidotdev/usehooks'
 import React, { useMemo, useState, useCallback } from 'react'
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'
@@ -16,7 +17,7 @@ import {
 import './style.css'
 
 // TODO: Extract
-const getStageForID = (id: string): FeaturesStage => {
+const getStageForID = (id: FeaturesStageID): FeaturesStage => {
   switch (id) {
     case FeaturesStageID.StageOne:
       return FEATURES_STAGE_ONE
@@ -34,7 +35,8 @@ const getStageForID = (id: string): FeaturesStage => {
 
 const Features: React.FC<any> = (): JSX.Element => {
   const { width: windowWidth } = useWindowSize()
-  const isMobile = windowWidth <= MOBILE_WIDTH_BREAKPOINT
+  const isMobile =
+    !_isNil(windowWidth) && windowWidth <= MOBILE_WIDTH_BREAKPOINT
 
   const [cardWidth, setCardWidth] = useState<number>(0)
   const [stageOpenStatuses, setStageOpenStatuses] = useState<boolean[]>([
@@ -56,7 +58,7 @@ const Features: React.FC<any> = (): JSX.Element => {
   )
 
   const onStageClick = useCallback(
-    (id: string): void => {
+    (id: FeaturesStageID): void => {
       setCurrentStageID(id as FeaturesStageID)
       setCardWidth(0)
 
@@ -76,21 +78,24 @@ const Features: React.FC<any> = (): JSX.Element => {
   )
 
   const onNextStageCardClick = useCallback(
-    (id: string): void => {
+    (id: FeaturesStageID): void => {
       const nextStageActiveCardIndexes = [...stageActiveCardIndexes]
 
-      if (id === FeaturesStageID.StageOne) {
-        if (nextStageActiveCardIndexes[0] < currentStage.cards.length - 1) {
-          nextStageActiveCardIndexes[0] += 1
-        }
-      } else if (id === FeaturesStageID.StageTwo) {
-        if (nextStageActiveCardIndexes[1] < currentStage.cards.length - 1) {
-          nextStageActiveCardIndexes[1] += 1
-        }
-      } else if (id === FeaturesStageID.StageThree) {
-        if (nextStageActiveCardIndexes[2] < currentStage.cards.length - 1) {
-          nextStageActiveCardIndexes[2] += 1
-        }
+      if (
+        id === FeaturesStageID.StageOne &&
+        nextStageActiveCardIndexes[0] < currentStage.cards.length - 1
+      ) {
+        nextStageActiveCardIndexes[0] += 1
+      } else if (
+        id === FeaturesStageID.StageTwo &&
+        nextStageActiveCardIndexes[1] < currentStage.cards.length - 1
+      ) {
+        nextStageActiveCardIndexes[1] += 1
+      } else if (
+        id === FeaturesStageID.StageThree &&
+        nextStageActiveCardIndexes[2] < currentStage.cards.length - 1
+      ) {
+        nextStageActiveCardIndexes[2] += 1
       }
 
       setStageActiveCardIndexes(nextStageActiveCardIndexes)
@@ -99,21 +104,24 @@ const Features: React.FC<any> = (): JSX.Element => {
   )
 
   const onPrevStageCardClick = useCallback(
-    (id: string): void => {
+    (id: FeaturesStageID): void => {
       const nextStageActiveCardIndexes = [...stageActiveCardIndexes]
 
-      if (id === FeaturesStageID.StageOne) {
-        if (nextStageActiveCardIndexes[0] > 0) {
-          nextStageActiveCardIndexes[0] -= 1
-        }
-      } else if (id === FeaturesStageID.StageTwo) {
-        if (nextStageActiveCardIndexes[1] > 0) {
-          nextStageActiveCardIndexes[1] -= 1
-        }
-      } else if (id === FeaturesStageID.StageThree) {
-        if (nextStageActiveCardIndexes[2] > 0) {
-          nextStageActiveCardIndexes[2] -= 1
-        }
+      if (
+        id === FeaturesStageID.StageOne &&
+        nextStageActiveCardIndexes[0] > 0
+      ) {
+        nextStageActiveCardIndexes[0] -= 1
+      } else if (
+        id === FeaturesStageID.StageTwo &&
+        nextStageActiveCardIndexes[1] > 0
+      ) {
+        nextStageActiveCardIndexes[1] -= 1
+      } else if (
+        id === FeaturesStageID.StageThree &&
+        nextStageActiveCardIndexes[2] > 0
+      ) {
+        nextStageActiveCardIndexes[2] -= 1
       }
 
       setStageActiveCardIndexes(nextStageActiveCardIndexes)
@@ -131,7 +139,7 @@ const Features: React.FC<any> = (): JSX.Element => {
       </div>
 
       <div
-        className={classNames('align-middle justify-end gap-2.5 mt-12 mx-0', {
+        className={cn('align-middle justify-end gap-2.5 mt-12 mx-0', {
           flex: !isMobile,
           'flex-column': isMobile
         })}
@@ -142,7 +150,7 @@ const Features: React.FC<any> = (): JSX.Element => {
               <div
                 key={`stage-${i}-${id}`}
                 onClick={onStageClick.bind(null, id)}
-                className={classNames('stage', {
+                className={cn('stage', {
                   'active-stage': id === currentStageID
                 })}
               >
@@ -189,7 +197,7 @@ const Features: React.FC<any> = (): JSX.Element => {
                   <div className="card-wrapper flex" key={`stage-card-${i}`}>
                     <div
                       onClick={onPrevStageCardClick.bind(null, id)}
-                      className={classNames('flex stage-nav', {
+                      className={cn('flex stage-nav', {
                         disabled: stageActiveCardIndexes[i] === 0
                       })}
                     >
@@ -217,7 +225,7 @@ const Features: React.FC<any> = (): JSX.Element => {
                         {cards.map((_, cardI: number) => (
                           <li
                             key={cardI}
-                            className={classNames('stage-nav-dot', {
+                            className={cn('stage-nav-dot', {
                               active: cardI === stageActiveCardIndexes[i]
                             })}
                           />
@@ -227,7 +235,7 @@ const Features: React.FC<any> = (): JSX.Element => {
 
                     <div
                       onClick={onNextStageCardClick.bind(null, id)}
-                      className={classNames('flex stage-nav', {
+                      className={cn('flex stage-nav', {
                         disabled: stageActiveCardIndexes[i] === cards.length - 1
                       })}
                     >

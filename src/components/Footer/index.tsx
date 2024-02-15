@@ -3,9 +3,9 @@ import _isEmpty from 'lodash/isEmpty'
 import React, { useState, useCallback } from 'react'
 import { FaYoutube, FaLinkedin, FaFacebookF, FaInstagram } from 'react-icons/fa'
 
-import Logo from 'public/assets/Logo.svg'
-import scrollToRef from '@/hooks/scrollTo'
+import { scrollToRef } from '@/hooks'
 import { addToWaitlist } from '@/actions/waitlist.actions'
+import LOGO_SVG from 'public/assets/Logo.svg' assert { type: 'svg' }
 
 import { type FooterProps } from './types'
 
@@ -34,9 +34,7 @@ const Footer: React.FC<FooterProps> = (props: FooterProps): JSX.Element => {
       if (!waitlistEmail) {
         setWaitlistErrorMessage('Please enter your email address.')
         return
-      } else if (
-        !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(waitlistEmail)
-      ) {
+      } else if (!/^[\w.%+-]+@[A-Z\d.-]+\.[A-Z]{2,4}$/i.test(waitlistEmail)) {
         setWaitlistErrorMessage('Invalid email address')
         return
       }
@@ -56,11 +54,12 @@ const Footer: React.FC<FooterProps> = (props: FooterProps): JSX.Element => {
 
   const onSubmitWaitlistEmail = useCallback(() => {
     handleJoinWaitlist()
-      .then(() => {
+      .then((): void => {
         setWaitlistEmail('')
       })
       .catch((err: Error) => {
-        console.error(err.stack)
+        // eslint-disable-next-line no-console
+        console.error(err.message)
       })
   }, [handleJoinWaitlist, waitlistEmail])
 
@@ -94,7 +93,7 @@ const Footer: React.FC<FooterProps> = (props: FooterProps): JSX.Element => {
   return (
     <div className="bg-zircon-50 flex-column lg:flex">
       <div className="flex-column items-center lg:pl-16 lg:mr-16 py-6 lg:w-full">
-        <Image alt="Logo" src={Logo} className="mx-auto w-10" />
+        <Image alt="Logo" src={LOGO_SVG as string} className="mx-auto w-10" />
         <h3 className="footer-title heading-font text-center mt-2 mb-0 font-semibold">
           StudyCrew
         </h3>

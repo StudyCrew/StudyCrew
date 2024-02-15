@@ -1,5 +1,5 @@
 import React from 'react'
-import classNames from 'classnames'
+import cn from 'clsx'
 
 import faqsData from '@/data/faqsData'
 
@@ -10,10 +10,9 @@ import './style.css'
 
 const FAQs: React.FC<FAQsProps> = (props: FAQsProps): JSX.Element => {
   const { className } = props
-  const finalClassName = classNames(CLASS_NAME, className)
 
   return (
-    <div className={finalClassName}>
+    <div className={cn(CLASS_NAME, className)}>
       <div className="blue-neon-mist faq-mist-1"></div>
       <h2 className="faqs-heading">
         <span>FAQ</span>s

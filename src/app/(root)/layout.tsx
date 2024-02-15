@@ -39,11 +39,12 @@ export const metadata: Metadata = {
   twitter
 }
 
-export default async function RootLayout({
+// TODO: Define props interface
+const RootLayout = ({
   children
 }: {
   children: React.ReactNode
-}): Promise<JSX.Element> {
+}): JSX.Element => {
   return (
     <ClerkProvider
       appearance={{
@@ -63,3 +64,5 @@ export default async function RootLayout({
     </ClerkProvider>
   )
 }
+
+export default RootLayout

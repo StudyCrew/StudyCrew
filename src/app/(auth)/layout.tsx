@@ -5,7 +5,7 @@ import twitter from '@/metadata/twitter'
 import openGraph from '@/metadata/openGraph'
 import { ClerkProvider } from '@clerk/nextjs'
 import type { Metadata, Viewport } from 'next'
-import { ThemeProvider } from '@/components/theme-provider'
+import { ThemeProvider } from '@/components/theme_provider'
 
 import '@/app/globals.css'
 

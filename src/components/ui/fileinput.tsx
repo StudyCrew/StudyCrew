@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import { Input } from '@/components/ui/input'
 import { type FileInputProps } from '@/interface/controls/fileinput'
 
-const FileInput = React.forwardRef<HTMLInputElement, FileInputProps>(
-  ({ className, type, ...props }, ref) => {
+const FileInput = forwardRef<HTMLInputElement, FileInputProps>(
+  ({ className, type, ...props }) => {
     return (
       <Input
         label={props.label}
@@ -15,6 +15,7 @@ const FileInput = React.forwardRef<HTMLInputElement, FileInputProps>(
     )
   }
 )
+
 FileInput.displayName = 'FileInput'
 
 export default FileInput

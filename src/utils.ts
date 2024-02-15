@@ -1,3 +1,4 @@
+import _split from 'lodash/split'
 import { twMerge } from 'tailwind-merge'
 import { type ClassValue, clsx } from 'clsx'
 
@@ -6,7 +7,7 @@ export function cn(...inputs: ClassValue[]): string {
 }
 
 export const convertBase64ToFile = (base64String: string): File => {
-  const imageData = base64String.split(',')[1]
+  const imageData = _split(base64String, ',')[1]
   const binaryImageData = atob(imageData)
   const uint8Array = new Uint8Array(binaryImageData.length)
 

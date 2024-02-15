@@ -1,11 +1,14 @@
 /** @type {import('tailwindcss').Config} */
 
+import tailwindCSSAnimate from 'tailwindcss-animate'
+
 // TODO: Extract color codes as constants with descriptive names. Currently
 //       only a few are commented and therefore documented. It is unclear what
 ///      the others are meant for.
-module.exports = {
+const tailwindConfig = {
   darkMode: ['class'],
   content: ['./src/**/*.{ts,tsx}'],
+  plugins: [tailwindCSSAnimate],
   theme: {
     container: {
       center: true,
@@ -150,6 +153,7 @@ module.exports = {
         12: '3rem'
       }
     }
-  },
-  plugins: [require('tailwindcss-animate')]
+  }
 }
+
+export default tailwindConfig

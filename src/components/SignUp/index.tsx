@@ -2,8 +2,9 @@ import React, { useCallback, useEffect, useState } from 'react'
 import { addToWaitlist, getSpotsLeft } from '@/actions/waitlist.actions'
 
 import Button from '@/components/Button'
-
 import './style.css'
+
+const { NODE_ENV } = process.env
 
 function SignUp(): JSX.Element {
   const [email, setEmail] = useState<string>('')
@@ -16,7 +17,7 @@ function SignUp(): JSX.Element {
         setMessage('Please enter your email address.')
         return
       }
-      if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email)) {
+      if (!/^[\w.%+-]+@[A-Z\d.-]+\.[A-Z]{2,4}$/i.test(email)) {
         setMessage('Invalid email address')
       }
 
@@ -33,28 +34,41 @@ function SignUp(): JSX.Element {
     }
   }
 
-  const onHandleJoinWaitlist = useCallback(() => {
-    handleJoinWaitlist().catch((err: Error) => {
-      console.error(err.message)
+  const onHandleJoinWaitlist = useCallback((): void => {
+    handleJoinWaitlist().catch((err: Error): void => {
+      if (NODE_ENV === 'development') {
+        // eslint-disable-next-line no-console
+        console.error(err.stack)
+      } else {
+        // eslint-disable-next-line no-console
+        console.error(err.message)
+      }
     })
   }, [handleJoinWaitlist])
 
   const fetchSpotsLeft = async (): Promise<void> => {
     try {
       const response = await getSpotsLeft()
-      console.log(response)
       setSpotsLeft(response)
-    } catch (error) {
-      console.error('Error fetching spots left:', error)
+    } catch (err: any) {
+      // eslint-disable-next-line no-console
+      console.error(`Error fetching spots left: ${(err as Error).message}`)
+
+      if (NODE_ENV === 'development') {
+        // eslint-disable-next-line no-console
+        console.error((err as Error).stack)
+      }
     }
   }
-
   useEffect(() => {
-    const fetchData = async (): Promise<void> => {
-      await fetchSpotsLeft()
-    }
-    fetchData().catch((error) => {
-      console.log(error)
+    fetchSpotsLeft().catch((err: Error) => {
+      if (NODE_ENV === 'development') {
+        // eslint-disable-next-line no-console
+        console.error(err.stack)
+      } else {
+        // eslint-disable-next-line no-console
+        console.error(err.message)
+      }
     })
   }, [])
 

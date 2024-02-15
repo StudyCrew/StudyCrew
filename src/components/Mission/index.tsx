@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 
-import LogoGroup from 'public/assets/mission/LogoGroup.svg'
+import LOGO_GROUP_SVG from 'public/assets/mission/LogoGroup.svg' assert { type: 'svg' }
 
 import './style.css'
 
@@ -117,7 +117,12 @@ const Mission = (props: any): JSX.Element => {
         </div>
 
         <div className="relative w-full lg:w-1/2 items-center hidden lg:flex">
-          <Image alt="Mission Logos" src={LogoGroup} width={500} height={500} />
+          <Image
+            width={500}
+            height={500}
+            alt="Mission Logos"
+            src={LOGO_GROUP_SVG as string}
+          />
         </div>
       </div>
     </div>

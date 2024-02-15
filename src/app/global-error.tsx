@@ -16,6 +16,7 @@ const GlobalError = ({
   return (
     <html>
       <body>
+        {/* eslint-disable-next-line @typescript-eslint/no-unsafe-assignment */}
         <NextError statusCode={undefined as any} />
       </body>
     </html>
