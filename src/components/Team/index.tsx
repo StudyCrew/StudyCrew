@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 
 import Button from '@/components/Button'
-import teamMembers from '@/data/teamData'
+import { TEAM_MEMBERS } from '@/data'
 
 import './style.css'
 
@@ -38,8 +38,6 @@ const Team = (): JSX.Element => {
     window.location.href = 'https://forms.gle/CBKSjovcWeRGWbg2A'
   }
 
-  const allMembers = [...teamMembers, ...teamMembers]
-
   return (
     <div className="team-component">
       <div className="head-title">
@@ -53,11 +51,11 @@ const Team = (): JSX.Element => {
       </div>
       <div className="bg">
         <div className="team-cards" ref={scrollContainer}>
-          {allMembers.map((member, index) => (
-            <div className="team-card" key={index}>
-              <img src={member.avatar.src} alt={member.name} />
-              <h5>{member.name}</h5>
-              <p className="role">{member.role}</p>
+          {TEAM_MEMBERS.map(({ avatar, name, role }, i: number) => (
+            <div className="team-card" key={i}>
+              <img src={avatar} alt={name} />
+              <h5>{name}</h5>
+              <p className="role">{role}</p>
             </div>
           ))}
         </div>

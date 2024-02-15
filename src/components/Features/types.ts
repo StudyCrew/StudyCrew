@@ -4,16 +4,16 @@ export interface FeaturesStageCard {
   description: string
 }
 
-export interface FeaturesStage {
-  id: string
-  title: string
-  limit: number
-  description: string
-  cards: FeaturesStageCard[]
-}
-
 export enum FeaturesStageID {
   StageOne = 'stage-1',
   StageTwo = 'stage-2',
   StageThree = 'stage-3'
+}
+
+export interface FeaturesStage {
+  id: FeaturesStageID
+  title: string
+  limit: number
+  description: string
+  cards: FeaturesStageCard[]
 }

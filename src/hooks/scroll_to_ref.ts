@@ -1,4 +1,4 @@
-const scrollToRef = (ref: React.MutableRefObject<null>): void => {
+export const scrollToRef = (ref: React.MutableRefObject<null>): void => {
   const refContainerCurrent = ref.current as HTMLDivElement | null
   if (refContainerCurrent) {
     const y =
@@ -8,5 +8,3 @@ const scrollToRef = (ref: React.MutableRefObject<null>): void => {
     }, 100)
   }
 }
-
-export default scrollToRef

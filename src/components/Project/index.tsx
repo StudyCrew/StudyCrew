@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 
-import project_image from 'public/assets/project-image.jpg'
+import PROJECT_IMAGE_JPG from 'public/assets/project-image.jpg' assert { type: 'jpg' }
 
 import './style.css'
 
@@ -28,7 +28,7 @@ const Project = (): JSX.Element => {
 
       <div className="project-right-column">
         <Image
-          src={project_image}
+          src={PROJECT_IMAGE_JPG}
           className="project-image"
           alt="Project representation"
         />

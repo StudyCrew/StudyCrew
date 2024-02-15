@@ -1,5 +1,5 @@
 import React from 'react'
-import scrollToRef from '@/hooks/scrollTo'
+import { scrollToRef } from '@/hooks'
 
 import { type NavbarProps } from './types'
 import './style.css'
@@ -46,6 +46,7 @@ const Navbar: React.FC<NavbarProps> = (props: NavbarProps): JSX.Element => {
       default:
         return
     }
+
     scrollToRef(ref)
   }
 

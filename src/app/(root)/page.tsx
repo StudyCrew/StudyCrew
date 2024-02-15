@@ -3,15 +3,14 @@
 import Hero from '@/components/Hero'
 import Team from '@/components/Team'
 import Faqs from '@/components/FAQs'
+import { scrollToRef } from '@/hooks'
 import Header from '@/components/Header'
 import SignUp from '@/components/SignUp'
 import Footer from '@/components/Footer'
 import Mission from '@/components/Mission'
 import Project from '@/components/Project'
-import scrollToRef from '@/hooks/scrollTo'
 import Features from '@/components/Features'
-import useScrollFadeIn from '@/hooks/useFadeIn'
-import React, { useEffect, useState } from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
 
 function App(): JSX.Element {
@@ -23,16 +22,15 @@ function App(): JSX.Element {
     setActivePage('signup')
     scrollToRef(signupRef)
   }
-  const animatedItem = useScrollFadeIn()
 
   const [activePage, setActivePage] = useState('')
 
-  const missionRef = React.useRef(null)
-  const featuresRef = React.useRef(null)
-  const projectRef = React.useRef(null)
-  const teamRef = React.useRef(null)
-  const signupRef = React.useRef(null)
-  const faqRef = React.useRef(null)
+  const missionRef = useRef(null)
+  const featuresRef = useRef(null)
+  const projectRef = useRef(null)
+  const teamRef = useRef(null)
+  const signupRef = useRef(null)
+  const faqRef = useRef(null)
 
   useEffect(() => {
     const missionNode = missionRef.current
@@ -42,28 +40,39 @@ function App(): JSX.Element {
     const signupNode = signupRef.current
     const faqNode = faqRef.current
 
+    // TODO: Refactor this entire approach. For now, the linter rules are
+    //       disabled.
     const callback = (entries: any): void => {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access,@typescript-eslint/no-unsafe-call
       entries.forEach((entry: any) => {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
         if (entry.isIntersecting) {
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
           switch (entry.target.className) {
             case 'mission-component':
               setActivePage('mission')
               break
+
             case 'features-component':
               setActivePage('features')
               break
+
             case 'project-component':
               setActivePage('project')
               break
+
             case 'empower-component':
               setActivePage('signup')
               break
+
             case 'team-component':
               setActivePage('team')
               break
+
             case 'faq-component':
               setActivePage('faq')
               break
+
             default:
               break
           }
@@ -78,20 +87,54 @@ function App(): JSX.Element {
 
     const observer = new IntersectionObserver(callback, options)
 
-    if (missionNode) observer.observe(missionNode)
-    if (featuresNode) observer.observe(featuresNode)
-    if (projectNode) observer.observe(projectNode)
-    if (teamNode) observer.observe(teamNode)
-    if (signupNode) observer.observe(signupNode)
-    if (faqNode) observer.observe(faqNode)
+    if (missionNode) {
+      observer.observe(missionNode)
+    }
+
+    if (featuresNode) {
+      observer.observe(featuresNode)
+    }
+
+    if (projectNode) {
+      observer.observe(projectNode)
+    }
+
+    if (teamNode) {
+      observer.observe(teamNode)
+    }
+
+    if (signupNode) {
+      observer.observe(signupNode)
+    }
+
+    if (faqNode) {
+      observer.observe(faqNode)
+    }
 
     return () => {
-      if (missionNode) observer.unobserve(missionNode)
-      if (featuresNode) observer.unobserve(featuresNode)
-      if (projectNode) observer.unobserve(projectNode)
-      if (teamNode) observer.unobserve(teamNode)
-      if (signupNode) observer.unobserve(signupNode)
-      if (faqNode) observer.unobserve(faqNode)
+      if (missionNode) {
+        observer.unobserve(missionNode)
+      }
+
+      if (featuresNode) {
+        observer.unobserve(featuresNode)
+      }
+
+      if (projectNode) {
+        observer.unobserve(projectNode)
+      }
+
+      if (signupNode) {
+        observer.unobserve(signupNode)
+      }
+
+      if (signupNode) {
+        observer.unobserve(signupNode)
+      }
+
+      if (faqNode) {
+        observer.unobserve(faqNode)
+      }
     }
   }, [])
 
@@ -113,31 +156,30 @@ function App(): JSX.Element {
       <Hero
         handleLearnMoreClick={handleLearnMoreClick}
         handleJoinWaitlistClick={handleJoinWaitlistClick}
-        {...animatedItem}
       />
 
       <div className="mission-component" ref={missionRef}>
-        <Mission {...animatedItem} />
+        <Mission />
       </div>
 
       <div className="features-component" ref={featuresRef}>
-        <Features {...animatedItem} />
+        <Features />
       </div>
 
       <div className="project-component" ref={projectRef}>
-        <Project {...animatedItem} />
+        <Project />
       </div>
 
       <div className="empower-component" ref={signupRef}>
-        <SignUp {...animatedItem} />
+        <SignUp />
       </div>
 
       <div className="team-component" ref={teamRef}>
-        <Team {...animatedItem} />
+        <Team />
       </div>
 
       <div className="faq-component" ref={faqRef}>
-        <Faqs {...animatedItem} />
+        <Faqs />
       </div>
 
       <div className="footer-component">

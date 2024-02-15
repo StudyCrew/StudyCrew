@@ -1,6 +1,6 @@
 'use server'
 
-import { connectToDB } from '@/mongoose'
+import { connectToDB } from '@/db'
 import { revalidatePath } from 'next/cache'
 import { clerkClient } from '@clerk/nextjs'
 import { convertBase64ToFile } from '@/utils'
@@ -10,12 +10,11 @@ export async function getUserInfo(id: string): Promise<IUser | null> {
   try {
     await connectToDB()
 
-    const user = await User.findOne({
+    return await User.findOne({
       clerkId: id
     })
-    return user
-  } catch (error: any) {
-    throw new Error(`Failed to create/update user: ${error.message}`)
+  } catch (err: any) {
+    throw new Error(`Failed to create/update user: ${(err as Error).message}`)
   }
 }
 
@@ -39,14 +38,15 @@ export async function updateUser(userData: IUser, path: string): Promise<void> {
     const file: File = convertBase64ToFile(userData.image)
     clerkClient.users
       .updateUserProfileImage(userData.clerkId, { file })
-      .catch((err) => {
-        console.table(err.errors)
+      .catch((err: Error) => {
+        // eslint-disable-next-line no-console
+        console.error(err.message)
       })
 
     if (path === '/profile/edit') {
       revalidatePath(path)
     }
-  } catch (error: any) {
-    throw new Error(`Failed to create/update user: ${error.message}`)
+  } catch (err: any) {
+    throw new Error(`Failed to create/update user: ${(err as Error).message}`)
   }
 }
