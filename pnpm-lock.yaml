@@ -18,8 +18,8 @@ dependencies:
     specifier: ^3.3.4
     version: 3.3.4(react-hook-form@7.49.3)
   '@next/third-parties':
-    specifier: 14.1.1-canary.54
-    version: 14.1.1-canary.54(next@14.1.0)(react@18.2.0)
+    specifier: 14.1.1-canary.73
+    version: 14.1.1-canary.73(next@14.1.0)(react@18.2.0)
   '@radix-ui/react-dropdown-menu':
     specifier: ^2.0.6
     version: 2.0.6(@types/react-dom@18.2.18)(@types/react@18.2.55)(react-dom@18.2.0)(react@18.2.0)
@@ -1760,8 +1760,8 @@ packages:
     dev: false
     optional: true
 
-  /@next/third-parties@14.1.1-canary.54(next@14.1.0)(react@18.2.0):
-    resolution: {integrity: sha512-MvHAKlUNCsav8qpK1tbjAcFFHcsI+mfSX1JjCH5jN/L58eJjtt1pmamvR91xTqSJhLo+5Ag2M5NJzhwkKJMQPA==}
+  /@next/third-parties@14.1.1-canary.73(next@14.1.0)(react@18.2.0):
+    resolution: {integrity: sha512-+tm3DVkMocz1a2U9irBAC6ryLF0wVKHcu49z6XRO0+ex8gg7o9+lD9vIc9qVlSsAJhd2+cFkP3gdBGbuG5tgng==}
     peerDependencies:
       next: ^13.0.0 || ^14.0.0
       react: ^18.2.0
