@@ -28,8 +28,11 @@
     "next-env.d.ts",
     "src/declarations.d.ts",
     "*.ts",
+    "*.tsx",
     "src/**/*",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
+    "components/**/*",
+    "lib/**/*"
   ],
   "exclude": ["node_modules"]
 }
