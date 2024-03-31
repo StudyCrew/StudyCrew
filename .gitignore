@@ -141,4 +141,4 @@ public/workbox-*
 .env*
 .flaskenv*
 !.env.project
-!.env.vault
+.env.vault
