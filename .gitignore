@@ -144,3 +144,5 @@ public/workbox-*
 !.env.vault
 # Sentry Config File
 .sentryclirc
+
+.idea
