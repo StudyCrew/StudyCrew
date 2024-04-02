@@ -99,15 +99,15 @@ const Mission = (props: any): JSX.Element => {
       </svg>
 
       <div className="bg-gradient-to-r from-primary-500 to-gradient-500 2xl:h-85vh h-75vh max-w-100vw relative flex top-36 px-6 lg:px-36 z-1">
-        <div className="top-28 lg:top-20vh relative w-full lg:w-1/2 sm:text-sm md:text-base lg:text-lg xl:text-xl">
-          <div className="flex flex-col">
-            <h3 className="text-zircon-50 lg:pb-4 pb-1 mb-0 2xl:top-24 lg:top-16 relative">
+        <div className="top-28 lg:top-20vh relative w-full lg:w-1/2 sm:text-sm md:text-base lg:text-lg xl:text-xl flex justify-center items-start">
+          <div className="flex flex-col max-w-md">
+            <h3 className="text-zircon-50 lg:pb-4 pb-1 mb-0 relative">
               OUR MISSION
             </h3>
-            <h2 className="text-zircon-50 slogan 2xl:top-24 lg:top-16 relative leading-12">
+            <h2 className="text-zircon-50 slogan mb-4 leading-12">
               We support education for all.
             </h2>
-            <p className="absolute mr-5% lg:top-80 top-60 text-white">
+            <p className="text-white">
               StudyCrew is committed to making education accessible,
               collaborative, and engaging through innovative learning platforms.
               Our vision is to provide every student with the resources and
