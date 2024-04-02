@@ -13,7 +13,7 @@ const Mission = (props: any): JSX.Element => {
         viewBox="0 0 2628 376"
         fill="none"
         style={{ width: '100%' }}
-        className="chevron-gradient hidden lg:block"
+        className="chevron-gradient"
         {...props}
         preserveAspectRatio="none"
       >
@@ -43,7 +43,7 @@ const Mission = (props: any): JSX.Element => {
         viewBox="0 0 2628 376"
         fill="none"
         style={{ width: '100%' }}
-        className="chevron-white hidden lg:block"
+        className="chevron-white"
         {...props}
         preserveAspectRatio="none"
       >
@@ -73,7 +73,7 @@ const Mission = (props: any): JSX.Element => {
         viewBox="0 0 2628 376"
         fill="none"
         style={{ width: '100%' }}
-        className="second-chevron-gradient hidden lg:block"
+        className="second-chevron-gradient"
         {...props}
         preserveAspectRatio="none"
       >
@@ -98,13 +98,11 @@ const Mission = (props: any): JSX.Element => {
         </defs>
       </svg>
 
-      <div className="bg-gradient-to-r from-primary-500 to-gradient-500 h-full relative flex flex-col justify-center px-6 lg:px-36 lg:pt-48 z-1">
-        <div className="flex flex-col lg:flex-row md:mt-20">
-          <div className="lg:w-1/2 mt-8 flex justify-center lg:justify-start">
+      <div className="bg-gradient-to-r from-primary-500 to-gradient-500 h-full relative flex flex-col justify-center px-6 lg:px-36 z-1 top-36 mx-auto">
+        <div className="flex flex-col md:flex-row items-center mt-32 gap-8">
+          <div className="lg:w-1/2 flex justify-center md:justify-start mb-8">
             <div className="max-w-md text-2xl lg:mb-8">
-              <h3 className="text-zircon-50 lg:pb-4 pb-1 mb-0 relative">
-                OUR MISSION
-              </h3>
+              <h3 className="text-zircon-50">OUR MISSION</h3>
               <h2 className="text-zircon-50 slogan mb-4 leading-12">
                 We support education for all.
               </h2>
@@ -116,7 +114,7 @@ const Mission = (props: any): JSX.Element => {
               </p>
             </div>
           </div>
-          <div className="lg:w-1/2 lg:pr-12 flex justify-center items-center my-8">
+          <div className="md:flex md:justify-end md:my-8 hidden">
             <Image
               width={600}
               height={600}
