@@ -13,7 +13,7 @@ const Mission = (props: any): JSX.Element => {
         viewBox="0 0 2628 376"
         fill="none"
         style={{ width: '100%' }}
-        className="chevron-gradient"
+        className="chevron-gradient hidden lg:block"
         {...props}
         preserveAspectRatio="none"
       >
@@ -43,7 +43,7 @@ const Mission = (props: any): JSX.Element => {
         viewBox="0 0 2628 376"
         fill="none"
         style={{ width: '100%' }}
-        className="chevron-white"
+        className="chevron-white hidden lg:block"
         {...props}
         preserveAspectRatio="none"
       >
@@ -73,7 +73,7 @@ const Mission = (props: any): JSX.Element => {
         viewBox="0 0 2628 376"
         fill="none"
         style={{ width: '100%' }}
-        className="second-chevron-gradient"
+        className="second-chevron-gradient hidden lg:block"
         {...props}
         preserveAspectRatio="none"
       >
@@ -98,31 +98,32 @@ const Mission = (props: any): JSX.Element => {
         </defs>
       </svg>
 
-      <div className="bg-gradient-to-r from-primary-500 to-gradient-500 2xl:h-85vh h-75vh max-w-100vw relative flex top-36 px-6 lg:px-36 z-1">
-        <div className="top-28 lg:top-20vh relative w-full lg:w-1/2 sm:text-sm md:text-base lg:text-lg xl:text-xl flex justify-center items-start">
-          <div className="flex flex-col max-w-md">
-            <h3 className="text-zircon-50 lg:pb-4 pb-1 mb-0 relative">
-              OUR MISSION
-            </h3>
-            <h2 className="text-zircon-50 slogan mb-4 leading-12">
-              We support education for all.
-            </h2>
-            <p className="text-white">
-              StudyCrew is committed to making education accessible,
-              collaborative, and engaging through innovative learning platforms.
-              Our vision is to provide every student with the resources and
-              community they need to reach their full potential.
-            </p>
+      <div className="bg-gradient-to-r from-primary-500 to-gradient-500 h-full relative flex flex-col justify-center px-6 lg:px-36 lg:pt-48 z-1">
+        <div className="flex flex-col lg:flex-row md:mt-20">
+          <div className="lg:w-1/2 mt-8 flex justify-center lg:justify-start">
+            <div className="max-w-md text-2xl lg:mb-8">
+              <h3 className="text-zircon-50 lg:pb-4 pb-1 mb-0 relative">
+                OUR MISSION
+              </h3>
+              <h2 className="text-zircon-50 slogan mb-4 leading-12">
+                We support education for all.
+              </h2>
+              <p className="text-white">
+                StudyCrew is committed to making education accessible,
+                collaborative, and engaging through innovative learning
+                platforms. Our vision is to provide every student with the
+                resources and community they need to reach their full potential.
+              </p>
+            </div>
           </div>
-        </div>
-
-        <div className="relative w-full lg:w-1/2 items-center hidden lg:flex">
-          <Image
-            width={500}
-            height={500}
-            alt="Mission Logos"
-            src={LOGO_GROUP_SVG as string}
-          />
+          <div className="lg:w-1/2 lg:pr-12 flex justify-center items-center my-8">
+            <Image
+              width={600}
+              height={600}
+              alt="Mission Logos"
+              src={LOGO_GROUP_SVG as string}
+            />
+          </div>
         </div>
       </div>
     </div>
