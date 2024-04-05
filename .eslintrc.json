@@ -29,7 +29,8 @@
     "plugin:jsonc/recommended-with-json",
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended-requiring-type-checking"
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "prettier"
   ],
   "plugins": [
     "pure",
@@ -45,7 +46,8 @@
     "json-format",
     "optimize-regex",
     "@typescript-eslint",
-    "write-good-comments"
+    "write-good-comments",
+    "prettier"
   ],
   "settings": {
     "react": {

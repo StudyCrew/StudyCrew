@@ -9,8 +9,8 @@ interface CheckboxProps
 }
 
 const Checkbox = React.forwardRef<
-React.ElementRef<typeof CheckboxPrimitive.Root>,
-CheckboxProps
+  React.ElementRef<typeof CheckboxPrimitive.Root>,
+  CheckboxProps
 >((props, ref) => {
   const { className, ...rest } = props
 

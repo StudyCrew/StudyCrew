@@ -17,7 +17,7 @@ const FAQs: React.FC<FAQsProps> = (props: FAQsProps): JSX.Element => {
       <h2 className="faqs-heading">
         <span>FAQ</span>s
       </h2>
-      <p className="faqs-des">
+      <p className="faqs-des px-4">
         We are here to help you with any question you have
       </p>
       <div className="questions-list">
