@@ -44,7 +44,7 @@ const Team = (): JSX.Element => {
         <h2 className="heading">
           Our <span className="heading">Team</span>
         </h2>
-        <p>
+        <p className="text-center px-4">
           Our team of talented and open-minded individuals makes Study Crew one
           of the most diverse sets of collaborators in the world.
         </p>
