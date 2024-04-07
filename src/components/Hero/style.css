@@ -61,17 +61,19 @@
   display: flex;
   justify-content: center;
   gap: 1.5rem;
-  button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    svg {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-  }
+}
+
+.button-group button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.button-group button svg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .text-transition {
