@@ -28,12 +28,12 @@ const Project = (): JSX.Element => {
           className="w-full h-full object-cover"
           alt="Project representation"
         />
-        <blockquote className="absolute bottom-0 left-0 p-12 bg-white/65 backdrop-blur-lg">
+        <blockquote className="absolute bottom-0 left-0 flex flex-col gap-2 p-12 bg-white/65 backdrop-blur-lg">
           <p>
             “Every student deserves a dynamic and engaging educational
             experience. Let&apos;s build it together.”
           </p>
-          <cite className="text-lg mt-8 text-secondary-text-700">
+          <cite className="text-lg text-secondary-text-700">
             - Jacob, Founder of StudyCrew
           </cite>
         </blockquote>
