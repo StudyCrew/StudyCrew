@@ -14,7 +14,8 @@
 
 .title {
   margin: auto;
-  max-width: 64vw;
+  max-width: 60rem;
+  width: 100%;
   font-size: 70px;
   font-weight: 500;
   letter-spacing: -0.01em;
@@ -59,6 +60,19 @@
   display: flex;
   justify-content: center;
   gap: 1.5rem;
+}
+
+.button-group button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.button-group button svg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .text-transition {
