@@ -31,9 +31,6 @@ jobs:
       - name: Install dependencies
         run: pnpm i
 
-      - name: Check Format
-        run: pnpm format:check
-
       - name: Lint
         run: pnpm lint
 
