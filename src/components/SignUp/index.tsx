@@ -45,7 +45,7 @@ function SignUp(): JSX.Element {
 
       setEmail('') // Clear the input after successful operation
       setIsSucceed(true)
-      
+
       await fetchSpotsLeft()
     } catch (error) {
       setErrorMessage('Failed to join waitlist. Please try again.')
@@ -171,90 +171,98 @@ function SignUp(): JSX.Element {
             ? `Spots left for Version 1.0: ${spotsLeft}`
             : 'Loading spots...'}
         </p>
+        <div>
+          {isSucceed
+            ? (
+                <div className="flex justify-center w-full pt-4">
+                  <div className="max-w-[320px] md:max-w-[390px] p-4 border text-center border-primary-400 rounded-md">
+                    <h6 className="text-primary-500 mb-2 w-full text-center">
+                      Thank you for joining the StudyCrew waitlist!
+                    </h6>
 
-        {isSucceed
-          ? (
-            <div className="flex justify-center w-full pt-4">
-              <div className="max-w-[320px] md:max-w-[390px] p-4 border text-center border-primary-400 rounded-md">
-                <h6 className="text-primary-500 mb-2 w-full text-center">
-                Thank you for joining the StudyCrew waitlist!
-                </h6>
+                    <p className="text-sm mb-3 w-full text-center">
+                      We&apos;ll keep you updated on your waitlist status and inform you
+                      as soon as it&apos;s available.
+                    </p>
 
-                <p className="text-sm mb-3 w-full text-center">
-                We&apos;ll keep you updated on your waitlist status and inform you as soon as it&apos;s available.
-                </p>
-
-                <div className="w-full text-center">
-                  <p className="text-sm w-full text-center">Find us on</p>
-                  <div className="flex items-center justify-center gap-4 w-full">
-                    <div className="flex items-center">
-                      <Image
-                        height={20}
-                        alt="youtube"
-                        width={20}
-                        src={'/assets/sign-up/youtube-logo.svg'}
-                      />
-                      <Link href={'#'} className="text-sm text-primary-500 ml-1">
-                      @studycrewofficial
-                      </Link>
+                    <div className="w-full text-center">
+                      <p className="text-sm w-full text-center">Find us on</p>
+                      <div className="flex items-center justify-center gap-4 w-full">
+                        <div className="flex items-center">
+                          <Image
+                            height={20}
+                            alt="youtube"
+                            width={20}
+                            src={'/assets/sign-up/youtube-logo.svg'}
+                          />
+                          <Link
+                          href={'#'}
+                          className="text-sm text-primary-500 ml-1"
+                        >
+                            @studycrewofficial
+                          </Link>
+                        </div>
+                        <div className="flex items-center">
+                          <Image
+                            height={20}
+                            alt="instagram"
+                            width={20}
+                            src={'/assets/sign-up/instagram-logo.svg'}
+                          />
+                          <Link
+                          href={'#'}
+                            className="text-sm text-primary-500 ml-1"
+                          >
+                            @studycrew.world
+                          </Link>
+                        </div>
+                      </div>
                     </div>
-                    <div className="flex items-center">
-                      <Image
-                        height={20}
-                        alt="instagram"
-                        width={20}
-                        src={'/assets/sign-up/instagram-logo.svg'}
-                      />
-                      <Link href={'#'} className="text-sm text-primary-500 ml-1">
-                      @studycrew.world
-                      </Link>
-                    </div>
+                </div>
+                </div>
+              )
+            : (
+                <React.Fragment>
+                  <div className="email-input">
+                    <input
+                      type="email"
+                      placeholder="Enter your email"
+                      value={email}
+                      onChange={(e) => {
+                        setEmail(e.target.value)
+                      }}
+                    />
+                    <Button onClick={onHandleJoinWaitlist}>Join WaitList</Button>
                   </div>
+                  <div className="flex items-center justify-center space-x-2 my-4">
+                    <Checkbox
+                      checked={ageChecked}
+                      onCheckedChange={() => {
+                        setAgeChecked((prev) => !prev)
+                      }}
+                      id="age"
+                    />
+                    <label
+                      htmlFor="age"
+                      className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                    >
+                      I confirm that I am 16 years or older
+                    </label>
+                  </div>
+                </React.Fragment>
+              )
+          }
+
+          {errorMessage
+            ? (
+              <div className="flex justify-center w-full">
+                <div className="max-w-[300px] p-3 bg-red-400 text-white rounded-md">
+                  {errorMessage}
                 </div>
               </div>
-            </div>
-            )
-          : (
-            <React.Fragment>
-              <div className="email-input">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  value={email}
-                  onChange={(e) => {
-                    setEmail(e.target.value)
-                  }}
-                />
-                <Button onClick={onHandleJoinWaitlist}>Join WaitList</Button>
-              </div>
-              <div className="flex items-center justify-center space-x-2 my-4">
-                <Checkbox
-                  checked={ageChecked}
-                  onCheckedChange={() => {
-                    setAgeChecked((prev) => !prev)
-                  }}
-                  id="age"
-                />
-                <label
-                  htmlFor="age"
-                  className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                >
-                I confirm that I am 16 years or older
-                </label>
-              </div>
-            </React.Fragment>
-            )}
-
-        {errorMessage
-          ? (
-            <div className="flex justify-center w-full">
-              <div className="max-w-[300px] p-3 bg-red-400 text-white rounded-md">
-                {errorMessage}
-              </div>
-            </div>
-            )
-          : null}
-
+              )
+            : null}
+        </div>
       </div>
 
       <div className="right-wing">

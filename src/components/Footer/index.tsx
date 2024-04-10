@@ -8,6 +8,7 @@ import { addToWaitlist } from '@/actions/waitlist.actions'
 import LOGO_SVG from 'public/assets/Logo.svg' assert { type: 'svg' }
 
 import { type FooterProps } from './types'
+import { Checkbox } from '../ui/checkbox'
 
 const Footer: React.FC<FooterProps> = (props: FooterProps): JSX.Element => {
   const {
@@ -21,6 +22,7 @@ const Footer: React.FC<FooterProps> = (props: FooterProps): JSX.Element => {
   } = props
 
   const [waitlistEmail, setWaitlistEmail] = useState<string>('')
+  const [ageChecked, setAgeChecked] = useState(false)
   const [waitlistErrorMessage, setWaitlistErrorMessage] = useState<string>('')
   const onChangeWaitlistEmail = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -36,6 +38,13 @@ const Footer: React.FC<FooterProps> = (props: FooterProps): JSX.Element => {
         return
       } else if (!/^[\w.%+-]+@[A-Z\d.-]+\.[A-Z]{2,4}$/i.test(waitlistEmail)) {
         setWaitlistErrorMessage('Invalid email address')
+        return
+      }
+
+      if (!ageChecked) {
+        setWaitlistErrorMessage(
+          'Sorry, our waitlist is only open to indeviduals who are 16 years of age or older.'
+        )
         return
       }
 
@@ -291,6 +300,23 @@ const Footer: React.FC<FooterProps> = (props: FooterProps): JSX.Element => {
           onChange={onChangeWaitlistEmail}
           className="mr-4 lg:mr-0 mb-4 border-2 border-blue-300 px-4 py-2 rounded-lg w-3/4"
         />
+
+        <div className="flex items-center justify-start space-x-2 mb-4">
+          <Checkbox
+            checked={ageChecked}
+            onCheckedChange={() => {
+              setAgeChecked((prev) => !prev)
+            }}
+            id="age"
+          />
+          <label
+            htmlFor="age"
+            className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+          >
+            I confirm that I am 16 years or older
+          </label>
+        </div>
+
         <button
           onClick={onSubmitWaitlistEmail}
           className="text-white bg-blue-500 px-4 rounded-lg text-center py-2"
