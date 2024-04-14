@@ -1,10 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 
 import tailwindCSSAnimate from 'tailwindcss-animate'
-
 // TODO: Extract color codes as constants with descriptive names. Currently
 //       only a few are commented and therefore documented. It is unclear what
 ///      the others are meant for.
+import path from 'path'
+
 const tailwindConfig = {
   darkMode: ['class'],
   content: ['./src/**/*.{ts,tsx}'],
@@ -18,6 +19,10 @@ const tailwindConfig = {
       }
     },
     extend: {
+     fontFamily:{
+     'sans': ['DM Sans', 'ui-sans-serif', 'system-ui'],
+     'Rubik': ['Rubik', 'ui-serif']
+     },
       zIndex: {
         1: '1',
         200: '200'
@@ -153,7 +158,14 @@ const tailwindConfig = {
         12: '3rem'
       }
     }
+  },
+  paths:{
+     fonts: [
+      path.resolve(__dirname, 'public', 'fonts', 'dmsans'),
+      path.resolve(__dirname, 'public', 'fonts', 'rubik'),
+    ],
   }
 }
+
 
 export default tailwindConfig
