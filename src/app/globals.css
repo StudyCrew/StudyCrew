@@ -17,8 +17,6 @@
   --light-background-color: #f2f7ff;
   --primary-text-color: #0c1b33;
   --secondary-text-color: #434c59;
-  --heading-font: 'Rubik', sans-serif;
-  --text-font: 'DM Sans', sans-serif;
 }
 
 body {
@@ -47,7 +45,7 @@ h4,
 h5,
 h6,
 button {
-  font-family: var(--heading-font);
+  font-family: 'Rubik';
   color: var(--primary-text-color);
 }
 
@@ -56,11 +54,11 @@ p,
 span,
 input,
 textarea {
-  font-family: var(--text-font);
+  font-family: 'sans';
 }
 
 h3 {
-  font-family: var(--text-font);
+  font-family: 'sans';
   font-weight: 300;
   font-size: 22px;
 }
@@ -68,12 +66,12 @@ h3 {
 h2 {
   font-weight: 500;
   font-size: 50px;
-  font-family: var(--heading-font);
+  font-family: 'Rubik';
 }
 
 h2 span {
   color: var(--primary-color);
-  font-family: var(--heading-font);
+  font-family: 'Rubik';
 }
 
 p {
@@ -82,7 +80,7 @@ p {
 }
 
 .heading-font {
-  font-family: var(--heading-font);
+  font-family: 'Rubik';
 }
 
 .text-gradient {
@@ -96,7 +94,7 @@ p {
 }
 
 .text-font {
-  font-family: var(--text-font);
+  font-family: 'sans';
 }
 
 .primary-text-color {
