@@ -16,7 +16,7 @@
     "test": "pnpm exec playwright test"
   },
   "dependencies": {
-    "@clerk/nextjs": "^4.29.4",
+    "@clerk/nextjs": "^4.30.0",
     "@clerk/themes": "^1.7.9",
     "@ducanh2912/next-pwa": "^10.2.2",
     "@hookform/resolvers": "^3.3.4",
