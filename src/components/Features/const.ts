@@ -8,10 +8,9 @@ import LEARNING_PATHS_SVG from 'public/assets/features/learning_paths.svg' asser
 import VIRTUAL_EVENTS_SVG from 'public/assets/features/virtual_events.svg' assert { type: 'svg' }
 import PERSONAL_DASHBOARD_SVG from 'public/assets/features/personal_dashboard.svg' assert { type: 'svg' }
 import MOBILE_APPLICATION_SVG from 'public/assets/features/mobile_application.svg' assert { type: 'svg' }
-import VIRTUAL_STUDY_ROOMS_SVG from 'public/assets/features/virtual_study_rooms.svg' assert { type: 'svg' }
 import MULTILINGUAL_SUPPORT_SVG from 'public/assets/features/multilingual_support.svg' assert { type: 'svg' }
-import LEARNING_ENVIRONMENTS_SVG from 'public/assets/features/learning_environments.svg' assert { type: 'svg' }
-import COLLLABORATIVE_PROJECTSS_SVG from 'public/assets/features/collaborative_projects.svg' assert { type: 'svg' }
+import USER_FEEDBACK_SVG from 'public/assets/features/user_feedback.svg' assert { type: 'svg' }
+import COURSES_SVG from 'public/assets/features/courses.svg' assert { type: 'svg' }
 
 import { FeaturesStageID, type FeaturesStage } from './types'
 
@@ -102,22 +101,16 @@ export const FEATURES_STAGE_THREE: FeaturesStage = {
   description: 'Futuristic Learning',
   cards: [
     {
-      image: LEARNING_ENVIRONMENTS_SVG as string,
-      title: '3D Learning Environments',
+      image: USER_FEEDBACK_SVG as string,
+      title: 'User Feedback',
       description:
-        'Step into the future of learning with our 3D learning environments. Learn through exploration and engage with topics like never before.'
+        'We will incorporate your feedback in stage three to introduce new features that make education more accessible, collaborative, and engaging.'
     },
     {
-      image: COLLLABORATIVE_PROJECTSS_SVG as string,
-      title: 'Collaborative Projects',
+      image: COURSES_SVG as string,
+      title: 'Courses',
       description:
-        'Dive into collaborative projects that not only enhance your knowledge but also improve your teamwork and communication skills.'
-    },
-    {
-      image: VIRTUAL_STUDY_ROOMS_SVG as string,
-      title: 'Virtual Study Rooms',
-      description:
-        'Dive into immersive, real-time study sessions with peers. Collaborate, discuss, and learn together in our interactive digital spaces, designed to make online learning feel just like being in the same room.'
+        'A curated journey into diverse subjects. Engage with structured content, gain hands-on experience, and progress at your own pace. The courses will be in video format, with interactive and collaborative elements added.'
     },
     {
       image: VIRTUAL_EVENTS_SVG as string,
