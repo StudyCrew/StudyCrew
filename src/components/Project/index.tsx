@@ -10,7 +10,9 @@ const Project = (): JSX.Element => {
     <div className="flex bg-gradient-to-r from-primary-500 to-gradient-500">
       <div className="flex flex-col gap-2 px-11 md:px-36 py-14">
         <h2 className="text-lg font-normal text-zircon-50">Our Project</h2>
-        <h3 className="text-5xl font-semibold m-0 text-zircon-50">Transforming Education Together.</h3>
+        <h3 className="text-5xl font-semibold m-0 text-zircon-50">
+          Transforming Education Together.
+        </h3>
         <p className="text-zircon-50">
           Dedicated to transforming the educational landscape, our platform
           prioritizes accessibility, collaboration, and engagement. We are
