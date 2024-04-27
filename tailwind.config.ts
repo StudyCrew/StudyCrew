@@ -10,6 +10,10 @@ const tailwindConfig = {
   content: ['./src/**/*.{ts,tsx}'],
   plugins: [tailwindCSSAnimate],
   theme: {
+    fontFamily: {
+      'sans': ['"DM Sans"', 'ui-sans-serif'],
+      'serif': ['Rubik','ui-serif']
+    },
     container: {
       center: true,
       padding: '2rem',
