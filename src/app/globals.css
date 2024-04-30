@@ -1,10 +1,26 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,200;0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,200;1,9..40,300;1,9..40,400;1,9..40,600&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,500&display=swap');
-
+@tailwind base;
 @tailwind components;
 @tailwind utilities;
-@layer tailwind {
-  @tailwind base;
+@layer base {
+  @font-face {
+    font-family: 'Rubik';
+    src: url('/fonts/rubik/Rubik-VariableFont_wght.ttf');
+  }
+
+  @font-face {
+    font-family: 'DM Sans';
+    src: url('/fonts/dmsans/DMSans-VariableFont_opsz,wght.ttf');
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  button {
+    @apply font-serif;
+  }
 }
 
 * {
@@ -17,15 +33,10 @@
   --light-background-color: #f2f7ff;
   --primary-text-color: #0c1b33;
   --secondary-text-color: #434c59;
-  --heading-font: 'Rubik', sans-serif;
-  --text-font: 'DM Sans', sans-serif;
 }
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -47,20 +58,10 @@ h4,
 h5,
 h6,
 button {
-  font-family: var(--heading-font);
   color: var(--primary-text-color);
 }
 
-body,
-p,
-span,
-input,
-textarea {
-  font-family: var(--text-font);
-}
-
 h3 {
-  font-family: var(--text-font);
   font-weight: 300;
   font-size: 22px;
 }
@@ -68,21 +69,15 @@ h3 {
 h2 {
   font-weight: 500;
   font-size: 50px;
-  font-family: var(--heading-font);
 }
 
 h2 span {
   color: var(--primary-color);
-  font-family: var(--heading-font);
 }
 
 p {
   font-size: 19px;
   letter-spacing: 0.1px;
-}
-
-.heading-font {
-  font-family: var(--heading-font);
 }
 
 .text-gradient {
@@ -93,10 +88,6 @@ p {
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}
-
-.text-font {
-  font-family: var(--text-font);
 }
 
 .primary-text-color {
