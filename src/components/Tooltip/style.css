@@ -1,0 +1,13 @@
+.tooltipDesign {
+  color: white;
+  background-color: hsla(214, 33%, 17%, 1);
+  border-radius: 4px;
+}
+.tooltipArrowSetup {
+  fill: hsla(214, 33%, 17%, 1);
+}
+.tooltipDesign p {
+  word-wrap: break-word;
+  padding: 12px 8px;
+  font-family: var(--font-surface), sans-serif;
+}
