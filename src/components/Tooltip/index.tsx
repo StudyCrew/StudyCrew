@@ -42,10 +42,12 @@ const Tooltip: React.FC<TooltipProps> = ({
           ref={tooltipRef}
           align={align}
           side={side}
-          className={cn('tooltipDesign')}
+          className={cn('bg-tooltipcolor text-white')}
         >
-          <TooltipArrow className={arrowPositionClass} />
-          <p className={surface.variable}>{information}</p>
+          <TooltipArrow className={`fill-tooltipcolor ${arrowPositionClass}`} />
+          <p className={`text-wrap py-3 px-2 ${surface.className}`}>
+            {information}
+          </p>
         </TooltipContent>
       </TooltipUI>
     </TooltipProvider>

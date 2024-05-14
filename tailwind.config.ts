@@ -31,7 +31,8 @@ const tailwindConfig = {
       padding: {
         5.5: '22px'
       },
-      colors: {
+      colors: {      
+       'tooltipcolor': '#1D2939',
         gradient: {
           500: '#8338ec'
         },
