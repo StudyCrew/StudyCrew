@@ -22,6 +22,8 @@ const Footer: React.FC<FooterProps> = (props: FooterProps): JSX.Element => {
 
   const [waitlistEmail, setWaitlistEmail] = useState<string>('')
   const [waitlistErrorMessage, setWaitlistErrorMessage] = useState<string>('')
+  const [ageAbove16, setAgeAbove16] = useState<boolean>(false)
+
   const onChangeWaitlistEmail = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
       setWaitlistEmail(e.target.value)
@@ -279,7 +281,7 @@ const Footer: React.FC<FooterProps> = (props: FooterProps): JSX.Element => {
         </ul>
       </div>
 
-      <div className="flex-column lg:px-16 bg-blue-200 pt-6 pb-8 w-full text-center lg:text-left">
+      <div className="flex flex-col lg:px-16 bg-blue-200 pt-6 pb-8 w-full text-center lg:text-left">
         <h3 className="font-bold mt-0 mb-2">Sign Up</h3>
         <p className="text-sm mb-4">
           Ready to transform Your Learning Experience?
@@ -287,16 +289,29 @@ const Footer: React.FC<FooterProps> = (props: FooterProps): JSX.Element => {
         <input
           type="email"
           value={waitlistEmail}
-          placeholder="Enter your email"
+          placeholder={`${!ageAbove16 ? 'Please confirm you are 16+' : 'example@gmail.com'}`}
           onChange={onChangeWaitlistEmail}
-          className="mr-4 lg:mr-0 mb-4 border-2 border-blue-300 px-4 py-2 rounded-lg w-3/4"
+          disabled={!ageAbove16}
+          className="mr-4 lg:mr-0 mb-1 border-2 grow border-blue-300 px-4 py-2 rounded-lg disabled:cursor-not-allowed"
         />
         <button
           onClick={onSubmitWaitlistEmail}
-          className="text-white bg-blue-500 px-4 rounded-lg text-center py-2"
+          disabled={!ageAbove16}
+          className="text-white bg-blue-500 px-4 rounded-lg text-center py-2 grow disabled:cursor-not-allowed disabled:opacity-85"
         >
           Join Waitlist
         </button>
+        <div className="flex align-middle gap-2 mt-2">
+          <input
+            type="checkbox"
+            className="w-5"
+            checked={ageAbove16}
+            onChange={() => {
+              setAgeAbove16(!ageAbove16)
+            }}
+          />{' '}
+          <span className="text-sm">I confirm that I am 16 years or older</span>
+        </div>
 
         {!_isEmpty(waitlistErrorMessage) && (
           <p className="text-red-500 text-sm mt-4">{waitlistErrorMessage}</p>

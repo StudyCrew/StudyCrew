@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react'
-
+import Image from 'next/image'
 import Button from '@/components/Button'
 import { TEAM_MEMBERS } from '@/data'
 
@@ -53,7 +53,7 @@ const Team = (): JSX.Element => {
         <div className="team-cards" ref={scrollContainer}>
           {TEAM_MEMBERS.map(({ avatar, name, role }, i: number) => (
             <div className="team-card" key={i}>
-              <img src={avatar} alt={name} />
+              <Image src={avatar} alt={name} />
               <h5>{name}</h5>
               <p className="role">{role}</p>
             </div>
