@@ -1,10 +1,7 @@
 import { FaChevronDown } from 'react-icons/fa'
 import React, { useState, useEffect } from 'react'
-
 import Button from '@/components/Button'
-
 import { type HeroProps } from './types'
-import './style.css'
 
 const words = ['Collaborative', 'Accessible', 'Engaging']
 
@@ -33,55 +30,34 @@ const Hero: React.FC<HeroProps> = (props: HeroProps): JSX.Element => {
   }, [])
 
   return (
-    <div className="hero">
-      <div className="hero-container">
-        <h1 className="title title-sm">
-          The{' '}
-          <span className="relative-span">
-            <svg
-              aria-hidden="true"
-              viewBox="0 0 418 42"
-              className="blue-wave"
-              preserveAspectRatio="none"
-            ></svg>
-            <span className="relative-span heading-font">Future </span>
-          </span>
-          of Education is <br />
-          <span className="relative-span">
-            <svg
-              aria-hidden="true"
-              viewBox="0 0 418 42"
-              className="blue-wave"
-              preserveAspectRatio="none"
-            ></svg>
-            <span
-              className="relative-span heading-font text-transition text-gradient huge-font"
-              style={{ opacity }}
-            >
-              {' '}
-              {currentWord}
-            </span>
-          </span>
-        </h1>
+    <div className="mx-16 mt-24 mb-16 text-center">
+      <h1 className="text-5xl leading-normal md:text-7xl md:leading-normal font-medium">
+        The Future of Education is <br />
+        <span
+          style={{ opacity }}
+          className="transition-opacity duration-500 animate-[fade-in_0.5s_linear] bg-gradient-to-r from-primary-500 to-gradient-500 bg-clip-text text-transparent"
+        >
+          {currentWord}
+        </span>
+      </h1>
 
-        <p className="description">
-          Opening doors to new learning experiences for everyone.
-        </p>
+      <p className="mt-2 text-lg font-light">
+        Opening doors to new learning experiences for everyone.
+      </p>
 
-        <div className="button-group">
-          <Button onClick={handleJoinWaitlistClick} size="big">
-            Join Waitlist
-            <FaChevronDown className="icon-inline" />
-          </Button>
-          <Button
-            onClick={handleLearnMoreClick}
-            variant="outline"
-            size="big-outline"
-          >
-            Learn More
-            <FaChevronDown className="icon-inline" />
-          </Button>
-        </div>
+      <div className="mt-8 flex flex-col md:flex-row gap-2 justify-center align-middle">
+        <Button onClick={handleJoinWaitlistClick} size="big">
+          Join Waitlist
+          <FaChevronDown className="inline ml-2" />
+        </Button>
+        <Button
+          onClick={handleLearnMoreClick}
+          variant="outline"
+          size="big-outline"
+        >
+          Learn More
+          <FaChevronDown className="inline ml-2" />
+        </Button>
       </div>
     </div>
   )

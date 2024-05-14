@@ -10,6 +10,10 @@ const tailwindConfig = {
   content: ['./src/**/*.{ts,tsx}'],
   plugins: [tailwindCSSAnimate],
   theme: {
+    fontFamily: {
+      'sans': ['"DM Sans"', 'ui-sans-serif'],
+      'serif': ['Rubik','ui-serif']
+    },
     container: {
       center: true,
       padding: '2rem',
@@ -31,7 +35,8 @@ const tailwindConfig = {
       padding: {
         5.5: '22px'
       },
-      colors: {
+      colors: {      
+       'tooltipcolor': '#1D2939',
         gradient: {
           500: '#8338ec'
         },
@@ -132,6 +137,10 @@ const tailwindConfig = {
         'accordion-up': {
           from: { height: 'var(--radix-accordion-content-height)' },
           to: { height: 0 }
+        },
+        'fade-in': {
+          from: { opacity: 0 },
+          to: { opacity: 1 }
         }
       },
       animation: {
