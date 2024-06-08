@@ -39,12 +39,11 @@ export const metadata: Metadata = {
   twitter
 }
 
-// TODO: Define props interface
-const RootLayout = ({
-  children
-}: {
+interface LayoutProps {
   children: React.ReactNode
-}): JSX.Element => {
+}
+
+const RootLayout = ({ children }: LayoutProps): JSX.Element => {
   return (
     <ClerkProvider
       appearance={{
