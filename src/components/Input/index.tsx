@@ -1,3 +1,4 @@
+'use client'
 import { cn } from '@/utils'
 import React, { useState } from 'react'
 import type { InputProps } from './types'
