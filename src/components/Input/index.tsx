@@ -1,7 +1,17 @@
 'use client'
 import { cn } from '@/utils'
 import React, { useState } from 'react'
-import type { InputProps } from './types'
+
+interface InputProps {
+  placeholder?: string
+  className?: string
+  value: string
+  onChange: (
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => void
+  characterLimit?: number
+  rowLimit?: number
+}
 
 const Input: React.FC<InputProps> = ({
   placeholder,
@@ -13,7 +23,7 @@ const Input: React.FC<InputProps> = ({
 }) => {
   const [characterCount, setCharacterCount] = useState(0)
   const initialStyles =
-    'bg-[#404040] text-[#8e97a6] border-2 border-[#8e97a6] rounded w-[400px] px-2 py-2 text-lg'
+    'text-[#8e97a6] border-2 border-[#8e97a6] rounded w-[400px] px-2 py-2 text-lg'
 
   function calculateWidthCharacterLimit(): number {
     return `${characterLimit}`.length * 20
