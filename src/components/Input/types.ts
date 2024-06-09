@@ -1,6 +1,10 @@
 export interface InputProps {
   placeholder?: string
   className?: string
-  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void
+  value: string
+  onChange: (
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => void
   characterLimit?: number
+  rowLimit?: number
 }

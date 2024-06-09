@@ -6,8 +6,10 @@ import type { InputProps } from './types'
 const Input: React.FC<InputProps> = ({
   placeholder,
   className,
+  value,
   onChange,
-  characterLimit
+  characterLimit,
+  rowLimit
 }) => {
   const [characterCount, setCharacterCount] = useState(0)
   const initialStyles =
@@ -19,10 +21,21 @@ const Input: React.FC<InputProps> = ({
 
   return (
     <div className="relative w-fit h-fit">
-      {(!characterLimit || characterLimit <= 0) && (
-        <input
-          type="text"
-          className={cn(initialStyles, className)}
+      {(!characterLimit || characterLimit <= 0) &&
+        (!rowLimit || rowLimit <= 0) && (
+          <input
+            type="text"
+            value={value}
+            className={cn(initialStyles, className)}
+            onChange={onChange}
+            placeholder={placeholder}
+          />
+        )}
+      {(!characterLimit || characterLimit <= 0) && rowLimit && rowLimit > 1 && (
+        <textarea
+          value={value}
+          rows={rowLimit}
+          className={cn(`${initialStyles} resize-none`, className)}
           onChange={onChange}
           placeholder={placeholder}
         />
@@ -31,6 +44,7 @@ const Input: React.FC<InputProps> = ({
         <div className={cn(`${initialStyles} flex w-fit`, className)}>
           <input
             type="text"
+            value={value}
             className="w-[350px] bg-transparent outline-none"
             onChange={(e) => {
               if (onChange) onChange(e)
