@@ -32,7 +32,8 @@
     "src/**/*",
     ".next/types/**/*.ts",
     "components/**/*",
-    "lib/**/*"
+    "lib/**/*",
+    "utils/cn.ts"
   ],
   "exclude": ["node_modules"]
 }
