@@ -11,4 +11,6 @@ components.json
 .prettierrc.json
 package-lock.json
 
-src/components/ui/
+components/ui/
+
+test-route/
