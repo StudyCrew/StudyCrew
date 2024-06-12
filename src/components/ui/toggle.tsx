@@ -12,12 +12,15 @@ const toggleVariants = cva(
     variants: {
       variant: {
         default: 'bg-transparent',
+        grid: 'bg-transparent hover:bg-primary-100 text-foreground/80 data-[state=on]:text-white data-[state=on]:bg-primary-500',
         outline:
           'border border-slate-200 bg-transparent hover:bg-slate-100 hover:text-slate-900 dark:border-slate-800 dark:hover:bg-slate-800 dark:hover:text-slate-50'
       },
       size: {
         default: 'h-10 px-3',
         sm: 'h-9 px-2.5',
+        grid: 'h-8 px-2.5',
+
         lg: 'h-11 px-5'
       }
     },

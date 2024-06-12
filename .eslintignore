@@ -10,4 +10,5 @@ postcss.config.js
 components.json
 .prettierrc.json
 package-lock.json
-/components/ui/
+
+src/components/ui/
