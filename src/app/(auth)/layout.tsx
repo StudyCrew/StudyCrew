@@ -6,4 +6,3 @@ interface LayoutProps {
 
 export default function AuthLayout({ children }: LayoutProps): JSX.Element {
   return <React.Fragment>{children}</React.Fragment>
-}

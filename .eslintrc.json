@@ -63,21 +63,13 @@
     }
   },
   "rules": {
-    // window os
     "prettier/prettier": "off",
     "i18n-text/no-en": 0,
     "no-invalid-this": 0,
-    // "indent": [
-    //   "error",
-    //   2,
-    //   {
-    //     "SwitchCase": 1
-    //   }
-    // ],
     "import/no-namespace": 0,
     "github/array-foreach": 0,
-    "semi": ["error", "never"],
-    "quotes": ["error", "single"],
+    "semi": ["warn", "never"],
+    "quotes": ["warn", "single"],
     "no-shadow": "off",
     "github/no-then": 0,
     "promise/always-return": 0,
