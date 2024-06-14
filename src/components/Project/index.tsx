@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 
-import PROJECT_IMAGE_JPG from 'public/assets/project-image.jpg' assert { type: 'jpg' }
+import PROJECT_IMAGE from 'public/assets/project-image.webp'
 
 import './style.css'
 
@@ -26,7 +26,7 @@ const Project = (): JSX.Element => {
 
       <div className="hidden md:flex md:flex-auto md:relative md:items-center md:justify-center">
         <Image
-          src={PROJECT_IMAGE_JPG}
+          src={PROJECT_IMAGE}
           className="w-full h-full object-cover"
           alt="Project representation"
         />

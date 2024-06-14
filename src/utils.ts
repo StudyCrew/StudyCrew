@@ -19,3 +19,11 @@ export const convertBase64ToFile = (base64String: string): File => {
 
   return new File([blob], 'image.jpg', { type: 'image/jpeg' })
 }
+
+export function shortenName(fullName: string): string {
+  const nameParts = fullName.split(' ')
+
+  const initials = nameParts.map((part) => part.charAt(0))
+
+  return initials.join('').toLowerCase()
+}
