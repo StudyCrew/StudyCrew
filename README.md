@@ -27,7 +27,7 @@ git clone https://github.com/studycrew/studycrew
 
 StudyCrew uses MongoDB as its primary data storage. Ensure you have a local instance or a free MongoDB Atlas subscription. Set your connection string in the .env.example file:
 
-```shell
+```js
 MONGODB_URL=[YOUR CONNECTION STRING HERE]
 ```
 
@@ -35,7 +35,7 @@ MONGODB_URL=[YOUR CONNECTION STRING HERE]
 
 For authentication, StudyCrew utilizes Clerk. To set up your local instance, you'll need a Clerk account. Once you've created an account, obtain your credentials and place them in the env.local file:
 
-```shell
+```js
 NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=[YOUR PUBLISHABLE KEY FROM CLERK]
 CLERK_SECRET_KEY=[YOUR SECRET KEY FROM CLERK]
 ```
@@ -78,10 +78,12 @@ If you have to create a new component, please study existing components so these
 
 If you are unsure about anything, just ask! We are more than happy to help and would love to have you are part of the community. 😊
 
+## Developer Hours
+
+Each week, StudyCrew hosts hour-long meetings for contributors and team members to discuss upcoming changes, planned changes, and general strategy. These "developer hours" occur on **Tuesdays and Fridays at 7AM EST (4AM PST) and 4PM EST (1PM PST), respectively**.
+
 ## Join Our Community
 
 [Join our Discord community](https://discord.gg/Q93eWC8k) for discussions, support, and more!
-
-
 
 Thank you for exploring our repository! We're excited to welcome you to our community.
