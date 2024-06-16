@@ -3,7 +3,6 @@ import Image from 'next/image'
 
 import PROJECT_IMAGE from 'public/assets/project-image.webp'
 
-import './style.css'
 
 const Project = (): JSX.Element => {
   return (
