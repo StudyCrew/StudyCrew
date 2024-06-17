@@ -3,7 +3,6 @@ import Image from 'next/image'
 
 import PROJECT_IMAGE from 'public/assets/project-image.webp'
 
-
 const Project = (): JSX.Element => {
   return (
     <div className="flex bg-gradient-to-r from-primary-500 to-gradient-500">
