@@ -47,7 +47,7 @@ const Team = (): JSX.Element => {
           of the most diverse sets of collaborators in the world.
         </p>
       </div>
-      <div className="bg-arrow-bg bg-contain bg-[150%_90%] mb-[50px]">
+      <div className="bg-arrow-bg bg-full bg-top mb-[50px] ">
         <div
           className="flex overflow-x-hidden items-center gap-[30px] custom_team_scroll"
           ref={scrollContainer}
