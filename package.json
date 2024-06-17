@@ -94,7 +94,7 @@
     "eslint-plugin-sonarjs": "^0.24.0",
     "eslint-plugin-unicorn": "^51.0.1",
     "eslint-plugin-write-good-comments": "^0.2.0",
-    "husky": "^8.0.3",
+    "husky": "^9.0.11",
     "postcss": "8.4.33",
     "postcss-simple-vars": "^7.0.1",
     "prettier": "^3.3.1",
