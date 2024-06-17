@@ -152,7 +152,7 @@ devDependencies:
     specifier: ^4.14.202
     version: 4.17.5
   '@types/node':
-    specifier: ^20.11.20
+    specifier: ^20.14.2
     version: 20.14.2
   '@types/react':
     specifier: 18.2.55
