@@ -221,7 +221,7 @@ devDependencies:
     specifier: github:purely-functional/eslint-plugin-pure
     version: github.com/purely-functional/eslint-plugin-pure/f69e9e358e621dea41129c7ccfd35f87b37c186a
   eslint-plugin-react:
-    specifier: ^7.33.2
+    specifier: ^7.34.2
     version: 7.34.2(eslint@8.56.0)
   eslint-plugin-regexp:
     specifier: ^2.2.0
