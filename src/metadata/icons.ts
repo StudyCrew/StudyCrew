@@ -2,12 +2,12 @@ import { type Icon } from 'next/dist/lib/metadata/types/metadata-types'
 
 const icons: Icon[] = [
   {
-    url: '/assets/maskable_icon_x48',
+    url: '/assets/maskable_icon_x48.png',
     type: 'image/png',
     sizes: '48x48'
   },
   {
-    url: '/assets/maskable_icon_x72',
+    url: '/assets/maskable_icon_x72.png',
     type: 'image/png',
     sizes: '72x72'
   },
