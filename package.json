@@ -36,7 +36,7 @@
     "@radix-ui/react-tooltip": "^1.0.7",
     "@sentry/nextjs": "^7.93.0",
     "@uidotdev/usehooks": "^2.4.1",
-    "autoprefixer": "10.4.17",
+    "autoprefixer": "10.4.19",
     "class-names": "^1.0.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
