@@ -8,7 +8,7 @@ const Team = (): JSX.Element => {
 
   const scrollHorizontally = (): void => {
     if (scrollContainer.current) {
-      const step = (): void => {  
+      const step = (): void => {
         const scrollContainerCurrent =
           scrollContainer.current as HTMLDivElement | null
         if (scrollContainerCurrent) {
@@ -38,18 +38,18 @@ const Team = (): JSX.Element => {
 
   return (
     <div className="min-h-[1000px] text-center w-full my-[100px] mt-[100px]">
-      <div className="w-[100$] text-center mb-[50px]">
+      <div className="w-[100%] flex flex-col items-center text-[#0c1b33] text-center m-[50px]">
         <h2 className="font-bold">
           Our <span className="text-[#3a86ff]">Team</span>
         </h2>
-        <p className="text-center px-4">
+        <p className="text-center px-4 w-[65%]">
           Our team of talented and open-minded individuals makes Study Crew one
           of the most diverse sets of collaborators in the world.
         </p>
       </div>
-      <div className="bg-arrow-bg bg-contain bg-[100%_100%] mb-[50px]">
+      <div className="bg-arrow-bg bg-contain bg-[150%_90%] mb-[50px]">
         <div
-          className="flex overflow-x-auto items-center gap-[30px] custom_team_scroll"
+          className="flex overflow-x-hidden items-center gap-[30px] custom_team_scroll"
           ref={scrollContainer}
         >
           {TEAM_MEMBERS.map((team, i: number) => (
