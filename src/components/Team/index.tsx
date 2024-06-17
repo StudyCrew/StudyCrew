@@ -1,16 +1,14 @@
 import React, { useEffect, useRef } from 'react'
-import Image from 'next/image'
 import Button from '@/components/Button'
 import { TEAM_MEMBERS } from '@/data'
-
-import './style.css'
+import TeamCard from './TeamCard'
 
 const Team = (): JSX.Element => {
   const scrollContainer = useRef(null)
 
   const scrollHorizontally = (): void => {
     if (scrollContainer.current) {
-      const step = (): void => {
+      const step = (): void => {  
         const scrollContainerCurrent =
           scrollContainer.current as HTMLDivElement | null
         if (scrollContainerCurrent) {
@@ -39,30 +37,29 @@ const Team = (): JSX.Element => {
   }
 
   return (
-    <div className="team-component">
-      <div className="head-title">
-        <h2 className="heading">
-          Our <span className="heading">Team</span>
+    <div className="min-h-[1000px] text-center w-full my-[100px] mt-[100px]">
+      <div className="w-[100$] text-center mb-[50px]">
+        <h2 className="font-bold">
+          Our <span className="text-[#3a86ff]">Team</span>
         </h2>
         <p className="text-center px-4">
           Our team of talented and open-minded individuals makes Study Crew one
           of the most diverse sets of collaborators in the world.
         </p>
       </div>
-      <div className="bg">
-        <div className="team-cards" ref={scrollContainer}>
-          {TEAM_MEMBERS.map(({ avatar, name, role }, i: number) => (
-            <div className="team-card" key={i}>
-              <Image src={avatar} alt={name} />
-              <h5>{name}</h5>
-              <p className="role">{role}</p>
-            </div>
+      <div className="bg-arrow-bg bg-contain bg-[100%_100%] mb-[50px]">
+        <div
+          className="flex overflow-x-auto items-center gap-[30px] custom_team_scroll"
+          ref={scrollContainer}
+        >
+          {TEAM_MEMBERS.map((team, i: number) => (
+            <TeamCard {...team} key={i} />
           ))}
         </div>
       </div>
 
-      <div className="join-team-section">
-        <p>Interested in becoming part of our team?</p>
+      <div className="w-screen border-t-2 border-b-2 border-[#f2f7ff] py-[25px]">
+        <p className="mb-[20px]">Interested in becoming part of our team?</p>
         <Button
           onClick={() => {
             handleClick()

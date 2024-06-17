@@ -129,6 +129,9 @@ const tailwindConfig = {
           900: '#382C00'
         }
       },
+      backgroundImage: {
+        'arrow-bg': `url('../../public/assets/arrow_bg.webp')`,
+      },
       keyframes: {
         'accordion-down': {
           from: { height: 0 },
