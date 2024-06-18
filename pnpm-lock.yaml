@@ -149,7 +149,7 @@ devDependencies:
     specifier: ^1.41.2
     version: 1.44.1
   '@types/lodash':
-    specifier: ^4.14.202
+    specifier: ^4.17.5
     version: 4.17.5
   '@types/node':
     specifier: ^20.14.3
