@@ -152,7 +152,7 @@ function App(): JSX.Element {
           setActivePage={setActivePage}
         />
       </div>
-
+<div className="relative mt-[30%] md:mt-[10%]">
       <Hero
         handleLearnMoreClick={handleLearnMoreClick}
         handleJoinWaitlistClick={handleJoinWaitlistClick}
@@ -193,6 +193,7 @@ function App(): JSX.Element {
           activePage={activePage}
           setActivePage={setActivePage}
         />
+      </div>
       </div>
     </Router>
   )
