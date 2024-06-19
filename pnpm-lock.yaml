@@ -189,7 +189,7 @@ devDependencies:
     version: 3.2.0(eslint@8.57.0)
   eslint-plugin-github:
     specifier: ^5.0.1
-    version: 5.0.1(eslint-import-resolver-typescript@3.6.1)(eslint@8.56.0)(typescript@5.4.2)
+    version: 5.0.1(eslint-import-resolver-typescript@3.6.1)(eslint@8.57.0)(typescript@5.4.2)
   eslint-plugin-immutable:
     specifier: ^1.0.0
     version: 1.0.0
@@ -224,7 +224,7 @@ devDependencies:
     specifier: ^7.34.2
     version: 7.34.2(eslint@8.57.0)
   eslint-plugin-regexp:
-    specifier: ^2.2.0
+    specifier: ^2.6.0
     version: 2.6.0(eslint@8.57.0)
   eslint-plugin-sonarjs:
     specifier: ^0.24.0
@@ -4808,7 +4808,7 @@ packages:
       lodash.upperfirst: 4.3.1
     dev: true
 
-  /eslint-plugin-github@5.0.1(eslint-import-resolver-typescript@3.6.1)(eslint@8.56.0)(typescript@5.4.2):
+  /eslint-plugin-github@5.0.1(eslint-import-resolver-typescript@3.6.1)(eslint@8.57.0)(typescript@5.4.2):
     resolution: {integrity: sha512-qbXG3wL5Uh2JB92EKeX2hPtO9c/t75qVxQjVLYuTFfhHifLZzv9CBvLCvoaBhLrAC/xTMVht7DK/NofYK8X4Dg==}
     hasBin: true
     peerDependencies:
