@@ -35,7 +35,7 @@ const Header: React.FC<HeaderProps> = (props: HeaderProps): JSX.Element => {
   }
 
   return (
-    <header>
+    <header className='fixed top-0'>
       <div className="hamburger-menu" onClick={toggleMenu}>
         <FaBars />
       </div>

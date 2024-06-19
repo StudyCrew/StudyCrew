@@ -51,7 +51,7 @@ const Navbar: React.FC<NavbarProps> = (props: NavbarProps): JSX.Element => {
   }
 
   return (
-    <nav>
+    <nav className=''>
       <div
         className={`${isActive('mission')} hover:cursor-pointer`}
         onClick={() => {

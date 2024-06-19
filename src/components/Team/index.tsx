@@ -38,11 +38,11 @@ const Team = (): JSX.Element => {
 
   return (
     <div className="min-h-[1000px] text-center w-full my-[100px] mt-[100px]">
-      <div className="w-[100%] flex flex-col items-center text-gray-400 text-center m-[50px]">
+      <div className="w-[100%] flex flex-col items-center text-gray-400 text-center md:m-[50px]">
         <h2 className="font-bold">
           Our <span className="text-[#3a86ff]">Team</span>
         </h2>
-        <p className="text-center px-4 w-[65%]">
+        <p className="text-center px-4 md:w-[65%] w-full">
           Our team of talented and open-minded individuals makes Study Crew one
           of the most diverse sets of collaborators in the world.
         </p>

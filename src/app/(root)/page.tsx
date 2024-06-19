@@ -140,7 +140,7 @@ function App(): JSX.Element {
 
   return (
     <Router>
-      <div className="header">
+      <div className="header ">
         <Header
           missionRef={missionRef}
           featuresRef={featuresRef}
@@ -152,47 +152,48 @@ function App(): JSX.Element {
           setActivePage={setActivePage}
         />
       </div>
-
-      <Hero
-        handleLearnMoreClick={handleLearnMoreClick}
-        handleJoinWaitlistClick={handleJoinWaitlistClick}
-      />
-
-      <div className="mission-component" ref={missionRef}>
-        <Mission />
-      </div>
-
-      <div className="features-component" ref={featuresRef}>
-        <Features />
-      </div>
-
-      <div className="project-component" ref={projectRef}>
-        <Project />
-      </div>
-
-      <div className="empower-component" ref={signupRef}>
-        <SignUp />
-      </div>
-
-      <div className="team-component" ref={teamRef}>
-        <Team />
-      </div>
-
-      <div className="faq-component" ref={faqRef}>
-        <Faqs />
-      </div>
-
-      <div className="footer-component">
-        <Footer
-          missionRef={missionRef}
-          featuresRef={featuresRef}
-          projectRef={projectRef}
-          teamRef={teamRef}
-          signupRef={signupRef}
-          faqRef={faqRef}
-          activePage={activePage}
-          setActivePage={setActivePage}
+      <div className="relative mt-[10%] xs:mt-[30%]">
+        <Hero
+          handleLearnMoreClick={handleLearnMoreClick}
+          handleJoinWaitlistClick={handleJoinWaitlistClick}
         />
+
+        <div className="mission-component" ref={missionRef}>
+          <Mission />
+        </div>
+
+        <div className="features-component" ref={featuresRef}>
+          <Features />
+        </div>
+
+        <div className="project-component" ref={projectRef}>
+          <Project />
+        </div>
+
+        <div className="empower-component" ref={signupRef}>
+          <SignUp />
+        </div>
+
+        <div className="team-component" ref={teamRef}>
+          <Team />
+        </div>
+
+        <div className="faq-component" ref={faqRef}>
+          <Faqs />
+        </div>
+
+        <div className="footer-component">
+          <Footer
+            missionRef={missionRef}
+            featuresRef={featuresRef}
+            projectRef={projectRef}
+            teamRef={teamRef}
+            signupRef={signupRef}
+            faqRef={faqRef}
+            activePage={activePage}
+            setActivePage={setActivePage}
+          />
+        </div>
       </div>
     </Router>
   )
