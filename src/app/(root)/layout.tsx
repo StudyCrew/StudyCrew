@@ -1,13 +1,13 @@
 import React from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
-import { dark } from '@clerk/themes'
+// import { dark } from '@clerk/themes'
 import icons from '@/metadata/icons'
 import _isEmpty from 'lodash/isEmpty'
 import robots from '@/metadata/robot'
 import twitter from '@/metadata/twitter'
 import openGraph from '@/metadata/openGraph'
-import { ClerkProvider } from '@clerk/nextjs'
+// import { ClerkProvider } from '@clerk/nextjs'
 import type { Metadata, Viewport } from 'next'
 import { GoogleAnalytics } from '@next/third-parties/google'
 
@@ -46,22 +46,22 @@ const RootLayout = ({
   children: React.ReactNode
 }): JSX.Element => {
   return (
-    <ClerkProvider
-      appearance={{
-        baseTheme: dark
-      }}
-    >
-      <html lang="en">
-        <Head>
-          <Link rel="shortcut icon" href="/public/assets/favicon.ico" />
-        </Head>
-        <body>{children}</body>
+    // <ClerkProvider
+    //   appearance={{
+    //     baseTheme: dark
+    //   }}
+    // >
+    <html lang="en">
+      <Head>
+        <Link rel="shortcut icon" href="/public/assets/favicon.ico" />
+      </Head>
+      <body>{children}</body>
 
-        {process.browser && !_isEmpty(GOOGLE_ANALYTICS_ID) && (
-          <GoogleAnalytics gaId={GOOGLE_ANALYTICS_ID} />
-        )}
-      </html>
-    </ClerkProvider>
+      {process.browser && !_isEmpty(GOOGLE_ANALYTICS_ID) && (
+        <GoogleAnalytics gaId={GOOGLE_ANALYTICS_ID} />
+      )}
+    </html>
+    // </ClerkProvider>
   )
 }
 

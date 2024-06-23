@@ -4,7 +4,7 @@ import robots from '@/metadata/robot'
 import twitter from '@/metadata/twitter'
 import openGraph from '@/metadata/openGraph'
 import type { Metadata, Viewport } from 'next'
-import { ThemeProvider } from '@/components/theme_provider'
+// import { ThemeProvider } from '@/components/theme_provider'
 
 import '@/app/globals.css'
 
@@ -39,7 +39,5 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }): JSX.Element {
-  return (
-    
-  )
+  return <></>
 }
