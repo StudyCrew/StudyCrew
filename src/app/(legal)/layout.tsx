@@ -1,10 +1,10 @@
 import React from 'react'
 import '@/app/globals.css'
 
-export default function LegalLayout({
-  children
-}: {
+interface LayoutProps {
   children: React.ReactNode
-}): JSX.Element {
+}
+
+export default function LegalLayout({ children }: LayoutProps): JSX.Element {
   return <div className="max-w-6xl mx-auto pt-8">{children}</div>
 }

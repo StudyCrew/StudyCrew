@@ -141,3 +141,16 @@ p {
   width: 100%;
   position: fixed;
 }
+
+.custom_team_scroll::-webkit-scrollbar {
+  height: 4px;
+}
+
+.custom_team_scroll::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+.custom_team_scroll::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

@@ -1,43 +1,136 @@
 # Contributing to StudyCrew
 
-Thank you for considering contributing to StudyCrew! We welcome contributions from everyone.
+Thank you for considering contributing to StudyCrew! We welcome contributions of all kinds, including bug reports, feature requests, and code contributions.
 
-Before getting started, please take a moment to review this guide to understand how to contribute effectively.
+## Table of Contents
 
-## Ways to Contribute
+- [Getting Started](#getting-started)
+- [Development Setup](#development-setup)
+- [Submitting Changes](#submitting-changes)
+- [Development Resources](#development-resources)
+- [Community](#community)
+- [Code of Conduct](#code-of-conduct)
 
-### Bug Reports and Feature Requests
+## Getting Started
 
-- If you encounter a bug or have a feature request, please open an issue in the repository.
-- Ensure that the issue has not already been reported by searching through existing issues before creating a new one.
-- Clearly describe the problem or suggestion, including any relevant information or steps to reproduce the issue.
+1. **Fork the repository:**
 
-### Pull Requests
+    Click the "Fork" button at the top right of the repository page to create a copy of the repository under your GitHub account.
 
-- We encourage you to contribute improvements by submitting pull requests.
-- Fork the repository, create a new branch for your changes, and make your modifications.
-- Ensure your code follows the repository's style and conventions.
-- Write clear and concise commit messages.
-- Provide a detailed description of your changes in the pull request, explaining the problem and your solution.
+2. **Clone your fork:**
 
-## Code Style and Guidelines
+    ```bash
+    git clone https://github.com/your-username/repo-name.git
+    cd repo-name
+    ```
 
-- Follow the coding style and guidelines specified in the project. If there are none, try to match the existing style.
-- Write clean, readable, and well-documented code.
-- Respect the existing architecture and patterns in the project.
+3. **Add the upstream repository:**
+
+    ```bash
+    git remote add upstream https://github.com/StudyCrew/StudyCrew.git
+    ```
+
+## Development Setup
+
+1. **Install dependencies:**
+
+    This project uses `pnpm` for package management. If you don't have `pnpm` installed, you can install it using `npm`:
+
+    ```bash
+    npm install -g pnpm
+    ```
+
+    Install the project dependencies:
+
+    ```bash
+    pnpm install
+    ```
+
+2. **Grab the environment variables:**
+
+    StudyCrew uses MongoDB as its primary data storage. Ensure you have a local instance or a free MongoDB Atlas subscription. Set your connection string in the .env.example file:
+
+    ```env
+    MONGODB_URL=[YOUR CONNECTION STRING HERE]
+    ```
+
+    For authentication, StudyCrew utilizes Clerk. To set up your local instance, you'll need a Clerk account. Once you've created an account, obtain your credentials and place them in the env.local file:
+
+    ```env
+    NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=[YOUR PUBLISHABLE KEY FROM CLERK]
+    CLERK_SECRET_KEY=[YOUR SECRET KEY FROM CLERK]
+    ```
+
+3. **Start the development server:**
+
+    ```bash
+    pnpm dev
+    ```
+
+    This will start the Next.js development server. Open your browser and navigate to `http://localhost:3000` to see the application running.
+
+4. **Run Prettier:**
+
+    Format the code before you make a pull-request to the main repo by:
+
+    ```bash
+    pnpm format
+    ```
+
+5. **Build the project:**
+
+    To build the project for production, run:
+
+    ```bash
+    pnpm build
+    ```
+
+## Submitting Changes
+
+1. **Create a new branch:**
+
+    ```bash
+    git checkout -b feature/your-feature-name
+    ```
+
+2. **Make your changes:**
+
+    Make sure your code follows the project's coding standards and includes relevant documentation and tests.
+
+3. **Commit your changes:**
+
+    ```bash
+    git add .
+    git commit -m "Add your commit message here"
+    ```
+
+4. **Push to your fork:**
+
+    ```bash
+    git push origin feature/your-feature-name
+    ```
+
+5. **Create a Pull Request:**
+
+    Go to the original repository and create a pull request from your fork. Provide a clear and descriptive description for your pull request.
+
+## Development Resources
+
+- **Design Guidelines:** [Figma Documentation](https://www.figma.com/file/BJG9JmbThqdp8p8IWs7gNG/StudyCrew-Prototypes-(Copy)?type=design&node-id=8%3A98&mode=design&t=uwHVDf3Ihi12lro3-1)
+- **Next.js Documentation:** [https://nextjs.org/docs](https://nextjs.org/docs)
+- **Tailwind Documentation:** [https://tailwindcss.com/](https://tailwindcss.com/)
+- **Shadcn-UI Documentation:** [https://ui.shadcn.com/](https://ui.shadcn.com/)
+- **pnpm Documentation:** [https://pnpm.io](https://pnpm.io)
+
+## Community
+
+- **Discord Channel:** Join our community on [Discord](https://discord.gg/Q93eWC8k)
+- **Issue Tracker:** Report bugs or request features on our [GitHub Issues](https://github.com/StudyCrew/StudyCrew/issues)
 
 ## Code of Conduct
 
-Please note that StudyCrew has a Code of Conduct. By participating in this project, you agree to abide by its terms.
+Please read our [Code of Conduct](CODE_OF_CONDUCT.md) to understand the expectations for contributors and the steps for reporting unacceptable behavior.
 
-## Licensing
+---
 
-By contributing to StudyCrew, you agree that your contributions will be licensed under the project's license.
-
-## Getting Help
-
-If you need help or have any questions, feel free to reach out by opening an issue or contacting the maintainers listed in the repository.
-
-We appreciate your contributions and thank you for helping to improve StudyCrew!
-
-Happy Coding!
+Thank you for contributing to StudyCrew!
