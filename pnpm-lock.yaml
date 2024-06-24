@@ -152,8 +152,8 @@ devDependencies:
     specifier: ^4.17.5
     version: 4.17.5
   '@types/node':
-    specifier: ^20.14.3
-    version: 20.14.3
+    specifier: ^20.14.8
+    version: 20.14.8
   '@types/react':
     specifier: 18.2.55
     version: 18.2.55
@@ -189,7 +189,7 @@ devDependencies:
     version: 3.2.0(eslint@8.57.0)
   eslint-plugin-github:
     specifier: ^5.0.1
-    version: 5.0.1(eslint-import-resolver-typescript@3.6.1)(eslint@8.56.0)(typescript@5.4.2)
+    version: 5.0.1(eslint-import-resolver-typescript@3.6.1)(eslint@8.57.0)(typescript@5.4.2)
   eslint-plugin-immutable:
     specifier: ^1.0.0
     version: 1.0.0
@@ -3113,7 +3113,7 @@ packages:
     resolution: {integrity: sha512-ZUxbzKl0IfJILTS6t7ip5fQQM/J3TJYubDm3nMbgubNNYS62eXeUpoLUC8/7fJNiFYHTrGPQn7hspDUzIHX3UA==}
     dependencies:
       '@types/minimatch': 5.1.2
-      '@types/node': 20.14.3
+      '@types/node': 20.14.8
     dev: true
 
   /@types/json-schema@7.0.15:
@@ -3145,6 +3145,13 @@ packages:
     resolution: {integrity: sha512-Nuzqa6WAxeGnve6SXqiPAM9rA++VQs+iLZ1DDd56y0gdvygSZlQvZuvdFPR3yLqkVxPu4WrO02iDEyH1g+wazw==}
     dependencies:
       undici-types: 5.26.5
+    dev: false
+
+  /@types/node@20.14.8:
+    resolution: {integrity: sha512-DO+2/jZinXfROG7j7WKFn/3C6nFwxy2lLpgLjEXJz+0XKphZlTLJ14mo8Vfg8X5BWN6XjyESXq+LcYdT7tR3bA==}
+    dependencies:
+      undici-types: 5.26.5
+    dev: true
 
   /@types/normalize-package-data@2.4.4:
     resolution: {integrity: sha512-37i+OaWTh9qeK4LSHPsyRC7NahnGotNuZvjLSgcPzblpHB3rrCJxAOgI5gCdKm7coonsaX1Of0ILiTcnZjbfxA==}
@@ -3185,7 +3192,7 @@ packages:
   /@types/signale@1.4.7:
     resolution: {integrity: sha512-nc0j37QupTT7OcYeH3gRE1ZfzUalEUsDKJsJ3IsJr0pjjFZTjtrX1Bsn6Kv56YXI/H9rNSwAkIPRxNlZI8GyQw==}
     dependencies:
-      '@types/node': 20.14.3
+      '@types/node': 20.14.8
     dev: true
 
   /@types/trusted-types@2.0.7:
@@ -4808,7 +4815,7 @@ packages:
       lodash.upperfirst: 4.3.1
     dev: true
 
-  /eslint-plugin-github@5.0.1(eslint-import-resolver-typescript@3.6.1)(eslint@8.56.0)(typescript@5.4.2):
+  /eslint-plugin-github@5.0.1(eslint-import-resolver-typescript@3.6.1)(eslint@8.57.0)(typescript@5.4.2):
     resolution: {integrity: sha512-qbXG3wL5Uh2JB92EKeX2hPtO9c/t75qVxQjVLYuTFfhHifLZzv9CBvLCvoaBhLrAC/xTMVht7DK/NofYK8X4Dg==}
     hasBin: true
     peerDependencies:
