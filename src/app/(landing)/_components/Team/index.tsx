@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react'
-import Button from '@/components/Button'
+import Button from '@/app/(landing)/_components/Button'
 import { TEAM_MEMBERS } from '@/data'
 import TeamCard from './TeamCard'
 
