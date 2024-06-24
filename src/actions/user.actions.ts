@@ -2,7 +2,6 @@
 
 // import { connectToDB } from '@/db'
 // import { revalidatePath } from 'next/cache'
-// import { } from '@clerk/nextjs'
 // import { convertBase64ToFile } from '@/utils'
 // import User, { type IUser } from '@/models/user'
 
