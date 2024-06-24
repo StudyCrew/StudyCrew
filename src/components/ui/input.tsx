@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { type InputProps } from '@/interface/controls/input'
+import { type InputProps } from '@/types/controls/input'
 
 import { cn } from '@/utils'
 import Label from '@/components/ui/label'

@@ -1,7 +1,7 @@
 'use server'
 
-import Waitlist from '@/models/waitlist'
-import { connectToDB } from '@/db'
+import Waitlist from '@/database/models/waitlist'
+import { connectToDB } from '@/database'
 
 const maxSpots = 2500
 

@@ -12,7 +12,6 @@ import type { Metadata, Viewport } from 'next'
 import { GoogleAnalytics } from '@next/third-parties/google'
 
 import '@/app/globals.css'
-import '@/styles/landing.css'
 
 const { GOOGLE_ANALYTICS_ID } = process.env
 

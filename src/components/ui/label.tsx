@@ -5,7 +5,7 @@ import * as LabelPrimitive from '@radix-ui/react-label'
 import { type VariantProps } from 'class-variance-authority'
 
 import { cn } from '@/utils'
-import { labelVariants } from '@/variance/label'
+import { labelVariants } from './label-variants'
 
 // prettier-ignore
 const Label = React.forwardRef<React.ElementRef<typeof LabelPrimitive.Root>, React.ComponentPropsWithoutRef<typeof LabelPrimitive.Root> & VariantProps<typeof labelVariants>>(({ className, ...props }, ref) => (
