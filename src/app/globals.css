@@ -141,3 +141,23 @@ p {
   width: 100%;
   position: fixed;
 }
+
+.logo-1 {
+  position: relative;
+  top: 8%;
+  left: 8%;
+  transform: rotate(-30deg);
+}
+
+.logo-2 {
+  position: relative;
+  top: 12%;
+  left: 14%;
+}
+
+.logo-3 {
+  position: relative;
+  top: -55%;
+  left: 40%;
+  transform: rotate(30deg);
+}
