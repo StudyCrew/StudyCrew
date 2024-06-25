@@ -24,6 +24,8 @@ const tailwindConfig = {
     extend: {
       zIndex: {
         1: '1',
+        3: '3',
+        5: '5',
         200: '200'
       },
       rounded: {
@@ -34,6 +36,9 @@ const tailwindConfig = {
       },
       padding: {
         5.5: '22px'
+      },
+      height: {
+        '200': '200px'      
       },
       colors: {      
        'tooltipcolor': '#1D2939',
@@ -152,6 +157,8 @@ const tailwindConfig = {
         '80vh': '80vh',
         '85vh': '85vh',
         '20vh': '20vh',
+        '100': '100px',
+        '50': '50px',      
         '5%': '5%'
       },
       maxWidth: {
