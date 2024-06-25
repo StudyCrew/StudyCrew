@@ -1,9 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-
 import LOGO_GROUP_SVG from 'public/assets/mission/LogoGroup.svg' assert { type: 'svg' }
-
-import './style.css'
 
 const Mission = (props: any): JSX.Element => {
   return (
@@ -12,8 +9,7 @@ const Mission = (props: any): JSX.Element => {
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 2628 376"
         fill="none"
-        style={{ width: '100%' }}
-        className="chevron-gradient"
+        className="absolute h-200 w-screen z-5"
         {...props}
         preserveAspectRatio="none"
       >
@@ -32,8 +28,8 @@ const Mission = (props: any): JSX.Element => {
             y2={169.679}
             gradientUnits="userSpaceOnUse"
           >
-            <stop stopColor="stop-first" />
-            <stop offset={1} stopColor="#stop-second" />
+            <stop style={{ stopColor: 'var(--primary-gradient-color)' }} />
+            <stop offset={1} style={{ stopColor: 'var(--primary-color)' }} />
           </linearGradient>
         </defs>
       </svg>
@@ -42,8 +38,7 @@ const Mission = (props: any): JSX.Element => {
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 2628 376"
         fill="none"
-        style={{ width: '100%' }}
-        className="chevron-white"
+        className="w-screen absolute h-200 z-3 top-50"
         {...props}
         preserveAspectRatio="none"
       >
@@ -72,8 +67,7 @@ const Mission = (props: any): JSX.Element => {
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 2628 376"
         fill="none"
-        style={{ width: '100%' }}
-        className="second-chevron-gradient"
+        className="w-screen absolute h-200 top-100 z-5"
         {...props}
         preserveAspectRatio="none"
       >
