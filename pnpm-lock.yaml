@@ -96,8 +96,8 @@ dependencies:
     specifier: ^0.358.0
     version: 0.358.0(react@18.2.0)
   mongoose:
-    specifier: ^8.2.0
-    version: 8.4.1
+    specifier: ^8.4.4
+    version: 8.4.4
   next:
     specifier: 14.2.3
     version: 14.2.3(@babel/core@7.24.7)(@playwright/test@1.44.1)(react-dom@18.2.0)(react@18.2.0)
@@ -189,7 +189,7 @@ devDependencies:
     version: 3.2.0(eslint@8.57.0)
   eslint-plugin-github:
     specifier: ^5.0.1
-    version: 5.0.1(eslint-import-resolver-typescript@3.6.1)(eslint@8.56.0)(typescript@5.4.2)
+    version: 5.0.1(eslint-import-resolver-typescript@3.6.1)(eslint@8.57.0)(typescript@5.4.2)
   eslint-plugin-immutable:
     specifier: ^1.0.0
     version: 1.0.0
@@ -4808,7 +4808,7 @@ packages:
       lodash.upperfirst: 4.3.1
     dev: true
 
-  /eslint-plugin-github@5.0.1(eslint-import-resolver-typescript@3.6.1)(eslint@8.56.0)(typescript@5.4.2):
+  /eslint-plugin-github@5.0.1(eslint-import-resolver-typescript@3.6.1)(eslint@8.57.0)(typescript@5.4.2):
     resolution: {integrity: sha512-qbXG3wL5Uh2JB92EKeX2hPtO9c/t75qVxQjVLYuTFfhHifLZzv9CBvLCvoaBhLrAC/xTMVht7DK/NofYK8X4Dg==}
     hasBin: true
     peerDependencies:
@@ -6658,8 +6658,8 @@ packages:
       mongodb-connection-string-url: 3.0.1
     dev: false
 
-  /mongoose@8.4.1:
-    resolution: {integrity: sha512-odQ2WEWGL3hb0Qex+QMN4eH6D34WdMEw7F1If2MGABApSDmG9cMmqv/G1H6WsXmuaH9mkuuadW/WbLE5+tHJwA==}
+  /mongoose@8.4.4:
+    resolution: {integrity: sha512-Nya808odIJoHP4JuJKbWA2eIaerXieu59kE8pQlvJpUBoSKWUyhLji0g1WMVaYXWmzPYXP2Jd6XdR4KJE8RELw==}
     engines: {node: '>=16.20.1'}
     dependencies:
       bson: 6.7.0
