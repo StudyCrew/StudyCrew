@@ -1,4 +1,4 @@
-import { addToWaitlist, getSpotsLeft } from '@/actions/waitlist.actions'
+import { addToWaitlist, getSpotsLeft } from '@/app/(landing)/waitlist.actions'
 import React, { useCallback, useEffect, useState } from 'react'
 
 import Button from '@/app/(landing)/_components/Button'
