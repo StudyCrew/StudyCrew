@@ -1,4 +1,4 @@
-import { type buttonVariants } from '@/variance/button'
+import { type buttonVariants } from '@/components/ui/button'
 import { type VariantProps } from 'class-variance-authority'
 
 // prettier-ignore

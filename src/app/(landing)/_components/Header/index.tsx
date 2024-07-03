@@ -2,8 +2,8 @@ import { Link } from 'react-router-dom'
 import { FaBars } from 'react-icons/fa'
 import React, { useState, useEffect } from 'react'
 
-import Navbar from '@/components/Navbar'
-import Button from '@/components/Button'
+import Navbar from '@/app/(landing)/_components/Navbar'
+import Button from '@/app/(landing)/_components/Button'
 
 import { type HeaderProps } from './types'
 import './style.css'

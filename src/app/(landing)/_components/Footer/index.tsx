@@ -4,7 +4,7 @@ import React, { useState, useCallback } from 'react'
 import { FaYoutube, FaLinkedin, FaFacebookF, FaInstagram } from 'react-icons/fa'
 
 import { scrollToRef } from '@/hooks'
-import { addToWaitlist } from '@/actions/waitlist.actions'
+import { addToWaitlist } from '@/app/(landing)/waitlist.actions'
 import LOGO_SVG from 'public/assets/Logo.svg' assert { type: 'svg' }
 
 import { type FooterProps } from './types'

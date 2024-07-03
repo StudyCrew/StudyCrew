@@ -1,6 +1,6 @@
 import { FaChevronDown } from 'react-icons/fa'
 import React, { useState, useEffect } from 'react'
-import Button from '@/components/Button'
+import Button from '@/app/(landing)/_components/Button'
 import { type HeroProps } from './types'
 
 const words = ['Collaborative', 'Accessible', 'Engaging']

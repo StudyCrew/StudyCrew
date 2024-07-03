@@ -1,11 +1,9 @@
-
-// import React from 'react'
+import React from 'react'
 // import { redirect } from 'next/navigation'
 // import { type IUser } from '@/models/user'
 // import { currentUser } from '@clerk/nextjs'
 // import Logout from '@/components/shared/Logout'
 // import { getUserInfo } from '@/actions/user.actions'
-
 
 export default function page(): JSX.Element {
   // const user = await currentUser()
