@@ -3,7 +3,7 @@
 import React from 'react'
 import Link from 'next/link'
 
-import Logout from './Logout'
+// import Logout from './Logout'
 
 export default function Topbar(): JSX.Element {
   return (
@@ -13,7 +13,7 @@ export default function Topbar(): JSX.Element {
           StudyCrew
         </p>
       </Link>
-      <Logout placement="top" />
+      {/* <Logout placement="top" /> */}
     </nav>
   )
 }
