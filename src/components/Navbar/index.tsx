@@ -17,7 +17,9 @@ const Navbar: React.FC<NavbarProps> = (props: NavbarProps): JSX.Element => {
   } = props
 
   const isActive = (name: string): string =>
-    activePage === name ? 'text-primary-500 mb-0 border-solid border-b-[5px] border-primary-500' : 'border-none mb-[5px]'
+    activePage === name
+      ? 'text-primary-500 mb-0 border-solid border-b-[5px] border-primary-500'
+      : 'border-none mb-[5px]'
 
   const handleNavLinkClick = (name: string): void => {
     setIsMenuOpen(false)
@@ -55,10 +57,10 @@ const Navbar: React.FC<NavbarProps> = (props: NavbarProps): JSX.Element => {
 
   return (
     <nav
-      className='
+      className="
         flex flex-col justify-center items-center w-screen h-screen fixed z-5000 bg-white/90 top-0 left-0 pt-[10px]
         md:inline-grid md:grid-cols-6 md:bg-white/78 md:w-fit md:relative md:col-span-1 md:w-fit md:h-fit md:top-[-10px] md:rounded-b-[5px] md:backdrop-blur-md md:shadow-[0_0_10px_0_#ddd]
-      '
+      "
     >
       <div
         className={`${isActive('mission')} ${divClass} hover:cursor-pointer`}

@@ -130,7 +130,7 @@ const tailwindConfig = {
         }
       },
       backgroundImage: {
-        'arrow-bg': `url('../../public/assets/arrow_bg.webp')`
+        'arrow-bg': 'url(\'../../public/assets/arrow_bg.webp\')'
       },
       backgroundSize: {
         full: '100% 100%'
