@@ -10,3 +10,7 @@ postcss.config.js
 components.json
 .prettierrc.json
 package-lock.json
+
+src/components/ui/
+
+test-route/

@@ -2,7 +2,6 @@ import React from 'react'
 import { scrollToRef } from '@/hooks'
 
 import { type NavbarProps } from './types'
-import './style.css'
 
 const Navbar: React.FC<NavbarProps> = (props: NavbarProps): JSX.Element => {
   const {
@@ -18,7 +17,7 @@ const Navbar: React.FC<NavbarProps> = (props: NavbarProps): JSX.Element => {
   } = props
 
   const isActive = (name: string): string =>
-    activePage === name ? 'activeNavLink' : ''
+    activePage === name ? 'text-primary-500 mb-0 border-solid border-b-[5px] border-primary-500' : 'border-none mb-[5px]'
 
   const handleNavLinkClick = (name: string): void => {
     setIsMenuOpen(false)
@@ -50,10 +49,19 @@ const Navbar: React.FC<NavbarProps> = (props: NavbarProps): JSX.Element => {
     scrollToRef(ref)
   }
 
+  const divClass = `w-full text-center p-[20px] color-primary-950 text-[16px] font-semibold 
+    transition-colors transition-mb duration-200 ease-in-out transition-border duration-200 ease-in-out hover:text-primary-500
+    md:pt-[15px] md:px-[20px] md:pb-[10px] md:text-center md:w-auto md:rounded-[5px]`
+
   return (
-    <nav>
+    <nav
+      className='
+        flex flex-col justify-center items-center w-screen h-screen fixed z-5000 bg-white/90 top-0 left-0 pt-[10px]
+        md:inline-grid md:grid-cols-6 md:bg-white/78 md:w-fit md:relative md:col-span-1 md:w-fit md:h-fit md:top-[-10px] md:rounded-b-[5px] md:backdrop-blur-md md:shadow-[0_0_10px_0_#ddd]
+      '
+    >
       <div
-        className={`${isActive('mission')} hover:cursor-pointer`}
+        className={`${isActive('mission')} ${divClass} hover:cursor-pointer`}
         onClick={() => {
           handleNavLinkClick('mission')
           setActivePage('mission')
@@ -62,7 +70,7 @@ const Navbar: React.FC<NavbarProps> = (props: NavbarProps): JSX.Element => {
         Mission
       </div>
       <div
-        className={`${isActive('features')} hover:cursor-pointer`}
+        className={`${isActive('features')} ${divClass} hover:cursor-pointer`}
         onClick={() => {
           handleNavLinkClick('features')
           setActivePage('features')
@@ -71,7 +79,7 @@ const Navbar: React.FC<NavbarProps> = (props: NavbarProps): JSX.Element => {
         Features
       </div>
       <div
-        className={`${isActive('project')} hover:cursor-pointer`}
+        className={`${isActive('project')} ${divClass} hover:cursor-pointer`}
         onClick={() => {
           handleNavLinkClick('project')
           setActivePage('project')
@@ -80,7 +88,7 @@ const Navbar: React.FC<NavbarProps> = (props: NavbarProps): JSX.Element => {
         Project
       </div>
       <div
-        className={`${isActive('signup')} hover:cursor-pointer`}
+        className={`${isActive('signup')} ${divClass} hover:cursor-pointer`}
         onClick={() => {
           handleNavLinkClick('signup')
           setActivePage('signup')
@@ -89,7 +97,7 @@ const Navbar: React.FC<NavbarProps> = (props: NavbarProps): JSX.Element => {
         Sign Up
       </div>
       <div
-        className={`${isActive('team')} hover:cursor-pointer`}
+        className={`${isActive('team')} ${divClass} hover:cursor-pointer`}
         onClick={() => {
           handleNavLinkClick('team')
           setActivePage('team')
@@ -98,7 +106,7 @@ const Navbar: React.FC<NavbarProps> = (props: NavbarProps): JSX.Element => {
         Team
       </div>
       <div
-        className={`${isActive('faq')} hover:cursor-pointer`}
+        className={`${isActive('faq')} ${divClass} hover:cursor-pointer`}
         onClick={() => {
           handleNavLinkClick('faq')
           setActivePage('faq')

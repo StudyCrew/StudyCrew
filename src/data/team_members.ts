@@ -44,6 +44,11 @@ const TEAM_MEMBERS = [
     avatar: kian as string
   },
   {
+    name: 'Abiel',
+    role: TeamMemberRole.Development,
+    avatar: sugumaran as string
+  },
+  {
     name: 'Xavier',
     role: TeamMemberRole.ProductManagement,
     avatar: xavier as string
