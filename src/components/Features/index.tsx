@@ -14,7 +14,6 @@ import {
   MOBILE_WIDTH_BREAKPOINT
 } from './const'
 
-import './style.css'
 
 // TODO: Extract
 const getStageForID = (id: FeaturesStageID): FeaturesStage => {
@@ -130,12 +129,162 @@ const Features: React.FC<any> = (): JSX.Element => {
   )
 
   return (
-    <div className="features">
-      <div className="features-head">
+    <>
+      <style>
+        {
+          `
+.features-head .title {
+  text-transform: capitalize;
+}
+
+.features-head .title span {
+  color: #3a86ff;
+  font-family: var(--heading-font);
+}
+
+
+.stages .stage {
+  user-select: none;
+}
+
+h3 {
+  margin: 22px 0px;
+}
+
+
+.mobile-stage-wrapper .owl-carousel-wrapper {
+  width: 100%;
+}
+
+
+.mobile-stage-wrapper .stage-nav-dot:last-child {
+  margin-right: 0;
+}
+
+.mobile-stage-wrapper .stage-nav-dot.active {
+  background: #000;
+}
+
+.active {
+  height: 100% !important;
+}
+
+.owl-carousel-wrapper {
+  transition: 1s ease-in;
+}
+
+.owl-carousel .cards {
+  transition: 0.5s ease-in;
+  white-space: nowrap;
+}
+
+.none {
+  display: none;
+}
+
+.card {
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+.arrow-icons {
+  position: absolute;
+  bottom: -3.5%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.arrow-right,
+.arrow-left {
+  margin-top: 20px;
+  margin-bottom: -10px;
+  size: 300px;
+}
+.arrow-right {
+  position: relative;
+  left: 10px;
+}
+
+.arrow-right:hover,
+.arrow-left:hover {
+  cursor: pointer;
+}
+
+.active-stage {
+  background-color: var(--light-background-color);
+}
+
+@media screen and (max-width: 1040px) {
+  .arrow-icons {
+    justify-content: start;
+  }
+}
+
+@media screen and (max-width: 860px) {
+  .card {
+    padding: 15px 15px;
+    max-height: 100%;
+  }
+  .container {
+    justify-content: center;
+  }
+  .container .stages {
+    display: none;
+  }
+  .stage {
+    display: block;
+    cursor: pointer;
+    user-select: none;
+  }
+  .card-image {
+    width: 50%;
+    height: 25%;
+  }
+  .owl-carousel-wrapper {
+    border-radius: 20px;
+  }
+  .owl-carousel .cards {
+    grid-auto-columns: calc((100% / 2));
+  }
+  .features {
+    margin-right: 50px;
+    margin-left: 50px;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .owl-carousel .cards {
+    grid-auto-columns: calc(100%);
+  }
+}
+
+.owl-carousel .cards::-webkit-scrollbar {
+  height: 10px;
+}
+
+.owl-carousel .cards::-webkit-scrollbar-thumb {
+  background: #959da6;
+  border-radius: 5px;
+}
+
+.owl-carousel .cards::-webkit-scrollbar-thumb:hover {
+  background: #434c59;
+}
+
+@media (min-width: 1400px) {
+  .container {
+    max-width: 100%;
+  }
+}
+
+          `
+        }
+      </style>
+    <div className="features mx-[150px]">
+      <div className="features-head text-center">
         <h2>
           Our <span>Features</span>
         </h2>
-        <p className="des">Discover powerful tools that help you study.</p>
+        <p className="des text-[var(--secondary-text-color)]">Discover powerful tools that help you study.</p>
       </div>
 
       <div
@@ -150,22 +299,22 @@ const Features: React.FC<any> = (): JSX.Element => {
               <div
                 key={`stage-${i}-${id}`}
                 onClick={onStageClick.bind(null, id)}
-                className={cn('stage', {
+                className={cn('stage text-center my-[10px] cursor-pointer mr-7 p-3 text-[var(--secondary-text-color)] rounded-[5px]', {
                   'active-stage': id === currentStageID
                 })}
               >
-                <h3>{title}</h3>
-                <p>{description}</p>
+                <h3 className="text-[28px] font-bold">{title}</h3>
+                <p className="-mt-[25px] text-base pb-[15px]">{description}</p>
               </div>
             ))}
           </div>
         )}
 
         {!isMobile && (
-          <div className="owl-carousel-wrapper">
-            <div className="owl-carousel">
+          <div className="owl-carousel-wrapper bg-[var(--light-background-color)] w-[75%] p-[30px] rounded-[25px] z-10 overflow-hidden">
+            <div className="owl-carousel relative pb-0">
               <div
-                className="cards"
+                className="cards grid h-[1] grid-flow-col gap-[30px] overflow-x-auto scroll-smooth pb-[10px]"
                 style={{
                   transform: `translateX(${cardWidth}px`
                 }}
@@ -187,17 +336,17 @@ const Features: React.FC<any> = (): JSX.Element => {
         {isMobile &&
           FEATURES_STAGES.map(
             ({ id, title, description, cards }, i: number) => (
-              <div key={`stage-${i}-${id}`} className="mobile-stage-wrapper">
-                <div className="stage" onClick={onStageClick.bind(null, id)}>
-                  <h3>{title}</h3>
+              <div key={`stage-${i}-${id}`} className="mobile-stage-wrapper bg-[var(--light-background-color)]">
+                <div className="stage py-0 px-[64px]" onClick={onStageClick.bind(null, id)}>
+                  <h3 className="text-[36px] font-bold">{title}</h3>
                   <p>{description}</p>
                 </div>
 
                 {stageOpenStatuses[i] && (
-                  <div className="card-wrapper flex" key={`stage-card-${i}`}>
+                  <div className="card-wrapper flex justify-center py-4 px-0 w-full" key={`stage-card-${i}`}>
                     <div
                       onClick={onPrevStageCardClick.bind(null, id)}
-                      className={cn('flex stage-nav', {
+                      className={cn('flex stage-nav items-center py-0 px-4 disabled:opacity-25', {
                         disabled: stageActiveCardIndexes[i] === 0
                       })}
                     >
@@ -205,27 +354,27 @@ const Features: React.FC<any> = (): JSX.Element => {
                     </div>
 
                     <div className="card-inner-wrapper">
-                      <div className="card">
+                      <div className="card bg-white rounded-[20px] p-[25px] w-[240px] inline-block whitespace-normal">
                         <Image
-                          className="card-image"
+                          className="card-image block h-[140px] w-auto max-w-full m-auto rounded-[10px] object-cover mb-5"
                           src={cards[stageActiveCardIndexes[i]].image}
                           alt={cards[stageActiveCardIndexes[i]].title}
                         />
 
-                        <h3 className="card-title">
+                        <h3 className="card-title text-[22px] font-bold mb-0">
                           {cards[stageActiveCardIndexes[i]].title}
                         </h3>
 
-                        <p className="card-description">
+                        <p className="card-description text-sm mb-[5px] text-[var(--secondary-text-color)]">
                           {cards[stageActiveCardIndexes[i]].description}
                         </p>
                       </div>
 
-                      <ul className="flex stage-nav-dots">
+                      <ul className="flex stage-nav-dots my-4 mx-0 justify-center">
                         {cards.map((_, cardI: number) => (
                           <li
                             key={cardI}
-                            className={cn('stage-nav-dot', {
+                            className={cn('stage-nav-dot !h-2 !w-2 rounded-[50%] bg-[#999] mr-4', {
                               active: cardI === stageActiveCardIndexes[i]
                             })}
                           />
@@ -247,7 +396,8 @@ const Features: React.FC<any> = (): JSX.Element => {
             )
           )}
       </div>
-    </div>
+      </div>
+      </>
   )
 }
 
