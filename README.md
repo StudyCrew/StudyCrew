@@ -72,6 +72,8 @@ To run the project locally, you need to:
 
 Interested in contributing? Check out our contribution guide to learn how you can get involved and contribute to StudyCrew's development.
 
+When you find an issue that you want to work on, just leave a comment so we can assign it to you! Feel free to tag @JacobHeldt so we notice your comment faster.
+
 Before contributing please read the style guidelines from the [Figma documentation](https://www.figma.com/file/BJG9JmbThqdp8p8IWs7gNG/StudyCrew-Prototypes-(Copy)?type=design&node-id=8%3A98&mode=design&t=uwHVDf3Ihi12lro3-1) carefully.
 
 If you have to create a new component, please study existing components so these are kept consistent with the rest of the project.
