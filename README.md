@@ -84,6 +84,6 @@ Each week, StudyCrew hosts hour-long meetings for contributors and team members 
 
 ## Join Our Community
 
-[Join our Discord community](https://discord.gg/Q93eWC8k) for discussions, support, and more!
+[Join our Discord community](https://discord.gg/fxd6uHbdBt) for discussions, support, and more!
 
 Thank you for exploring our repository! We're excited to welcome you to our community.
