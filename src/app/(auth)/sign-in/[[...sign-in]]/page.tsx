@@ -1,17 +1,7 @@
-// import React from 'react'
-// import { SignIn } from '@clerk/nextjs'
-// import { type Metadata } from 'next'
+import { NextPage } from 'next'
 
-// export const metadata: Metadata = {
-//   metadataBase: new URL(
-//     `https://${process.env.NEXT_PUBLIC_VERCEL_URL ?? 'localhost:3000'}`
-//   ),
-//   title: 'Sign In | StudyCrew',
-//   description: 'Sign in to continue your journey to a better education.'
-// }
+const Page: NextPage = () => {
+  return <div />
+}
 
-// export default function Page(): JSX.Element {
-//   return <SignIn />
-// }
-
-export {}
+export default Page
