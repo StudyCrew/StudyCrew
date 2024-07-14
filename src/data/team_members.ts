@@ -22,7 +22,7 @@ enum TeamMemberRole {
   ProductManagement = 'Product Management',
   HeadContentManagement = 'Head of Content Management',
   ContentManagement = 'Content Management',
-  Kian = "Lead & Homepage Designer",
+  Kian = 'Lead & Homepage Designer'
 }
 
 const TEAM_MEMBERS = [
