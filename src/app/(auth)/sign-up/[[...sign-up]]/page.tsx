@@ -14,4 +14,4 @@
 //   return <SignUp />
 // }
 
-export {};
+export {}

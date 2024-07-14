@@ -30,4 +30,4 @@ export default function page(): JSX.Element {
   )
 }
 
-export {};
+export {}
