@@ -63,27 +63,21 @@
     }
   },
   "rules": {
-    // window os
     "prettier/prettier": "off",
     "i18n-text/no-en": 0,
     "no-invalid-this": 0,
-    // "indent": [
-    //   "error",
-    //   2,
-    //   {
-    //     "SwitchCase": 1
-    //   }
-    // ],
+    "react/react-in-jsx-scope": "off",
     "import/no-namespace": 0,
     "github/array-foreach": 0,
-    "semi": ["error", "never"],
-    "quotes": ["error", "single"],
     "no-shadow": "off",
     "github/no-then": 0,
     "promise/always-return": 0,
     "lodash/prefer-lodash-method": 0,
     "@typescript-eslint/no-shadow": "warn",
-    "@typescript-eslint/no-explicit-any": 0,
+
+    // make sure there is no :any in the project
+    "@typescript-eslint/no-explicit-any": "warn",
+
     "@typescript-eslint/triple-slash-reference": 0,
     "@typescript-eslint/strict-boolean-expressions": 0,
     "@typescript-eslint/space-before-function-paren": 0,

@@ -1,18 +1,10 @@
 import React from 'react'
-import Head from 'next/head'
-import Link from 'next/link'
-import { dark } from '@clerk/themes'
-import icons from '@/metadata/icons'
-import _isEmpty from 'lodash/isEmpty'
-import robots from '@/metadata/robot'
-import twitter from '@/metadata/twitter'
-import openGraph from '@/metadata/openGraph'
-import { ClerkProvider } from '@clerk/nextjs'
-import type { Metadata, Viewport } from 'next'
-import { GoogleAnalytics } from '@next/third-parties/google'
 
+<<<<<<<< HEAD:src/app/(root)/layout.tsx
+interface LayoutProps {
+  children: React.ReactNode
+========
 import '@/app/globals.css'
-import '@/styles/landing.css'
 
 const { GOOGLE_ANALYTICS_ID } = process.env
 
@@ -62,6 +54,9 @@ const RootLayout = ({ children }: LayoutProps): JSX.Element => {
       </html>
     </ClerkProvider>
   )
+>>>>>>>> platform:src/app/layout.tsx
 }
 
-export default RootLayout
+export default function RootLayout({ children }: LayoutProps): JSX.Element {
+  return <React.Fragment>{children}</React.Fragment>
+}

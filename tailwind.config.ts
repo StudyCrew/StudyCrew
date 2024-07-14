@@ -11,8 +11,8 @@ const tailwindConfig = {
   plugins: [tailwindCSSAnimate],
   theme: {
     fontFamily: {
-      'sans': ['"DM Sans"', 'ui-sans-serif'],
-      'serif': ['Rubik','ui-serif']
+      sans: ['"DM Sans"', 'ui-sans-serif'],
+      serif: ['Rubik', 'ui-serif']
     },
     container: {
       center: true,
@@ -35,8 +35,8 @@ const tailwindConfig = {
       padding: {
         5.5: '22px'
       },
-      colors: {      
-       'tooltipcolor': '#1D2939',
+      colors: {
+        tooltipcolor: '#1D2939',
         gradient: {
           500: '#8338ec'
         },
@@ -128,6 +128,15 @@ const tailwindConfig = {
           800: '#755B00',
           900: '#382C00'
         }
+      },
+      backgroundImage: {
+        'arrow-bg': `url('../../public/assets/arrow_bg.webp')`
+      },
+      backgroundSize: {
+        full: '100% 100%'
+      },
+      backgroundPosition: {
+        top: 'top'
       },
       keyframes: {
         'accordion-down': {
