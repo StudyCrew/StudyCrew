@@ -29,3 +29,5 @@ export default function page(): JSX.Element {
     </main>
   )
 }
+
+export {};
