@@ -47,6 +47,11 @@ const TEAM_MEMBERS = [
     avatar: rohan as string
   },
   {
+    name: 'Sreekar',
+    role: TeamMemberRole.HeadProductManagement,
+    avatar: user as string
+  },
+  {
     name: 'Xavier',
     role: TeamMemberRole.ProductManagement,
     avatar: xavier as string
