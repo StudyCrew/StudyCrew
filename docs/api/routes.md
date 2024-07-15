@@ -13,6 +13,10 @@
 - `/group/[groupId]/materials`
   - **Methods**: GET, POST
   - **Description**: Fetch or add materials to a specific group.
+
+- `/group/[groupId]/folders`
+  - **Methods**: GET, POST
+  - **Description**: Fetch or add folders to a specific group.
   
 - `/group/[groupId]/questions`
   - **Methods**: GET, POST
@@ -22,26 +26,26 @@
   - **Methods**: GET, POST
   - **Description**: Fetch or post answers for q&a in a specific group.
 
-## Settings Endpoints
+## User Endpoints
 
-- `/settings`
+- `/user/[userId]/profile`
+  - **Methods**: GET, PATCH
+  - **Description**: Fetch or update user profile information.
+
+- `/user/[userId]/settings`
   - **Methods**: GET, PATCH
   - **Description**: Retrieve or update user settings.
 
-## User Endpoints
-
-- `/user/profile`
+- `/user/[userId]/notifications`
   - **Methods**: GET, PATCH
-  - **Description**: Fetch or update user profile information.
+  - **Description**: Fetch all the notifications.
+
+- `/user/[userId]/notifications/[category]`
+  - **Methods**: GET, PATCH
+  - **Description**: Fetch the notifications based on category.
 
 ## Chat Endpoints
 
 - `/group/[groupId]/chat`
   - **Methods**: GET, POST
   - **Description**: Retrieve or send messages in group chats.
-
-## Data Fetching Endpoints
-
-- `/data`
-  - **Methods**: GET
-  - **Description**: Fetch various types of data.
