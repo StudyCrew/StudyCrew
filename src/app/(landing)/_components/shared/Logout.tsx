@@ -2,7 +2,7 @@
 
 import React from 'react'
 // import { useRouter } from 'next/navigation'
-// import { SignOutButton, SignedIn } from '@clerk/nextjs'
+
 
 export default function Logout(props: { placement: string }): JSX.Element {
   //   const router = useRouter()
