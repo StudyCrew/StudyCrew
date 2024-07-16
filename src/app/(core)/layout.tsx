@@ -7,5 +7,10 @@ interface LayoutProps {
 export default function ApplicationLayout({
   children
 }: LayoutProps): JSX.Element {
-  return <React.Fragment>{children}</React.Fragment>
+  return (
+    <React.Fragment>
+      {/* TODO setup nav and other components */}
+      {children}
+    </React.Fragment>
+  )
 }
