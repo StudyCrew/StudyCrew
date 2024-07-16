@@ -12,8 +12,8 @@ importers:
         specifier: ^5.0.8
         version: 5.1.5(next@14.2.3(@babel/core@7.24.7)(@playwright/test@1.44.1)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@clerk/themes':
-        specifier: ^1.7.9
-        version: 1.7.17(react@18.2.0)
+        specifier: ^2.1.12
+        version: 2.1.12
       '@ducanh2912/next-pwa':
         specifier: ^10.2.2
         version: 10.2.7(next@14.2.3(@babel/core@7.24.7)(@playwright/test@1.44.1)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(webpack@5.92.0)
@@ -221,7 +221,7 @@ importers:
         version: 6.2.0(eslint@8.57.0)
       eslint-plugin-pure:
         specifier: github:purely-functional/eslint-plugin-pure
-        version: https://codeload.github.com/purely-functional/eslint-plugin-pure/tar.gz/f69e9e358e621dea41129c7ccfd35f87b37c186a
+        version: git+https://git@github.com:purely-functional/eslint-plugin-pure.git#f69e9e358e621dea41129c7ccfd35f87b37c186a
       eslint-plugin-react:
         specifier: ^7.34.2
         version: 7.34.2(eslint@8.57.0)
@@ -876,18 +876,16 @@ packages:
       react-dom:
         optional: true
 
-  '@clerk/themes@1.7.17':
-    resolution: {integrity: sha512-bNd9gkVAnccoFwpFhubeaO85/SwtF05gnLGXujCn/5oGIlTvvLcLsqqvD1uyLBFAN745SuS9SXYmxjUYrvF0cg==}
-    engines: {node: '>=14'}
-    peerDependencies:
-      react: '>=16'
-
-  '@clerk/types@3.65.2':
-    resolution: {integrity: sha512-MX56SpyjHvKi5ZbLSkINOOecFXR+fzRqa6tHlXry7sNDgemU/0UCWn2KwxyO+/O3QspQPe0m8vqkvP53iGYw/Q==}
-    engines: {node: '>=14'}
+  '@clerk/themes@2.1.12':
+    resolution: {integrity: sha512-9YxHyfWKiuopwQQp4APl8S8JY5qowQBbVOTJgw0VP3XwCc22UrQACo+hPCOcQA0j7xXLI2XfafPaS+CWRqOHlw==}
+    engines: {node: '>=18.17.0'}
 
   '@clerk/types@4.6.0':
     resolution: {integrity: sha512-kowqVGqLfu0Zl2Pteum70MfkGHqBUoHHeR+u2+yWVl1lKHLCiyY1u8ntYBEIolAylBaQNDuRzxyMIDPSxjPE8g==}
+    engines: {node: '>=18.17.0'}
+
+  '@clerk/types@4.8.0':
+    resolution: {integrity: sha512-UjirfALJOWeuRSz+SvTujexlvIXvMC1VzvYlcNmSF0E9wcAcPJnzboLM+SlNTG7p1JMlL4bd0dipsFyWTJsq5A==}
     engines: {node: '>=18.17.0'}
 
   '@ducanh2912/next-pwa@10.2.7':
@@ -2605,8 +2603,8 @@ packages:
     peerDependencies:
       eslint: ^7.0.0 || ^8.0.0 || ^9.0.0
 
-  eslint-plugin-pure@https://codeload.github.com/purely-functional/eslint-plugin-pure/tar.gz/f69e9e358e621dea41129c7ccfd35f87b37c186a:
-    resolution: {tarball: https://codeload.github.com/purely-functional/eslint-plugin-pure/tar.gz/f69e9e358e621dea41129c7ccfd35f87b37c186a}
+  eslint-plugin-pure@git+https://git@github.com:purely-functional/eslint-plugin-pure.git#f69e9e358e621dea41129c7ccfd35f87b37c186a:
+    resolution: {commit: f69e9e358e621dea41129c7ccfd35f87b37c186a, repo: git@github.com:purely-functional/eslint-plugin-pure.git, type: git}
     version: 0.0.0
     engines: {node: '>=0.10.0'}
 
@@ -5543,17 +5541,16 @@ snapshots:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
 
-  '@clerk/themes@1.7.17(react@18.2.0)':
+  '@clerk/themes@2.1.12':
     dependencies:
-      '@clerk/types': 3.65.2
-      react: 18.2.0
+      '@clerk/types': 4.8.0
       tslib: 2.4.1
 
-  '@clerk/types@3.65.2':
+  '@clerk/types@4.6.0':
     dependencies:
       csstype: 3.1.1
 
-  '@clerk/types@4.6.0':
+  '@clerk/types@4.8.0':
     dependencies:
       csstype: 3.1.1
 
@@ -7683,7 +7680,7 @@ snapshots:
     dependencies:
       eslint: 8.57.0
 
-  eslint-plugin-pure@https://codeload.github.com/purely-functional/eslint-plugin-pure/tar.gz/f69e9e358e621dea41129c7ccfd35f87b37c186a:
+  eslint-plugin-pure@git+https://git@github.com:purely-functional/eslint-plugin-pure.git#f69e9e358e621dea41129c7ccfd35f87b37c186a:
     dependencies:
       requireindex: 1.1.0
 
