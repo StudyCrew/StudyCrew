@@ -8,6 +8,10 @@ import tarunvidyut from 'public/assets/avatars/tarunvidyut.svg' assert { type: '
 import toryn from 'public/assets/avatars/toryn.svg' assert { type: 'svg' }
 import xavier from 'public/assets/avatars/xavier.svg' assert { type: 'svg' }
 import daksh from 'public/assets/avatars/daksh.svg' assert { type: 'svg' }
+import kian from 'public/assets/avatars/kian.svg' assert { type: 'svg' }
+import abiel from 'public/assets/avatars/abiel.svg' assert { type: 'svg' }
+import hemang from 'public/assets/avatars/hemang.svg' assert { type: 'svg' }
+import tyler from 'public/assets/avatars/tyler.svg' assert { type: 'svg' }
 
 enum TeamMemberRole {
   Founder = 'Founder',
@@ -82,9 +86,14 @@ const TEAM_MEMBERS = [
     avatar: tarunvidyut as string
   },
   {
+    name: 'Tyler',
+    role: TeamMemberRole.UIUXDesign,
+    avatar: tyler as string
+  },
+  {
     name: 'Kian',
     role: TeamMemberRole.Kian,
-    avatar: user as string
+    avatar: kian as string
   },
   {
     name: 'Adedayo',
@@ -112,6 +121,11 @@ const TEAM_MEMBERS = [
     avatar: user as string
   },
   {
+    name: 'Hemang',
+    role: TeamMemberRole.Development,
+    avatar: hemang as string
+  },
+  {
     name: 'Toryn',
     role: TeamMemberRole.Development,
     avatar: toryn as string
@@ -124,7 +138,7 @@ const TEAM_MEMBERS = [
   {
     name: 'Abiel',
     role: TeamMemberRole.Development,
-    avatar: user as string
+    avatar: abiel as string
   },
   {
     name: 'Zai',
