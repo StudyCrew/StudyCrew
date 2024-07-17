@@ -157,7 +157,6 @@ function App(): JSX.Element {
         handleLearnMoreClick={handleLearnMoreClick}
         handleJoinWaitlistClick={handleJoinWaitlistClick}
       />
-
       <div className="mission-component" ref={missionRef}>
         <Mission />
       </div>
