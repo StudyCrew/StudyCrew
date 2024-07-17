@@ -154,8 +154,8 @@ importers:
         specifier: ^4.17.5
         version: 4.17.5
       '@types/node':
-        specifier: ^20.14.3
-        version: 20.14.3
+        specifier: ^20.14.11
+        version: 20.14.11
       '@types/react':
         specifier: 18.2.55
         version: 18.2.55
@@ -221,7 +221,7 @@ importers:
         version: 6.2.0(eslint@8.57.0)
       eslint-plugin-pure:
         specifier: github:purely-functional/eslint-plugin-pure
-        version: https://codeload.github.com/purely-functional/eslint-plugin-pure/tar.gz/f69e9e358e621dea41129c7ccfd35f87b37c186a
+        version: git+https://git@github.com:purely-functional/eslint-plugin-pure.git#f69e9e358e621dea41129c7ccfd35f87b37c186a
       eslint-plugin-react:
         specifier: ^7.34.2
         version: 7.34.2(eslint@8.57.0)
@@ -1674,6 +1674,9 @@ packages:
   '@types/ms@0.7.34':
     resolution: {integrity: sha512-nG96G3Wp6acyAgJqGasjODb+acrI7KltPiRxzHPXnP3NgI28bpQDRv53olbqGXbfcgF5aiiHmO3xpwEpS5Ld9g==}
 
+  '@types/node@20.14.11':
+    resolution: {integrity: sha512-kprQpL8MMeszbz6ojB5/tU8PLN4kesnN8Gjzw349rDlNgsSzg90lAVj3llK99Dh7JON+t9AuscPPFW6mPbTnSA==}
+
   '@types/node@20.14.3':
     resolution: {integrity: sha512-Nuzqa6WAxeGnve6SXqiPAM9rA++VQs+iLZ1DDd56y0gdvygSZlQvZuvdFPR3yLqkVxPu4WrO02iDEyH1g+wazw==}
 
@@ -2605,8 +2608,8 @@ packages:
     peerDependencies:
       eslint: ^7.0.0 || ^8.0.0 || ^9.0.0
 
-  eslint-plugin-pure@https://codeload.github.com/purely-functional/eslint-plugin-pure/tar.gz/f69e9e358e621dea41129c7ccfd35f87b37c186a:
-    resolution: {tarball: https://codeload.github.com/purely-functional/eslint-plugin-pure/tar.gz/f69e9e358e621dea41129c7ccfd35f87b37c186a}
+  eslint-plugin-pure@git+https://git@github.com:purely-functional/eslint-plugin-pure.git#f69e9e358e621dea41129c7ccfd35f87b37c186a:
+    resolution: {commit: f69e9e358e621dea41129c7ccfd35f87b37c186a, repo: git@github.com:purely-functional/eslint-plugin-pure.git, type: git}
     version: 0.0.0
     engines: {node: '>=0.10.0'}
 
@@ -6439,7 +6442,7 @@ snapshots:
   '@types/glob@7.2.0':
     dependencies:
       '@types/minimatch': 5.1.2
-      '@types/node': 20.14.3
+      '@types/node': 20.14.11
 
   '@types/json-schema@7.0.15': {}
 
@@ -6454,6 +6457,10 @@ snapshots:
   '@types/minimatch@5.1.2': {}
 
   '@types/ms@0.7.34': {}
+
+  '@types/node@20.14.11':
+    dependencies:
+      undici-types: 5.26.5
 
   '@types/node@20.14.3':
     dependencies:
@@ -6485,7 +6492,7 @@ snapshots:
 
   '@types/signale@1.4.7':
     dependencies:
-      '@types/node': 20.14.3
+      '@types/node': 20.14.11
 
   '@types/trusted-types@2.0.7': {}
 
@@ -7683,7 +7690,7 @@ snapshots:
     dependencies:
       eslint: 8.57.0
 
-  eslint-plugin-pure@https://codeload.github.com/purely-functional/eslint-plugin-pure/tar.gz/f69e9e358e621dea41129c7ccfd35f87b37c186a:
+  eslint-plugin-pure@git+https://git@github.com:purely-functional/eslint-plugin-pure.git#f69e9e358e621dea41129c7ccfd35f87b37c186a:
     dependencies:
       requireindex: 1.1.0
 
