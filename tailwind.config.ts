@@ -22,9 +22,14 @@ const tailwindConfig = {
       }
     },
     extend: {
+      height:{
+       200: '200px' 
+      },
       zIndex: {
         1: '1',
-        200: '200'
+        3:'3',
+        5: '5',
+        200: '200',
       },
       rounded: {
         10: '10'
@@ -161,7 +166,9 @@ const tailwindConfig = {
         '80vh': '80vh',
         '85vh': '85vh',
         '20vh': '20vh',
-        '5%': '5%'
+        '50':'50px',
+        '100': '100px',
+        '5%': '5%',
       },
       maxWidth: {
         '100vw': '100vw'
