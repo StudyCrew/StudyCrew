@@ -1,90 +1,117 @@
-'use client'
-import Avatar from './avatar'
-import { useCallback, useEffect, useState } from 'react'
-import { createClient } from '@/utils/supabase/client'
-import { type User } from '@supabase/supabase-js'
-import Button from '@/components/ui/button'
+import Avatar from './avatar';
+import { useCallback, useEffect, useState } from 'react';
+import { createClient } from '@/utils/supabase/client';
+import { type User } from '@supabase/supabase-js';
+import Button from '@/components/ui/button';
 
-export default function AccountForm({ user }: { user: User | null }) {
-  const supabase = createClient()
-  const [loading, setLoading] = useState(true)
-  const [fullname, setFullname] = useState<string | null>(null)
-  const [username, setUsername] = useState<string | null>(null)
-  const [website, setWebsite] = useState<string | null>(null)
-  const [avatar_url, setAvatarUrl] = useState<string | null>(null)
+interface AccountFormProps {
+  user: User | null;
+}
+
+export default function AccountForm({ user }: AccountFormProps): JSX.Element {
+  const supabase = createClient();
+  const [loading, setLoading] = useState<boolean>(true);
+  const [fullname, setFullname] = useState<string | null>(null);
+  const [username, setUsername] = useState<string | null>(null);
+  const [website, setWebsite] = useState<string | null>(null);
+  const [avatarUrl, setAvatarUrl] = useState<string | null>(null);
 
   const getProfile = useCallback(async () => {
     try {
-      setLoading(true)
+      setLoading(true);
 
-      const { data, error, status } = await supabase
+      const { data, error } = await supabase
         .from('profiles')
-        .select(`full_name, username, website, avatar_url`)
+        .select('fullName, username, website, avatarUrl')
         .eq('id', user?.id)
-        .single()
+        .single();
+      // Prefer using nullish coalescing operator (`??`) instead of a logical or (`||`), as it is a safer operator  
+      // if (error || !data) {
+      //   throw error || new Error('Profile data not found');
+      // }
 
-      if (error && status !== 406) {
-        console.log(error)
-        throw error
+      if (error) {
+        throw new Error(error.message);
       }
 
-      if (data) {
-        setFullname(data.full_name)
-        setUsername(data.username)
-        setWebsite(data.website)
-        setAvatarUrl(data.avatar_url)
+      if (!data) {
+        throw new Error('Profile data not found');
       }
+
+      setFullname(data.fullName ?? null);
+      setUsername(data.username ?? null);
+      setWebsite(data.website ?? null);
+      setAvatarUrl(data.avatarUrl ?? null);
     } catch (error) {
-      alert('Error loading user data!')
+      alert('Error fetching profile data!');
     } finally {
-      setLoading(false)
+      setLoading(false);
     }
-  }, [user, supabase])
+  }, [user, supabase]);
 
   useEffect(() => {
-    getProfile()
-  }, [user, getProfile])
+    if (user) {
+      getProfile();
+    }
+  }, [user, getProfile]);
 
-  async function updateProfile({
+  const updateProfile = async ({
     username,
+    fullname,
     website,
-    avatar_url
+    avatarUrl,
   }: {
-    username: string | null
-    fullname: string | null
-    website: string | null
-    avatar_url: string | null
-  }) {
+    username: string | null;
+    fullname: string | null;
+    website: string | null;
+    avatarUrl: string | null;
+  }): Promise<void> => {
     try {
-      setLoading(true)
+      setLoading(true);
 
       const { error } = await supabase.from('profiles').upsert({
-        id: user?.id!,
-        full_name: fullname,
+        id: user?.id,
+        fullName: fullname,
         username,
         website,
-        avatar_url,
-        updated_at: new Date().toISOString()
-      })
-      if (error) throw error
-      alert('Profile updated!')
+        avatarUrl,
+        updatedAt: new Date().toISOString(),
+      });
+
+      if (error) {
+        throw new Error(error.message);
+      }
+
+      alert('Profile updated!');
     } catch (error) {
-      alert('Error updating the data!')
+      alert('Error updating the data!');
     } finally {
-      setLoading(false)
+      setLoading(false);
     }
-  }
+  };
+
+  const handleUpdateClick = async (): Promise<void> => {
+    await updateProfile({ fullname, username, website, avatarUrl });
+  };
+
+  const handleSignOut = (): void => {
+    const form = document.createElement('form');
+    form.method = 'post';
+    form.action = '/auth/signout';
+    document.body.appendChild(form);
+    form.submit();
+  };
 
   return (
     <div className="form-widget flex flex-col h-screen w-full justify-center items-center gap-2">
       <div className="flex justify-center items-center">
         <Avatar
           uid={user?.id ?? null}
-          url={avatar_url}
+          url={avatarUrl}
           size={150}
           onUpload={(url) => {
-            setAvatarUrl(url)
-            updateProfile({ fullname, username, website, avatar_url: url })
+            setAvatarUrl(url);
+            updateProfile({ fullname, username, website, avatarUrl: url });
           }}
         />
       </div>
@@ -93,7 +120,7 @@ export default function AccountForm({ user }: { user: User | null }) {
         <input
           id="email"
           type="text"
-          value={user?.email}
+          value={user?.email ?? ''}
           className="border border-grey rounded-lg px-2"
           disabled
         />
@@ -103,10 +130,8 @@ export default function AccountForm({ user }: { user: User | null }) {
         <input
           id="fullName"
           type="text"
-          value={fullname || ''}
-          onChange={(e) => {
-            setFullname(e.target.value)
-          }}
+          value={fullname ?? ''}
+          onChange={(e) => { setFullname(e.target.value); }}
           className="border border-grey rounded-lg px-2"
         />
       </div>
@@ -115,10 +140,8 @@ export default function AccountForm({ user }: { user: User | null }) {
         <input
           id="username"
           type="text"
-          value={username || ''}
-          onChange={(e) => {
-            setUsername(e.target.value)
-          }}
+          value={username ?? ''}
+          onChange={(e) => { setUsername(e.target.value); }}
           className="border border-grey rounded-lg px-2"
         />
       </div>
@@ -127,10 +150,8 @@ export default function AccountForm({ user }: { user: User | null }) {
         <input
           id="website"
           type="url"
-          value={website || ''}
-          onChange={(e) => {
-            setWebsite(e.target.value)
-          }}
+          value={website ?? ''}
+          onChange={(e) => { setWebsite(e.target.value); }}
           className="border border-grey rounded-lg px-2"
         />
       </div>
@@ -138,23 +159,20 @@ export default function AccountForm({ user }: { user: User | null }) {
       <div className="flex gap-2">
         <Button
           className="rounded-lg py-0.5 px-2 w-full"
-          onClick={async () => {
-            await updateProfile({ fullname, username, website, avatar_url })
-          }}
+          onClick={handleUpdateClick}
           disabled={loading}
           text={loading ? 'Loading ...' : 'Update'}
         />
       </div>
 
       <div className="flex gap-2">
-        <form action="/auth/signout" method="post">
-          <Button
-            type="submit"
-            text="Sign out"
-            className="rounded-lg py-0.5 px-2 w-full"
-          />
-        </form>
+        <Button
+          type="button"
+          onClick={handleSignOut}
+          text="Sign out"
+          className="rounded-lg py-0.5 px-2 w-full"
+        />
       </div>
     </div>
-  )
+  );
 }

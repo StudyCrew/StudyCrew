@@ -1,7 +1,15 @@
 import { login, signup } from './actions'
 import Button from '@/components/ui/button'
 
-export default function LoginPage() {
+export default function LoginPage(): JSX.Element {
+  const handleLogin = async (formData: FormData): Promise<void> => {
+    await login(formData)
+  }
+
+  const handleSignup = async (formData: FormData): Promise<void> => {
+    await signup(formData)
+  }
+
   return (
     <div className="flex flex-col justify-center items-center h-screen w-full">
       <form className="flex flex-col justify-center items-start gap-2">
@@ -24,12 +32,12 @@ export default function LoginPage() {
           required
         />
         <Button
-          formAction={login}
+          formAction={handleLogin}
           text="Login"
           className="rounded-lg py-0.5 px-2 w-full"
         />
         <Button
-          formAction={signup}
+          formAction={handleSignup}
           text="Signup"
           className="rounded-lg py-0.5 px-2 w-full"
         />

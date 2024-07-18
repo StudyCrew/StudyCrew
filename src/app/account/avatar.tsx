@@ -1,72 +1,69 @@
-'use client'
-import React, { useEffect, useState } from 'react'
-import { createClient } from '@/utils/supabase/client'
-import Image from 'next/image'
+import React, { useEffect, useState } from 'react';
+import { createClient } from '@/utils/supabase/client';
+import Image from 'next/image';
 
-export default function Avatar({
-  uid,
-  url,
-  size,
-  onUpload
-}: {
-  uid: string | null
-  url: string | null
-  size: number
-  onUpload: (url: string) => void
-}) {
-  const supabase = createClient()
-  const [avatarUrl, setAvatarUrl] = useState<string | null>(url)
-  const [uploading, setUploading] = useState(false)
+interface AvatarProps {
+  uid: string | null;
+  url: string | null;
+  size: number;
+  onUpload: (url: string) => void;
+}
+
+const Avatar: React.FC<AvatarProps> = ({ uid, url, size, onUpload }) => {// Uso del hook useToast para notificaciones
+  const supabase = createClient();
+  const [avatarUrl, setAvatarUrl] = useState<string | null>(url);
+  const [uploading, setUploading] = useState(false);
 
   useEffect(() => {
-    async function downloadImage(path: string) {
+    const downloadImage = async (path: string): Promise<void> => {
       try {
         const { data, error } = await supabase.storage
           .from('avatars')
-          .download(path)
+          .download(path);
+
         if (error) {
-          throw error
+          throw error;
         }
 
-        const url = URL.createObjectURL(data)
-        setAvatarUrl(url)
+        const imageUrl = URL.createObjectURL(data);
+        setAvatarUrl(imageUrl);
       } catch (error) {
-        console.log('Error downloading image: ', error)
+        alert('Error downloading image');
       }
+    };
+
+    if (url) {
+      downloadImage(url);
     }
+  }, [url, supabase]);
 
-    if (url) downloadImage(url)
-  }, [url, supabase])
-
-  const uploadAvatar: React.ChangeEventHandler<HTMLInputElement> = async (
-    event
-  ) => {
+  const uploadAvatar: React.ChangeEventHandler<HTMLInputElement> = async (event) => {
     try {
-      setUploading(true)
+      setUploading(true);
 
       if (!event.target.files || event.target.files.length === 0) {
-        throw new Error('You must select an image to upload.')
+        throw new Error('You must select an image to upload.');
       }
 
-      const file = event.target.files[0]
-      const fileExt = file.name.split('.').pop()
-      const filePath = `${uid}-${Math.random()}.${fileExt}`
+      const file = event.target.files[0];
+      const fileExt = file.name.split('.').pop();
+      const filePath = `${uid}-${Math.random()}.${fileExt}`;
 
       const { error: uploadError } = await supabase.storage
         .from('avatars')
-        .upload(filePath, file)
+        .upload(filePath, file);
 
       if (uploadError) {
-        throw uploadError
+        throw uploadError;
       }
 
-      onUpload(filePath)
+      onUpload(filePath);
     } catch (error) {
-      alert('Error uploading avatar!')
+      alert('Error uploading image');
     } finally {
-      setUploading(false)
+      setUploading(false);
     }
-  }
+  };
 
   return (
     <div className="flex justify-center items-center">
@@ -105,5 +102,7 @@ export default function Avatar({
         />
       </div>
     </div>
-  )
-}
+  );
+};
+
+export default Avatar;
