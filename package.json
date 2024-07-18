@@ -89,7 +89,7 @@
     "eslint-plugin-optimize-regex": "^1.2.1",
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-pure": "github:purely-functional/eslint-plugin-pure",
-    "eslint-plugin-react": "^7.34.2",
+    "eslint-plugin-react": "^7.34.4",
     "eslint-plugin-regexp": "^2.6.0",
     "eslint-plugin-sonarjs": "^0.24.0",
     "eslint-plugin-unicorn": "^51.0.1",
