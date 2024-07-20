@@ -1,117 +1,109 @@
-import Avatar from './avatar';
-import { useCallback, useEffect, useState } from 'react';
-import { createClient } from '@/utils/supabase/client';
-import { type User } from '@supabase/supabase-js';
-import Button from '@/components/ui/button';
+'use client'
+import Avatar from './avatar'
+import { useCallback, useEffect, useState } from 'react'
+import { createClient } from '@/utils/supabase/client'
+import { type User } from '@supabase/supabase-js'
+import Button from '@/components/ui/button'
 
 interface AccountFormProps {
-  user: User | null;
+  user: User | null
 }
 
 export default function AccountForm({ user }: AccountFormProps): JSX.Element {
-  const supabase = createClient();
-  const [loading, setLoading] = useState<boolean>(true);
-  const [fullname, setFullname] = useState<string | null>(null);
-  const [username, setUsername] = useState<string | null>(null);
-  const [website, setWebsite] = useState<string | null>(null);
-  const [avatarUrl, setAvatarUrl] = useState<string | null>(null);
+  const supabase = createClient()
+  const [loading, setLoading] = useState<boolean>(true)
+  const [name, setName] = useState<string | null>(null)
+  const [about, setAbout] = useState<string | null>(null)
+  const [avatar, setAvatar] = useState<string | null>(null)
 
   const getProfile = useCallback(async () => {
     try {
-      setLoading(true);
+      setLoading(true)
 
       const { data, error } = await supabase
-        .from('profiles')
-        .select('fullName, username, website, avatarUrl')
+        .from('users')
+        .select('name, about, avatar')
         .eq('id', user?.id)
-        .single();
-      // Prefer using nullish coalescing operator (`??`) instead of a logical or (`||`), as it is a safer operator  
-      // if (error || !data) {
-      //   throw error || new Error('Profile data not found');
-      // }
+        .single()
 
       if (error) {
-        throw new Error(error.message);
+        throw new Error(error.message)
       }
 
       if (!data) {
-        throw new Error('Profile data not found');
+        throw new Error('Profile data not found')
       }
 
-      setFullname(data.fullName ?? null);
-      setUsername(data.username ?? null);
-      setWebsite(data.website ?? null);
-      setAvatarUrl(data.avatarUrl ?? null);
+      setName(data.name ?? null)
+      setAbout(data.about ?? null)
+      setAvatar(data.avatar ?? null)
     } catch (error) {
-      alert('Error fetching profile data!');
+      alert('Error fetching profile data!')
     } finally {
-      setLoading(false);
+      setLoading(false)
     }
-  }, [user, supabase]);
+  }, [user, supabase])
 
   useEffect(() => {
     if (user) {
-      getProfile();
+      getProfile()
     }
-  }, [user, getProfile]);
+  }, [user, getProfile])
 
   const updateProfile = async ({
-    username,
-    fullname,
-    website,
-    avatarUrl,
+    name,
+    about,
+    avatar
   }: {
-    username: string | null;
-    fullname: string | null;
-    website: string | null;
-    avatarUrl: string | null;
+    name: string | null
+    about: string | null
+    avatar: string | null
   }): Promise<void> => {
     try {
-      setLoading(true);
+      setLoading(true)
 
-      const { error } = await supabase.from('profiles').upsert({
+      const { error } = await supabase.from('users').upsert({
         id: user?.id,
-        fullName: fullname,
-        username,
-        website,
-        avatarUrl,
-        updatedAt: new Date().toISOString(),
-      });
+        name,
+        about,
+        avatar,
+        updatedAt: new Date().toISOString()
+      })
 
       if (error) {
-        throw new Error(error.message);
+        throw new Error(error.message)
       }
 
-      alert('Profile updated!');
+      alert('Profile updated!')
     } catch (error) {
-      alert('Error updating the data!');
+      alert('Error updating the data!')
     } finally {
-      setLoading(false);
+      setLoading(false)
     }
-  };
+  }
 
   const handleUpdateClick = async (): Promise<void> => {
-    await updateProfile({ fullname, username, website, avatarUrl });
-  };
+    await updateProfile({ name, about, avatar })
+  }
 
   const handleSignOut = (): void => {
-    const form = document.createElement('form');
-    form.method = 'post';
-    form.action = '/auth/signout';
-    document.body.appendChild(form);
-    form.submit();
-  };
+    const form = document.createElement('form')
+    form.method = 'post'
+    form.action = '/auth/signout'
+    document.body.appendChild(form)
+    form.submit()
+  }
 
   return (
     <div className="form-widget flex flex-col h-screen w-full justify-center items-center gap-2">
       <div className="flex justify-center items-center">
         <Avatar
           uid={user?.id ?? null}
-          url={avatarUrl}
+          url={avatar}
           size={150}
           onUpload={(url) => {
-            setAvatarUrl(url);
-            updateProfile({ fullname, username, website, avatarUrl: url });
+            setAvatar(url)
+            updateProfile({ name, about, avatar: url })
           }}
         />
       </div>
@@ -130,28 +122,22 @@ export default function AccountForm({ user }: AccountFormProps): JSX.Element {
         <input
           id="fullName"
           type="text"
-          value={fullname ?? ''}
-          onChange={(e) => { setFullname(e.target.value); }}
+          value={name ?? ''}
+          onChange={(e) => {
+            setName(e.target.value)
+          }}
           className="border border-grey rounded-lg px-2"
         />
       </div>
       <div className="flex gap-2">
-        <label htmlFor="username">Username</label>
+        <label htmlFor="website">About</label>
         <input
-          id="username"
+          id="about"
           type="text"
-          value={username ?? ''}
-          onChange={(e) => { setUsername(e.target.value); }}
-          className="border border-grey rounded-lg px-2"
-        />
-      </div>
-      <div className="flex gap-2">
-        <label htmlFor="website">Website</label>
-        <input
-          id="website"
-          type="url"
-          value={website ?? ''}
-          onChange={(e) => { setWebsite(e.target.value); }}
+          value={about ?? ''}
+          onChange={(e) => {
+            setAbout(e.target.value)
+          }}
           className="border border-grey rounded-lg px-2"
         />
       </div>
@@ -174,5 +160,5 @@ export default function AccountForm({ user }: AccountFormProps): JSX.Element {
         />
       </div>
     </div>
-  );
+  )
 }

@@ -8,7 +8,7 @@ import twitter from '@/metadata/twitter'
 import openGraph from '@/metadata/openGraph'
 import type { Metadata, Viewport } from 'next'
 import { GoogleAnalytics } from '@next/third-parties/google'
-import { Toaster } from "@/components/ui/toaster"
+import { Toaster } from '@/components/ui/toaster'
 
 import '@/app/globals.css'
 
