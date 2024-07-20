@@ -23,21 +23,17 @@ To begin, follow these steps:
 git clone https://github.com/studycrew/studycrew
 ```
 
-### Setting up MongoDB
+### Setting up Supabase
 
-StudyCrew uses MongoDB as its primary data storage. Ensure you have a local instance or a free MongoDB Atlas subscription. Set your connection string in the .env.example file:
+StudyCrew uses Supabase as its primary data storage. Ensure you have a local instance or a free Supabase subscription.
 
-```js
-MONGODB_URL=[YOUR CONNECTION STRING HERE]
-```
+### Setting up Authentication with Supabase
 
-### Setting up Authentication with Clerk
-
-For authentication, StudyCrew utilizes Clerk. To set up your local instance, you'll need a Clerk account. Once you've created an account, obtain your credentials and place them in the env.local file:
+For authentication, StudyCrew utilizes Supabase. To set up your local instance, you'll need a Supabase account. Once you've created an account, obtain your credentials and place them in the env.local file:
 
 ```js
-NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=[YOUR PUBLISHABLE KEY FROM CLERK]
-CLERK_SECRET_KEY=[YOUR SECRET KEY FROM CLERK]
+NEXT_PUBLIC_SUPABASE_URL=https://iqbtyidkfhmqokxopxhf.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlxYnR5aWRrZmhtcW9reG9weGhmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjA0NTI4NDgsImV4cCI6MjAzNjAyODg0OH0.eo6MVgRbXbdpdUlj4YQo4NJ6D0kE2HRQaLO4VOAOMd4
 ```
 
 ### Sentry Exception Handling
