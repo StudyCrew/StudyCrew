@@ -46,14 +46,14 @@ export default function AccountForm({ user }: AccountFormProps): JSX.Element {
 
   useEffect(() => {
     if (user) {
-      getProfile()
+      void getProfile()
     }
   }, [user, getProfile])
 
   const updateProfile = async ({
-    name,
-    about,
-    avatar
+    name: newName,
+    about: newAbout,
+    avatar: newAvatar
   }: {
     name: string | null
     about: string | null
@@ -64,9 +64,9 @@ export default function AccountForm({ user }: AccountFormProps): JSX.Element {
 
       const { error } = await supabase.from('users').upsert({
         id: user?.id,
-        name,
-        about,
-        avatar,
+        name: newName,
+        about: newAbout,
+        avatar: newAvatar,
         updatedAt: new Date().toISOString()
       })
 
@@ -103,7 +103,7 @@ export default function AccountForm({ user }: AccountFormProps): JSX.Element {
           size={150}
           onUpload={(url) => {
             setAvatar(url)
-            updateProfile({ name, about, avatar: url })
+            void updateProfile({ name, about, avatar: url })
           }}
         />
       </div>
@@ -130,7 +130,7 @@ export default function AccountForm({ user }: AccountFormProps): JSX.Element {
         />
       </div>
       <div className="flex gap-2">
-        <label htmlFor="website">About</label>
+        <label htmlFor="about">About</label>
         <input
           id="about"
           type="text"
