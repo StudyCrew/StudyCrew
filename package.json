@@ -94,7 +94,7 @@
     "eslint-plugin-unicorn": "^51.0.1",
     "eslint-plugin-write-good-comments": "^0.2.0",
     "husky": "^9.1.1",
-    "postcss": "8.4.33",
+    "postcss": "8.4.40",
     "postcss-simple-vars": "^7.0.1",
     "prettier": "^3.3.3",
     "remark": "^15.0.1"

@@ -70,7 +70,7 @@ importers:
         version: 2.4.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       autoprefixer:
         specifier: 10.4.19
-        version: 10.4.19(postcss@8.4.33)
+        version: 10.4.19(postcss@8.4.40)
       class-names:
         specifier: ^1.0.0
         version: 1.0.0
@@ -218,7 +218,7 @@ importers:
         version: 6.6.0(eslint@8.57.0)
       eslint-plugin-pure:
         specifier: github:purely-functional/eslint-plugin-pure
-        version: https://codeload.github.com/purely-functional/eslint-plugin-pure/tar.gz/f69e9e358e621dea41129c7ccfd35f87b37c186a
+        version: git+https://git@github.com:purely-functional/eslint-plugin-pure.git#f69e9e358e621dea41129c7ccfd35f87b37c186a
       eslint-plugin-react:
         specifier: ^7.35.0
         version: 7.35.0(eslint@8.57.0)
@@ -238,11 +238,11 @@ importers:
         specifier: ^9.1.1
         version: 9.1.1
       postcss:
-        specifier: 8.4.33
-        version: 8.4.33
+        specifier: 8.4.40
+        version: 8.4.40
       postcss-simple-vars:
         specifier: ^7.0.1
-        version: 7.0.1(postcss@8.4.33)
+        version: 7.0.1(postcss@8.4.40)
       prettier:
         specifier: ^3.3.3
         version: 3.3.3
@@ -2742,8 +2742,8 @@ packages:
     peerDependencies:
       eslint: ^7.0.0 || ^8.0.0 || ^9.0.0
 
-  eslint-plugin-pure@https://codeload.github.com/purely-functional/eslint-plugin-pure/tar.gz/f69e9e358e621dea41129c7ccfd35f87b37c186a:
-    resolution: {tarball: https://codeload.github.com/purely-functional/eslint-plugin-pure/tar.gz/f69e9e358e621dea41129c7ccfd35f87b37c186a}
+  eslint-plugin-pure@git+https://git@github.com:purely-functional/eslint-plugin-pure.git#f69e9e358e621dea41129c7ccfd35f87b37c186a:
+    resolution: {commit: f69e9e358e621dea41129c7ccfd35f87b37c186a, repo: git@github.com:purely-functional/eslint-plugin-pure.git, type: git}
     version: 0.0.0
     engines: {node: '>=0.10.0'}
 
@@ -3890,8 +3890,8 @@ packages:
     resolution: {integrity: sha512-PS08Iboia9mts/2ygV3eLpY5ghnUcfLV/EXTOW1E2qYxJKGGBUtNjN76FYHnMs36RmARn41bC0AZmn+rR0OVpQ==}
     engines: {node: ^10 || ^12 || >=14}
 
-  postcss@8.4.33:
-    resolution: {integrity: sha512-Kkpbhhdjw2qQs2O2DGX+8m5OVqEcbB9HRBvuYM9pgrjEFUg30A9LmXNlTAUj4S9kgtGyrMbTzVjH7E+s5Re2yg==}
+  postcss@8.4.40:
+    resolution: {integrity: sha512-YF2kKIUzAofPMpfH6hOi2cGnv/HrUlfucspc7pDyvv7kGdqXrfj8SCl/t8owkEgKEuu8ZcRjSOxFxVLqwChZ2Q==}
     engines: {node: ^10 || ^12 || >=14}
 
   prelude-ls@1.2.1:
@@ -7073,14 +7073,14 @@ snapshots:
 
   at-least-node@1.0.0: {}
 
-  autoprefixer@10.4.19(postcss@8.4.33):
+  autoprefixer@10.4.19(postcss@8.4.40):
     dependencies:
       browserslist: 4.23.2
       caniuse-lite: 1.0.30001643
       fraction.js: 4.3.7
       normalize-range: 0.1.2
       picocolors: 1.0.1
-      postcss: 8.4.33
+      postcss: 8.4.40
       postcss-value-parser: 4.2.0
 
   available-typed-arrays@1.0.7:
@@ -7867,7 +7867,7 @@ snapshots:
     dependencies:
       eslint: 8.57.0
 
-  eslint-plugin-pure@https://codeload.github.com/purely-functional/eslint-plugin-pure/tar.gz/f69e9e358e621dea41129c7ccfd35f87b37c186a:
+  eslint-plugin-pure@git+https://git@github.com:purely-functional/eslint-plugin-pure.git#f69e9e358e621dea41129c7ccfd35f87b37c186a:
     dependencies:
       requireindex: 1.1.0
 
@@ -9067,28 +9067,28 @@ snapshots:
 
   possible-typed-array-names@1.0.0: {}
 
-  postcss-import@15.1.0(postcss@8.4.33):
+  postcss-import@15.1.0(postcss@8.4.40):
     dependencies:
-      postcss: 8.4.33
+      postcss: 8.4.40
       postcss-value-parser: 4.2.0
       read-cache: 1.0.0
       resolve: 1.22.8
 
-  postcss-js@4.0.1(postcss@8.4.33):
+  postcss-js@4.0.1(postcss@8.4.40):
     dependencies:
       camelcase-css: 2.0.1
-      postcss: 8.4.33
+      postcss: 8.4.40
 
-  postcss-load-config@4.0.2(postcss@8.4.33):
+  postcss-load-config@4.0.2(postcss@8.4.40):
     dependencies:
       lilconfig: 3.1.2
       yaml: 2.5.0
     optionalDependencies:
-      postcss: 8.4.33
+      postcss: 8.4.40
 
-  postcss-nested@6.2.0(postcss@8.4.33):
+  postcss-nested@6.2.0(postcss@8.4.40):
     dependencies:
-      postcss: 8.4.33
+      postcss: 8.4.40
       postcss-selector-parser: 6.1.1
 
   postcss-selector-parser@6.1.1:
@@ -9096,9 +9096,9 @@ snapshots:
       cssesc: 3.0.0
       util-deprecate: 1.0.2
 
-  postcss-simple-vars@7.0.1(postcss@8.4.33):
+  postcss-simple-vars@7.0.1(postcss@8.4.40):
     dependencies:
-      postcss: 8.4.33
+      postcss: 8.4.40
 
   postcss-value-parser@4.2.0: {}
 
@@ -9108,7 +9108,7 @@ snapshots:
       picocolors: 1.0.1
       source-map-js: 1.2.0
 
-  postcss@8.4.33:
+  postcss@8.4.40:
     dependencies:
       nanoid: 3.3.7
       picocolors: 1.0.1
@@ -9664,11 +9664,11 @@ snapshots:
       normalize-path: 3.0.0
       object-hash: 3.0.0
       picocolors: 1.0.1
-      postcss: 8.4.33
-      postcss-import: 15.1.0(postcss@8.4.33)
-      postcss-js: 4.0.1(postcss@8.4.33)
-      postcss-load-config: 4.0.2(postcss@8.4.33)
-      postcss-nested: 6.2.0(postcss@8.4.33)
+      postcss: 8.4.40
+      postcss-import: 15.1.0(postcss@8.4.40)
+      postcss-js: 4.0.1(postcss@8.4.40)
+      postcss-load-config: 4.0.2(postcss@8.4.40)
+      postcss-nested: 6.2.0(postcss@8.4.40)
       postcss-selector-parser: 6.1.1
       resolve: 1.22.8
       sucrase: 3.35.0
