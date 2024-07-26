@@ -6,7 +6,7 @@ import { type HeroProps } from './types'
 const words = ['Collaborative', 'Accessible', 'Engaging']
 
 const Hero: React.FC<HeroProps> = (props: HeroProps): JSX.Element => {
-  const { handleLearnMoreClick, handleJoinWaitlistClick } = props
+  const { handleJoinWaitlistClick } = props
   const [currentWord, setCurrentWord] = useState('Collaborative')
   const [opacity, setOpacity] = useState(1)
 
@@ -46,15 +46,13 @@ const Hero: React.FC<HeroProps> = (props: HeroProps): JSX.Element => {
       </p>
 
       <div className="mt-8 flex flex-col md:flex-row gap-2 justify-center align-middle">
+        {
+          // <Button onClick={handleJoinWaitlistClick} size="big">
+          //   Join Waitlist
+          //   <FaChevronDown className="inline ml-2" />
+          // </Button>
+        }
         <Button onClick={handleJoinWaitlistClick} size="big">
-          Join Waitlist
-          <FaChevronDown className="inline ml-2" />
-        </Button>
-        <Button
-          onClick={handleLearnMoreClick}
-          variant="outline"
-          size="big-outline"
-        >
           Learn More
           <FaChevronDown className="inline ml-2" />
         </Button>

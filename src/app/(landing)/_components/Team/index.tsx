@@ -38,7 +38,7 @@ const Team = (): JSX.Element => {
 
   return (
     <div className="min-h-[1000px] text-center w-full my-[100px] mt-[100px]">
-      <div className="w-[100%] flex flex-col items-center text-gray-400 text-center m-[50px]">
+      <div className="w-full flex flex-col items-center text-gray-400 text-center m-auto">
         <h2 className="font-bold">
           Our <span className="text-[#3a86ff]">Team</span>
         </h2>

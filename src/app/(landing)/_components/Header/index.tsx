@@ -3,7 +3,7 @@ import { FaBars } from 'react-icons/fa'
 import React, { useState, useEffect } from 'react'
 
 import Navbar from '@/app/(landing)/_components/Navbar'
-import Button from '@/app/(landing)/_components/Button'
+// import Button from '@/app/(landing)/_components/Button'
 
 import { type HeaderProps } from './types'
 import './style.css'
@@ -163,28 +163,29 @@ const Header: React.FC<HeaderProps> = (props: HeaderProps): JSX.Element => {
           setIsMenuOpen={setIsMenuOpen}
         />
       </div>
-
-      <div className="header-items waitlist-container">
-        <Link className="waitlistLink" to="/">
-          <Button
-            onClick={() => {
-              setActivePage('signup')
-              const refContainerCurrent =
-                signupRef.current as HTMLDivElement | null
-              if (refContainerCurrent) {
-                const y =
-                  refContainerCurrent.getBoundingClientRect().top +
-                  window.scrollY +
-                  -60
-                window.scrollTo({ top: y, behavior: 'smooth' })
-              }
-            }}
-            size="small"
-          >
-            Join Waitlist
-          </Button>
-        </Link>
-      </div>
+      {
+        // <div className="header-items waitlist-container">
+        //   <Link className="waitlistLink" to="/">
+        //     <Button
+        //       onClick={() => {
+        //         setActivePage('signup')
+        //         const refContainerCurrent =
+        //           signupRef.current as HTMLDivElement | null
+        //         if (refContainerCurrent) {
+        //           const y =
+        //             refContainerCurrent.getBoundingClientRect().top +
+        //             window.scrollY +
+        //             -60
+        //           window.scrollTo({ top: y, behavior: 'smooth' })
+        //         }
+        //       }}
+        //       size="small"
+        //     >
+        //       Join Waitlist
+        //     </Button>
+        //   </Link>
+        // </div>
+      }
     </header>
   )
 }
