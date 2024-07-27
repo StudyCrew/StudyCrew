@@ -1,5 +1,5 @@
 import React from 'react'
-import Navbar from '@/components/layout/navbar'
+import NavbarHelper from '@/components/layout/NavbarHelper'
 
 interface LayoutProps {
   children: React.ReactNode
@@ -10,7 +10,7 @@ export default function ApplicationLayout({
 }: LayoutProps): JSX.Element {
   return (
     <main className={'flex'}>
-      <Navbar />
+      <NavbarHelper />
       {children}
     </main>
   )
