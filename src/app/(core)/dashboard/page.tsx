@@ -1,3 +1,7 @@
 export default function Dashboard(): JSX.Element {
-  return <div>Dashboard</div>
+  return (
+    <section className={"w-full"}>
+      Dashboard
+    </section>
+  )
 }
