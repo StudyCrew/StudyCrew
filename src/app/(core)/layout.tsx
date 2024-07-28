@@ -1,4 +1,5 @@
 import React from 'react'
+import NavbarHelper from '@/components/layout/NavbarHelper'
 
 interface LayoutProps {
   children: React.ReactNode
@@ -8,9 +9,9 @@ export default function ApplicationLayout({
   children
 }: LayoutProps): JSX.Element {
   return (
-    <React.Fragment>
-      {/* TODO setup nav and other components */}
+    <main className={'flex'}>
+      <NavbarHelper />
       {children}
-    </React.Fragment>
+    </main>
   )
 }

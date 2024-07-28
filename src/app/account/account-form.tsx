@@ -66,7 +66,7 @@ export default function AccountForm({ user }: AccountFormProps): JSX.Element {
         user_id: user?.id,
         name: newName,
         about: newAbout,
-        avatar: newAvatar,
+        avatar: newAvatar
       })
 
       if (error) {
