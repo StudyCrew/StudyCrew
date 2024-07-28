@@ -34,7 +34,7 @@ const Navbar = ({
       imgURL: '/assets/icons/users.svg',
       route: '/groups',
       label: 'Search Study Groups'
-    }
+    },
   ]
 
   const footerLinks = [
@@ -87,19 +87,25 @@ const Navbar = ({
                 href={item.route}
                 key={item.label}
                 className={cn(
-                  'flex justify-center items-center h-[56px] cursor-pointer ',
+                  'flex justify-start items-center h-14 cursor-pointer ',
                   {
-                    'bg-[#D3E4FF] border-l-[8px] border-blue-500 rounded-l':
+                    // 'bg-[#D3E4FF] border-l-[8px] border-blue-500 rounded-l':
+                    'bg-[#D3E4FF]':
                       isActive
                   }
                 )}
               >
+                {isActive && (
+                  <div className={"w-2 bg-blue-500 rounded-l rounded-full h-full"}>
+                    &nbsp;
+                  </div>
+                )}
                 <Image
                   src={item.imgURL}
                   alt={item.label}
                   height={24}
                   width={24}
-                  className={cn({ 'fill-blue-600': isActive })}
+                  className={cn("ml-6", { 'fill-blue-600 ml-4': isActive })}
                 />
               </Link>
             )
@@ -114,20 +120,27 @@ const Navbar = ({
                 .map((word) => word[0].toUpperCase())
                 .join('')
 
+              const isActive =
+                pathname === `/groups/${group.id}` || pathname.startsWith(`/groups/${group.id}`)
               return (
                 <Link
-                  href={`/group/${group.id}`}
+                  href={`/groups/${group.id}`}
                   key={group.id}
                   className={cn(
-                    'flex justify-center items-center h-[56px] cursor-pointer',
+                    'flex justify-start items-center h-14 cursor-pointer',
                     {
-                      'bg-[#D3E4FF] border-l-[8px] border-blue-500 rounded-l':
+                      'bg-[#D3E4FF]':
                         pathname === `/group/${group.id}`
                     }
                   )}
                 >
-                  <div className="flex justify-center border-[1px] border-blue-600 items-center w-8 h-8 bg-blue-50 rounded-full">
-                    <span className="text-black text-base">{initials}</span>
+                  {isActive && (
+                    <div className={"w-2 bg-blue-500 rounded-l rounded-full h-full"}>
+                      &nbsp;
+                    </div>
+                  )}
+                  <div className={cn("flex justify-center border-[1px] border-blue-600 items-center w-8 h-8 bg-blue-50 rounded-full ml-5", {"ml-3": isActive})}>
+                    <span className={cn("text-black text-base")}>{initials}</span>
                   </div>
                 </Link>
               )
@@ -150,19 +163,25 @@ const Navbar = ({
                 href={item.route}
                 key={item.label}
                 className={cn(
-                  'flex justify-center items-center h-[56px] cursor-pointer ',
+                  'flex justify-start items-center h-14 cursor-pointer ',
                   {
-                    'bg-[#D3E4FF] border-l-[8px] border-blue-500 rounded-l':
+                    // 'bg-[#D3E4FF] border-l-[8px] border-blue-500 rounded-l':
+                    'bg-[#D3E4FF]':
                       isActive
                   }
                 )}
               >
+                {isActive && (
+                  <div className={"w-2 bg-blue-500 rounded-l rounded-full h-full"}>
+                    &nbsp;
+                  </div>
+                )}
                 <Image
                   src={item.imgURL}
                   alt={item.label}
                   height={24}
                   width={24}
-                  className={cn({ 'brightness-[3] invert-0': isActive })}
+                  className={cn("ml-6", {"ml-4": isActive })}
                 />
               </Link>
             )
