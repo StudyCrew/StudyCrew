@@ -34,7 +34,7 @@ const Navbar = ({
       imgURL: '/assets/icons/users.svg',
       route: '/groups',
       label: 'Search Study Groups'
-    },
+    }
   ]
 
   const footerLinks = [
@@ -53,7 +53,7 @@ const Navbar = ({
   return (
     <div
       className={
-        'sticky left-0 top-0 flex h-screen flex-col justify-between border-r border-gray-200 bg-white text-white w-[78px]'
+        'sticky left-0 top-0 flex h-screen flex-col justify-between border-r border-gray-200 bg-white text-white w-[72px]'
       }
     >
       <nav
@@ -90,13 +90,14 @@ const Navbar = ({
                   'flex justify-start items-center h-14 cursor-pointer ',
                   {
                     // 'bg-[#D3E4FF] border-l-[8px] border-blue-500 rounded-l':
-                    'bg-[#D3E4FF]':
-                      isActive
+                    'bg-[#D3E4FF]': isActive
                   }
                 )}
               >
                 {isActive && (
-                  <div className={"w-2 bg-blue-500 rounded-l rounded-full h-full"}>
+                  <div
+                    className={'w-2 bg-blue-500 rounded-l rounded-full h-full'}
+                  >
                     &nbsp;
                   </div>
                 )}
@@ -105,7 +106,7 @@ const Navbar = ({
                   alt={item.label}
                   height={24}
                   width={24}
-                  className={cn("ml-6", { 'fill-blue-600 ml-4': isActive })}
+                  className={cn('ml-6', { 'fill-blue-600 ml-4': isActive })}
                 />
               </Link>
             )
@@ -121,7 +122,8 @@ const Navbar = ({
                 .join('')
 
               const isActive =
-                pathname === `/groups/${group.id}` || pathname.startsWith(`/groups/${group.id}`)
+                pathname === `/groups/${group.id}` ||
+                pathname.startsWith(`/groups/${group.id}`)
               return (
                 <Link
                   href={`/groups/${group.id}`}
@@ -129,18 +131,28 @@ const Navbar = ({
                   className={cn(
                     'flex justify-start items-center h-14 cursor-pointer',
                     {
-                      'bg-[#D3E4FF]':
-                        pathname === `/group/${group.id}`
+                      'bg-[#D3E4FF]': pathname === `/group/${group.id}`
                     }
                   )}
                 >
                   {isActive && (
-                    <div className={"w-2 bg-blue-500 rounded-l rounded-full h-full"}>
+                    <div
+                      className={
+                        'w-2 bg-blue-500 rounded-l rounded-full h-full'
+                      }
+                    >
                       &nbsp;
                     </div>
                   )}
-                  <div className={cn("flex justify-center border-[1px] border-blue-600 items-center w-8 h-8 bg-blue-50 rounded-full ml-5", {"ml-3": isActive})}>
-                    <span className={cn("text-black text-base")}>{initials}</span>
+                  <div
+                    className={cn(
+                      'flex justify-center border-[1px] border-blue-600 items-center w-8 h-8 bg-blue-50 rounded-full ml-5',
+                      { 'ml-3': isActive }
+                    )}
+                  >
+                    <span className={cn('text-black text-base')}>
+                      {initials}
+                    </span>
                   </div>
                 </Link>
               )
@@ -166,13 +178,14 @@ const Navbar = ({
                   'flex justify-start items-center h-14 cursor-pointer ',
                   {
                     // 'bg-[#D3E4FF] border-l-[8px] border-blue-500 rounded-l':
-                    'bg-[#D3E4FF]':
-                      isActive
+                    'bg-[#D3E4FF]': isActive
                   }
                 )}
               >
                 {isActive && (
-                  <div className={"w-2 bg-blue-500 rounded-l rounded-full h-full"}>
+                  <div
+                    className={'w-2 bg-blue-500 rounded-l rounded-full h-full'}
+                  >
                     &nbsp;
                   </div>
                 )}
@@ -181,7 +194,7 @@ const Navbar = ({
                   alt={item.label}
                   height={24}
                   width={24}
-                  className={cn("ml-6", {"ml-4": isActive })}
+                  className={cn('ml-6', { 'ml-4': isActive })}
                 />
               </Link>
             )
