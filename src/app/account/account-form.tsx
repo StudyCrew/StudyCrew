@@ -23,7 +23,7 @@ export default function AccountForm({ user }: AccountFormProps): JSX.Element {
       const { data, error } = await supabase
         .from('users')
         .select('name, about, avatar')
-        .eq('id', user?.id)
+        .eq('user_id', user?.id)
         .single()
 
       if (error) {
@@ -63,11 +63,10 @@ export default function AccountForm({ user }: AccountFormProps): JSX.Element {
       setLoading(true)
 
       const { error } = await supabase.from('users').upsert({
-        id: user?.id,
+        user_id: user?.id,
         name: newName,
         about: newAbout,
         avatar: newAvatar,
-        updatedAt: new Date().toISOString()
       })
 
       if (error) {
