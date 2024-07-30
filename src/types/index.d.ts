@@ -1,4 +1,5 @@
 import type { MaterialType } from '../../types'
+import { User } from '@supabase/supabase-js'
 
 declare type MaterialComponentProps = {
   type: MaterialType;
