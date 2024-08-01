@@ -110,7 +110,7 @@ If you are unsure about anything, just ask! We are more than happy to help and w
 
 ## Developer Hours
 
-Each week, StudyCrew hosts hour-long meetings for contributors and team members to discuss upcoming changes, planned changes, and general strategy. These "developer hours" occur on **Tuesdays and Fridays at 7AM EST (4AM PST) and 4PM EST (1PM PST), respectively**.
+StudyCrew hosts regular meetings for contributors and team members to discuss upcoming changes, planned updates, and overall strategy. These 'developer hours' are held on our Discord server, where specific timings will be announced.
 
 ## Join Our Community
 
