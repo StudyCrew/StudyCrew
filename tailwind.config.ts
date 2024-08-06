@@ -42,6 +42,26 @@ const tailwindConfig = {
       },
       colors: {
         tooltipcolor: '#1D2939',
+        
+        //
+        brand:"#3a86ff",
+        brand_shade:"#3376e0",
+        brand_tint:"#4e92ff",
+
+        dim:"#243247",
+        dim_shade:"",
+        dim_tint:"",
+
+        text:"#0c1b33",
+        text_shade:"#0b182d",
+        text_tint:"#243247",
+
+        background:"#f2f7ff",
+        background_shade:"#d5d9e0",
+        background_tint:"#f3f8ff",
+
+        light:"#666d79",
+        
         gradient: {
           500: '#8338ec'
         },
