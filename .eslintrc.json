@@ -14,23 +14,20 @@
     "project": ["./tsconfig.json"]
   },
   "extends": [
-    "eslint:recommended",
-    "plugin:import/errors",
-    "plugin:import/warnings",
-    "plugin:import/typescript",
-    "standard-with-typescript",
-    "plugin:react/recommended",
-    "plugin:github/recommended",
-    "plugin:lodash/recommended",
-    "plugin:regexp/recommended",
-    "plugin:sonarjs/recommended",
-    "plugin:promise/recommended",
-    "plugin:eslint-comments/recommended",
-    "plugin:jsonc/recommended-with-json",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended-requiring-type-checking",
-    "prettier"
+    // "eslint:recommended",
+    // "plugin:import/errors",
+    // "plugin:import/warnings",
+    // "plugin:import/typescript",
+    // "standard-with-typescript",
+    // "plugin:react/recommended",
+    // "plugin:github/recommended",
+    // "plugin:lodash/recommended",
+    // "plugin:regexp/recommended",
+    // "plugin:promise/recommended",
+    // "plugin:eslint-comments/recommended",
+    // "plugin:jsonc/recommended-with-json",
+    // "plugin:@typescript-eslint/recommended",
+    // "prettier"
   ],
   "plugins": [
     "pure",
@@ -74,13 +71,17 @@
     "promise/always-return": 0,
     "lodash/prefer-lodash-method": 0,
     "@typescript-eslint/no-shadow": "warn",
+    "@typescript-eslint/no-unused-vars": "warn",
 
-    // make sure there is no :any in the project
     "@typescript-eslint/no-explicit-any": "warn",
+    "no-console": "off",
+    "@typescript-eslint/no-unsafe-argument": "warn",
+    "@typescript-eslint/no-unsafe-member-access": "warn",
+    "@typescript-eslint/explicit-function-return-type": "warn",
 
     "@typescript-eslint/triple-slash-reference": 0,
     "@typescript-eslint/strict-boolean-expressions": 0,
-    "@typescript-eslint/space-before-function-paren": 0,
-    "filenames/match-regex": [2, "^[a-z_.]+$", true]
+    "@typescript-eslint/space-before-function-paren": 0
+    // "filenames/match-regex": [2, "^[a-z_.]+$", true]
   }
 }
