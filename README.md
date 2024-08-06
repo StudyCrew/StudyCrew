@@ -23,21 +23,17 @@ To begin, follow these steps:
 git clone https://github.com/studycrew/studycrew
 ```
 
-### Setting up MongoDB
+### Setting up Supabase
 
-StudyCrew uses MongoDB as its primary data storage. Ensure you have a local instance or a free MongoDB Atlas subscription. Set your connection string in the .env.example file:
+StudyCrew uses Supabase as its primary data storage. Ensure you have a local instance or a free Supabase subscription.
 
-```js
-MONGODB_URL=[YOUR CONNECTION STRING HERE]
-```
+### Setting up Authentication with Supabase
 
-### Setting up Authentication with Clerk
-
-For authentication, StudyCrew utilizes Clerk. To set up your local instance, you'll need a Clerk account. Once you've created an account, obtain your credentials and place them in the env.local file:
+For authentication, StudyCrew utilizes Supabase. To set up your local instance, you'll need a Supabase account. Once you've created an account, obtain your credentials and place them in the env.local file:
 
 ```js
-NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=[YOUR PUBLISHABLE KEY FROM CLERK]
-CLERK_SECRET_KEY=[YOUR SECRET KEY FROM CLERK]
+NEXT_PUBLIC_SUPABASE_URL=https://iqbtyidkfhmqokxopxhf.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlxYnR5aWRrZmhtcW9reG9weGhmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjA0NTI4NDgsImV4cCI6MjAzNjAyODg0OH0.eo6MVgRbXbdpdUlj4YQo4NJ6D0kE2HRQaLO4VOAOMd4
 ```
 
 ### Sentry Exception Handling
@@ -60,9 +56,41 @@ Sentry.init({
 })
 ```
 
-### Running the Project Locally
+## Running the Project Locally
 
-To run the project locally, you need to:
+### Using Docker
+This project is Dockerized for easy development and deployment. Follow the instructions below to get started.
+
+**Make sure you have Docker installed and running on your system.**
+
+#### Quick Start
+1. **Fork this Repository**
+
+2. **Clone the Repository to local:**
+    ```bash
+   git clone <your-repository-url>
+   cd <your-repository-name>
+   ```
+3. **Build the Image:**
+    
+    ```bash
+    # (Development)
+    docker build . --target development -t studycrew_test:dev
+    # (Production)
+    docker build . --target production -t studycrew_test:prod
+    ```
+4. **Run the Image:**
+    ```bash
+    # (Development)
+    docker run -v .:/usr/src/app -p 3000:3000 --name studycrew_test studycrew_test:dev
+    # (Production)
+    docker run -p 3000:3000 --name studycrew_prod studycrew_test:prod
+    ```
+5. **Access the Application:** Open your browser and navigate to http://localhost:3000 to see the running application.
+
+To stop the container, run `docker stop studycrew_test` or `docker stop studycrew_prod` respectively.
+
+### Without Docker:
 
 1. `pnpm i` the required dependencies.
 
@@ -72,6 +100,8 @@ To run the project locally, you need to:
 
 Interested in contributing? Check out our contribution guide to learn how you can get involved and contribute to StudyCrew's development.
 
+When you find an issue that you want to work on, just leave a comment so we can assign it to you! Feel free to tag @JacobHeldt so we notice your comment faster.
+
 Before contributing please read the style guidelines from the [Figma documentation](https://www.figma.com/file/BJG9JmbThqdp8p8IWs7gNG/StudyCrew-Prototypes-(Copy)?type=design&node-id=8%3A98&mode=design&t=uwHVDf3Ihi12lro3-1) carefully.
 
 If you have to create a new component, please study existing components so these are kept consistent with the rest of the project.
@@ -80,10 +110,10 @@ If you are unsure about anything, just ask! We are more than happy to help and w
 
 ## Developer Hours
 
-Each week, StudyCrew hosts hour-long meetings for contributors and team members to discuss upcoming changes, planned changes, and general strategy. These "developer hours" occur on **Tuesdays and Fridays at 7AM EST (4AM PST) and 4PM EST (1PM PST), respectively**.
+StudyCrew hosts regular meetings for contributors and team members to discuss upcoming changes, planned updates, and overall strategy. These 'developer hours' are held on our Discord server, where specific timings will be announced.
 
 ## Join Our Community
 
-[Join our Discord community](https://discord.gg/Q93eWC8k) for discussions, support, and more!
+[Join our Discord community](https://discord.gg/fxd6uHbdBt) for discussions, support, and more!
 
 Thank you for exploring our repository! We're excited to welcome you to our community.

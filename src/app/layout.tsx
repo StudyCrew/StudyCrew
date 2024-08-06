@@ -1,18 +1,16 @@
 import React from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
-import { dark } from '@clerk/themes'
 import icons from '@/metadata/icons'
 import _isEmpty from 'lodash/isEmpty'
 import robots from '@/metadata/robot'
 import twitter from '@/metadata/twitter'
 import openGraph from '@/metadata/openGraph'
-import { ClerkProvider } from '@clerk/nextjs'
 import type { Metadata, Viewport } from 'next'
 import { GoogleAnalytics } from '@next/third-parties/google'
+import { Toaster } from '@/components/ui/toaster'
 
 import '@/app/globals.css'
-import '@/styles/landing.css'
 
 const { GOOGLE_ANALYTICS_ID } = process.env
 
@@ -45,22 +43,19 @@ interface LayoutProps {
 
 const RootLayout = ({ children }: LayoutProps): JSX.Element => {
   return (
-    <ClerkProvider
-      appearance={{
-        baseTheme: dark
-      }}
-    >
-      <html lang="en">
-        <Head>
-          <Link rel="shortcut icon" href="/public/assets/favicon.ico" />
-        </Head>
-        <body>{children}</body>
+    <html lang="en">
+      <Head>
+        <Link rel="shortcut icon" href="/public/assets/favicon.ico" />
+      </Head>
+      <body>
+        {children}
+        <Toaster />
+      </body>
 
-        {process.browser && !_isEmpty(GOOGLE_ANALYTICS_ID) && (
-          <GoogleAnalytics gaId={GOOGLE_ANALYTICS_ID} />
-        )}
-      </html>
-    </ClerkProvider>
+      {process.browser && !_isEmpty(GOOGLE_ANALYTICS_ID) && (
+        <GoogleAnalytics gaId={GOOGLE_ANALYTICS_ID} />
+      )}
+    </html>
   )
 }
 

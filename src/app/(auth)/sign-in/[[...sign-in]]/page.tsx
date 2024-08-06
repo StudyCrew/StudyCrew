@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // import React from 'react'
 // import { SignIn } from '@clerk/nextjs'
 // import { type Metadata } from 'next'
@@ -13,3 +14,12 @@
 // export default function Page(): JSX.Element {
 //   return <SignIn />
 // }
+=======
+import { type NextPage } from 'next'
+
+const Page: NextPage = () => {
+  return <div />
+}
+
+export default Page
+>>>>>>> platform

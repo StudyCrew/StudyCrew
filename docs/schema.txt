@@ -1,17 +1,10 @@
 // Schema
 
 type User = {
-    id: ObjectId;
+    id: ObjectId; // uuid references auth.users not null primary key
     name: string;
-    userType: UserType; 
-    email: string;
     about: string;
     avatar: string;
-    isTutor: boolean;
-    settings: UserSettings;
-    notifications: Notification[];
-    groupsJoined: ObjectId[]; // Array of group ObjectIds
-    groupsCreated: ObjectId[]; // Array of group ObjectIds
 };
 
 enum UserType {
@@ -19,9 +12,39 @@ enum UserType {
     Teacher
 }
 
-type UserSettings = {
-    emailNotifications: boolean;
-    showGroups: boolean;
+type Settings = {
+    id: ObjectId; // uuid not null primary key
+    email_notifications: boolean; //not null
+    show_groups: boolean; //not null
+    user_id: ObjectId; // uuid unique references auth.users
+};
+
+type Question = {
+    id: ObjectId; // uuid not null primary key
+    title: string; // not null
+    content: string;
+    upvotes: number;
+    created_at: Date;
+    group_id: ObjectId; // uuid references public.groups
+    user_id: ObjectId; // uuid references auth.users
+};
+
+type QuestionComment = {
+    id: ObjectId; // uuid not null primary key
+    content: string; // not null
+    user_id: ObjectId; // uuid references auth.users
+    created_at: Date; // not null
+    question_id: ObjectId // uuid references public.questions
+};
+
+type Notification = {
+    id: ObjectId; // uuid not null primary key
+    category: NotificationCategory;
+    created_at: Date; // not null
+    title: string; // not null
+    content: string; // not null
+    read: boolean; // not null
+    user_ids: Array; // uuid
 };
 
 enum NotificationCategory {
@@ -30,28 +53,29 @@ enum NotificationCategory {
     PlatformUpdate
 }
 
-type Notification = {
-    id: ObjectId;
-    category: NotificationCategory;
-    createdAt: Date;
-    title: string;
-    content: string;
-    read: boolean;
-};
-
 type Message = {
-    id: ObjectId;
-    content: string;
-    groupId: ObjectId;
-    user: ObjectId; // user ObjectId
-    createdAt: Date;
+    id: ObjectId; // uuid not null primary key
+    content: string; // not null
+    user_id: ObjectId; // uuid references auth.users
+    created_at: Date; // not null
+    group_id: ObjectId; // uuid references public.groups
 };
 
 type MessageReport {
-    id: ObjectId;
-    messageId: ObjectId;
+    id: ObjectId; // uuid not null primary key
+    message_id: ObjectId; // uuid references public.messages
     note: string;
 }
+
+type Group = {
+    id: ObjectId; // uuid not null primary key
+    name: string; // not null
+    admin_id: ObjectId; // uuid
+    description: string;
+    subject: GroupSubject;
+    member_ids: ObjectId[]; // Array of user ObjectIds
+    bannerimage: string;
+};
 
 enum GroupSubject {
     Math,
@@ -64,24 +88,21 @@ enum GroupSubject {
     Other
 }
 
-type Group = {
-    id: ObjectId;
-    name: string;
-    adminId: ObjectId; // User ObjectId of person who created the group
-    description: string;
-    subject: GroupSubject;
-    members: ObjectId[]; // Array of user ObjectIds
-    bannerImage: string;
-    qna: Question[];
-    messages: Message[];
-    materialFolders: Folder[];
-    materials: Material[];
+type Folder = {
+    id: ObjectId; // uuid not null primary key
+    name: string; // not null
+    createdAt: Date; // not null
+    group_id: ObjectId; // uuid references public.groups
 };
 
-type Folder = {
-    id: ObjectId;
-    name: string;
-    createdAt: Date;
+type Material = {
+    id: ObjectId; // uuid not null primary key
+    name: string; // not null
+    type: MaterialType; // not null
+    folder_id: ObjectId; // uuid references public.folders
+    link: string; // not null
+    createdAt: Date; // not null
+    group_id: ObjectId; // uuid references public.groups not null
 };
 
 enum MaterialType {
@@ -95,64 +116,15 @@ enum MaterialType {
     Website
 }
 
-type Material = {
-    id: ObjectId;
-    name: string;
-    type: MaterialType;
-    folder: ObjectId; // Reference to Folder ObjectId
-    link: string;
-    createdAt: Date;
-};
-
-type Question = {
-    id: ObjectId;
-    title: string;
-    content: string;
-    user: ObjectId; // user ObjectId
-    comments: QuestionComment[];
-    upvotes: number;
-    createdAt: Date;
-};
-
-type QuestionComment = {
-    id: ObjectId;
-    content: string;
-    user: ObjectId; // user ObjectId
-    createdAt: Date;
-};
-
-
-
 // Examples
 
 const user = {
-    id: new ObjectId(),
+    id: "3d5711ec-bd94-433e-96d4-6e211d02711f",
     name: "Alice Johnson",
-    userType: UserType.Student,
-    email: "alice.johnson@example.com",
-    about: "Passionate about computer science and math.",
+    email: "user4@example.com",
+    about: "Excited to join the community and share knowledge!",
     avatar: "https://api.dicebear.com/9.x/big-ears/svg?seed=Alice",
-    isTutor: false,
-    settings: {
-        emailNotifications: true,
-        showGroups: true
-    },
-    notifications: [
-        {
-            id: new ObjectId(),
-            category: NotificationCategory.GroupQuestion,
-            createdAt: new Date(),
-            title: "New Question in Math Group",
-            content: "A new question has been posted in your Math group.",
-            read: false
-        }
-    ],
-    groupsJoined: [new ObjectId(), new ObjectId()],
-    groupsCreated: [new ObjectId()]
 };
-
-const userTypeStudent = UserType.Student;
-const userTypeTeacher = UserType.Teacher;
 
 const userSettings = {
     emailNotifications: true,
@@ -162,121 +134,70 @@ const userSettings = {
 const notificationCategory = NotificationCategory.PlatformUpdate;
 
 const notification = {
-    id: new ObjectId(),
+    id: "69cbf352-97ac-4497-afe0-3713b00ce9d9",
     category: NotificationCategory.GroupMaterial,
-    createdAt: new Date(),
+    createdAt: "2024-06-28 15:47:00+00",
     title: "New Material in Science Group",
-    content: "A new material has been added to your Science group.",
+    content: "A new material called 'Topic 83' has been added to your group.",
     read: true
 };
 
 const message = {
-    id: new ObjectId(),
-    content: "This is a sample message content.",
-    groupId: new ObjectId(),
-    user: new ObjectId(),
-    createdAt: new Date()
+    id: "38b3d118-86ec-4b44-813b-6c168a5f1faf",
+    content: "Check out this resource.",
+    user_id: "e5e1d4e9-23f3-4d5e-ac92-90e8c61bf2ed"
+    groupId: "a14b4027-11b1-4f44-95a3-ac5f6a0c79ae"
+    createdAt: "2024-06-28 16:57:00+00"
 };
 
 const messageReport = {
-    id: new ObjectId(),
-    messageId: new ObjectId(),
-    note: "Inappropriate content reported."
+    id: "45a4b65e-7a09-4577-bdb8-f046bb8c74db"
+    messageId: "c2a21c9b-251b-4d6c-b75a-a4fc9f153db9",
+    note: "This message is very offensive and should be deleted! "
 };
 
 const groupSubject = GroupSubject.ComputerScience;
 
 const group = {
-    id: new ObjectId(),
+    id: "73783dd5-3aa9-4e91-b711-11aaa2481215",
     name: "Advanced Math Group",
-    adminId: new ObjectId(),
+    adminId: "eedbbcf8-c30d-468d-ba27-0edf2f28876d",
     description: "A group for discussing advanced math topics.",
     subject: GroupSubject.Math,
-    members: [new ObjectId(), new ObjectId()],
-    bannerImage: "https://api.unsplash.com/photos/random?query=study-group&client_id=UNSPLASH_ACCESS_KEY",
-    qna: [
-        {
-            id: new ObjectId(),
-            title: "What is the Riemann Hypothesis?",
-            content: "Can someone explain the Riemann Hypothesis?",
-            user: new ObjectId(),
-            comments: [
-                {
-                    id: new ObjectId(),
-                    content: "It's a conjecture about the distribution of prime numbers.",
-                    user: new ObjectId(),
-                    createdAt: new Date()
-                }
-            ],
-            upvotes: 10,
-            createdAt: new Date()
-        }
-    ],
-    messages: [
-        {
-            id: new ObjectId(),
-            content: "Welcome to the Advanced Math Group!",
-            groupId: new ObjectId(),
-            user: new ObjectId(),
-            createdAt: new Date()
-        }
-    ],
-    materialFolders: [
-        {
-            id: new ObjectId(),
-            name: "Lecture Notes",
-            createdAt: new Date()
-        }
-    ],
-    materials: [
-        {
-            id: new ObjectId(),
-            name: "Week 1 Lecture Notes",
-            type: MaterialType.GoogleDoc,
-            folder: new ObjectId(),
-            link: "https://docs.google.com/document/d/1abcd1234",
-            createdAt: new Date()
-        }
-    ]
+    members: ["66c51364-b0d6-4568-85a6-aa6c5e142dd8","96fee162-04a5-4680-9508-0af953b2372a","0fed0269-f4f4-43ca-abd2-34f24d3d30dd","6162e365-ef5a-4615-8b42-7939abb8ee2b","2a6ea8f0-33b5-4372-9b05-9598fe70038f","cfb5b583-c75e-49dc-b3c6-c91007679243","95262634-d57c-43aa-b01c-301738cbe807","b341d670-5cc9-4fe9-8c4a-39df4d4e1f23","278b9efa-588c-44a0-9540-4391a20715c7","e5e1d4e9-23f3-4d5e-ac92-90e8c61bf2ed","74baf966-266f-411a-95b3-fd812eacf1c5","542755c8-dc3f-43cb-a6c1-ccab06fd8f8e","cc938813-c2aa-4c08-9fb2-6d790152fffa"],
+    bannerImage: "https://images.unsplash.com/photo-1509228627152-72ae9ae6848d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MzczNTB8MHwxfHNlYXJjaHw1fHxtYXRofGVufDB8fHx8MTcyMjAwNjE4N3ww&ixlib=rb-4.0.3&q=80&w=1080",
 };
 
 const folder = {
-    id: new ObjectId(),
-    name: "Assignments",
-    createdAt: new Date()
+    id: "f6fd7c07-8d8d-4f88-a192-fdfcf4b9f6c5",
+    name: "Chemistry Basics",
+    createdAt: "2024-07-09 16:05:00+00",
+    group_id: "a14b4027-11b1-4f44-95a3-ac5f6a0c79ae"
 };
 
 const materialType = MaterialType.YouTube;
 
 const material = {
-    id: new ObjectId(),
-    name: "Introduction to Quantum Computing",
-    type: MaterialType.YouTube,
-    folder: new ObjectId(),
-    link: "https://www.youtube.com/watch?v=abcd1234",
-    createdAt: new Date()
+    id: "ae693026-2c30-4e0a-8517-05b575c29adb",
+    name: "Quiz Answers",
+    type: MaterialType.GoogleDoc,
+    folder: "d90077a0-64c3-4e72-87bb-facb7c4ac7c3",
+    link: "https://docs.google.com/document/d/1SlqM3ksvjMgoTS_1tgLhGXC4n-S0W4Y_LWntOHkeEz8/edit?usp=sharing",
+    createdAt: "2024-07-15 16:18:00+00"
 };
 
 const question = {
-    id: new ObjectId(),
-    title: "How does machine learning work?",
-    content: "Can someone explain the basics of machine learning?",
-    user: new ObjectId(),
-    comments: [
-        {
-            id: new ObjectId(),
-            content: "Machine learning is a method of data analysis that automates analytical model building.",
-            user: new ObjectId(),
-            createdAt: new Date()
-        }
-    ],
-    upvotes: 5,
-    createdAt: new Date()
+    id: "94a6c942-83a4-43ee-9fac-ef37770694cb",
+    title: "What are the key factors in social change?",
+    content: "Can someone explain the main drivers of social change and provide examples from different societies?",
+    upvotes: 19,
+    group_id: "00d000d8-f8d9-43bc-a28b-99aa87ed5858"
+    user_id: "c266fc82-c15c-498b-81fe-2938dfc8db37"
 };
 
 const questionComment = {
-    id: new ObjectId(),
-    content: "It's a type of AI that enables computers to learn from data.",
-    user: new ObjectId(),
-    createdAt: new Date()
+    id: "58a1e9bd-0160-4624-ad66-1da95d3430f7",
+    content: "I think the historical context is key here. Here’s why.",
+    user_id: "cbefb3ca-0a58-447c-9db6-cc67f7d25f94",
+    createdAt: "2024-07-04 19:24:00+00"
 };
