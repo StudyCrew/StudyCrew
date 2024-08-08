@@ -1,6 +1,6 @@
 'use client'
 
-import GroupChat from '@/components/widgets/groupchat/GroupChat'
+import GroupCard from '@/components/widgets/groupcard/GroupCard'
 // import "../globals.css"
 
 const Check: React.FC = () => {
@@ -42,7 +42,7 @@ const Check: React.FC = () => {
   return (
     <div className="main bg-[#f3f4f8] h-screen flex justify-center items-center gap-y-5 gap-x-4">
       {arr.map((item, index) => (
-        <GroupChat
+        <GroupCard
           key={index}
           bannerImageLink={item.bannerImageLink}
           name={item.name}

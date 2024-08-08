@@ -1,6 +1,6 @@
 import React from 'react'
 
-interface GroupChatProps {
+interface GroupCardProps {
   key: number
   bannerImageLink: string
   avatarLink: string
@@ -13,7 +13,7 @@ interface GroupChatProps {
   handleClickAction: () => void // Typing handleClickAction as a function
 }
 
-const GroupChat: React.FC<GroupChatProps> = ({
+const GroupCard: React.FC<GroupCardProps> = ({
   key,
   bannerImageLink,
   avatarLink,
@@ -28,7 +28,7 @@ const GroupChat: React.FC<GroupChatProps> = ({
   return (
     <div
       key={key}
-      className="groupChat w-[360px] h-[280px] flex flex-col rounded-2xl bg-white"
+      className="groupCard w-[360px] h-[280px] flex flex-col rounded-2xl bg-white"
     >
       <div
         className="banner w-full h-[128px] relative rounded-t-2xl"
@@ -79,4 +79,4 @@ const GroupChat: React.FC<GroupChatProps> = ({
   )
 }
 
-export default GroupChat
+export default GroupCard
