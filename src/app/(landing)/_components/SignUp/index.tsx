@@ -100,9 +100,9 @@ function SignUp(): JSX.Element {
       <div className="blue-neon-mist signup-mist-1"></div>
 
       <div className="user-email">
-        <h2>
-          Empowering <span>You</span>
-        </h2>
+        {/* <h2> */}
+        {/*   Empowering <span>You</span> */}
+        {/* </h2> */}
         <p className="subtitle">Ready to Transform Your Learning Experience?</p>
         <p className="spots-left">
           {spotsLeft !== null
