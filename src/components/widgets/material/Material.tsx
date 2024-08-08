@@ -1,8 +1,8 @@
 'use client'
 
 import React from 'react'
-import type { MaterialComponentProps } from '@/types'
-import { MaterialType } from '../../../types'
+import type { MaterialProps } from '@/types'
+import { MaterialType } from '../../../../types'
 import Image from 'next/image'
 import { formatDate } from '@/utils'
 import Link from 'next/link'
@@ -10,7 +10,7 @@ import Link from 'next/link'
 // ! THE USER TYPE IS SET TO STRING FOR NOW, CHANGE IT TO THE DEFINED USER TYPE WHEN USING THE COMPONENT
 // ! ALSO UPDATE THE DECLARATION - "MaterialComponentProps"
 
-const MaterialComponent = ({
+const Material = ({
   type,
   websiteLink,
   title,
@@ -18,7 +18,7 @@ const MaterialComponent = ({
   user,
   date,
   variant = 'default'
-}: MaterialComponentProps) => {
+}: MaterialProps) => {
   let iconPath: string
 
   switch (type) {
@@ -161,4 +161,4 @@ const MaterialComponent = ({
   )
 }
 
-export default MaterialComponent
+export default Material
