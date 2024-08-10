@@ -1,111 +1,80 @@
-import React, { useEffect, useState } from 'react'
-import { createClient } from '@/utils/supabase/client'
-import Image from 'next/image'
+import { useMemo, useState, useEffect } from 'react';
+import { createAvatar } from '@dicebear/core';
+import { bigEars } from '@dicebear/collection';
 
-interface AvatarProps {
-  uid: string | null
-  url: string | null
-  size: number
-  onUpload: (url: string) => void
-}
-
-const Avatar: React.FC<AvatarProps> = ({ uid, url, size, onUpload }) => {
-  const supabase = createClient()
-  const [avatarUrl, setAvatarUrl] = useState<string | null>(url)
-  const [uploading, setUploading] = useState(false)
-
-  useEffect(() => {
-    const downloadImage = async (path: string): Promise<void> => {
-      try {
-        const { data, error } = await supabase.storage
-          .from('avatars')
-          .download(path)
-
-        if (error) {
-          throw error
-        }
-
-        const imageUrl = URL.createObjectURL(data)
-        setAvatarUrl(imageUrl)
-      } catch (error) {
-        alert('Error downloading image')
-      }
-    }
-
-    if (url) {
-      downloadImage(url)
-    }
-  }, [url, supabase])
-
-  const uploadAvatar: React.ChangeEventHandler<HTMLInputElement> = async (
-    event
-  ) => {
-    try {
-      setUploading(true)
-
-      if (!event.target.files || event.target.files.length === 0) {
-        throw new Error('You must select an image to upload.')
-      }
-
-      const file = event.target.files[0]
-      const fileExt = file.name.split('.').pop()
-      const suffix = window.crypto.getRandomValues(new Uint32Array(1))[0]
-      const filePath = `${uid}-${suffix}.${fileExt}`
-
-      const { error: uploadError } = await supabase.storage
-        .from('avatars')
-        .upload(filePath, file)
-
-      if (uploadError) {
-        throw uploadError
-      }
-
-      onUpload(filePath)
-    } catch (error) {
-      alert('Error uploading image')
-    } finally {
-      setUploading(false)
-    }
+const USERCONFIGURATIONOPTIONS = [
+  {
+    label: 'Background Color',
+    options: [
+      "#b6e3f4", "#c0aede", "#d1d4f9", "#ffd5dc", "#ffdfbf"
+    ]
+  },
+  {
+    label: 'Eyes',
+    options: [
+      "variant03", "variant13", "variant21", "variant23", "variant24"
+    ]
+  },
+  {
+    label: 'Hair',
+    options: [
+      "long17", "long14", "long02", "long11", "no selection"
+    ]
+  },
+  {
+    label: 'Hair Color',
+    options: [
+      "#2c1b18", "#724133", "#d6b370", "#393305", "#f59797"
+    ]
+  },
+  {
+    label: "Skin Color",
+    options: [
+      "#89532c", "#a66637", "#c07f50", "#da9969", "#f8b788"
+    ]
+  },
+  {
+    label: "Mouth",
+    options: [
+      "variant0201", "variant0105", "variant0702", "variant0105", "variant0707"
+    ]
   }
+]
+
+function Avatar() {
+  const [background, setBackground] = useState('transparent');
+  const [eyes, setEyes] = useState('default');
+  const [hair, setHair] = useState('default');
+  const [hairColor, setHairColor] = useState('default');
+  const [skinColor, setSkinColor] = useState('default');
+  const [mouth, setMouth] = useState('default');
+
+  const avatar = useMemo(() => {
+    return createAvatar(bigEars, {
+      size: 128,
+      flip: false,
+      rotate: 0,
+      scale: 1,
+      radius: 0,
+      backgroundType: ['solid'],
+      backgroundRotation: [0],
+      translateX: 0,
+      translateY: 0,
+      randomizeIds: false,
+      cheekProbability: 0,
+      ear: ['variant01'],
+      face: ['variant02'],
+      frontHair: ['variant02'],
+      nose: ['variant05'],
+      sideburn: ['variant04'],
+    }).toDataUri();
+  }, []);
 
   return (
-    <div className="flex justify-center items-center">
-      {avatarUrl ? (
-        <Image
-          width={size}
-          height={size}
-          src={avatarUrl}
-          alt="Avatar"
-          className="avatar image"
-          style={{ height: size, width: size }}
-        />
-      ) : (
-        <div
-          className="avatar no-image"
-          style={{ height: size, width: size }}
-        />
-      )}
-      <div style={{ width: size }}>
-        <label
-          className="cursor-pointer bg-primary-500 py-0.5 px-2 text-white font-bold rounded-lg"
-          htmlFor="single"
-        >
-          {uploading ? 'Uploading ...' : 'Upload image'}
-        </label>
-        <input
-          style={{
-            visibility: 'hidden',
-            position: 'absolute'
-          }}
-          type="file"
-          id="single"
-          accept="image/*"
-          onChange={uploadAvatar}
-          disabled={uploading}
-        />
-      </div>
+    <div className='bg-gray-200 rounded-lg py-[25px] px-[35px] flex flex-col gap-3 mt-4'>
+      <img src={avatar} alt="Avatar" />
     </div>
-  )
+  );
 }
 
-export default Avatar
+export default Avatar;

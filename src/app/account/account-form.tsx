@@ -106,12 +106,13 @@ export default function AccountForm({ user }: AccountFormProps): JSX.Element {
         </h1>
         <h2 className='font-bold text-center text-[40px] w-full'>Create Your Profile</h2>
       </header>
-      <div className='grid grid-cols-2 h-full px-[125px]'>
+      <div className='grid grid-cols-2 h-full px-[125px] gap-10'>
         <div>
           <h3 className='text-2xl font-bold'>Avatar</h3>
+          <Avatar />
         </div>
         <div>
-          <form className='flex flex-col gap-7'>
+          <form className='flex flex-col gap-4'>
             <h3 className='text-2xl font-bold'>Account</h3>
             <div className='bg-gray-200 rounded-lg py-[25px] px-[35px] flex flex-col gap-3'>
               <div className='flex flex-col'>
