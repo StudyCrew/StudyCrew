@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import Button from '@/app/(landing)/_components/Button'
-import { TEAM_MEMBERS } from '@/data'
+import { TEAM_MEMBERS } from '../../_data/team-members'
 import TeamCard from './TeamCard'
 
 const Team = (): JSX.Element => {
