@@ -40,10 +40,33 @@ const tailwindConfig = {
       padding: {
         5.5: '22px'
       },
+
+      fontFamily: {
+        rubik: ['Rubik', 'sans-serif'],
+        dmsans: ['DM Sans', 'sans-serif'],
+      },
+      fontSize: {
+        'display-01': '40px',
+        'heading1': '26px',
+        'heading2': '24px',
+        'heading3': '22px',
+        'heading4': '20px',
+        'body1': '18px',
+        'heading5': '18px',
+        'label-lg': '16px',
+        'heading6': '16px',
+        'overline': '14px',
+        'label-md': '14px',
+        'body-quotation': '14px',
+        'body2': '14px',
+        'button': '12px',
+        'label-sm': '12px',
+        'link': '10px',
+        'label-xsm': '10px',
+        'tiny': '10px',
+      },
+
       colors: {
-        tooltipcolor: '#1D2939',
-        
-        //
         brand:"#3a86ff",
         brand_shade:"#3376e0",
         brand_tint:"#4e92ff",
@@ -65,6 +88,9 @@ const tailwindConfig = {
         gradient: {
           500: '#8338ec'
         },
+
+        tooltipcolor: '#1D2939',
+
         primary: {
           50: '#EEF6FF',
           100: '#D9EAFF',
