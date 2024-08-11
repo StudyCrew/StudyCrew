@@ -1,4 +1,4 @@
-import type { MaterialType } from '../../types'
+import type { MaterialType } from '.'
 import { User } from '@supabase/supabase-js'
 
 declare type MaterialProps = {

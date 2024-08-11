@@ -2,7 +2,7 @@
 
 import React from 'react'
 import type { MaterialProps } from '@/types'
-import { MaterialType } from '../../../../types'
+import { MaterialType } from '../../../types'
 import Image from 'next/image'
 import { formatDate } from '@/utils'
 import Link from 'next/link'
