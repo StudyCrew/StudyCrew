@@ -3,36 +3,36 @@ import Image from 'next/image'
 import Link from 'next/link'
 import LogoWhite from '../../../public/assets/LogoWhite.svg'
 import GoogleAccount from '../../../public/assets/web_light_sq_ctn 1.svg'
-import { FaHouse } from 'react-icons/fa6'
+import { PiHouseDuotone } from "react-icons/pi"
 import { PiUsersDuotone } from 'react-icons/pi'
-import { IoIosSettings } from 'react-icons/io'
-import { AiOutlineUser } from 'react-icons/ai'
+import { PiGearDuotone } from "react-icons/pi"
+import { PiUserDuotone } from "react-icons/pi"
 import Button from '@/components/ui/button'
 import { signup } from './actions'
 
 const Signup = () => {
   const OurFeatures = [
     {
-      icon: <FaHouse className="w-[32px] h-[32px]" />,
+      icon: <PiHouseDuotone className="w-[32px] h-[32px] text-black" />,
       title: 'Perdonal Dashboard'
     },
     {
-      icon: <PiUsersDuotone className="w-[32px] h-[32px]" />,
+      icon: <PiUsersDuotone className="w-[32px] h-[32px] text-black" />,
       title: 'Study Groups'
     },
     {
-      icon: <IoIosSettings className="w-[32px] h-[32px]" />,
+      icon: <PiGearDuotone className="w-[32px] h-[32px] text-black" />,
       title: 'Settings'
     },
     {
-      icon: <AiOutlineUser className="w-[32px] h-[32px]" />,
+      icon: <PiUserDuotone className="w-[32px] h-[32px] text-black" />,
       title: 'Personal Profile'
     }
   ]
   return (
-    <div className="flex max-h-full w-full gap-10">
-      <div className="flex flex-col w-[40%] rounded-lg bg-primary-700 px-[46px] py-[70px] gap-20">
-        <header className="flex flex-row items-center justify-start p-4 gap-2">
+    <div className="container m-0 p-0 flex w-full gap-10">
+      <div className="flex flex-col h-full w-[40%] justify-around rounded-lg bg-primary-700 px-[46px] gap-20">
+        <header className="flex flex-row items-center justify-start gap-2 mt-[54px]">
           <Image
             src={LogoWhite}
             alt="StudyCrew Logo"
@@ -49,7 +49,7 @@ const Signup = () => {
           Elevate Your Learning Experience with a Few Clicks.
         </h2>
         <div className="flex flex-col gap-2 text-secondary-text-400 items-start justify-start">
-          <h3 className="text-white font-bold text-2xl">Our fetures:</h3>
+          <h3 className="text-white font-bold text-2xl">Our features:</h3>
           {OurFeatures.map((feature, index) => (
             <div key={index} className="flex gap-2 items-center justify-start">
               <div className="p-4 bg-white rounded-md">{feature.icon}</div>
@@ -61,7 +61,7 @@ const Signup = () => {
           info@studycrew.world
         </span>
       </div>
-      <div className="flex flex-col justify-center pr-100">
+      <div className="flex flex-col w-[60%] justify-center pr-100">
         <h2 className="fontFamily-rubik font-bold text-[40px]">Sign Up</h2>
         <p className="text-[22px] mt-3">
           Already have an account?{' '}

@@ -7,9 +7,9 @@ import Button from '@/components/ui/button'
 
 export default function LoginPage(): JSX.Element {
   return (
-    <div className="flex max-h-full w-full gap-10">
-      <div className="flex flex-col w-[40%] rounded-lg bg-primary-700 px-[46px] py-[70px] gap-20">
-        <header className="flex flex-row items-center justify-start p-4 gap-2">
+    <div className="container m-0 p-0 flex w-full gap-10">
+      <div className="flex flex-col h-max w-[40%] justify-around rounded-lg bg-primary-700 px-[46px] py-[70px] gap-20">
+        <header className="flex flex-row items-center justify-start gap-2">
           <Image
             src={LogoWhite}
             alt="StudyCrew Logo"
@@ -25,7 +25,7 @@ export default function LoginPage(): JSX.Element {
         <h2 className="text-white fontFamily-rubik leading-none text-[45px]">
           Welcome Back!
         </h2>
-        <div className="mt-[160px] flex flex-col gap-5">
+        <div className="flex flex-col gap-5">
           <h3 className="text-[1.5rem] text-white font-bold">Updates</h3>
           <div className="bg-white p-4 rounded-lg">
             <p>StudyCrew Version 0.1 is Live! 🥳</p>
@@ -36,7 +36,7 @@ export default function LoginPage(): JSX.Element {
             </p>
           </div>
         </div>
-        <span className="text-white text-[22px] fontFamily-dmSans italic underline mt-[161px]">
+        <span className="text-white text-[22px] fontFamily-dmSans italic underline">
           info@studycrew.world
         </span>
       </div>
