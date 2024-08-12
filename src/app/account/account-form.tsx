@@ -39,19 +39,10 @@ export default function AccountForm({ user }: AccountFormProps): JSX.Element {
       setAbout(data.about ?? null)
       setAvatar(data.avatar ?? null)
 
-      // Si el avatar existe, descarga la imagen
       if (data.avatar) {
-        const { data: avatarData, error: avatarError } = await supabase.storage
-          .from('avatars')
-          .download(data.avatar)
-
-        if (avatarError) throw new Error(avatarError.message)
-
-        const url = URL.createObjectURL(avatarData)
-        setAvatar(url)
+        await getAvatar(data.avatar)
       }
 
-      await getAvatar(data.avatar)
       await getSettings()
     } catch (error) {
       console.error('Error fetching profile data:', error)
@@ -108,18 +99,36 @@ export default function AccountForm({ user }: AccountFormProps): JSX.Element {
   }, [user, getProfile])
 
   const handleUpdateClick = async (): Promise<void> => {
-    await updateProfile({
-      name,
-      about,
-      avatar: avatar ? convertUrlToFile(avatar) : null
-    })
-    await updateSettings({ showGroups, emailNotifications })
+    try {
+      setLoading(true)
+  
+      let avatarFile: File | null = null
+      if (avatar) {
+        avatarFile = await convertUrlToFile(avatar)
+      }
+  
+      await updateProfile({
+        name,
+        about,
+        avatar: avatarFile
+      })
+      await updateSettings({ showGroups, emailNotifications })
+    } catch (error) {
+      console.error('Error updating profile:', error)
+      alert('Error updating the profile!')
+    } finally {
+      setLoading(false)
+    }
   }
 
-  const convertUrlToFile = (url: string): File => {
-    // Convert URL to File (for the sake of this example, create a dummy file)
-    // You might need a more sophisticated method in a real-world scenario
-    return new File([url], 'avatar.svg', { type: 'image/svg' })
+  const convertUrlToFile = async (url: string): Promise<File> => {
+    const response = await fetch(url)
+    const blob = await response.blob()
+  
+    const file = new File([blob], 'avatar.svg', {
+      type: 'image/svg+xml'
+    })
+    return file
   }
 
   const updateProfile = async ({
@@ -136,8 +145,6 @@ export default function AccountForm({ user }: AccountFormProps): JSX.Element {
 
       let avatarUri: string | null = null
       if (newAvatar) {
-        console.log('Uploading avatar:', newAvatar)
-
         const { data, error } = await supabase.storage
           .from('avatars')
           .upload(`${user?.id}.svg`, newAvatar, {
@@ -184,13 +191,11 @@ export default function AccountForm({ user }: AccountFormProps): JSX.Element {
         .eq('user_id', user?.id)
         .single()
 
-      console.log('Settings Data:', data)
       if (error && error.message !== 'No rows found') {
         throw new Error(error.message)
       }
 
       if (data) {
-        // Actualizar si ya existe
         const { error: updateError } = await supabase
           .from('settings')
           .update({
@@ -201,7 +206,6 @@ export default function AccountForm({ user }: AccountFormProps): JSX.Element {
 
         if (updateError) throw new Error(updateError.message)
       } else {
-        // Insertar si no existe
         const { error: insertError } = await supabase.from('settings').insert({
           user_id: user?.id,
           show_groups: newShowGroups,
