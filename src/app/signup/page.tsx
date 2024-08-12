@@ -32,7 +32,7 @@ const Signup = () => {
   return (
     <div className="container m-0 p-0 flex w-full gap-10">
       <div className="flex flex-col h-full w-[40%] justify-around rounded-lg bg-primary-700 px-[46px] py-[70px] gap-20">
-        <header className="flex flex-row items-center justify-start gap-2 mt-[54px]">
+        <header className="flex flex-row items-center justify-start gap-2">
           <Image
             src={LogoWhite}
             alt="StudyCrew Logo"
