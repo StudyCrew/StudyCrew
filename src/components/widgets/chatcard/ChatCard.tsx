@@ -16,7 +16,7 @@ const ChatCard: React.FC<ChatCardProps> = ({
   return (
     <>
       {user && (
-        <div className="flex justify-end">
+        <div className="flex justify-start">
           <div className="flex gap-x-2 max-w-[300px] items-start">
             <div className="image">
               <img
@@ -32,17 +32,17 @@ const ChatCard: React.FC<ChatCardProps> = ({
         </div>
       )}
       {otherUser && (
-        <div className="flex justify-start">
+        <div className="flex justify-end">
           <div className="flex gap-x-2 max-w-[300px] items-start">
+            <div className="px-3 py-2 text-sm rounded-t-2xl rounded-bl-2xl bg-[#3a86fe] text-white">
+              {text}
+            </div>
             <div className="image">
               <img
                 src={profileImageLink}
                 alt="avatarlink"
                 className="w-[31px] h-[31px] rounded-full"
               />
-            </div>
-            <div className="px-3 py-2 text-sm rounded-t-2xl rounded-bl-2xl bg-[#3a86fe] text-white">
-              {text}
             </div>
           </div>
         </div>
