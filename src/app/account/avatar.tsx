@@ -130,7 +130,7 @@ function Avatar({
         <div
           key={opt}
           onClick={() => setState(opt)}
-          className={`cursor-pointer flex items-center ${opt === currentValue ? 'border-2 border-blue-500' : ''} rounded-full`}
+          className={`cursor-pointer flex items-center ${opt === currentValue ? 'border-2 border-blue-500 -m-1 shadow-inner' : ''} rounded-full`}
         >
           <Image
             src={previewAvatar}
