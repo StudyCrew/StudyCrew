@@ -14,7 +14,7 @@ const Signup = () => {
   const OurFeatures = [
     {
       icon: <PiHouseDuotone className="w-[32px] h-[32px] text-black" />,
-      title: 'Perdonal Dashboard'
+      title: 'Personal Dashboard'
     },
     {
       icon: <PiUsersDuotone className="w-[32px] h-[32px] text-black" />,
@@ -30,8 +30,8 @@ const Signup = () => {
     }
   ]
   return (
-    <div className="container m-0 p-0 flex w-full gap-10">
-      <div className="flex flex-col h-full w-[40%] justify-around rounded-lg bg-primary-700 px-[46px] py-[70px] gap-20">
+    <div className="container m-5 p-0 flex w-full gap-10">
+      <div className="flex flex-col w-[603px] xl:h-screen justify-around rounded-lg bg-primary-700 px-[46px] py-[70px] gap-20">
         <header className="flex flex-row items-center justify-start gap-2">
           <Image
             src={LogoWhite}
@@ -58,10 +58,10 @@ const Signup = () => {
           ))}
         </div>
         <span className="text-white text-[22px] fontFamily-dmSans italic underline">
-          info@studycrew.world
+          <a href="mailto:info@studycrew.world">info@studycrew.world</a>
         </span>
       </div>
-      <div className="flex flex-col w-[60%] justify-center pr-100">
+      <div className="flex flex-col justify-center pr-100">
         <h2 className="fontFamily-rubik font-bold text-[40px]">Sign Up</h2>
         <p className="text-[22px] mt-3">
           Already have an account?{' '}
@@ -86,7 +86,7 @@ const Signup = () => {
               id="email"
               name="email"
               type="email"
-              className="rounded-lg border border-grey px-1 h-12"
+              className="rounded-lg border border-grey px-3 h-12"
               placeholder="email@address.com"
               required
             />
@@ -97,7 +97,7 @@ const Signup = () => {
               id="password"
               name="password"
               type="password"
-              className="rounded-lg border border-grey px-1 h-12"
+              className="rounded-lg border border-grey px-3 h-12"
               placeholder="*****"
               required
             />
@@ -108,7 +108,7 @@ const Signup = () => {
               id="confirmPassword"
               name="confirmPassword"
               type="password"
-              className="rounded-lg border border-grey px-1 h-12"
+              className="rounded-lg border border-grey px-3 h-12"
               placeholder="*****"
               required
             />

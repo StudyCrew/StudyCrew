@@ -7,8 +7,8 @@ import Button from '@/components/ui/button'
 
 export default function LoginPage(): JSX.Element {
   return (
-    <div className="container m-0 p-0 flex w-full gap-10">
-      <div className="flex flex-col h-max w-[40%] justify-around rounded-lg bg-primary-700 px-[46px] py-[70px] gap-20">
+    <div className="container m-5 p-0 flex w-full gap-10">
+      <div className="flex flex-col w-[603px] xl:h-screen justify-around rounded-lg bg-primary-700 px-[46px] py-[70px] gap-20">
         <header className="flex flex-row items-center justify-start gap-2">
           <Image
             src={LogoWhite}
@@ -37,10 +37,10 @@ export default function LoginPage(): JSX.Element {
           </div>
         </div>
         <span className="text-white text-[22px] fontFamily-dmSans italic underline">
-          info@studycrew.world
+          <a href="mailto:info@studycrew.world">info@studycrew.world</a>
         </span>
       </div>
-      <div className="flex flex-col w-[60%] justify-center pr-100">
+      <div className="flex flex-col justify-center pr-100">
         <h2 className="fontFamily-rubik font-bold text-[40px]">Log In</h2>
         <p className="text-[22px] mt-3">
           New to StudyCrew?{' '}
@@ -65,7 +65,7 @@ export default function LoginPage(): JSX.Element {
               id="email"
               name="email"
               type="email"
-              className="rounded-lg border border-grey px-1 h-12"
+              className="rounded-lg border border-grey px-3 h-12"
               placeholder="email@address.com"
               required
             />
@@ -76,7 +76,7 @@ export default function LoginPage(): JSX.Element {
               id="password"
               name="password"
               type="password"
-              className="rounded-lg border border-grey px-1 h-12"
+              className="rounded-lg border border-grey px-3 h-12"
               placeholder="*****"
               required
             />

@@ -13,14 +13,29 @@ interface AccountFormProps {
   user: User | null
 }
 
+const usernameLimit = 100
+const aboutLimit = 400
+
 export default function AccountForm({ user }: AccountFormProps): JSX.Element {
   const supabase = createClient()
   const [loading, setLoading] = useState<boolean>(true)
-  const [name, setName] = useState<string | null>(null)
-  const [about, setAbout] = useState<string | null>(null)
+  const [name, setName] = useState<string>('')
+  const [about, setAbout] = useState<string>('')
   const [avatar, setAvatar] = useState<string | null>(null)
   const [showGroups, setShowGroups] = useState<boolean>(false)
   const [emailNotifications, setEmailNotifications] = useState<boolean>(false)
+
+  const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.value.length <= usernameLimit) {
+      setName(e.target.value)
+    }
+  }
+
+  const handleAboutChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    if (e.target.value.length <= aboutLimit) {
+      setAbout(e.target.value)
+    }
+  }
 
   const getProfile = useCallback(async () => {
     try {
@@ -259,29 +274,47 @@ export default function AccountForm({ user }: AccountFormProps): JSX.Element {
           <form className="flex flex-col gap-4">
             <h3 className="text-2xl font-bold">Account</h3>
             <div className="bg-gray-200 rounded-lg py-[25px] px-[35px] flex flex-col gap-3">
-              <div className="flex flex-col">
+              <div className="relative flex flex-col">
                 <label htmlFor="fullName">Username</label>
                 <input
                   id="fullName"
                   type="text"
                   value={name ?? ''}
                   onChange={(e) => setName(e.target.value)}
-                  className="border border-grey rounded-lg px-2"
+                  placeholder='Enter your username'
+                  className="border border-grey rounded-lg px-2 outline-none focus:ring-2 focus:ring-primary-500"
+                  maxLength={usernameLimit}
                 />
+                <span
+                  className={`absolute right-3 bottom-1 text-xs text-gray-600 ${
+                    usernameLimit - name?.length <= 10 ? 'text-red-500' : 'text-gray-600'
+                  }`}
+                >
+                  {name?.length}/{usernameLimit}
+                </span>
               </div>
-              <div className="flex flex-col">
+              <div className="relative flex flex-col">
                 <label htmlFor="about">About</label>
                 <textarea
                   id="about"
                   rows={4}
                   value={about ?? ''}
                   onChange={(e) => setAbout(e.target.value)}
-                  className="border border-grey rounded-lg px-2"
+                  placeholder='Excited to join the community and share knowledge!'
+                  className="border border-grey rounded-lg px-2 outline-none focus:ring-2 focus:ring-primary-500"
+                  maxLength={aboutLimit}
                 />
+                <span
+                  className={`absolute right-3 bottom-1 text-xs text-gray-600 ${
+                    aboutLimit - about?.length <= 10 ? 'text-red-500' : 'text-gray-600'
+                  }`}
+                >
+                  {about?.length}/{aboutLimit}
+                </span>
               </div>
             </div>
             <h3 className="text-2xl font-bold">Settings</h3>
-            <div className="bg-gray-200 rounded-lg py-[25px] px-[35px] flex flex-col gap-3">
+            <div className="bg-gray-200 rounded-lg py-[25px] px-[35px] flex flex-col gap-2.5">
               <div className="flex justify-between items-center">
                 <p>Show Study Groups on Profile</p>
                 <Switch
@@ -306,7 +339,7 @@ export default function AccountForm({ user }: AccountFormProps): JSX.Element {
           </form>
         </div>
       </div>
-      <div className="bg-primary-100">
+      <div className="bg-primary-100 py-1">
         <p className="text-center text-xs">
           The avatar style{' '}
           <a
@@ -333,7 +366,25 @@ export default function AccountForm({ user }: AccountFormProps): JSX.Element {
             target="_blank"
             rel="noopener noreferrer"
           >
-            "Big Ears" by Becca Viscott
+            "Face Generator"
+          </a>
+          {' '} by {' '}
+          <a
+            href="https://thevisual.team/"
+            className="underline hover:text-primary-500"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            The Visual Team
+          </a>
+          , licensed under {' '}
+          <a
+            href="https://creativecommons.org/licenses/by/4.0/"
+            className="underline hover:text-primary-500"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            CC BY 4.0
           </a>
           .
         </p>
