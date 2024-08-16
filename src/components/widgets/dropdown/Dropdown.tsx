@@ -1,19 +1,19 @@
 import React from 'react';
-import { CaretRight } from "@phosphor-icons/react";
 
-interface DropdownProps {
+type DropdownProps = {
   opened: boolean;
   setOpened: (opened: boolean) => void;
   currentChoice: string;
   setCurrentChoice: (choice: string) => void;
   choices: string[];
-}
+};
 
 const Dropdown: React.FC<DropdownProps> = ({ opened, setOpened, currentChoice, setCurrentChoice, choices }) => {
   return (
-    <div className="dropdown flex flex-col relative">
+    <div className="dropdown flex flex-col relative" style={{ fontFamily: 'DM Sans, sans-serif' }}>
       <style>
         {`
+          @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
           ::-webkit-scrollbar{
             background-color:transparent;
             width:10px;
@@ -24,10 +24,10 @@ const Dropdown: React.FC<DropdownProps> = ({ opened, setOpened, currentChoice, s
           }
         `}
       </style>
-      <div className="currentchoice flex py-2 px-2 text-xl w-fit border-2 border-[#E5E5E5] rounded-t-[6px]">
+      <div className={`currentchoice flex py-2 px-2 text-xl w-fit border-2 border-[#E5E5E5] ${opened ? "rounded-t-[6px]" : "rounded-[6px]"}`}>
         <div className="text w-[300px]">{currentChoice}</div>
         <div
-          className={`chevron w-[28px] h-[28px] justify-center flex items-center transition-all ${opened ? "rotate-90" : ""}`}
+          className={`chevron w-[28px] h-[28px] justify-center flex items-center transition-all ${opened ? "-rotate-90" : "rotate-90"}`}
           onClick={() => { setOpened(!opened); }}
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#000000" viewBox="0 0 256 256">
@@ -40,7 +40,7 @@ const Dropdown: React.FC<DropdownProps> = ({ opened, setOpened, currentChoice, s
           <div className="flex flex-col h-[200px] overflow-y-auto">
             {choices.map((option, i) => (
               <button
-                className="p-2 text-left rounded-md transition-all hover:bg-[#3A86FF] hover:text-white"
+                className="p-2 py-1 text-left rounded-md transition-all hover:bg-[#3A86FF] hover:text-white"
                 key={i}
                 onClick={() => {
                   setCurrentChoice(option);
