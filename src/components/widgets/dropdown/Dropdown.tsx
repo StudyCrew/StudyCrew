@@ -27,7 +27,7 @@ const Dropdown: React.FC<DropdownProps> = ({ opened, setOpened, currentChoice, s
       <div className={`currentchoice flex py-2 px-2 text-xl w-fit border-2 border-[#E5E5E5] ${opened ? "rounded-t-[6px]" : "rounded-[6px]"}`}>
         <div className="text w-[300px]">{currentChoice}</div>
         <div
-          className={`chevron w-[28px] h-[28px] justify-center flex items-center transition-all ${opened ? "-rotate-90" : "rotate-90"}`}
+          className={`chevron w-[28px] h-[28px] justify-center flex items-center transition-all cursor-pointer ${opened ? "-rotate-90" : "rotate-90"}`}
           onClick={() => { setOpened(!opened); }}
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#000000" viewBox="0 0 256 256">
@@ -36,7 +36,7 @@ const Dropdown: React.FC<DropdownProps> = ({ opened, setOpened, currentChoice, s
         </div>
       </div>
       {opened && (
-        <div className="w-[332px] bg-[#f3f4f8] absolute top-[46px] rounded rounded-b-[6px] p-2 flex flex-col">
+        <div className="w-[332px] bg-[#f3f4f8] absolute top-[46px] rounded rounded-b-[6px] p-2 flex flex-col" style={{ fontFamily: 'DM Sans, sans-serif' }}>
           <div className="flex flex-col h-[200px] overflow-y-auto">
             {choices.map((option, i) => (
               <button
@@ -46,6 +46,7 @@ const Dropdown: React.FC<DropdownProps> = ({ opened, setOpened, currentChoice, s
                   setCurrentChoice(option);
                   setOpened(false);
                 }}
+                style={{ fontFamily: 'DM Sans, sans-serif' }}
               >
                 {option}
               </button>
