@@ -116,12 +116,12 @@ export default function AccountForm({ user }: AccountFormProps): JSX.Element {
   const handleUpdateClick = async (): Promise<void> => {
     try {
       setLoading(true)
-  
+
       let avatarFile: File | null = null
       if (avatar) {
         avatarFile = await convertUrlToFile(avatar)
       }
-  
+
       await updateProfile({
         name,
         about,
@@ -139,7 +139,7 @@ export default function AccountForm({ user }: AccountFormProps): JSX.Element {
   const convertUrlToFile = async (url: string): Promise<File> => {
     const response = await fetch(url)
     const blob = await response.blob()
-  
+
     const file = new File([blob], 'avatar.svg', {
       type: 'image/svg+xml'
     })
@@ -281,13 +281,15 @@ export default function AccountForm({ user }: AccountFormProps): JSX.Element {
                   type="text"
                   value={name ?? ''}
                   onChange={(e) => setName(e.target.value)}
-                  placeholder='Enter your username'
+                  placeholder="Enter your username"
                   className="border border-grey rounded-lg px-2 outline-none focus:ring-2 focus:ring-primary-500"
                   maxLength={usernameLimit}
                 />
                 <span
                   className={`absolute right-3 bottom-1 text-xs text-gray-600 ${
-                    usernameLimit - name?.length <= 10 ? 'text-red-500' : 'text-gray-600'
+                    usernameLimit - name?.length <= 10
+                      ? 'text-red-500'
+                      : 'text-gray-600'
                   }`}
                 >
                   {name?.length}/{usernameLimit}
@@ -300,13 +302,15 @@ export default function AccountForm({ user }: AccountFormProps): JSX.Element {
                   rows={4}
                   value={about ?? ''}
                   onChange={(e) => setAbout(e.target.value)}
-                  placeholder='Excited to join the community and share knowledge!'
+                  placeholder="Excited to join the community and share knowledge!"
                   className="border border-grey rounded-lg px-2 outline-none focus:ring-2 focus:ring-primary-500"
                   maxLength={aboutLimit}
                 />
                 <span
                   className={`absolute right-3 bottom-1 text-xs text-gray-600 ${
-                    aboutLimit - about?.length <= 10 ? 'text-red-500' : 'text-gray-600'
+                    aboutLimit - about?.length <= 10
+                      ? 'text-red-500'
+                      : 'text-gray-600'
                   }`}
                 >
                   {about?.length}/{aboutLimit}
@@ -367,8 +371,8 @@ export default function AccountForm({ user }: AccountFormProps): JSX.Element {
             rel="noopener noreferrer"
           >
             "Face Generator"
-          </a>
-          {' '} by {' '}
+          </a>{' '}
+          by{' '}
           <a
             href="https://thevisual.team/"
             className="underline hover:text-primary-500"
@@ -377,7 +381,7 @@ export default function AccountForm({ user }: AccountFormProps): JSX.Element {
           >
             The Visual Team
           </a>
-          , licensed under {' '}
+          , licensed under{' '}
           <a
             href="https://creativecommons.org/licenses/by/4.0/"
             className="underline hover:text-primary-500"

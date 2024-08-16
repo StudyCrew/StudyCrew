@@ -3,10 +3,10 @@ import Image from 'next/image'
 import Link from 'next/link'
 import LogoWhite from '../../../public/assets/LogoWhite.svg'
 import GoogleAccount from '../../../public/assets/web_light_sq_ctn 1.svg'
-import { PiHouseDuotone } from "react-icons/pi"
+import { PiHouseDuotone } from 'react-icons/pi'
 import { PiUsersDuotone } from 'react-icons/pi'
-import { PiGearDuotone } from "react-icons/pi"
-import { PiUserDuotone } from "react-icons/pi"
+import { PiGearDuotone } from 'react-icons/pi'
+import { PiUserDuotone } from 'react-icons/pi'
 import Button from '@/components/ui/button'
 import { signup } from './actions'
 
@@ -30,8 +30,8 @@ const Signup = () => {
     }
   ]
   return (
-    <div className="container m-5 p-0 flex w-full gap-10">
-      <div className="flex flex-col w-[603px] xl:h-screen justify-around rounded-lg bg-primary-700 px-[46px] py-[70px] gap-20">
+    <div className="container m-5 p-0 flex w-full h-screen gap-10">
+      <div className="flex flex-col min-w-[35vw] max-w-[40vw] max-h-[78vh] xl:h-screen justify-around rounded-lg bg-primary-500 px-[46px] py-[70px] gap-[55px]">
         <header className="flex flex-row items-center justify-start gap-2">
           <Image
             src={LogoWhite}
@@ -45,11 +45,11 @@ const Signup = () => {
             </span>
           </h1>
         </header>
-        <h2 className="text-white fontFamily-rubik leading-none text-[45px]">
-          Elevate Your Learning Experience with a Few Clicks.
+        <h2 className="text-white fontFamily-rubik leading-none text-[40px]">
+          Elevate Your Learning Experience – 100% Free.
         </h2>
         <div className="flex flex-col gap-2 text-secondary-text-400 items-start justify-start">
-          <h3 className="text-white font-bold text-2xl">Our features:</h3>
+          <h3 className="text-white font-bold text-2xl">Our Features:</h3>
           {OurFeatures.map((feature, index) => (
             <div key={index} className="flex gap-2 items-center justify-start">
               <div className="p-4 bg-white rounded-md">{feature.icon}</div>
@@ -61,7 +61,7 @@ const Signup = () => {
           <a href="mailto:info@studycrew.world">info@studycrew.world</a>
         </span>
       </div>
-      <div className="flex flex-col justify-center pr-100">
+      <div className="flex flex-col justify-center pr-100 w-full">
         <h2 className="fontFamily-rubik font-bold text-[40px]">Sign Up</h2>
         <p className="text-[22px] mt-3">
           Already have an account?{' '}
@@ -135,7 +135,7 @@ const Signup = () => {
           <Button
             formAction={signup}
             text="Sign Up"
-            className="uppercase py-2 bg-primary-500 text-white w-full h-[40px] rounded-lg mt-4"
+            className="uppercase py-2 bg-primary-500 text-white h-[40px] rounded-lg mt-4"
           />
         </form>
       </div>

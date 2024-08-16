@@ -8,7 +8,7 @@ import Button from '@/components/ui/button'
 export default function LoginPage(): JSX.Element {
   return (
     <div className="container m-5 p-0 flex w-full gap-10">
-      <div className="flex flex-col w-[603px] xl:h-screen justify-around rounded-lg bg-primary-700 px-[46px] py-[70px] gap-20">
+      <div className="flex flex-col max-w-[35vw] h-[78vh] justify-around rounded-lg bg-primary-500 px-[46px] py-[70px] gap-20">
         <header className="flex flex-row items-center justify-start gap-2">
           <Image
             src={LogoWhite}
@@ -40,7 +40,7 @@ export default function LoginPage(): JSX.Element {
           <a href="mailto:info@studycrew.world">info@studycrew.world</a>
         </span>
       </div>
-      <div className="flex flex-col justify-center pr-100">
+      <div className="flex flex-col justify-center pr-100 w-full">
         <h2 className="fontFamily-rubik font-bold text-[40px]">Log In</h2>
         <p className="text-[22px] mt-3">
           New to StudyCrew?{' '}
@@ -58,7 +58,7 @@ export default function LoginPage(): JSX.Element {
           <span className="px-4 text-gray-500 bg-white">Or continue with</span>
           <div className="flex-grow border-t border-gray-500"></div>
         </div>
-        <form className="flex flex-col mt-[20px] gap-[20px]">
+        <form className="flex flex-col mt-[20px] gap-[20px] w-full">
           <div className="flex flex-col">
             <label htmlFor="email">Email:</label>
             <input
@@ -84,7 +84,7 @@ export default function LoginPage(): JSX.Element {
           <Button
             formAction={login}
             text="Log in"
-            className="uppercase py-2 bg-primary-500 text-white w-full h-[40px] rounded-lg mt-4"
+            className="uppercase py-2 bg-primary-500 text-white h-[40px] rounded-lg mt-4"
           />
         </form>
       </div>
