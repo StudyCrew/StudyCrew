@@ -181,6 +181,10 @@ const tailwindConfig = {
           900: '#382C00'
         }
       },
+      fontFamily: {
+        rubik: ['Rubik', 'sans-serif'],
+        dmSans: ['DM Sans', 'sans-serif']
+      },
       backgroundImage: {
         'arrow-bg': `url('../../public/assets/arrow_bg.webp')`
       },
