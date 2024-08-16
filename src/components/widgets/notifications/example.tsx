@@ -46,7 +46,10 @@ const Check: React.FC = () => {
         <NotificationCard variant="grpQuestion" variant2Data={{
           size: "large",
           groupName: "AP Calc",
-          img: "https://s3-alpha-sig.figma.com/img/8984/cd4d/716f2115474431e82106834a5708dd89?Expires=1724630400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=KyelsmEvilnxxSFdbtqSpzfIpkbb07OzhFrcUMKg0AqGEfZ8hHBViue3iqTWkr8EANoDhIeTe72WM70TsA8IgGtptxtiMeIv-kS0G4FaQW2aA67zIx8Hp05I9VFMwJsgkOn-QLtA6ZqpjXaMHJ1QuB8MsepMZtnAlousJkFzZA5Qww0qdoTDTaiHvFel35U0yt~qD6mWq19LXwvWoEne2Kg7wuOEhkgQV3iqd4UnfPb3Pscn830GRWEK4HdveWkhgQepBBEjv91x2KLRgdoOf56~qAgInImfKnZ5CBKRmIxoFUWrv3BYsTvgnUReyLos1eqIMEo5~Ji~AUZeLAqUqw__
+          img: "https://s3-alpha-sig.figma.com/img/8984/cd4d/716f2115474431e82106834a5708dd89?Expires=1724630400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=KyelsmEvilnxxSFdbtqSpzfIpkbb07OzhFrcUMKg0AqGEfZ8hHBViue3iqTWkr8EANoDhIeTe72WM70TsA8IgGtptxtiMeIv-kS0G4FaQW2aA67zIx8Hp05I9VFMwJsgkOn-QLtA6ZqpjXaMHJ1QuB8MsepMZtnAlousJkFzZA5Qww0qdoTDTaiHvFel35U0yt~qD6mWq19LXwvWoEne2Kg7wuOEhkgQV3iqd4UnfPb3Pscn830GRWEK4HdveWkhgQepBBEjv91x2KLRgdoOf56~qAgInImfKnZ5CBKRmIxoFUWrv3BYsTvgnUReyLos1eqIMEo5~Ji~AUZeLAqUqw__",
+          username: "Agatha Lewis-Johanssen",
+          date: "Aug 23 12:24 PM",
+          question: "What are the key factors in social change?"
         }} />
       </div>
       <div className="flex gap-x-4">
