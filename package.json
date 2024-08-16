@@ -16,6 +16,8 @@
     "test": "pnpm exec playwright test"
   },
   "dependencies": {
+    "@dicebear/collection": "^9.2.1",
+    "@dicebear/core": "^9.2.1",
     "@ducanh2912/next-pwa": "^10.2.8",
     "@hookform/resolvers": "^3.9.0",
     "@next/third-parties": "14.2.4",
