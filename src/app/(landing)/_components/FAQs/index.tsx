@@ -1,7 +1,7 @@
 import React from 'react'
 import cn from 'clsx'
 
-import faqsData from '@/data/faqsData'
+import faqsData from '../../_data/faqs-data'
 
 import { CLASS_NAME } from './const'
 import { type FAQsProps } from './types'

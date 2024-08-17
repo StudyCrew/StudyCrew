@@ -36,61 +36,48 @@ NEXT_PUBLIC_SUPABASE_URL=https://iqbtyidkfhmqokxopxhf.supabase.co
 NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlxYnR5aWRrZmhtcW9reG9weGhmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjA0NTI4NDgsImV4cCI6MjAzNjAyODg0OH0.eo6MVgRbXbdpdUlj4YQo4NJ6D0kE2HRQaLO4VOAOMd4
 ```
 
-### Sentry Exception Handling
-
-If you would like to handle exceptions like we do, just create a free Sentry.io account and replace the `dsn` key with your own in all of the following files:
-
-- `sentry.client.config.ts`
-- `sentry.edge.config.ts`
-- `sentry.server.config.ts`
-
-Here is an example:
-
-```typescript
-import * as Sentry from '@sentry/nextjs'
-
-Sentry.init({
-    dsn: '[YOUR DSN HERE]',
-    tracesSampleRate: 1,
-    debug: false
-})
-```
-
 ## Running the Project Locally
 
 ### Using Docker
+
 This project is Dockerized for easy development and deployment. Follow the instructions below to get started.
 
 **Make sure you have Docker installed and running on your system.**
 
 #### Quick Start
+
 1. **Fork this Repository**
 
 2. **Clone the Repository to local:**
+
     ```bash
    git clone <your-repository-url>
    cd <your-repository-name>
    ```
+
 3. **Build the Image:**
-    
+
     ```bash
     # (Development)
     docker build . --target development -t studycrew_test:dev
     # (Production)
     docker build . --target production -t studycrew_test:prod
     ```
+
 4. **Run the Image:**
+
     ```bash
     # (Development)
     docker run -v .:/usr/src/app -p 3000:3000 --name studycrew_test studycrew_test:dev
     # (Production)
     docker run -p 3000:3000 --name studycrew_prod studycrew_test:prod
     ```
-5. **Access the Application:** Open your browser and navigate to http://localhost:3000 to see the running application.
+
+5. **Access the Application:** Open your browser and navigate to <http://localhost:3000> to see the running application.
 
 To stop the container, run `docker stop studycrew_test` or `docker stop studycrew_prod` respectively.
 
-### Without Docker:
+### Without Docker
 
 1. `pnpm i` the required dependencies.
 
