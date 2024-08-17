@@ -1,35 +1,18 @@
 'use server'
 
-import Waitlist from '@/database/models/waitlist'
-import { connectToDB } from '@/database'
-
 const maxSpots = 2500
 
 export const getTotalWaitlistCount = async (): Promise<number> => {
   try {
-    await connectToDB()
-
-    return await Waitlist.countDocuments()
+    return 0
   } catch (err: any) {
     throw new Error(`Failed to get waitlist count: ${(err as Error).message}`)
   }
 }
 
-export const addToWaitlist = async (
-  email: string
-): Promise<typeof Waitlist> => {
+export const addToWaitlist = async (email: string): Promise<any> => {
   try {
-    await connectToDB()
-
-    return await Waitlist.findOneAndUpdate(
-      {
-        email
-      },
-      {
-        email
-      },
-      { upsert: true, new: true }
-    )
+    return null
   } catch (err: any) {
     throw new Error(`Failed to add to waitlist: ${(err as Error).message}`)
   }
@@ -37,10 +20,7 @@ export const addToWaitlist = async (
 
 export const getSpotsLeft = async (): Promise<number> => {
   try {
-    await connectToDB()
-
-    const totalWaitlistCount = await getTotalWaitlistCount()
-    return maxSpots - totalWaitlistCount
+    return 0
   } catch (err: any) {
     throw new Error(`Failed to get waitlist count: ${(err as Error).message}`)
   }
