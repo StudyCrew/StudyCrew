@@ -42,11 +42,6 @@ const Navbar = ({
       imgURL: '/assets/icons/user.svg',
       route: `/profile/${userId}`,
       label: 'Profile'
-    },
-    {
-      imgURL: '/assets/icons/gear.svg',
-      route: '/settings',
-      label: 'Settings'
     }
   ]
 
