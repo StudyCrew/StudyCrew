@@ -68,6 +68,77 @@ const tailwindConfig = {
       // },
 
       colors: {
+        'whitr': '#fffbfb',
+        'off white': '#fbfbfb',
+        'off-white-2': 'f1f1f1',
+        'green-outline': '#154704',
+
+        'primary-blue': {
+          50: '#e9f2ff',
+          100: '#d3e4ff',
+          200: '#a7c9ff',
+          300: '#92bcff',
+          400: '#66a1ff',
+          500: '#3a86ff', 
+          600: '#2353a0', 
+          700: '#173a70', 
+          800: '#0c2041',
+          900: '#000711'
+        },
+
+        'surface-gray': {
+          25: '#fcfcfd',
+          50: '#f9fafb',
+          100: '#f2f4f7',
+          200: '#e4e7ec',
+          300: '#d0d5dd',
+          400: '#98a2b3', 
+          500: '#667085', 
+          600: '#475467', 
+          700: '#344054',
+          800: '#1d2939',
+          900: '#101828'
+        },
+
+        'system-alert':{
+          'alert-50': '#ffffff',
+          'alert-100': '#fffff5',
+          'alert-200': '#ffffea',
+          'alert-300': '#fff8cf',
+          'alert-400': '#fcebaf',
+          'alert-500': '#f5dd87', 
+          'alert-600': '#eecb51', 
+          'alert-700': '#b1911f', 
+          'alert-800': '#755b00',
+          'alert-900': '#382c00'
+        },
+
+        'system-error':{
+          'error-50': '#ffeded',
+          'error-100': '#ffe4e4',
+          'error-200': '#ffdbdb',
+          'error-300': '#ffbdbd',
+          'error-400': '#f89898',
+          'error-500': '#f06c6c', 
+          'error-600': '#e83b3b', 
+          'error-700': '#ac1c1c', 
+          'error-800': '#6f0808',
+          'error-900': '#330000'
+        },
+
+        'system-success':{
+          'success-50': '#f4fff3',
+          'success-100': '#e5ffe2',
+          'success-200': '#d6ffd2',
+          'success-300': '#b8f8b2',
+          'success-400': '#98ed91',
+          'success-500': '#76e36d', 
+          'success-600': '#51d845', 
+          'success-700': '#3da434', 
+          'success-800': '#286f22',
+          'success-900': '#153b12'
+        },
+        
         brand:"#3a86ff",
         brand_shade:"#3376e0",
         brand_tint:"#4e92ff",
