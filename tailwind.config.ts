@@ -31,9 +31,6 @@ const tailwindConfig = {
         5: '5',
         200: '200',
       },
-      rounded: {
-        10: '10'
-      },
       translate: {
         icon: '5%'
       },
@@ -68,23 +65,10 @@ const tailwindConfig = {
       // },
 
       colors: {
-        'whitr': '#fffbfb',
+        'white': '#fffbfb',
         'off white': '#fbfbfb',
-        'off-white-2': 'f1f1f1',
+        'off-white-2': '#f1f1f1',
         'green-outline': '#154704',
-
-        'primary-blue': {
-          50: '#e9f2ff',
-          100: '#d3e4ff',
-          200: '#a7c9ff',
-          300: '#92bcff',
-          400: '#66a1ff',
-          500: '#3a86ff', 
-          600: '#2353a0', 
-          700: '#173a70', 
-          800: '#0c2041',
-          900: '#000711'
-        },
 
         'surface-gray': {
           25: '#fcfcfd',
