@@ -9,9 +9,9 @@
 
 Welcome to StudyCrew's GitHub repository! This repository serves as the central hub for [www.studycrew.world](https://www.studycrew.world)'s source code, assets, and content.
 
-## Introduction
+## Mission
 
-StudyCrew is a dedicated online platform designed to foster accessible, collaborative, and engaging educational experiences. We're committed to making learning more inclusive and interactive. If you have any questions or inquiries, feel free to reach out to us at [development@studycrew.world](mailto:development@studycrew.world).
+StudyCrew is committed to making education accessible, collaborative, and engaging through innovative learning platforms. Our vision is to provide every student with the resources and community they need to reach their full potential. If you have any questions or inquiries, feel free to reach out to us at [development@studycrew.world](mailto:development@studycrew.world).
 
 ## Getting Started
 
