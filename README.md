@@ -13,6 +13,9 @@ Welcome to StudyCrew's GitHub repository! This repository serves as the central 
 
 StudyCrew is committed to making education accessible, collaborative, and engaging through innovative learning platforms. Our vision is to provide every student with the resources and community they need to reach their full potential. If you have any questions or inquiries, feel free to reach out to us at [development@studycrew.world](mailto:development@studycrew.world).
 
+## Features
+The first feature we’ll develop is study groups, which includes a Q&A board, a group chat, and a section for shared materials. Additionally, the first version includes a personal dashboard, a user profile page, and a settings page. Feel free to check out the Figma prototype of [StudyCrew 0.1](https://www.figma.com/design/1Z1NIZIPE7TTqQXM7xk8av/StudyCrew-Prototype?node-id=0-1&t=vPRN1e1icTnXHebJ-1)! For future versions, we consider implementing tutoring, learning paths, shared flashcards, and more.
+
 ## Getting Started
 
 To begin, follow these steps:
@@ -94,6 +97,11 @@ Before contributing please read the style guidelines from the [Figma documentati
 If you have to create a new component, please study existing components so these are kept consistent with the rest of the project.
 
 If you are unsure about anything, just ask! We are more than happy to help and would love to have you are part of the community. 😊
+
+## Creating Issues
+We encourage you to report bugs or suggest enhancements by creating a new issue. To help us address your issue efficiently, please follow these steps:
+1. Before creating a new issue, check if it has already been reported or discussed.
+2. Provide all relevant information and write a clear, descriptive title. You can take inspiration from existing issues.
 
 ## Developer Hours
 
