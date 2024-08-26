@@ -1,5 +1,6 @@
 import React from 'react'
 import { scrollToRef } from '@/hooks'
+import Link from 'next/link'
 
 import { type NavbarProps } from './types'
 
@@ -89,15 +90,12 @@ const Navbar: React.FC<NavbarProps> = (props: NavbarProps): JSX.Element => {
       >
         Project
       </div>
-      <div
-        className={`${isActive('signup')} ${divClass} hover:cursor-pointer`}
-        onClick={() => {
-          handleNavLinkClick('signup')
-          setActivePage('signup')
-        }}
+      <Link
+        className={`${isActive('signup')} ${divClass} hover:cursor-pointer no-underline text-current visited:text-current`}
+        href="/signup"
       >
         Sign Up
-      </div>
+      </Link>
       <div
         className={`${isActive('team')} ${divClass} hover:cursor-pointer`}
         onClick={() => {
