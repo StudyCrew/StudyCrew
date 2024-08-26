@@ -38,14 +38,8 @@ const tailwindConfig = {
         5.5: '22px'
       },
       boxShadow: {
-        'custom-light': '0 2px 1px rgba(128, 128, 128, 0.472)',
-        'custom-dark': '0 4px 2px rgba(128, 128, 128, 0.472)',
-      },
-      maxHeight: {
-        '1000px': '1000px',
-      },
-      fontSize: {
-        '17px': '17px',
+        'faq-custom-light': '0 2px 1px rgba(128, 128, 128, 0.472)',
+        'faq-custom-dark': '0 4px 2px rgba(128, 128, 128, 0.472)',
       },
       screens: {
         'sm': '600px',

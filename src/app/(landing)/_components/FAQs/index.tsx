@@ -38,8 +38,8 @@ const FAQs: React.FC<FAQsProps> = (props: FAQsProps): JSX.Element => {
         {faqsData.map((faq, index) => (
           <details
             key={index}
-            className={`bg-background-light p-[10px] rounded-md shadow-custom-light mb-[15px] transition-all duration-300 ease-in-out
-              ${openIndex === index ? '!bg-white shadow-custom-dark' : ''}`}
+            className={`bg-background-light p-[10px] rounded-md shadow-faq-custom-light mb-[15px] transition-all duration-300 ease-in-out
+              ${openIndex === index ? '!bg-white shadow-faq-custom-dark' : ''}`}
             open={openIndex === index}
           >
             <summary className={`text-[1.2rem] font-medium cursor-pointer
