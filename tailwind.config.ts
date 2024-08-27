@@ -37,6 +37,13 @@ const tailwindConfig = {
       padding: {
         5.5: '22px'
       },
+      boxShadow: {
+        'faq-custom-light': '0 2px 1px rgba(128, 128, 128, 0.472)',
+        'faq-custom-dark': '0 4px 2px rgba(128, 128, 128, 0.472)',
+      },
+      screens: {
+        'sm': '600px',
+      },
 
       // Update accordingly
       // fontFamily: {
@@ -69,6 +76,8 @@ const tailwindConfig = {
         'off white': '#fbfbfb',
         'off-white-2': '#f1f1f1',
         'green-outline': '#154704',
+        'primary-blue': '#3a86ff',
+        'background-light': '#eef4ff',
 
         'surface-gray': {
           25: '#fcfcfd',
@@ -275,6 +284,10 @@ const tailwindConfig = {
         '50':'50px',
         '100': '100px',
         '5%': '5%',
+        '150px': '150px',
+        '25px': '25px',
+        '20px': '20px',
+        '10px': '10px',
       },
       maxWidth: {
         '100vw': '100vw'
