@@ -96,7 +96,7 @@
     "eslint-plugin-pure": "github:purely-functional/eslint-plugin-pure",
     "eslint-plugin-react": "^7.35.0",
     "eslint-plugin-regexp": "^2.6.0",
-    "eslint-plugin-sonarjs": "^0.24.0",
+    "eslint-plugin-sonarjs": "^2.0.1",
     "eslint-plugin-unicorn": "^55.0.0",
     "eslint-plugin-write-good-comments": "^0.2.0",
     "husky": "^9.1.5",
