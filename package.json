@@ -11,7 +11,7 @@
     "lint:eslint": "eslint . --ext .js,.json,.ts,.tsx",
     "lint:eslint:fix": "eslint --fix . --ext .js,.json,.ts,.tsx",
     "lint:fix": "pnpm lint:eslint:fix",
-    "prepare": "husky install",
+    "prepare": "husky",
     "start": "next start",
     "test": "pnpm exec playwright test"
   },
