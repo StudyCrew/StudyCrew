@@ -9,6 +9,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1
     },
     {
+      url: 'https://studycrew.world/login',
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
+      priority: 0.5
+    },
+    {
+      url: 'https://studycrew.world/signup',
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
+      priority: 0.5
+    },
+    {
       url: 'https://studycrew.world/privacy-policy',
       lastModified: new Date(),
       changeFrequency: 'yearly',
