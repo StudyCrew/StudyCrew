@@ -1,5 +1,0 @@
-User-agent: *
-Disallow: /_next/static/media
-Disallow: /favicon.ico
-
-Sitemap: https://www.studycrew.world/sitemap.xml  # Ruta al archivo sitemap XML
