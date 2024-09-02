@@ -9,7 +9,7 @@ interface GroupCardProps {
 
 function GroupCard({ groups }: GroupCardProps) {
   if (!groups || groups.length === 0) {
-    return <p>No groups found.</p>; // Mensaje si no hay grupos
+    return <p className='text-center font-bold text-2xl p-8'>No groups found.</p>; // Mensaje si no hay grupos
   }
 
   return (
