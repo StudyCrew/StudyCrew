@@ -10,3 +10,9 @@ declare type MaterialProps = {
   date: Date
   variant?: 'default' | 'small'
 }
+
+export interface Subject {
+  id: number;
+  name: string;
+  icon: string;
+}

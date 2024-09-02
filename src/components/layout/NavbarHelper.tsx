@@ -6,6 +6,11 @@ const NavbarHelper = async () => {
   const user = await getLoggedInUser()
   console.log(user)
 
+  if (!user) {
+    alert('Please log in to view this page')
+    return;
+  }
+
   const userGroups = await getUserGroups('66c51364-b0d6-4568-85a6-aa6c5e142dd8')
   console.log(userGroups)
 
