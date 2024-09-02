@@ -133,7 +133,7 @@ export default function GroupsPage(): JSX.Element {
             {Subjects.map((subject: any) => (
               <li
                 key={subject.id}
-                className={`rounded-full p-2 border border-solid cursor-pointer ${
+                className={`rounded-full p-2 border border-solid border-primary-blue cursor-pointer ${
                   selectedSubject === subject.name ? 'bg-primary-blue text-white' : 'bg-white'
                 }`}
                 onClick={() => setSelectedSubject(subject.name)}
