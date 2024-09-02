@@ -1,58 +1,98 @@
-import React from 'react'
+'use client';
+import React, { useState, useEffect } from 'react';
+import GroupCard from '@/components/GroupCard';
+import { createClient } from '../../../../utils/supabase/client';
+import Image from 'next/image';
+import Button from '@/components/ui/button';
 import { HiMagnifyingGlass } from "react-icons/hi2";
 import BellIcon from "../../../../../public/assets/icons/BellIcon.svg";
-import Image from "next/image";
-import Button from '@/components/ui/button';
-import GroupCard from '@/components/GroupCard';
 import MyGroups from '@/components/MyGroups';
-import { Subject } from '@/types';
+import { FaChevronRight, FaChevronLeft } from 'react-icons/fa';
 import { PiUsersFour } from "react-icons/pi";
 import { CiCalculator1 } from "react-icons/ci";
-import Science from "../../../../../public/assets/icons/Science.svg";
 import { HiOutlineBookOpen } from "react-icons/hi";
 import { PiGlobeStand } from "react-icons/pi";
 import { PiLaptop } from "react-icons/pi";
 import { LuLanguages } from "react-icons/lu";
+import Science from "../../../../../public/assets/icons/Science.svg";
 
-export const Subjects:Subject[] = [
+const Subjects = [
   {
     id: 1,
     name: "All Groups",
-    icon: PiUsersFour
+    icon: PiUsersFour,
   },
   {
     id: 2,
     name: "Math",
-    icon: CiCalculator1
+    icon: CiCalculator1,
   },
   {
     id: 3,
     name: "Science",
-    icon: Science
+    icon: Science,
   },
   {
     id: 4,
     name: "English",
-    icon: HiOutlineBookOpen
+    icon: HiOutlineBookOpen,
   },
   {
     id: 5,
     name: "Social Science",
-    icon: PiGlobeStand
+    icon: PiGlobeStand,
   },
   {
     id: 6,
     name: "Computing",
-    icon: PiLaptop
+    icon: PiLaptop,
   },
   {
     id: 7,
     name: "Languages",
-    icon: LuLanguages
-  }
-]
+    icon: LuLanguages,
+  },
+];
 
 export default function GroupsPage(): JSX.Element {
+  const supabase = createClient();
+  const [groups, setGroups] = useState<any[]>([]);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [selectedSubject, setSelectedSubject] = useState<string>('All Groups');
+
+  useEffect(() => {
+    const fetchGroups = async () => {
+      try {
+        setLoading(true);
+        const { data, error, status } = await supabase
+          .from('groups')
+          .select('*');
+
+        if (error && status !== 406) {
+          throw error;
+        }
+
+        if (data) {
+          setGroups(data);
+        }
+      } catch (error: any) {
+        alert(error.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchGroups();
+  }, [supabase]);
+
+  const filteredGroups = selectedSubject === 'All Groups'
+    ? groups
+    : groups.filter((group) => group.subject === selectedSubject);
+
+  if (loading) {
+    return <p>Loading...</p>;
+  }
+
   return (
     <div className="w-full">
       <header className="w-full flex justify-between items-center">
@@ -75,9 +115,9 @@ export default function GroupsPage(): JSX.Element {
           <h2 className="font-rubik font-bold text-[26px] leading-[31px]">My Groups</h2>
           <Button text="+ Create Group" className="w-[130px] h-9"></Button>
         </div>
-        <MyGroups /> 
+        <MyGroups />
       </section>
-      <section className="mr-[45px] mt-6">
+      <section className="mr-[45px] mt-6 pb-4">
         <div className="w-full flex justify-between items-center">
           <h2 className="font-rubik font-bold text-[26px] leading-[31px]">Explore Groups</h2>
           <div className="relative">
@@ -90,18 +130,28 @@ export default function GroupsPage(): JSX.Element {
         </div>
         <div>
           <ul className="flex gap-x-2 mt-6">
-            {Subjects.map((subject:any) => (
-              <li key={subject.id} className="rounded-full p-2 border border-solid border-primary-blue bg-white">
-                <div className="flex items-center bg-white">
-                  {subject.icon === Science ? <Image src={subject.icon} alt={subject.name} className="w-4 h-4"/> : <subject.icon className="w-4 h-4"/>}
+            {Subjects.map((subject: any) => (
+              <li
+                key={subject.id}
+                className={`rounded-full p-2 border border-solid cursor-pointer ${
+                  selectedSubject === subject.name ? 'bg-primary-blue text-white' : 'bg-white'
+                }`}
+                onClick={() => setSelectedSubject(subject.name)}
+              >
+                <div className="flex items-center">
+                  {subject.icon === Science ? (
+                    <Image src={subject.icon} alt={subject.name} className="w-4 h-4" />
+                  ) : (
+                    <subject.icon className="w-4 h-4" />
+                  )}
                   <p className="text-[14px] font-bold ml-2">{subject.name}</p>
                 </div>
               </li>
             ))}
           </ul>
         </div>
-        <GroupCard />
+        <GroupCard groups={filteredGroups} />
       </section>
     </div>
-  )
+  );
 }

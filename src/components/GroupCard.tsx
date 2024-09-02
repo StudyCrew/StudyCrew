@@ -1,51 +1,24 @@
 'use client';
 import Image from 'next/image';
-import React, { useState, useEffect } from 'react';
-import { createClient } from '../utils/supabase/client';
+import React from 'react';
 import Button from './ui/button';
 
-function GroupCard() {
-  const supabase = createClient();
-  const [groups, setGroups] = useState<any[]>([]);
-  const [loading, setLoading] = useState<boolean>(false);
+interface GroupCardProps {
+  groups: any[]; // Define el tipo adecuado aquí si tienes tipos específicos
+}
 
-  useEffect(() => {
-    const fetchGroups = async () => {
-      try {
-        setLoading(true);
-
-        const { data, error, status } = await supabase
-          .from('groups')
-          .select('*');
-
-        if (error && status !== 406) {
-          throw error;
-        }
-
-        if (data) {
-          setGroups(data);
-        }
-      } catch (error: any) { // Especifica que el error es de tipo 'any' para poder acceder a 'error.message'
-        alert(error.message);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchGroups();
-  }, [supabase]); // Dependencia para evitar recrear el cliente de Supabase en cada renderizado
-
-  if (loading) {
-    return <p>Loading...</p>; // Mostrar un mensaje de carga mientras se recuperan los datos
+function GroupCard({ groups }: GroupCardProps) {
+  if (!groups || groups.length === 0) {
+    return <p>No groups found.</p>; // Mensaje si no hay grupos
   }
 
   return (
     <div className="grid grid-cols-3 gap-[64px] mt-6">
       {groups.map((group) => (
-        <div key={group.id} className="w-[360px] h-[280px] rounded-[16px] bg-white">
+        <div key={group.id} className="h-[280px] rounded-[16px] bg-white">
           <div className="relative">
-            <div className="w-[360px] h-[128px] rounded-t-xl">
-              <Image src={group.bannerimage} alt={group.name} layout="fill" objectFit="cover" className="rounded-t-[16px]"/>
+            <div className="h-[128px] rounded-t-xl">
+              <Image src={group.bannerimage} alt={group.name} layout="fill" objectFit="cover" className="rounded-t-[16px]" />
             </div>
             <p className="absolute top-[14px] right-[14px] bg-white rounded-sm text-[12px] uppercase font-bold py-[5px] px-[8px]">{group.subject}</p>
           </div>

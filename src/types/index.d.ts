@@ -16,3 +16,12 @@ export interface Subject {
   name: string;
   icon: string;
 }
+
+export interface Group {
+  id: string;
+  name: string;
+  description: string;
+  members: User[];
+  subject: Subject;
+  materials: MaterialProps[];
+}
