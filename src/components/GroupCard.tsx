@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import React from 'react';
 import Button from './ui/button';
+import GroupAdmin from './GroupAdmin';
 
 interface GroupCardProps {
   groups: any[]; // Define el tipo adecuado aquí si tienes tipos específicos
@@ -25,8 +26,8 @@ function GroupCard({ groups }: GroupCardProps) {
           <div className="p-4 h-[152px]">
             <h3 className="text-[22px] font-bold truncate">{group.name}</h3>
             <div className="flex justify-between items-center my-2">
-              <p className="text-[14px] font-bold">Posts: {group.posts}</p>
-              <p className="text-[12px] font-bold text-primary-600">{group.members ? group.members.length : 0} Members</p>
+              <GroupAdmin adminId={group.admin_id} />
+              <p className="text-[12px] font-bold text-primary-600">{group.member_ids ? group.member_ids.length : 0} Members</p>
             </div>
             <div className="flex justify-around items-start gap-x-[8px] mt-2 mb-4">
               <div className="w-[258px] h-[54px] overflow-hidden">
