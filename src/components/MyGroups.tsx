@@ -97,7 +97,7 @@ function MyGroups() {
             description={group.description}
             members={group.member_ids.length}
             subject={group.subject}
-            actionName="Enter"
+            actionName="ENTER"
             handleClickAction={() => {/* Acción cuando se hace clic en el botón "Enter" */}}
           />
         ))}
