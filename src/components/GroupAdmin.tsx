@@ -36,7 +36,7 @@ function GroupAdmin({ adminId }: GroupAdminProps) {
   }, [supabase, adminId]);
 
   if (!admin) {
-    return <p className="text-[14px] font-bold text-red-400">Admin not found</p>;
+    return <p className="text-[14px] font-bold text-red-400">No admin found</p>;
   }
 
   return (
