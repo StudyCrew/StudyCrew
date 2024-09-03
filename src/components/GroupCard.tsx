@@ -1,45 +1,38 @@
 'use client';
 import Image from 'next/image';
-import React from 'react';
+import React, { useState } from 'react';
 import Button from './ui/button';
 import GroupAdmin from './GroupAdmin';
+import GroupCard from "../components/widgets/groupcard/GroupCard";
 
 interface GroupCardProps {
-  groups: any[]; // Define el tipo adecuado aquí si tienes tipos específicos
+  groups: any[];
 }
 
-function GroupCard({ groups }: GroupCardProps) {
+function GroupCards({ groups }: GroupCardProps) {
+  const [admins, setAdmins] = useState<{ [key: string]: { name: string; avatar: string } }>({});
   if (!groups || groups.length === 0) {
-    return <p className='text-center font-bold text-2xl p-8'>No groups found.</p>; // Mensaje si no hay grupos
+    return <p className='text-center font-bold text-2xl p-8'>No groups found.</p>;
   }
 
   return (
     <div className="grid grid-cols-3 gap-[64px] mt-6">
       {groups.map((group) => (
-        <div key={group.id} className="h-[280px] rounded-[16px] bg-white">
-          <div className="relative">
-            <div className="h-[128px] rounded-t-xl">
-              <Image src={group.bannerimage} alt={group.name} layout="fill" objectFit="cover" className="rounded-t-[16px]" />
-            </div>
-            <p className="absolute top-[14px] right-[14px] bg-white rounded-sm text-[12px] uppercase font-bold py-[5px] px-[8px]">{group.subject}</p>
-          </div>
-          <div className="p-4 h-[152px]">
-            <h3 className="text-[22px] font-bold truncate">{group.name}</h3>
-            <div className="flex justify-between items-center my-2">
-              <GroupAdmin adminId={group.admin_id} />
-              <p className="text-[12px] font-bold text-primary-600">{group.member_ids ? group.member_ids.length : 0} Members</p>
-            </div>
-            <div className="flex justify-around items-start gap-x-[8px] mt-2 mb-4">
-              <div className="w-[258px] h-[54px] overflow-hidden">
-                <p className="text-[14px] line-clamp-2">{group.description}</p>
-              </div>
-              <Button text="Join" className="py-[10px] px-[12px] w-[52px] h-[36px] uppercase font-dmSans text-[12px] text-primary-blue bg-white border-gray-300 border-solid border rounded-[4px]" />
-            </div>
-          </div>
-        </div>
+        <GroupCard
+        key={group.id}
+        bannerImageLink={group.bannerimage}
+        avatarLink={admins[group.admin_id]?.avatar || ''}
+        adminName={admins[group.admin_id]?.name || ''}
+        name={group.name}
+        description={group.description}
+        members={group.member_ids.length}
+        subject={group.subject}
+        actionName="Enter"
+        handleClickAction={() => {/* Acción cuando se hace clic en el botón "Enter" */}}
+      />
       ))}
     </div>
   );
 }
 
-export default GroupCard;
+export default GroupCards;

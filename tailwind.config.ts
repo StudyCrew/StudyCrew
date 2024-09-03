@@ -9,7 +9,6 @@ const tailwindConfig = {
   darkMode: ['class'],
   content: ['./src/**/*.{ts,tsx}'],
   plugins: [
-    require('@tailwindcss/line-clamp'),
     tailwindCSSAnimate
   ],
   theme: {

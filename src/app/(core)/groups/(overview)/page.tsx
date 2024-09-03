@@ -15,6 +15,7 @@ import { PiGlobeStand } from "react-icons/pi";
 import { PiLaptop } from "react-icons/pi";
 import { LuLanguages } from "react-icons/lu";
 import Science from "../../../../../public/assets/icons/Science.svg";
+import { getLoggedInUser } from '@/utils/actions/user.actions';
 
 const Subjects = [
   {
@@ -59,21 +60,49 @@ export default function GroupsPage(): JSX.Element {
   const [groups, setGroups] = useState<any[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [selectedSubject, setSelectedSubject] = useState<string>('All Groups');
-
+  const [admins, setAdmins] = useState<{ [key: string]: { name: string; avatar: string } }>({});
+  const [user, setUser] = useState<any>(null);
   useEffect(() => {
-    const fetchGroups = async () => {
+    const fetchUserAndGroups = async () => {
       try {
-        setLoading(true);
-        const { data, error, status } = await supabase
-          .from('groups')
-          .select('*');
+        const loggedInUser = await getLoggedInUser();
+        setUser(loggedInUser);
 
-        if (error && status !== 406) {
-          throw error;
+        setLoading(true);
+
+        // Fetch groups
+        const { data: groupsData, error: groupsError } = await supabase
+          .from('groups')
+          .select('*')
+          .contains('member_ids', [loggedInUser.uuid]);
+
+        if (groupsError) {
+          throw groupsError;
         }
 
-        if (data) {
-          setGroups(data);
+        if (groupsData) {
+          setGroups(groupsData);
+
+          // Fetch admins data for all groups
+          const adminIds = [...new Set(groupsData.map((group: any) => group.admin_id))];
+          if (adminIds.length > 0) {
+            const { data: adminsData, error: adminsError } = await supabase
+              .from('users')
+              .select('user_id, name, avatar')
+              .in('user_id', adminIds);
+
+            if (adminsError) {
+              throw adminsError;
+            }
+
+            if (adminsData) {
+              const adminsMap = adminsData.reduce((acc: any, admin: any) => {
+                acc[admin.user_id] = { name: admin.name, avatar: admin.avatar };
+                return acc;
+              }, {});
+              setAdmins(adminsMap);
+            }
+          }
         }
       } catch (error: any) {
         alert(error.message);
@@ -82,7 +111,7 @@ export default function GroupsPage(): JSX.Element {
       }
     };
 
-    fetchGroups();
+    fetchUserAndGroups();
   }, [supabase]);
 
   const filteredGroups = selectedSubject === 'All Groups'
@@ -95,21 +124,6 @@ export default function GroupsPage(): JSX.Element {
 
   return (
     <div className="w-full">
-      <header className="w-full flex justify-between items-center">
-        <div className="relative flex justify-between">
-          {/* Seacrh bar */}
-          <input id="search_bar" placeholder="Search study groups, tutors, learning paths" className="w-[683px] h-[51px] rounded-xl border border-surface-gray-600 border-solid pl-[22px] pr-[13px]" />
-          <button type="button" className="absolute top-1/2 right-2 transform -translate-y-1/2">
-            <HiMagnifyingGlass className="w-6 h-6" />
-          </button>
-        </div>
-        <div>
-          {/* Notifications */}
-          <button>
-            <Image src={BellIcon} alt="Notifications" className="w-8 h-8"/>
-          </button>
-        </div>
-      </header>
       <section className="mr-[45px]">
         <div className="w-full flex justify-between items-center font-rubik font-bold text-[26px] leading-[30.81px] mt-[56px]">
           <h2 className="font-rubik font-bold text-[26px] leading-[31px]">My Groups</h2>
