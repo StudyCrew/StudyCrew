@@ -31,14 +31,18 @@ const tailwindConfig = {
         5: '5',
         200: '200',
       },
-      rounded: {
-        10: '10'
-      },
       translate: {
         icon: '5%'
       },
       padding: {
         5.5: '22px'
+      },
+      boxShadow: {
+        'faq-custom-light': '0 2px 1px rgba(128, 128, 128, 0.472)',
+        'faq-custom-dark': '0 4px 2px rgba(128, 128, 128, 0.472)',
+      },
+      screens: {
+        'sm': '600px',
       },
 
       // Update accordingly
@@ -68,6 +72,66 @@ const tailwindConfig = {
       // },
 
       colors: {
+        'white': '#fffbfb',
+        'off white': '#fbfbfb',
+        'off-white-2': '#f1f1f1',
+        'green-outline': '#154704',
+        'primary-blue': '#3a86ff',
+        'background-light': '#eef4ff',
+
+        'surface-gray': {
+          25: '#fcfcfd',
+          50: '#f9fafb',
+          100: '#f2f4f7',
+          200: '#e4e7ec',
+          300: '#d0d5dd',
+          400: '#98a2b3', 
+          500: '#667085', 
+          600: '#475467', 
+          700: '#344054',
+          800: '#1d2939',
+          900: '#101828'
+        },
+
+        'system-alert':{
+          'alert-50': '#ffffff',
+          'alert-100': '#fffff5',
+          'alert-200': '#ffffea',
+          'alert-300': '#fff8cf',
+          'alert-400': '#fcebaf',
+          'alert-500': '#f5dd87', 
+          'alert-600': '#eecb51', 
+          'alert-700': '#b1911f', 
+          'alert-800': '#755b00',
+          'alert-900': '#382c00'
+        },
+
+        'system-error':{
+          'error-50': '#ffeded',
+          'error-100': '#ffe4e4',
+          'error-200': '#ffdbdb',
+          'error-300': '#ffbdbd',
+          'error-400': '#f89898',
+          'error-500': '#f06c6c', 
+          'error-600': '#e83b3b', 
+          'error-700': '#ac1c1c', 
+          'error-800': '#6f0808',
+          'error-900': '#330000'
+        },
+
+        'system-success':{
+          'success-50': '#f4fff3',
+          'success-100': '#e5ffe2',
+          'success-200': '#d6ffd2',
+          'success-300': '#b8f8b2',
+          'success-400': '#98ed91',
+          'success-500': '#76e36d', 
+          'success-600': '#51d845', 
+          'success-700': '#3da434', 
+          'success-800': '#286f22',
+          'success-900': '#153b12'
+        },
+        
         brand:"#3a86ff",
         brand_shade:"#3376e0",
         brand_tint:"#4e92ff",
@@ -223,6 +287,10 @@ const tailwindConfig = {
         '50':'50px',
         '100': '100px',
         '5%': '5%',
+        '150px': '150px',
+        '25px': '25px',
+        '20px': '20px',
+        '10px': '10px',
       },
       maxWidth: {
         '100vw': '100vw'

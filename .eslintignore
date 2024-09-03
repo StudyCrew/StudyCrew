@@ -13,6 +13,5 @@ components.json
 package-lock.json
 
 src/components/ui/
-src/app/auth/
 
 test-route/

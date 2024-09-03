@@ -1,1 +1,1 @@
-export * from './scroll_to_ref'
+export * from './use-scroll'

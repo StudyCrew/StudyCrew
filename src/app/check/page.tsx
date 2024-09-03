@@ -1,3 +1,4 @@
+
 'use client'
 import PageHeader from '@/components/layout/PageHeader'
 import React  from 'react'
@@ -9,6 +10,5 @@ const Check: React.FC = () => {
       <PageHeader/>
     </div>
   )
-}
 
 export default Check

@@ -9,9 +9,12 @@
 
 Welcome to StudyCrew's GitHub repository! This repository serves as the central hub for [www.studycrew.world](https://www.studycrew.world)'s source code, assets, and content.
 
-## Introduction
+## Mission
 
-StudyCrew is a dedicated online platform designed to foster accessible, collaborative, and engaging educational experiences. We're committed to making learning more inclusive and interactive. If you have any questions or inquiries, feel free to reach out to us at [development@studycrew.world](mailto:development@studycrew.world).
+StudyCrew is committed to making education accessible, collaborative, and engaging through innovative learning platforms. Our vision is to provide every student with the resources and community they need to reach their full potential. If you have any questions or inquiries, feel free to reach out to us at [development@studycrew.world](mailto:development@studycrew.world).
+
+## Features
+The first feature we’ll develop is study groups, which includes a Q&A board, a group chat, and a section for shared materials. Additionally, the first version includes a personal dashboard, a user profile page, and a settings page. Feel free to check out the Figma prototype of [StudyCrew 0.1](https://www.figma.com/design/1Z1NIZIPE7TTqQXM7xk8av/StudyCrew-Prototype?node-id=0-1&t=vPRN1e1icTnXHebJ-1)! For future versions, we consider implementing tutoring, learning paths, shared flashcards, and more.
 
 ## Getting Started
 
@@ -36,61 +39,48 @@ NEXT_PUBLIC_SUPABASE_URL=https://iqbtyidkfhmqokxopxhf.supabase.co
 NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlxYnR5aWRrZmhtcW9reG9weGhmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjA0NTI4NDgsImV4cCI6MjAzNjAyODg0OH0.eo6MVgRbXbdpdUlj4YQo4NJ6D0kE2HRQaLO4VOAOMd4
 ```
 
-### Sentry Exception Handling
-
-If you would like to handle exceptions like we do, just create a free Sentry.io account and replace the `dsn` key with your own in all of the following files:
-
-- `sentry.client.config.ts`
-- `sentry.edge.config.ts`
-- `sentry.server.config.ts`
-
-Here is an example:
-
-```typescript
-import * as Sentry from '@sentry/nextjs'
-
-Sentry.init({
-    dsn: '[YOUR DSN HERE]',
-    tracesSampleRate: 1,
-    debug: false
-})
-```
-
 ## Running the Project Locally
 
 ### Using Docker
+
 This project is Dockerized for easy development and deployment. Follow the instructions below to get started.
 
 **Make sure you have Docker installed and running on your system.**
 
 #### Quick Start
+
 1. **Fork this Repository**
 
 2. **Clone the Repository to local:**
+
     ```bash
    git clone <your-repository-url>
    cd <your-repository-name>
    ```
+
 3. **Build the Image:**
-    
+
     ```bash
     # (Development)
     docker build . --target development -t studycrew_test:dev
     # (Production)
     docker build . --target production -t studycrew_test:prod
     ```
+
 4. **Run the Image:**
+
     ```bash
     # (Development)
     docker run -v .:/usr/src/app -p 3000:3000 --name studycrew_test studycrew_test:dev
     # (Production)
     docker run -p 3000:3000 --name studycrew_prod studycrew_test:prod
     ```
-5. **Access the Application:** Open your browser and navigate to http://localhost:3000 to see the running application.
+
+5. **Access the Application:** Open your browser and navigate to <http://localhost:3000> to see the running application.
 
 To stop the container, run `docker stop studycrew_test` or `docker stop studycrew_prod` respectively.
 
-### Without Docker:
+### Without Docker
 
 1. `pnpm i` the required dependencies.
 
@@ -107,6 +97,11 @@ Before contributing please read the style guidelines from the [Figma documentati
 If you have to create a new component, please study existing components so these are kept consistent with the rest of the project.
 
 If you are unsure about anything, just ask! We are more than happy to help and would love to have you are part of the community. 😊
+
+## Creating Issues
+We encourage you to report bugs or suggest enhancements by creating a new issue. To help us address your issue efficiently, please follow these steps:
+1. Before creating a new issue, check if it has already been reported or discussed.
+2. Provide all relevant information and write a clear, descriptive title. You can take inspiration from existing issues.
 
 ## Developer Hours
 
