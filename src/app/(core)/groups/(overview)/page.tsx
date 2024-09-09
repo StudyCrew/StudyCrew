@@ -17,7 +17,7 @@ import { LuLanguages } from "react-icons/lu";
 import Science from "../../../../../public/assets/icons/Science.svg";
 import { getLoggedInUser } from '@/utils/actions/user.actions';
 
-const Subjects = [
+const SUBJECTS = [
   {
     id: 1,
     name: "All Groups",
@@ -144,7 +144,7 @@ export default function GroupsPage(): JSX.Element {
         </div>
         <div>
           <ul className="flex gap-x-2 mt-6">
-            {Subjects.map((subject: any) => (
+            {SUBJECTS.map((subject: any) => (
               <li
                 key={subject.id}
                 className={`rounded-full p-2 border border-solid border-primary-blue cursor-pointer ${

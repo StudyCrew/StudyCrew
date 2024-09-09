@@ -28,7 +28,7 @@ function GroupCards({ groups }: GroupCardProps) {
         members={group.member_ids.length}
         subject={group.subject}
         actionName="JOIN"
-        handleClickAction={() => {/* Acción cuando se hace clic en el botón "Join" */}}
+        handleClickAction={() => {/* Action when you click on the button "Join" */}}
       />
       ))}
     </div>
