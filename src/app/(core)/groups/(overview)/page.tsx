@@ -16,6 +16,8 @@ import { PiLaptop } from "react-icons/pi";
 import { LuLanguages } from "react-icons/lu";
 import Science from "../../../../../public/assets/icons/Science.svg";
 import { getLoggedInUser } from '@/utils/actions/user.actions';
+import { Group, User, Admin } from '@/types/index';
+import { GroupSubject } from '@/types/models/index';
 
 const SUBJECTS = [
   {
@@ -57,11 +59,11 @@ const SUBJECTS = [
 
 export default function GroupsPage(): JSX.Element {
   const supabase = createClient();
-  const [groups, setGroups] = useState<any[]>([]);
+  const [groups, setGroups] = useState<Group[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
-  const [selectedSubject, setSelectedSubject] = useState<string>('All Groups');
-  const [admins, setAdmins] = useState<{ [key: string]: { name: string; avatar: string } }>({});
-  const [user, setUser] = useState<any>(null);
+  const [selectedSubject, setSelectedSubject] = useState<GroupSubject>(GroupSubject.AllGroups);
+  const [admins, setAdmins] = useState<Admin[]>();
+  const [user, setUser] = useState<User>();
   useEffect(() => {
     const fetchUserAndGroups = async () => {
       try {
@@ -84,7 +86,7 @@ export default function GroupsPage(): JSX.Element {
           setGroups(groupsData);
 
           // Fetch admins data for all groups
-          const adminIds = [...new Set(groupsData.map((group: any) => group.admin_id))];
+          const adminIds = [...new Set(groupsData.map((group: Group) => group.admin_id))];
           if (adminIds.length > 0) {
             const { data: adminsData, error: adminsError } = await supabase
               .from('users')

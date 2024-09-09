@@ -12,14 +12,15 @@ export enum NotificationCategory {
 }
 
 export enum GroupSubject {
-  Math,
-  English,
-  Science,
-  SocialScience,
-  ComputerScience,
-  Language,
-  TestPrep,
-  Other
+  Math = "Math",
+  English = "English",
+  Science = "Science",
+  SocialScience = "Social Science",
+  ComputerScience = "Computer Science",
+  Languages = "Languages",
+  TestPrep = "Test Prep",
+  Other = "Other",
+  AllGroups = "All Groups"
 }
 
 export enum MaterialType {

@@ -1,4 +1,5 @@
 import type { MaterialType } from '.'
+import { GroupSubject } from './models/index'
 import { User } from '@supabase/supabase-js'
 
 declare type MaterialProps = {
@@ -17,11 +18,26 @@ export interface Subject {
   icon: string;
 }
 
+export interface User {
+  id: number;
+  name: string;
+  avatar: string;
+  about: string;
+}
+
+export interface Admin {
+  key: string;
+  name: string;
+  avatar: string;
+}
+
 export interface Group {
-  id: string;
+  id: number;
   name: string;
   description: string;
   members: User[];
-  subject: Subject;
+  subject: GroupSubject;
   materials: MaterialProps[];
+  admin_id: number;
+  bannerimage: string;
 }
