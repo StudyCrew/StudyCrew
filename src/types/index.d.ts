@@ -1,5 +1,4 @@
 import type { MaterialType } from '.'
-import { User } from '@supabase/supabase-js'
 
 declare type MaterialProps = {
   type: MaterialType
@@ -9,4 +8,15 @@ declare type MaterialProps = {
   user: string
   date: Date
   variant?: 'default' | 'small'
+}
+
+export interface Group {
+  id: number;
+  name: string;
+  description: string;
+  members: User[];
+  subject: GroupSubject;
+  materials: MaterialProps[];
+  admin_id: number;
+  bannerimage: string;
 }

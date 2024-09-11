@@ -53,7 +53,7 @@ const Navbar = ({
     >
       <nav
         className={
-          'flex flex-col justify-between h-screen border-r-[1px] border-gray-300'
+          'fixed flex flex-col justify-between h-screen border-r-[1px] border-gray-300 w-[72px]'
         }
       >
         {/* LOGO */}
@@ -72,7 +72,7 @@ const Navbar = ({
         </div>
 
         {/* NAVIGATION LINKS */}
-        <div className={'flex flex-col py-[39px] h-full gap-y-2'}>
+        <div className={'flex flex-col py-[39px] h-full gap-y-2 bg-white'}>
           {navLinks.map((item) => {
             const isActive =
               pathname === item.route || pathname.startsWith(`${item.route}/`)
@@ -82,7 +82,7 @@ const Navbar = ({
                 href={item.route}
                 key={item.label}
                 className={cn(
-                  'flex justify-start items-center h-14 cursor-pointer ',
+                  'flex justify-start items-center h-14 cursor-pointer',
                   {
                     // 'bg-[#D3E4FF] border-l-[8px] border-blue-500 rounded-l':
                     'bg-[#D3E4FF]': isActive

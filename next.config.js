@@ -1,5 +1,6 @@
-/** @type {import('next').NextConfig} */
+const { withSentryConfig } = require('@sentry/nextjs')
 
+/** @type {import('next').NextConfig} */
 const nextConfig = {
   experimental: {
     serverComponentsExternalPackages: ['mongoose']
@@ -16,17 +17,21 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'images.clerk.dev'
+      },
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com'
+      },
+      {
+        protocol: 'https',
+        hostname: 'api.dicebear.com'
       }
     ]
   }
 }
 
-module.exports = nextConfig
-
-const { withSentryConfig } = require('@sentry/nextjs')
-
 module.exports = withSentryConfig(
-  module.exports,
+  nextConfig,
   {
     silent: true,
     org: 'studycrew',

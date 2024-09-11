@@ -8,7 +8,9 @@ import tailwindCSSAnimate from 'tailwindcss-animate'
 const tailwindConfig = {
   darkMode: ['class'],
   content: ['./src/**/*.{ts,tsx}'],
-  plugins: [tailwindCSSAnimate],
+  plugins: [
+    tailwindCSSAnimate
+  ],
   theme: {
     fontFamily: {
       sans: ['"DM Sans"', 'ui-sans-serif'],

@@ -9,8 +9,8 @@ export default function ApplicationLayout({
   children
 }: LayoutProps): JSX.Element {
   return (
-    <main className={'flex'}>
-      <NavbarHelper />
+    <main className={'flex bg-gray-100'}>
+        <NavbarHelper />
       {children}
     </main>
   )
