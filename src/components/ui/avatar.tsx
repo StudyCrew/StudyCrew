@@ -48,3 +48,42 @@ const AvatarFallback = React.forwardRef<
 AvatarFallback.displayName = AvatarPrimitive.Fallback.displayName
 
 export { Avatar, AvatarImage, AvatarFallback }
+
+// below we have the designed avatar from the figma file
+// we will use this as a reference to create the avatar component
+// the CustomAvatar accepts 3 props : image for the image, imageFallback for the text shows in case there is no avatar image and the size prop that can be lg for large size, md for medium size and sm for small size.
+
+// example usage
+
+// <CustomAvatar image="https://example.com/image.jpg" imageFallback="JD" size="lg"/>
+
+export const CustomAvatar = ({
+  image,
+  imageFallback,
+  size = 'lg'
+}: {
+  image: string
+  imageFallback: string
+  size: 'sm' | 'md' | 'lg'
+}) => {
+  return (
+    <Avatar
+      className={cn(
+        size === 'lg' ? 'w-8 h-8' : size === 'md' ? 'w-6 h-6' : 'h-4 w-4'
+      )}
+    >
+      <AvatarImage src={image} />
+      <AvatarFallback
+        className={cn(
+          size === 'lg'
+            ? 'text-[16px]'
+            : size === 'md'
+              ? 'text-[12px]'
+              : 'text-[10px]'
+        )}
+      >
+        {imageFallback}
+      </AvatarFallback>
+    </Avatar>
+  )
+}
