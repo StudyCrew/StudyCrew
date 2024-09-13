@@ -98,8 +98,8 @@ export default function ProfileDetailPage() {
           <div className="text-center pt-6">
             <h3 className="text-lg font-bold">{name}</h3>
           </div>
-          <article className="pt-9">
-            <p className='w-[280px] h-[72px] text-[14px] font-dmSans leading-[18.23px]'>{about}</p>
+          <article className="pt-9 w-[280px] h-[72px]">
+            <p className='text-[14px] font-dmSans leading-[18.23px]'>{about}</p>
           </article>
           <div className="mt-[152px]">
             <Button className="mt-4 uppercase text-[16px] leading-[20.83px] font-bold font-dmSans" text="Edit Profile" />
