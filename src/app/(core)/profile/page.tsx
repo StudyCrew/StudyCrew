@@ -98,7 +98,7 @@ export default function ProfileDetailPage() {
           <div className="text-center pt-6">
             <h3 className="text-lg font-bold">{name}</h3>
           </div>
-          <article className="pt-9 w-[280px] h-[72px]">
+          <article className="w-full pt-9 h-[72px]">
             <p className='text-[14px] font-dmSans leading-[18.23px]'>{about}</p>
           </article>
           <div className="mt-[152px]">
