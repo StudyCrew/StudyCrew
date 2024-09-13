@@ -54,10 +54,6 @@ export default function AccountForm({ user }: AccountFormProps): JSX.Element {
       setAbout(data.about ?? null)
       setAvatar(data.avatar ?? null)
 
-      if (data.avatar) {
-        await getAvatar(data.avatar)
-      }
-
       await getSettings()
     } catch (error) {
       console.error('Error fetching profile data:', error)
@@ -66,24 +62,6 @@ export default function AccountForm({ user }: AccountFormProps): JSX.Element {
       setLoading(false)
     }
   }, [user, supabase])
-
-  const getAvatar = async (avatarPath: string | null): Promise<void> => {
-    if (avatarPath) {
-      try {
-        const { data: avatarData, error: avatarError } = await supabase.storage
-          .from('avatars')
-          .download(avatarPath)
-
-        if (avatarError) throw new Error(avatarError.message)
-
-        const url = URL.createObjectURL(avatarData)
-        setAvatar(url)
-      } catch (error) {
-        console.error('Error fetching avatar:', error)
-        alert('Error fetching avatar!')
-      }
-    }
-  }
 
   const getSettings = async (): Promise<void> => {
     try {
@@ -117,15 +95,10 @@ export default function AccountForm({ user }: AccountFormProps): JSX.Element {
     try {
       setLoading(true)
 
-      let avatarFile: File | null = null
-      if (avatar) {
-        avatarFile = await convertUrlToFile(avatar)
-      }
-
       await updateProfile({
         name,
         about,
-        avatar: avatarFile
+        avatar,
       })
       await updateSettings({ showGroups, emailNotifications })
     } catch (error) {
@@ -136,16 +109,6 @@ export default function AccountForm({ user }: AccountFormProps): JSX.Element {
     }
   }
 
-  const convertUrlToFile = async (url: string): Promise<File> => {
-    const response = await fetch(url)
-    const blob = await response.blob()
-
-    const file = new File([blob], 'avatar.svg', {
-      type: 'image/svg+xml'
-    })
-    return file
-  }
-
   const updateProfile = async ({
     name: newName,
     about: newAbout,
@@ -153,30 +116,16 @@ export default function AccountForm({ user }: AccountFormProps): JSX.Element {
   }: {
     name: string | null
     about: string | null
-    avatar: File | null
+    avatar: string | null
   }): Promise<void> => {
     try {
       setLoading(true)
-
-      let avatarUri: string | null = null
-      if (newAvatar) {
-        const { data, error } = await supabase.storage
-          .from('avatars')
-          .upload(`${user?.id}.svg`, newAvatar, {
-            cacheControl: '3600',
-            upsert: true
-          })
-
-        if (error) throw new Error(error.message)
-
-        avatarUri = data.path ?? null
-      }
 
       const { error } = await supabase.from('users').upsert({
         user_id: user?.id,
         name: newName,
         about: newAbout,
-        avatar: avatarUri
+        avatar: newAvatar
       })
 
       if (error) throw new Error(error.message)
