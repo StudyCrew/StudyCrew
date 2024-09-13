@@ -6,17 +6,17 @@ import { PiPencilSimple } from "react-icons/pi";
 import { usePathname, redirect } from 'next/navigation';
 import Button from '@/components/ui/button';
 import { Switch } from '@/components/ui/switch';
+import { type User } from '@supabase/supabase-js';
+import { getLoggedInUser } from '@/utils/actions/user.actions';
 
-interface PageProps {
-  params: { profileId: string }
-}
-
-export default function ProfileDetailPage({ params }: PageProps): JSX.Element {
+export default function ProfileDetailPage() {
+  const [loading, setLoading] = useState<boolean>(false);
   const [avatar, setAvatar] = useState<string>('');
   const [name, setName] = useState<string>();
   const [about, setAbout] = useState<string>();
   const [showGroups, setShowGroups] = useState<boolean>(false);
   const [emailNotifications, setEmailNotifications] = useState<boolean>(false);
+  const [user, setUser] = useState<User | null>(null);
   const supabase = createClient();
   const pathname = usePathname();
 
@@ -25,25 +25,53 @@ export default function ProfileDetailPage({ params }: PageProps): JSX.Element {
     redirect(redirectUrl);
   };
 
-  const fetchUser = async () => {
-    const { data, error } = await supabase
-      .from('users')
-      .select('*')
-      .eq('user_id', params.profileId)
-      .single();
+  const getProfile = async (userId: string) => {
+    try {
+      setLoading(true);
 
-    if (error) {
-      console.error('error', error);
-      return;
+      const { data, error } = await supabase
+        .from('users')
+        .select('name, about, avatar')
+        .eq('user_id', userId)
+        .single();
+
+      if (error) {
+        console.error("Supabase error:", error);
+        throw new Error(error.message);
+      }
+      if (!data) {
+        console.error("No profile data found");
+        throw new Error('Profile data not found');
+      }
+
+      setName(data.name ?? null);
+      setAbout(data.about ?? null);
+      setAvatar(data.avatar ?? null);
+    } catch (error) {
+      alert(`Error fetching profile data!, ${error}`);
+    } finally {
+      setLoading(false);
     }
-    setAvatar(data?.avatar ?? '');
-    setName(data?.name ?? '');
-    setAbout(data?.about ?? '');
   };
 
   useEffect(() => {
+    const fetchUser = async () => {
+      const loggedInUser = await getLoggedInUser();
+      if (loggedInUser) {
+        setUser(loggedInUser);
+        await getProfile(loggedInUser.id);
+      }
+    };
     fetchUser();
   }, []);
+
+  const handleSignOut = (): void => {
+    const form = document.createElement('form')
+    form.method = 'post'
+    form.action = '/auth/signout'
+    document.body.appendChild(form)
+    form.submit()
+  }
 
   return (
     <div className="flex items-center gap-x-6 pl-[132px] pr-[204px]">
@@ -126,7 +154,7 @@ export default function ProfileDetailPage({ params }: PageProps): JSX.Element {
             </div>
           </div>
           <div className='flex gap-x-7 mt-9'>
-            <Button className="uppercase text-[12px] leading-[15.62px] font-bold font-dmSans bg-gray-200 border border-solid border-gray-600 text-gray-600" text="Log Out" />
+            <Button className="uppercase text-[12px] leading-[15.62px] font-bold font-dmSans bg-gray-200 border border-solid border-gray-600 text-gray-600" text="Log Out" onClick={handleSignOut}/>
             <Button className="uppercase text-[12px] leading-[15.62px] font-bold font-dmSans bg-error-600" text="Delete Your Account" />
           </div>
         </div>
