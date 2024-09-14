@@ -2,13 +2,13 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import LogoWhite from '../../../public/assets/LogoWhite.svg'
-import GoogleAccount from '../../../public/assets/web_light_sq_ctn 1.svg'
 import { PiHouseDuotone } from 'react-icons/pi'
 import { PiUsersDuotone } from 'react-icons/pi'
 import { PiGearDuotone } from 'react-icons/pi'
 import { PiUserDuotone } from 'react-icons/pi'
 import Button from '@/components/ui/button'
 import { signup } from './actions'
+import { GoogleOauthButton } from '@/components/widgets/auth/GoogleOauthButton'
 
 const Signup = () => {
   const OurFeatures = [
@@ -69,11 +69,7 @@ const Signup = () => {
             Log in
           </Link>
         </p>
-        <Image
-          src={GoogleAccount}
-          alt="Google Account"
-          className="w-[234px] h-[50px] cursor-pointer mt-8"
-        />
+        <GoogleOauthButton />
         <div className="relative flex items-center mt-[20px]">
           <div className="flex-grow border-t border-gray-500"></div>
           <span className="px-4 text-gray-500 bg-white">Or continue with</span>
