@@ -149,7 +149,10 @@ const tailwindConfig = {
         background:"#f2f7ff",
         background_shade:"#d5d9e0",
         background_tint:"#f3f8ff",
-
+        header_background: "#f3f4f8",
+        header_input_border: "#D0D5DD",
+        header_input_background: "#F9FAFB",
+        magnifying_glass_color:"#343330",
         light:"#666d79",
         
         gradient: {
