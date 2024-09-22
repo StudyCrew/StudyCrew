@@ -40,7 +40,7 @@ const Navbar = ({
   const footerLinks = [
     {
       imgURL: '/assets/icons/user.svg',
-      route: `/profile/${userId}`,
+      route: `/profile`,
       label: 'Profile'
     }
   ]
