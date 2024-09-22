@@ -5,5 +5,5 @@ interface GroupsLayoutProps {
 export default function GroupsLayout({
   children
 }: GroupsLayoutProps): JSX.Element {
-  return <div className="w-full ml-20 mt-[32px] mr-[35px] bg-gray-100">{children}</div>
+  return <div className="w-full bg-gray-100">{children}</div>
 }
