@@ -63,7 +63,7 @@ function SecondaryNavbar(): React.ReactElement {
   }
 
   return (
-    <div className={'h-full bg-white'}>
+    <div className={'h-full bg-white min-w-[200px] flex-shrink-0'}>
       <div
         className={
           'text-center font-semibold text-xl py-12 items-center bg-blue-50'
