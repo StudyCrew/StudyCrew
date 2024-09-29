@@ -1,0 +1,40 @@
+name: "🐞 Bug Report"
+description: "Create a report to help us improve"
+title: "BUG:"
+labels: [Bug, Needs Triage]
+body:
+  - type: checkboxes
+    attributes:
+      label: "Is there an existing issue for this?"
+      description: "Please search to see if an issue already exists for the bug you encountered."
+      options:
+        - label: "I have searched the existing issues"
+          required: true
+  - type: textarea
+    attributes:
+      label: "What happened? 📜"
+      description: "A concise description of what you're experiencing."
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: "Add Screenshots 📷"
+      description: "Add screenshots to explain your issue."
+  - type: dropdown
+    attributes:
+      label: "What browser are you seeing the problem on?"
+      options:
+        - chrome
+        - firefox
+        - safari
+        - edge
+        - other  
+  - type: checkboxes 
+    attributes:
+       label : Record 
+       options :
+         - label : I agree to follow this project's Code of Conduct 
+           required : true 
+         - label : I have read the project's contributing guidelines.
+           required : true
+         - label : I want to work on this issue 
