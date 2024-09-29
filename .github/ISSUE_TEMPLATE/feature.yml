@@ -12,13 +12,13 @@ body:
           required: true
   - type: textarea
     attributes:
-      label: "Describe the feature"
+      label: "Describe the feature 📜"
       description: "A detailed description of the feature or enhancement you are suggesting."
     validations:
       required: true
   - type: textarea
     attributes:
-      label: "Additional context"
+      label: "Additional context 📷"
       description: "Any other context or screenshots about the feature request."
   - type: checkboxes 
     attributes:
