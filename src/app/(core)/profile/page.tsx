@@ -92,7 +92,7 @@ export default function ProfileDetailPage() {
           <div className="flex flex-col items-center justify-between p-6 w-full h-[594px] mt-4 bg-[#fcfcfd] rounded-xl">
             <div className="relative flex justify-center w-fit">
               <Image
-                src={avatar && 'https://github.com/shadcn.png'}
+                src={avatar ?? 'https://github.com/shadcn.png'}
                 width={150}
                 height={150}
                 alt="User Avatar"
