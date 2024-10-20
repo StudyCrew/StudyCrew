@@ -3,12 +3,12 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import React, { useEffect, useState } from 'react'
 import { createClient } from '@/utils/supabase/client'
-import Image from 'next/image'
 import Link from 'next/link'
+import { Bell } from '@phosphor-icons/react'
 
 const HeaderNotification: React.FC = () => {
   const supabase = createClient()
-  const [readAll, setReadAll] = useState<boolean>(false)
+  const [isRead, setIsRead] = useState<boolean>(false)
 
   useEffect(() => {
     async function fetchData(): Promise<void> {
@@ -16,9 +16,9 @@ const HeaderNotification: React.FC = () => {
 
       const unread = data?.filter((noti: any) => !noti.read)
       if (unread?.length === 0) {
-        setReadAll(true)
+        setIsRead(true)
       } else {
-        setReadAll(false)
+        setIsRead(false)
       }
     }
 
@@ -26,17 +26,11 @@ const HeaderNotification: React.FC = () => {
   }, [supabase])
 
   return (
-    <Link href={'#'}>
-      <Image
-        src={
-          readAll
-            ? '/assets/icons/noti-read.svg'
-            : '/assets/icons/noti-unread.svg'
-        }
-        height={30}
-        width={30}
-        alt={'notification icon'}
-      />
+    <Link href={'#'} className="relative">
+      <Bell color="#2353A0" weight="duotone" size={30} />
+      {!isRead && (
+        <div className="absolute top-0 right-0 h-3 w-3 bg-red-600 rounded-full"></div>
+      )}
     </Link>
   )
 }
