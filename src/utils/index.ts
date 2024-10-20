@@ -25,7 +25,7 @@ export function shortenName(fullName: string): string {
 
   const initials = nameParts.map((part) => part.charAt(0))
 
-  return initials.join('').toLowerCase()
+  return initials.join('').toUpperCase()
 }
 
 export function formatDate(date: Date): string {
