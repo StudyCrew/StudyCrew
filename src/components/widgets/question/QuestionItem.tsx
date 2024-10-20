@@ -1,7 +1,9 @@
+'use client'
+
 import React from 'react'
-import Image from 'next/image'
 import { CustomAvatar } from '@/components/ui/avatar'
 import { shortenName } from '@/utils'
+import { ArrowFatUp, Chats } from '@phosphor-icons/react'
 
 interface QuestionItemProps {
   title: string
@@ -20,12 +22,7 @@ const QuestionItem: React.FC<QuestionItemProps> = (props) => {
         <h3 className={'text-lg font-medium'}>{props.title}</h3>
         <div className={'flex gap-5'}>
           <div className={'flex items-center gap-2'}>
-            <Image
-              src={'/assets/icons/messages.svg'}
-              alt={'messages'}
-              width={16}
-              height={16}
-            />
+            <Chats height={16} width={16} color={'#3A86FF'} />
             <p className={'text-sm font-medium'}>{props.replies} Replies</p>
           </div>
 
@@ -42,12 +39,7 @@ const QuestionItem: React.FC<QuestionItemProps> = (props) => {
 
       <div className={'items-center flex gap-2'}>
         <h5 className={'text-sm font-medium'}>{props.votes}</h5>
-        <Image
-          src={'/assets/icons/upvote.svg'}
-          alt={'messages'}
-          width={16}
-          height={16}
-        />
+        <ArrowFatUp height={16} width={16} color={'#3A86FF'} />
       </div>
     </div>
   )

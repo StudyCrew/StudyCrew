@@ -148,3 +148,5 @@ public/workbox-*
 .idea
 
 test-route/
+
+src/app/test/
