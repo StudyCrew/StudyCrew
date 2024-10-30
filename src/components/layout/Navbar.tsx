@@ -58,7 +58,7 @@ const Navbar = ({
       >
         {/* LOGO */}
         <div
-          className={'flex justify-center items-center h-[190px] bg-[#F2F7FF] '}
+          className={'flex justify-center items-center min-h-32 bg-[#F2F7FF] '}
         >
           <Link href={'/'} className={'cursor-pointer'}>
             <Image

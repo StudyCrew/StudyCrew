@@ -130,7 +130,7 @@ export default function GroupsPage(): JSX.Element {
   }
 
   return (
-    <div className="w-4/5 mx-auto">
+    <div className="px-4 md:px-8 lg:px-12">
       <section className="mb-12">
         <div className="flex justify-between items-center mt-14">
           <h2 className="font-rubik font-bold text-2xl sm:text-3xl">

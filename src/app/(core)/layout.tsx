@@ -11,8 +11,6 @@ export default function ApplicationLayout({
 }: LayoutProps): JSX.Element {
   return (
     <div className={'flex bg-gray-100 w-screen'}>
-      {' '}
-      {/* 🚨 gap-1 is useful to separate potential overlapping between the primary sidebar and children */}
       <NavbarHelper />
       <div className={'flex-1 px-4 md:px-6 lg:px-10'}>
         <PageHeader />

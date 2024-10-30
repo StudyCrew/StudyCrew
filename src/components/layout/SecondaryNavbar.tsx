@@ -63,10 +63,10 @@ function SecondaryNavbar(): React.ReactElement {
   }
 
   return (
-    <div className={'h-full bg-white min-w-[200px] flex-shrink-0'}>
+    <div className={'h-full bg-white w-52 flex-shrink-0 absolute'}>
       <div
         className={
-          'text-center font-semibold text-xl py-12 items-center bg-blue-50'
+          'text-center font-semibold text-xl items-center bg-blue-50 h-32 flex justify-center'
         }
       >
         AP Calculus
