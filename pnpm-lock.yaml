@@ -15,8 +15,8 @@ importers:
         specifier: ^9.2.1
         version: 9.2.1
       '@ducanh2912/next-pwa':
-        specifier: ^10.2.8
-        version: 10.2.8(next@14.2.3(@babel/core@7.25.2)(@playwright/test@1.46.1)(react-dom@18.2.0(react@18.3.1))(react@18.3.1))(webpack@5.94.0)
+        specifier: ^10.2.9
+        version: 10.2.9(next@14.2.3(@babel/core@7.25.2)(@playwright/test@1.46.1)(react-dom@18.2.0(react@18.3.1))(react@18.3.1))(webpack@5.94.0)
       '@hookform/resolvers':
         specifier: ^3.9.0
         version: 3.9.0(react-hook-form@7.53.0(react@18.3.1))
@@ -1164,8 +1164,8 @@ packages:
     peerDependencies:
       '@dicebear/core': ^9.0.0
 
-  '@ducanh2912/next-pwa@10.2.8':
-    resolution: {integrity: sha512-4USVoyJcueYXgAjzjyzblAawcdxgZgknmhhOfA8XF+0q2xMecEhKHegqWSMfX37kahyrtA5RVmgQopR9kHs4nA==}
+  '@ducanh2912/next-pwa@10.2.9':
+    resolution: {integrity: sha512-Wtu823+0Ga1owqSu1I4HqKgeRYarduCCKwsh1EJmJiJqgbt+gvVf5cFwFH8NigxYyyEvriAro4hzm0pMSrXdRQ==}
     peerDependencies:
       next: '>=14.0.0'
       webpack: '>=5.9.0'
@@ -4769,11 +4769,6 @@ packages:
     resolution: {integrity: sha512-BR7VvDCVHO+q2xBEWskxS6DJE1qRnb7DxzUrogb71CWoSficBxYsiAGd+Kl0mmq/MprG9yArRkyrQxTO6XjMzA==}
     hasBin: true
 
-  semver@7.6.2:
-    resolution: {integrity: sha512-FNAIBWCx9qcRhoHcgcJ0gvU7SN1lYU2ZXuSfl04bSC5OpvDHFyJCjdNHomPXxjQlCBU67YW64PzY7/VIEH7F2w==}
-    engines: {node: '>=10'}
-    hasBin: true
-
   semver@7.6.3:
     resolution: {integrity: sha512-oVekP1cKtI+CTDvHWYFUcMtsK/00wmAEfyqKfNdARm8u1wNVhSgaX7A8d4UuIlUI5e84iEwOhs7ZPYRmzU9U6A==}
     engines: {node: '>=10'}
@@ -5635,8 +5630,8 @@ snapshots:
   '@babel/helper-wrap-function@7.25.0':
     dependencies:
       '@babel/template': 7.25.0
-      '@babel/traverse': 7.25.4
-      '@babel/types': 7.25.4
+      '@babel/traverse': 7.25.9
+      '@babel/types': 7.26.0
     transitivePeerDependencies:
       - supports-color
 
@@ -6504,11 +6499,11 @@ snapshots:
     dependencies:
       '@dicebear/core': 9.2.1
 
-  '@ducanh2912/next-pwa@10.2.8(next@14.2.3(@babel/core@7.25.2)(@playwright/test@1.46.1)(react-dom@18.2.0(react@18.3.1))(react@18.3.1))(webpack@5.94.0)':
+  '@ducanh2912/next-pwa@10.2.9(next@14.2.3(@babel/core@7.25.2)(@playwright/test@1.46.1)(react-dom@18.2.0(react@18.3.1))(react@18.3.1))(webpack@5.94.0)':
     dependencies:
       fast-glob: 3.3.2
       next: 14.2.3(@babel/core@7.25.2)(@playwright/test@1.46.1)(react-dom@18.2.0(react@18.3.1))(react@18.3.1)
-      semver: 7.6.2
+      semver: 7.6.3
       webpack: 5.94.0
       workbox-build: 7.1.1
       workbox-core: 7.1.0
@@ -7280,7 +7275,7 @@ snapshots:
   '@rollup/plugin-babel@5.3.1(@babel/core@7.25.2)(rollup@2.79.1)':
     dependencies:
       '@babel/core': 7.25.2
-      '@babel/helper-module-imports': 7.24.7
+      '@babel/helper-module-imports': 7.25.9
       '@rollup/pluginutils': 3.1.0(rollup@2.79.1)
       rollup: 2.79.1
     transitivePeerDependencies:
@@ -10727,8 +10722,6 @@ snapshots:
   semver@5.7.2: {}
 
   semver@6.3.1: {}
-
-  semver@7.6.2: {}
 
   semver@7.6.3: {}
 
