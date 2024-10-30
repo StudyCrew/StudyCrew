@@ -40,7 +40,7 @@
     "@radix-ui/react-tooltip": "^1.1.2",
     "@sentry/nextjs": "^7.118.0",
     "@supabase/ssr": "^0.4.0",
-    "@supabase/supabase-js": "^2.44.4",
+    "@supabase/supabase-js": "^2.46.1",
     "@tailwindcss/line-clamp": "^0.4.4",
     "@uidotdev/usehooks": "^2.4.1",
     "autoprefixer": "10.4.19",
