@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation'
 import SearchBar from '@/components/layout/SearchBar'
 import HeaderNotification from '@/components/layout/HeaderNotification'
 
-const PageHeader: React.FC = () => {
+const PageHeader: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
   const pathname = usePathname()
   const isGroupPage = pathname.startsWith('/groups/')
 
@@ -19,6 +19,7 @@ const PageHeader: React.FC = () => {
     >
       <SearchBar />
       <HeaderNotification />
+      {isGroupPage && children} {/* Render children if on a group page */}
     </header>
   )
 }
