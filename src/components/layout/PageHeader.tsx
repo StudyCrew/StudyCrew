@@ -13,13 +13,13 @@ const PageHeader: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
   return (
     <header
       className={cn('flex items-center justify-between py-8', {
-        'max-w-full ml-52': isGroupPage, // Added margin top for group page
+        'max-w-full ml-52': isGroupPage,
         'max-w-7xl mx-auto': !isGroupPage
       })}
     >
       <SearchBar />
       <HeaderNotification />
-      {isGroupPage && children} {/* Render children if on a group page */}
+      {isGroupPage && children}
     </header>
   )
 }
