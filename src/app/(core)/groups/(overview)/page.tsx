@@ -136,7 +136,7 @@ export default function GroupsPage(): JSX.Element {
           <h2 className="font-rubik font-bold text-2xl sm:text-3xl">
             My Groups
           </h2>
-          <Button text="+ Create Group" className="w-[130px] h-9"></Button>
+          <Button text="+ Create Group"></Button>
         </div>
         <MyGroups />
       </section>
@@ -164,7 +164,7 @@ export default function GroupsPage(): JSX.Element {
             {SUBJECTS.map((subject: any) => (
               <li
                 key={subject.id}
-                className={`rounded-full p-2 border border-solid border-primary-blue cursor-pointer flex-shrink-0 ${
+                className={`rounded-full py-2 px-2 border border-solid border-primary-blue cursor-pointer flex-shrink-0 ${
                   selectedSubject === subject.name
                     ? 'bg-primary-blue text-white'
                     : 'bg-white'

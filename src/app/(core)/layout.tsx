@@ -12,7 +12,7 @@ export default function ApplicationLayout({
   return (
     <div className={'flex bg-gray-100 w-screen'}>
       <NavbarHelper />
-      <div className={'flex-1 px-4 md:px-6 lg:px-10'}>
+      <div className={'flex-1 px-4 md:px-12 lg:px-16'}>
         <PageHeader />
         {children}
       </div>

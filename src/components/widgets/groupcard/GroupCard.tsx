@@ -28,7 +28,7 @@ const GroupCard: React.FC<GroupCardProps> = ({
   return (
     <div
       key={key}
-      className="groupCard w-[360px] h-[280px] flex flex-col rounded-2xl bg-white"
+      className="groupCard w-full h-[280px] flex flex-col rounded-2xl bg-white"
     >
       <div
         className="banner w-full h-[128px] relative rounded-t-2xl"
