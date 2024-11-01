@@ -5,19 +5,17 @@ import { createClient } from '../../../../utils/supabase/client'
 import Image from 'next/image'
 import Button from '@/components/ui/button'
 import { HiMagnifyingGlass } from 'react-icons/hi2'
-import BellIcon from '../../../../../public/assets/icons/BellIcon.svg'
+import Science from '../../../../../public/assets/icons/Science.svg'
+import { getLoggedInUser } from '@/utils/actions/user.actions'
+import { Group, User, Admin } from '@/types/index'
+import { GroupSubject } from '@/types/models/index'
 import MyGroups from '@/components/MyGroups'
-import { FaChevronRight, FaChevronLeft } from 'react-icons/fa'
 import { PiUsersFour } from 'react-icons/pi'
 import { CiCalculator1 } from 'react-icons/ci'
 import { HiOutlineBookOpen } from 'react-icons/hi'
 import { PiGlobeStand } from 'react-icons/pi'
 import { PiLaptop } from 'react-icons/pi'
 import { LuLanguages } from 'react-icons/lu'
-import Science from '../../../../../public/assets/icons/Science.svg'
-import { getLoggedInUser } from '@/utils/actions/user.actions'
-import { Group, User, Admin } from '@/types/index'
-import { GroupSubject } from '@/types/models/index'
 
 const SUBJECTS = [
   {
@@ -59,71 +57,77 @@ const SUBJECTS = [
 
 export default function GroupsPage(): JSX.Element {
   const supabase = createClient()
-  const [groups, setGroups] = useState<Group[]>([])
+  const [exploreGroups, setExploreGroups] = useState<Group[]>([])
   const [loading, setLoading] = useState<boolean>(false)
   const [selectedSubject, setSelectedSubject] = useState<GroupSubject>(
     GroupSubject.AllGroups
   )
   const [admins, setAdmins] = useState<Admin[]>()
   const [user, setUser] = useState<User>()
+  const [exploreSearchQuery, setExploreSearchQuery] = useState<string>('')
+
   useEffect(() => {
-    const fetchUserAndGroups = async () => {
-      try {
-        const loggedInUser = await getLoggedInUser()
-        setUser(loggedInUser)
+    fetchExploreGroups()
+  }, [])
 
-        setLoading(true)
+  const fetchExploreGroups = async () => {
+    try {
+      const loggedInUser = await getLoggedInUser()
+      setUser(loggedInUser)
+      setLoading(true)
 
-        // Fetch groups
-        const { data: groupsData, error: groupsError } = await supabase
-          .from('groups')
-          .select('*')
-          .contains('member_ids', [loggedInUser.uuid])
+      // Fetch groups with search and subject filters
+      let query = supabase.from('groups').select('*')
 
-        if (groupsError) {
-          throw groupsError
-        }
+      if (exploreSearchQuery) {
+        query = query.textSearch('name', exploreSearchQuery)
+      }
 
-        if (groupsData) {
-          setGroups(groupsData)
+      if (selectedSubject !== GroupSubject.AllGroups) {
+        query = query.eq('subject', selectedSubject)
+      }
 
-          // Fetch admins data for all groups
-          const adminIds = [
-            ...new Set(groupsData.map((group: Group) => group.admin_id))
-          ]
-          if (adminIds.length > 0) {
-            const { data: adminsData, error: adminsError } = await supabase
-              .from('users')
-              .select('user_id, name, avatar')
-              .in('user_id', adminIds)
+      const { data: groupsData, error: groupsError } = await query
 
-            if (adminsError) {
-              throw adminsError
-            }
+      if (groupsError) {
+        throw groupsError
+      }
 
-            if (adminsData) {
-              const adminsMap = adminsData.reduce((acc: any, admin: any) => {
-                acc[admin.user_id] = { name: admin.name, avatar: admin.avatar }
-                return acc
-              }, {})
-              setAdmins(adminsMap)
-            }
+      if (groupsData) {
+        setExploreGroups(groupsData)
+        const adminIds = [
+          ...new Set(groupsData.map((group: Group) => group.admin_id))
+        ]
+
+        if (adminIds.length > 0) {
+          const { data: adminsData, error: adminsError } = await supabase
+            .from('users')
+            .select('user_id, name, avatar')
+            .in('user_id', adminIds)
+
+          if (adminsError) {
+            throw adminsError
+          }
+
+          if (adminsData) {
+            const adminsMap = adminsData.reduce((acc: any, admin: any) => {
+              acc[admin.user_id] = { name: admin.name, avatar: admin.avatar }
+              return acc
+            }, {})
+            setAdmins(adminsMap)
           }
         }
-      } catch (error: any) {
-        alert(error.message)
-      } finally {
-        setLoading(false)
       }
+    } catch (error: any) {
+      alert(error.message)
+    } finally {
+      setLoading(false)
     }
+  }
 
-    fetchUserAndGroups()
-  }, [supabase])
-
-  const filteredGroups =
-    selectedSubject === 'All Groups'
-      ? groups
-      : groups.filter((group) => group.subject === selectedSubject)
+  const handleExploreSearch = () => {
+    fetchExploreGroups()
+  }
 
   if (loading) {
     return <p>Loading...</p>
@@ -147,12 +151,18 @@ export default function GroupsPage(): JSX.Element {
           </h2>
           <div className="relative w-full sm:w-auto">
             <input
-              id="search_bar"
+              id="explore_search_bar"
               placeholder="Search Groups"
               className="w-full sm:w-[300px] md:w-[400px] lg:w-[500px] h-[51px] rounded-xl border border-surface-gray-600 border-solid pl-[22px] pr-[13px]"
+              value={exploreSearchQuery}
+              onChange={(e) => setExploreSearchQuery(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter') handleExploreSearch()
+              }}
             />
             <button
               type="button"
+              onClick={handleExploreSearch}
               className="absolute top-1/2 right-4 transform -translate-y-1/2"
             >
               <HiMagnifyingGlass className="w-6 h-6" />
@@ -189,7 +199,7 @@ export default function GroupsPage(): JSX.Element {
             ))}
           </ul>
         </div>
-        <GroupCard groups={filteredGroups} />
+        <GroupCard groups={exploreGroups} />
       </section>
     </div>
   )
