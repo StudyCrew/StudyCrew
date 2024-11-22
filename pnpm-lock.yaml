@@ -69,8 +69,8 @@ importers:
         specifier: ^7.118.0
         version: 7.119.0(next@14.2.3(@babel/core@7.25.2)(@playwright/test@1.46.1)(react-dom@18.2.0(react@18.3.1))(react@18.3.1))(react@18.3.1)(webpack@5.94.0)
       '@supabase/ssr':
-        specifier: ^0.4.0
-        version: 0.4.1(@supabase/supabase-js@2.45.2)
+        specifier: ^0.5.2
+        version: 0.5.2(@supabase/supabase-js@2.45.2)
       '@supabase/supabase-js':
         specifier: ^2.44.4
         version: 2.45.2
@@ -233,7 +233,7 @@ importers:
         version: 6.6.0(eslint@8.57.0)
       eslint-plugin-pure:
         specifier: github:purely-functional/eslint-plugin-pure
-        version: https://codeload.github.com/purely-functional/eslint-plugin-pure/tar.gz/f69e9e358e621dea41129c7ccfd35f87b37c186a
+        version: git+https://git@github.com:purely-functional/eslint-plugin-pure.git#f69e9e358e621dea41129c7ccfd35f87b37c186a
       eslint-plugin-react:
         specifier: ^7.35.0
         version: 7.36.1(eslint@8.57.0)
@@ -1954,11 +1954,6 @@ packages:
       rollup:
         optional: true
 
-  '@rollup/rollup-linux-x64-gnu@4.21.1':
-    resolution: {integrity: sha512-kXQVcWqDcDKw0S2E0TmhlTLlUgAmMVqPrJZR+KpH/1ZaZhLSl23GZpQVmawBQGVhyP5WXIsIQ/zqbDBBYmxm5w==}
-    cpu: [x64]
-    os: [linux]
-
   '@rtsao/scc@1.1.0':
     resolution: {integrity: sha512-zt6OdqaDoOnJ1ZYsCYGt9YmWzDXl4vQdKTyJev62gFhRGKdx7mcT54V9KIjg+d2wi9EXsPvAPKe7i7WjfVWB8g==}
 
@@ -2051,8 +2046,8 @@ packages:
   '@supabase/realtime-js@2.10.2':
     resolution: {integrity: sha512-qyCQaNg90HmJstsvr2aJNxK2zgoKh9ZZA8oqb7UT2LCh3mj9zpa3Iwu167AuyNxsxrUE8eEJ2yH6wLCij4EApA==}
 
-  '@supabase/ssr@0.4.1':
-    resolution: {integrity: sha512-000i7y4ITXjXU0T1JytZYU33VbUNklX9YN47hCweaLKsTBAEigJJJCeq3G+/IiwEggBt58Vu0KQ3UGXON7OmDQ==}
+  '@supabase/ssr@0.5.2':
+    resolution: {integrity: sha512-n3plRhr2Bs8Xun1o4S3k1CDv17iH5QY9YcoEvXX3bxV1/5XSasA0mNXYycFmADIdtdE6BG9MRjP5CGIs8qxC8A==}
     peerDependencies:
       '@supabase/supabase-js': ^2.43.4
 
@@ -2075,6 +2070,9 @@ packages:
     resolution: {integrity: sha512-5U6SY5z8N42VtrCrKlsTAA35gy2VSyYtHWCsg1H87NU1SXnEfekTVlrga9fzUDrrHcGi2Lb5KenUWb4lRQT5/g==}
     peerDependencies:
       tailwindcss: '>=2.0.0 || >=3.0.0 || >=3.0.0-alpha.1'
+
+  '@types/cookie@0.6.0':
+    resolution: {integrity: sha512-4Kh9a6B2bQciAhf7FSuMRRkUWecJgJu9nPnx3yzpsfXX/c50REIqpHY4C82bXP90qrLtXtkDxTZosYO3UpOwlA==}
 
   '@types/debug@4.1.12':
     resolution: {integrity: sha512-vIChWdVG3LG1SMxEvI/AK+FWJthlrqlTu7fbrlywTkkaONwk/UAGaULXRlf8vkzFBLVm0zkMdCquhL5aOjhXPQ==}
@@ -2720,8 +2718,8 @@ packages:
   convert-source-map@2.0.0:
     resolution: {integrity: sha512-Kvp459HrV2FEJ1CAsi1Ku+MY3kasH19TFykTz2xWmMeq6bk2NU3XXvfJ+Q61m0xktWwt+1HSYf3JZsTms3aRJg==}
 
-  cookie@0.6.0:
-    resolution: {integrity: sha512-U71cyTamuh1CRNCfpGY6to28lxvNwPG4Guz/EVjgf3Jmzv0vlDp1atT9eS5dDjMYHucpHbWns6Lwf3BKz6svdw==}
+  cookie@0.7.2:
+    resolution: {integrity: sha512-yki5XnKuf750l50uGTllt6kKILY4nQ1eNIQatoXEByZ5dWgnKqbnqmTrBE5B4N7lrMJKQ2ytWMiTO2o0v6Ew/w==}
     engines: {node: '>= 0.6'}
 
   core-js-compat@3.38.1:
@@ -3134,8 +3132,8 @@ packages:
     peerDependencies:
       eslint: ^7.0.0 || ^8.0.0 || ^9.0.0
 
-  eslint-plugin-pure@https://codeload.github.com/purely-functional/eslint-plugin-pure/tar.gz/f69e9e358e621dea41129c7ccfd35f87b37c186a:
-    resolution: {tarball: https://codeload.github.com/purely-functional/eslint-plugin-pure/tar.gz/f69e9e358e621dea41129c7ccfd35f87b37c186a}
+  eslint-plugin-pure@git+https://git@github.com:purely-functional/eslint-plugin-pure.git#f69e9e358e621dea41129c7ccfd35f87b37c186a:
+    resolution: {commit: f69e9e358e621dea41129c7ccfd35f87b37c186a, repo: git@github.com:purely-functional/eslint-plugin-pure.git, type: git}
     version: 0.0.0
     engines: {node: '>=0.10.0'}
 
@@ -7165,9 +7163,6 @@ snapshots:
     optionalDependencies:
       rollup: 2.79.1
 
-  '@rollup/rollup-linux-x64-gnu@4.21.1':
-    optional: true
-
   '@rtsao/scc@1.1.0': {}
 
   '@rushstack/eslint-patch@1.10.4': {}
@@ -7321,12 +7316,11 @@ snapshots:
       - bufferutil
       - utf-8-validate
 
-  '@supabase/ssr@0.4.1(@supabase/supabase-js@2.45.2)':
+  '@supabase/ssr@0.5.2(@supabase/supabase-js@2.45.2)':
     dependencies:
       '@supabase/supabase-js': 2.45.2
-      cookie: 0.6.0
-    optionalDependencies:
-      '@rollup/rollup-linux-x64-gnu': 4.21.1
+      '@types/cookie': 0.6.0
+      cookie: 0.7.2
 
   '@supabase/storage-js@2.7.0':
     dependencies:
@@ -7361,6 +7355,8 @@ snapshots:
   '@tailwindcss/line-clamp@0.4.4(tailwindcss@3.4.14)':
     dependencies:
       tailwindcss: 3.4.14
+
+  '@types/cookie@0.6.0': {}
 
   '@types/debug@4.1.12':
     dependencies:
@@ -8120,7 +8116,7 @@ snapshots:
 
   convert-source-map@2.0.0: {}
 
-  cookie@0.6.0: {}
+  cookie@0.7.2: {}
 
   core-js-compat@3.38.1:
     dependencies:
@@ -8778,7 +8774,7 @@ snapshots:
     dependencies:
       eslint: 8.57.0
 
-  eslint-plugin-pure@https://codeload.github.com/purely-functional/eslint-plugin-pure/tar.gz/f69e9e358e621dea41129c7ccfd35f87b37c186a:
+  eslint-plugin-pure@git+https://git@github.com:purely-functional/eslint-plugin-pure.git#f69e9e358e621dea41129c7ccfd35f87b37c186a:
     dependencies:
       requireindex: 1.1.0
 
