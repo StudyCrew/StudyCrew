@@ -9,6 +9,7 @@ import Project from '@/app/(landing)/_components/Project'
 import Features from '@/app/(landing)/_components/Features'
 import React, { useRef, useEffect, useState } from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
+import Development from './_components/Development'
 
 function App(): JSX.Element {
   const handleLearnMoreClick = (): void => {
@@ -165,6 +166,10 @@ function App(): JSX.Element {
 
       <div className="project-component" ref={projectRef}>
         <Project />
+      </div>
+
+      <div className="development-component" ref={projectRef}>
+        <Development />
       </div>
 
       <div className="footer-component">
