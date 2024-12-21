@@ -1,11 +1,8 @@
 'use client'
 
 import Hero from '@/app/(landing)/_components/Hero'
-import Team from '@/app/(landing)/_components/Team'
-import Faqs from '@/app/(landing)/_components/FAQs'
 import { scrollToRef } from '@/hooks'
 import Header from '@/app/(landing)/_components/Header'
-import SignUp from '@/app/(landing)/_components/SignUp'
 import Footer from '@/app/(landing)/_components/Footer'
 import Mission from '@/app/(landing)/_components/Mission'
 import Project from '@/app/(landing)/_components/Project'
@@ -168,18 +165,6 @@ function App(): JSX.Element {
 
       <div className="project-component" ref={projectRef}>
         <Project />
-      </div>
-
-      <div className="empower-component" ref={signupRef}>
-        <SignUp />
-      </div>
-
-      <div className="team-component" ref={teamRef}>
-        <Team />
-      </div>
-
-      <div className="faq-component" ref={faqRef}>
-        <Faqs />
       </div>
 
       <div className="footer-component">
