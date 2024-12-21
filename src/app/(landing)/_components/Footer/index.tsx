@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import _isEmpty from 'lodash/isEmpty'
 import React, { useState, useCallback } from 'react'
 import { FaYoutube, FaLinkedin, FaFacebookF, FaInstagram } from 'react-icons/fa'
 

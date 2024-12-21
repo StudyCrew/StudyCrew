@@ -2,16 +2,12 @@ import React from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import icons from '@/metadata/icons'
-import _isEmpty from 'lodash/isEmpty'
 import robots from '@/metadata/robot'
 import twitter from '@/metadata/twitter'
 import openGraph from '@/metadata/openGraph'
 import type { Metadata, Viewport } from 'next'
-import { GoogleAnalytics } from '@next/third-parties/google'
 
 import '@/app/globals.css'
-
-const { GOOGLE_ANALYTICS_ID } = process.env
 
 export const viewport: Viewport = {
   themeColor: '#3A86FF'
@@ -47,10 +43,6 @@ const RootLayout = ({ children }: LayoutProps): JSX.Element => {
         <Link rel="shortcut icon" href="/public/assets/favicon.ico" />
       </Head>
       <body>{children}</body>
-
-      {process.browser && !_isEmpty(GOOGLE_ANALYTICS_ID) && (
-        <GoogleAnalytics gaId={GOOGLE_ANALYTICS_ID} />
-      )}
     </html>
   )
 }
