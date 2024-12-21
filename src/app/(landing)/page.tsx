@@ -16,27 +16,17 @@ function App(): JSX.Element {
     setActivePage('features')
     scrollToRef(featuresRef)
   }
-  const handleJoinWaitlistClick = (): void => {
-    setActivePage('signup')
-    scrollToRef(signupRef)
-  }
 
   const [activePage, setActivePage] = useState('')
 
   const missionRef = useRef(null)
   const featuresRef = useRef(null)
   const projectRef = useRef(null)
-  const teamRef = useRef(null)
-  const signupRef = useRef(null)
-  const faqRef = useRef(null)
 
   useEffect(() => {
     const missionNode = missionRef.current
     const featuresNode = featuresRef.current
     const projectNode = projectRef.current
-    const teamNode = teamRef.current
-    const signupNode = signupRef.current
-    const faqNode = faqRef.current
 
     // TODO: Refactor this entire approach. For now, the linter rules are
     //       disabled.
@@ -97,18 +87,6 @@ function App(): JSX.Element {
       observer.observe(projectNode)
     }
 
-    if (teamNode) {
-      observer.observe(teamNode)
-    }
-
-    if (signupNode) {
-      observer.observe(signupNode)
-    }
-
-    if (faqNode) {
-      observer.observe(faqNode)
-    }
-
     return () => {
       if (missionNode) {
         observer.unobserve(missionNode)
@@ -121,18 +99,6 @@ function App(): JSX.Element {
       if (projectNode) {
         observer.unobserve(projectNode)
       }
-
-      if (signupNode) {
-        observer.unobserve(signupNode)
-      }
-
-      if (signupNode) {
-        observer.unobserve(signupNode)
-      }
-
-      if (faqNode) {
-        observer.unobserve(faqNode)
-      }
     }
   }, [])
 
@@ -143,18 +109,12 @@ function App(): JSX.Element {
           missionRef={missionRef}
           featuresRef={featuresRef}
           projectRef={projectRef}
-          teamRef={teamRef}
-          signupRef={signupRef}
-          faqRef={faqRef}
           activePage={activePage}
           setActivePage={setActivePage}
         />
       </div>
 
-      <Hero
-        handleLearnMoreClick={handleLearnMoreClick}
-        handleJoinWaitlistClick={handleJoinWaitlistClick}
-      />
+      <Hero handleLearnMoreClick={handleLearnMoreClick} />
 
       <div className="mission-component" ref={missionRef}>
         <Mission />
@@ -177,9 +137,6 @@ function App(): JSX.Element {
           missionRef={missionRef}
           featuresRef={featuresRef}
           projectRef={projectRef}
-          teamRef={teamRef}
-          signupRef={signupRef}
-          faqRef={faqRef}
           activePage={activePage}
           setActivePage={setActivePage}
         />

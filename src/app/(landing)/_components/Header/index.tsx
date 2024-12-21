@@ -9,16 +9,8 @@ import { type HeaderProps } from './types'
 import './style.css'
 
 const Header: React.FC<HeaderProps> = (props: HeaderProps): JSX.Element => {
-  const {
-    activePage,
-    setActivePage,
-    missionRef,
-    featuresRef,
-    projectRef,
-    teamRef,
-    signupRef,
-    faqRef
-  } = props
+  const { activePage, setActivePage, missionRef, featuresRef, projectRef } =
+    props
 
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
@@ -142,9 +134,6 @@ const Header: React.FC<HeaderProps> = (props: HeaderProps): JSX.Element => {
             missionRef={missionRef}
             featuresRef={featuresRef}
             projectRef={projectRef}
-            teamRef={teamRef}
-            signupRef={signupRef}
-            faqRef={faqRef}
             setIsMenuOpen={setIsMenuOpen}
           />
         </div>
@@ -157,32 +146,13 @@ const Header: React.FC<HeaderProps> = (props: HeaderProps): JSX.Element => {
           missionRef={missionRef}
           featuresRef={featuresRef}
           projectRef={projectRef}
-          teamRef={teamRef}
-          signupRef={signupRef}
-          faqRef={faqRef}
           setIsMenuOpen={setIsMenuOpen}
         />
       </div>
 
       <div className="header-items waitlist-container">
         <Link className="waitlistLink" to="/">
-          <Button
-            onClick={() => {
-              setActivePage('signup')
-              const refContainerCurrent =
-                signupRef.current as HTMLDivElement | null
-              if (refContainerCurrent) {
-                const y =
-                  refContainerCurrent.getBoundingClientRect().top +
-                  window.scrollY +
-                  -60
-                window.scrollTo({ top: y, behavior: 'smooth' })
-              }
-            }}
-            size="small"
-          >
-            Join Waitlist
-          </Button>
+          <Button size="small">Join Waitlist</Button>
         </Link>
       </div>
     </header>

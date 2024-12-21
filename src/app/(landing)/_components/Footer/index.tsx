@@ -4,21 +4,12 @@ import React, { useState, useCallback } from 'react'
 import { FaYoutube, FaLinkedin, FaFacebookF, FaInstagram } from 'react-icons/fa'
 
 import { scrollToRef } from '@/hooks'
-import { addToWaitlist } from '@/app/(landing)/waitlist.actions'
 import LOGO_SVG from 'public/assets/Logo.svg' assert { type: 'svg' }
 
 import { type FooterProps } from './types'
 
 const Footer: React.FC<FooterProps> = (props: FooterProps): JSX.Element => {
-  const {
-    setActivePage,
-    missionRef,
-    featuresRef,
-    projectRef,
-    teamRef,
-    signupRef,
-    faqRef
-  } = props
+  const { setActivePage, missionRef, featuresRef, projectRef } = props
 
   const [waitlistEmail, setWaitlistEmail] = useState<string>('')
   const [waitlistErrorMessage, setWaitlistErrorMessage] = useState<string>('')
@@ -31,40 +22,6 @@ const Footer: React.FC<FooterProps> = (props: FooterProps): JSX.Element => {
     [setWaitlistEmail]
   )
 
-  const handleJoinWaitlist = useCallback(async (): Promise<void> => {
-    try {
-      if (!waitlistEmail) {
-        setWaitlistErrorMessage('Please enter your email address.')
-        return
-      } else if (!/^[\w.%+-]+@[A-Z\d.-]+\.[A-Z]{2,4}$/i.test(waitlistEmail)) {
-        setWaitlistErrorMessage('Invalid email address')
-        return
-      }
-
-      const res = await addToWaitlist(waitlistEmail)
-
-      if (!res) {
-        setWaitlistErrorMessage('Failed to join waitlist. Please try again.')
-      } else {
-        setWaitlistErrorMessage('Successfully joined waitlist!')
-        setWaitlistEmail('')
-      }
-    } catch (error) {
-      setWaitlistErrorMessage('Failed to join waitlist. Please try again.')
-    }
-  }, [waitlistEmail, setWaitlistErrorMessage, setWaitlistEmail])
-
-  const onSubmitWaitlistEmail = useCallback(() => {
-    handleJoinWaitlist()
-      .then((): void => {
-        setWaitlistEmail('')
-      })
-      .catch((err: Error) => {
-        // eslint-disable-next-line no-console
-        console.error(err.message)
-      })
-  }, [handleJoinWaitlist, waitlistEmail])
-
   const handleNavLinkClick = (name: string): void => {
     let ref
     switch (name) {
@@ -76,15 +33,6 @@ const Footer: React.FC<FooterProps> = (props: FooterProps): JSX.Element => {
         break
       case 'project':
         ref = projectRef
-        break
-      case 'team':
-        ref = teamRef
-        break
-      case 'signup':
-        ref = signupRef
-        break
-      case 'faq':
-        ref = faqRef
         break
       default:
         return
@@ -279,43 +227,6 @@ const Footer: React.FC<FooterProps> = (props: FooterProps): JSX.Element => {
             </a>
           </li>
         </ul>
-      </div>
-
-      <div className="flex flex-col lg:px-16 bg-blue-200 pt-6 pb-8 w-full text-center lg:text-left">
-        <h3 className="font-bold mt-0 mb-2">Sign Up</h3>
-        <p className="text-sm mb-4">
-          Ready to transform Your Learning Experience?
-        </p>
-        <input
-          type="email"
-          value={waitlistEmail}
-          placeholder={`${!ageAbove16 ? 'Please confirm you are 16+' : 'example@gmail.com'}`}
-          onChange={onChangeWaitlistEmail}
-          disabled={!ageAbove16}
-          className="mr-4 lg:mr-0 mb-1 border-2 grow border-blue-300 px-4 py-2 rounded-lg disabled:cursor-not-allowed"
-        />
-        <button
-          onClick={onSubmitWaitlistEmail}
-          disabled={!ageAbove16}
-          className="text-white bg-blue-500 px-4 rounded-lg text-center py-2 grow disabled:cursor-not-allowed disabled:opacity-85"
-        >
-          Join Waitlist
-        </button>
-        <div className="flex align-middle gap-2 mt-2">
-          <input
-            type="checkbox"
-            className="w-5"
-            checked={ageAbove16}
-            onChange={() => {
-              setAgeAbove16(!ageAbove16)
-            }}
-          />{' '}
-          <span className="text-sm">I confirm that I am 16 years or older</span>
-        </div>
-
-        {!_isEmpty(waitlistErrorMessage) && (
-          <p className="text-red-500 text-sm mt-4">{waitlistErrorMessage}</p>
-        )}
       </div>
     </div>
   )
