@@ -7,9 +7,8 @@ import Button from '@/app/(landing)/_components/Button'
 const words = ['Collaborative', 'Accessible', 'Engaging']
 
 const Hero = (): JSX.Element => {
-
   const handleLearnMoreClick = (): void => {
-    console.log("Learn More Clicked")
+    console.log('Learn More Clicked')
   }
 
   const [currentWord, setCurrentWord] = useState('Collaborative')
