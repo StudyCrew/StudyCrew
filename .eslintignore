@@ -5,6 +5,7 @@ src/declarations.d.ts
 tsconfig.json
 next-env.d.ts
 .eslintrc.json
+tailwind.config.ts
 next.config.js
 postcss.config.js
 components.json
@@ -12,6 +13,6 @@ components.json
 package-lock.json
 
 src/components/ui/
-src/app/auth/
+src/app/(landing)/
 
 test-route/

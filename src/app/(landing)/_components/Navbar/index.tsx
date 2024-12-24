@@ -10,9 +10,6 @@ const Navbar: React.FC<NavbarProps> = (props: NavbarProps): JSX.Element => {
     missionRef,
     featuresRef,
     projectRef,
-    teamRef,
-    signupRef,
-    faqRef,
     setIsMenuOpen
   } = props
 
@@ -34,15 +31,6 @@ const Navbar: React.FC<NavbarProps> = (props: NavbarProps): JSX.Element => {
         break
       case 'project':
         ref = projectRef
-        break
-      case 'team':
-        ref = teamRef
-        break
-      case 'signup':
-        ref = signupRef
-        break
-      case 'faq':
-        ref = faqRef
         break
       default:
         return
@@ -88,33 +76,6 @@ const Navbar: React.FC<NavbarProps> = (props: NavbarProps): JSX.Element => {
         }}
       >
         Project
-      </div>
-      <div
-        className={`${isActive('signup')} ${divClass} hover:cursor-pointer`}
-        onClick={() => {
-          handleNavLinkClick('signup')
-          setActivePage('signup')
-        }}
-      >
-        Sign Up
-      </div>
-      <div
-        className={`${isActive('team')} ${divClass} hover:cursor-pointer`}
-        onClick={() => {
-          handleNavLinkClick('team')
-          setActivePage('team')
-        }}
-      >
-        Team
-      </div>
-      <div
-        className={`${isActive('faq')} ${divClass} hover:cursor-pointer`}
-        onClick={() => {
-          handleNavLinkClick('faq')
-          setActivePage('faq')
-        }}
-      >
-        FAQs
       </div>
     </nav>
   )

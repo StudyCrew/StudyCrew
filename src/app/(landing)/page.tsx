@@ -1,26 +1,20 @@
 'use client'
 
 import Hero from '@/app/(landing)/_components/Hero'
-import Team from '@/app/(landing)/_components/Team'
-import Faqs from '@/app/(landing)/_components/FAQs'
 import { scrollToRef } from '@/hooks'
 import Header from '@/app/(landing)/_components/Header'
-import SignUp from '@/app/(landing)/_components/SignUp'
 import Footer from '@/app/(landing)/_components/Footer'
 import Mission from '@/app/(landing)/_components/Mission'
 import Project from '@/app/(landing)/_components/Project'
 import Features from '@/app/(landing)/_components/Features'
 import React, { useRef, useEffect, useState } from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
+import Development from './_components/Development'
 
 function App(): JSX.Element {
   const handleLearnMoreClick = (): void => {
     setActivePage('features')
     scrollToRef(featuresRef)
-  }
-  const handleJoinWaitlistClick = (): void => {
-    setActivePage('signup')
-    scrollToRef(signupRef)
   }
 
   const [activePage, setActivePage] = useState('')
@@ -28,17 +22,11 @@ function App(): JSX.Element {
   const missionRef = useRef(null)
   const featuresRef = useRef(null)
   const projectRef = useRef(null)
-  const teamRef = useRef(null)
-  const signupRef = useRef(null)
-  const faqRef = useRef(null)
 
   useEffect(() => {
     const missionNode = missionRef.current
     const featuresNode = featuresRef.current
     const projectNode = projectRef.current
-    const teamNode = teamRef.current
-    const signupNode = signupRef.current
-    const faqNode = faqRef.current
 
     // TODO: Refactor this entire approach. For now, the linter rules are
     //       disabled.
@@ -99,18 +87,6 @@ function App(): JSX.Element {
       observer.observe(projectNode)
     }
 
-    if (teamNode) {
-      observer.observe(teamNode)
-    }
-
-    if (signupNode) {
-      observer.observe(signupNode)
-    }
-
-    if (faqNode) {
-      observer.observe(faqNode)
-    }
-
     return () => {
       if (missionNode) {
         observer.unobserve(missionNode)
@@ -123,18 +99,6 @@ function App(): JSX.Element {
       if (projectNode) {
         observer.unobserve(projectNode)
       }
-
-      if (signupNode) {
-        observer.unobserve(signupNode)
-      }
-
-      if (signupNode) {
-        observer.unobserve(signupNode)
-      }
-
-      if (faqNode) {
-        observer.unobserve(faqNode)
-      }
     }
   }, [])
 
@@ -145,18 +109,12 @@ function App(): JSX.Element {
           missionRef={missionRef}
           featuresRef={featuresRef}
           projectRef={projectRef}
-          teamRef={teamRef}
-          signupRef={signupRef}
-          faqRef={faqRef}
           activePage={activePage}
           setActivePage={setActivePage}
         />
       </div>
 
-      <Hero
-        handleLearnMoreClick={handleLearnMoreClick}
-        handleJoinWaitlistClick={handleJoinWaitlistClick}
-      />
+      <Hero handleLearnMoreClick={handleLearnMoreClick} />
 
       <div className="mission-component" ref={missionRef}>
         <Mission />
@@ -170,16 +128,8 @@ function App(): JSX.Element {
         <Project />
       </div>
 
-      <div className="empower-component" ref={signupRef}>
-        <SignUp />
-      </div>
-
-      <div className="team-component" ref={teamRef}>
-        <Team />
-      </div>
-
-      <div className="faq-component" ref={faqRef}>
-        <Faqs />
+      <div className="development-component" ref={projectRef}>
+        <Development />
       </div>
 
       <div className="footer-component">
@@ -187,9 +137,6 @@ function App(): JSX.Element {
           missionRef={missionRef}
           featuresRef={featuresRef}
           projectRef={projectRef}
-          teamRef={teamRef}
-          signupRef={signupRef}
-          faqRef={faqRef}
           activePage={activePage}
           setActivePage={setActivePage}
         />
