@@ -1,6 +1,5 @@
 import React from 'react'
 
-import { CLASS_NAME } from './const'
 import { type ButtonProps } from './types'
 
 import './style.css'
