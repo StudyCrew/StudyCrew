@@ -1,4 +1,6 @@
-import { Link } from 'react-router-dom'
+'use client';
+
+import Link from 'next/link'
 import { FaBars } from 'react-icons/fa'
 import React, { useState, useEffect } from 'react'
 
@@ -121,7 +123,7 @@ const Header: React.FC<HeaderProps> = (props: HeaderProps): JSX.Element => {
             mask="url(#path-4-inside-1_387_2)"
           />
         </svg>
-        <Link to="/" className="logo-name">
+        <Link href="/" className="logo-name">
           StudyCrew
         </Link>
       </div>
@@ -151,9 +153,6 @@ const Header: React.FC<HeaderProps> = (props: HeaderProps): JSX.Element => {
       </div>
 
       <div className="header-items waitlist-container">
-        <Link className="waitlistLink" to="/">
-          <Button size="small">Join Waitlist</Button>
-        </Link>
       </div>
     </header>
   )

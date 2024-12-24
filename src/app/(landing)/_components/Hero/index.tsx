@@ -1,3 +1,5 @@
+'use client';
+
 import { FaChevronDown } from 'react-icons/fa'
 import React, { useState, useEffect } from 'react'
 import Button from '@/app/(landing)/_components/Button'

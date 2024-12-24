@@ -1,148 +1,32 @@
-'use client'
-
 import Hero from '@/app/(landing)/_components/Hero'
-import { scrollToRef } from '@/hooks'
 import Header from '@/app/(landing)/_components/Header'
 import Footer from '@/app/(landing)/_components/Footer'
 import Mission from '@/app/(landing)/_components/Mission'
 import Project from '@/app/(landing)/_components/Project'
 import Features from '@/app/(landing)/_components/Features'
-import React, { useRef, useEffect, useState } from 'react'
-import { BrowserRouter as Router } from 'react-router-dom'
-import Development from './_components/Development'
+import Development from '@/app/(landing)/_components/Development'
+import ClientObserver from '@/app/(landing)/_components/ClientObserver'
 
-function App(): JSX.Element {
-  const handleLearnMoreClick = (): void => {
-    setActivePage('features')
-    scrollToRef(featuresRef)
-  }
-
-  const [activePage, setActivePage] = useState('')
-
-  const missionRef = useRef(null)
-  const featuresRef = useRef(null)
-  const projectRef = useRef(null)
-
-  useEffect(() => {
-    const missionNode = missionRef.current
-    const featuresNode = featuresRef.current
-    const projectNode = projectRef.current
-
-    // TODO: Refactor this entire approach. For now, the linter rules are
-    //       disabled.
-    const callback = (entries: any): void => {
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access,@typescript-eslint/no-unsafe-call
-      entries.forEach((entry: any) => {
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-        if (entry.isIntersecting) {
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-          switch (entry.target.className) {
-            case 'mission-component':
-              setActivePage('mission')
-              break
-
-            case 'features-component':
-              setActivePage('features')
-              break
-
-            case 'project-component':
-              setActivePage('project')
-              break
-
-            case 'empower-component':
-              setActivePage('signup')
-              break
-
-            case 'team-component':
-              setActivePage('team')
-              break
-
-            case 'faq-component':
-              setActivePage('faq')
-              break
-
-            default:
-              break
-          }
-        }
-      })
-    }
-
-    const options = {
-      rootMargin: '-50% 0px -50% 0px',
-      threshold: 0
-    }
-
-    const observer = new IntersectionObserver(callback, options)
-
-    if (missionNode) {
-      observer.observe(missionNode)
-    }
-
-    if (featuresNode) {
-      observer.observe(featuresNode)
-    }
-
-    if (projectNode) {
-      observer.observe(projectNode)
-    }
-
-    return () => {
-      if (missionNode) {
-        observer.unobserve(missionNode)
-      }
-
-      if (featuresNode) {
-        observer.unobserve(featuresNode)
-      }
-
-      if (projectNode) {
-        observer.unobserve(projectNode)
-      }
-    }
-  }, [])
-
+export default function LandingPage() {
   return (
-    <Router>
-      <div className="header">
-        <Header
-          missionRef={missionRef}
-          featuresRef={featuresRef}
-          projectRef={projectRef}
-          activePage={activePage}
-          setActivePage={setActivePage}
-        />
-      </div>
-
-      <Hero handleLearnMoreClick={handleLearnMoreClick} />
-
-      <div className="mission-component" ref={missionRef}>
-        <Mission />
-      </div>
-
-      <div className="features-component" ref={featuresRef}>
-        <Features />
-      </div>
-
-      <div className="project-component" ref={projectRef}>
-        <Project />
-      </div>
-
-      <div className="development-component" ref={projectRef}>
-        <Development />
-      </div>
-
-      <div className="footer-component">
-        <Footer
-          missionRef={missionRef}
-          featuresRef={featuresRef}
-          projectRef={projectRef}
-          activePage={activePage}
-          setActivePage={setActivePage}
-        />
-      </div>
-    </Router>
+    <>
+      <Header />
+      <Hero />
+      <ClientObserver>
+        <div className="mission-component">
+          <Mission />
+        </div>
+        <div className="features-component">
+          <Features />
+        </div>
+        <div className="project-component">
+          <Project />
+        </div>
+        <div className="development-component">
+          <Development />
+        </div>
+      </ClientObserver>
+      <Footer />
+    </>
   )
 }
-
-export default App
