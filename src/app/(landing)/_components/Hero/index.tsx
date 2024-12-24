@@ -1,12 +1,16 @@
+'use client'
+
 import { FaChevronDown } from 'react-icons/fa'
 import React, { useState, useEffect } from 'react'
 import Button from '@/app/(landing)/_components/Button'
-import { type HeroProps } from './types'
 
 const words = ['Collaborative', 'Accessible', 'Engaging']
 
-const Hero: React.FC<HeroProps> = (props: HeroProps): JSX.Element => {
-  const { handleLearnMoreClick } = props
+const Hero = (): JSX.Element => {
+  const handleLearnMoreClick = (): void => {
+    console.log('Learn More Clicked')
+  }
+
   const [currentWord, setCurrentWord] = useState('Collaborative')
   const [opacity, setOpacity] = useState(1)
 

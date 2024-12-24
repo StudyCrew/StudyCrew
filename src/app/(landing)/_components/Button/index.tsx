@@ -1,6 +1,5 @@
 import React from 'react'
 
-import { CLASS_NAME } from './const'
 import { type ButtonProps } from './types'
 
 import './style.css'
@@ -8,7 +7,7 @@ import './style.css'
 const Button: React.FC<ButtonProps> = (props: ButtonProps): JSX.Element => {
   const { onClick, variant = 'primary', size, children } = props
 
-  let className = CLASS_NAME
+  let className = 'button'
 
   if (variant === 'outline') className += ' button-outline'
   if (size === 'big') className += ' button-big'
