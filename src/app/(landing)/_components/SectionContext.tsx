@@ -9,10 +9,14 @@ type SectionContextType = {
 
 const SectionContext = createContext<SectionContextType>({
   activeSection: '',
-  setActiveSection: () => {},
+  setActiveSection: () => {}
 })
 
-export const SectionProvider = ({ children }: { children: React.ReactNode }) => {
+export const SectionProvider = ({
+  children
+}: {
+  children: React.ReactNode
+}) => {
   const [activeSection, setActiveSection] = useState('')
 
   useEffect(() => {
@@ -27,7 +31,7 @@ export const SectionProvider = ({ children }: { children: React.ReactNode }) => 
 
     const observer = new IntersectionObserver(observerCallback, {
       rootMargin: '-50% 0px -50% 0px',
-      threshold: 0,
+      threshold: 0
     })
 
     const sections = document.querySelectorAll('section[id]')

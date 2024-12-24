@@ -29,8 +29,10 @@ const Navbar: React.FC<NavbarProps> = ({ setIsMenuOpen }) => {
     md:pt-[15px] md:px-[20px] md:pb-[10px] md:text-center md:w-auto md:rounded-[5px]`
 
   return (
-    <nav className="flex flex-col justify-center items-center w-screen h-screen fixed z-5000 bg-white/90 top-0 left-0 pt-[10px]
-      md:inline-grid md:grid-cols-6 md:bg-white/78 md:w-fit md:relative md:col-span-1 md:w-fit md:h-fit md:top-[-10px] md:rounded-b-[5px] md:backdrop-blur-md md:shadow-[0_0_10px_0_#ddd]">
+    <nav
+      className="flex flex-col justify-center items-center w-screen h-screen fixed z-5000 bg-white/90 top-0 left-0 pt-[10px]
+      md:inline-grid md:grid-cols-6 md:bg-white/78 md:w-fit md:relative md:col-span-1 md:w-fit md:h-fit md:top-[-10px] md:rounded-b-[5px] md:backdrop-blur-md md:shadow-[0_0_10px_0_#ddd]"
+    >
       <div
         className={`${isActive('mission')} ${divClass} hover:cursor-pointer`}
         onClick={() => handleNavLinkClick('mission')}

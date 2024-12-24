@@ -20,7 +20,10 @@ const Header = () => {
 
   return (
     <header className="bg-white">
-      <div className="hamburger-menu" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+      <div
+        className="hamburger-menu"
+        onClick={() => setIsMenuOpen(!isMenuOpen)}
+      >
         <FaBars />
       </div>
 

@@ -13,11 +13,11 @@ export default function LandingPage() {
       <main>
         <SectionProvider>
           <section className="fixed top-0 left-0 right-0 z-50">
-            <Header/>
+            <Header />
           </section>
         </SectionProvider>
         <section id="hero" className="hero-component">
-          < Hero />
+          <Hero />
         </section>
         <section id="mission" className="mission-component">
           <Mission />
