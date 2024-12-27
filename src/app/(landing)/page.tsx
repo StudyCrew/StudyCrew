@@ -20,7 +20,7 @@ export default function LandingPage() {
           <Hero />
         </section>
         <section id="mission" className="relative">
-          <Mission/>
+          <Mission />
         </section>
         <section id="features" className="mt-64">
           <Features />
@@ -34,7 +34,6 @@ export default function LandingPage() {
         <section id="footer" className="mt-32">
           <Footer />
         </section>
-        
       </main>
     </>
   )
