@@ -1,5 +1,4 @@
 import React from 'react'
-import './_styles/landing.css'
 
 interface LandingLayoutProps {
   children: React.ReactNode

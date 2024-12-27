@@ -7,7 +7,7 @@ import './style.css'
 
 const Mission = (props: any): JSX.Element => {
   return (
-    <div className=''>
+    <div>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 2628 376"
