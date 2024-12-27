@@ -7,7 +7,7 @@ import './style.css'
 
 const Mission = (props: any): JSX.Element => {
   return (
-    <div>
+    <div className=''>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 2628 376"
@@ -98,10 +98,10 @@ const Mission = (props: any): JSX.Element => {
         </defs>
       </svg>
 
-      <div className="bg-gradient-to-r from-primary-500 to-gradient-500 h-full relative flex flex-col justify-center px-6 lg:px-36 z-1 top-36 mx-auto">
-        <div className="flex flex-col md:flex-row items-center mt-32 gap-8">
+      <div className="bg-gradient-to-r from-primary-500 to-gradient-500 h-full relative flex flex-col justify-center z-1 top-36">
+        <div className="flex flex-col md:flex-row items-center mt-32 gap-8 px-32">
           <div className="lg:w-1/2 flex justify-center md:justify-start mb-8">
-            <div className="max-w-md text-2xl lg:mb-8">
+            <div className="text-2xl lg:mb-8 mr-8">
               <h3 className="text-zircon-50">OUR MISSION</h3>
               <h2 className="text-zircon-50 slogan mb-4 leading-12">
                 We support education for all.

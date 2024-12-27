@@ -42,7 +42,8 @@ const Footer: React.FC<FooterProps> = (props: FooterProps): JSX.Element => {
   }
 
   return (
-    <div className="bg-zircon-50 flex-column lg:flex">
+    <div className="bg-zircon-50">
+      <div className='mx-32 flex-column lg:flex'>
       <div className="flex-column items-center lg:pl-16 lg:mr-16 py-6 lg:w-full">
         <Image alt="Logo" src={LOGO_SVG as string} className="mx-auto w-10" />
         <h3 className="footer-title heading-font text-center mt-2 mb-0 font-semibold">
@@ -229,6 +230,7 @@ const Footer: React.FC<FooterProps> = (props: FooterProps): JSX.Element => {
           </li>
         </ul>
       </div>
+    </div>
     </div>
   )
 }

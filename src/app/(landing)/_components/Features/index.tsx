@@ -132,7 +132,7 @@ const Features: React.FC<any> = (): JSX.Element => {
   )
 
   return (
-    <div className="features">
+    <div className="features mx-32">
       <div className="features-head">
         <h2>
           Our <span>Features</span>
