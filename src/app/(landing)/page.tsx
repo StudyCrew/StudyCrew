@@ -16,23 +16,25 @@ export default function LandingPage() {
             <Header />
           </section>
         </SectionProvider>
-        <section id="hero" className="hero-component">
+        <section id="hero" className="mt-32">
           <Hero />
         </section>
-        <section id="mission" className="mission-component">
+        <section id="mission" className="relative">
           <Mission />
         </section>
-        <section id="features" className="features-component">
+        <section id="features" className="mt-64">
           <Features />
         </section>
-        <section id="project" className="project-component">
+        <section id="project" className="mt-32">
           <Project />
         </section>
-        <section id="development" className="development-component">
+        <section id="development" className="mt-32">
           <Development />
         </section>
+        <section id="footer" className="mt-32">
+          <Footer />
+        </section>
       </main>
-      <Footer />
     </>
   )
 }

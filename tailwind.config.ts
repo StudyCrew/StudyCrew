@@ -38,7 +38,7 @@ const tailwindConfig = {
       colors: {
         tooltipcolor: '#1D2939',
         gradient: {
-          500: '#8338ec'
+          500: '#322E90'
         },
         primary: {
           50: '#EEF6FF',
