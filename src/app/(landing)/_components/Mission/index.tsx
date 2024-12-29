@@ -8,8 +8,6 @@ import {
 } from './MissionArrows'
 import LOGO_GROUP_SVG from 'public/assets/mission/LogoGroup.svg' assert { type: 'svg' }
 
-import './style.css'
-
 const Mission = (props: any): JSX.Element => {
   return (
     <div>

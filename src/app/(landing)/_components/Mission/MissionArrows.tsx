@@ -7,8 +7,7 @@ export const ChevronGradientSVG = (
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 2628 376"
     fill="none"
-    style={{ width: '100%' }}
-    className="chevron-gradient"
+    className="absolute w-full h-[200px] z-20"
     {...props}
     preserveAspectRatio="none"
   >
@@ -27,8 +26,8 @@ export const ChevronGradientSVG = (
         y2={169.679}
         gradientUnits="userSpaceOnUse"
       >
-        <stop stopColor="stop-first" />
-        <stop offset={1} stopColor="#stop-second" />
+        <stop stopColor="var(--primary-gradient-color)" />
+        <stop offset={1} stopColor="var(--primary-color)" />
       </linearGradient>
     </defs>
   </svg>
@@ -41,8 +40,7 @@ export const ChevronWhiteSVG = (
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 2628 376"
     fill="none"
-    style={{ width: '100%' }}
-    className="chevron-white"
+    className="w-full absolute h-[200px] z-10 top-[50px]"
     {...props}
     preserveAspectRatio="none"
   >
@@ -75,8 +73,7 @@ export const SecondChevronGradientSVG = (
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 2628 376"
     fill="none"
-    style={{ width: '100%' }}
-    className="second-chevron-gradient"
+    className="absolute w-full h-[200px] top-[100px] z-20"
     {...props}
     preserveAspectRatio="none"
   >
@@ -95,8 +92,8 @@ export const SecondChevronGradientSVG = (
         y2={169.679}
         gradientUnits="userSpaceOnUse"
       >
-        <stop stopColor="stop-first" />
-        <stop offset={1} stopColor="#stop-second" />
+        <stop stopColor="var(--primary-gradient-color)" />
+        <stop offset={1} stopColor="var(--primary-color)" />
       </linearGradient>
     </defs>
   </svg>
