@@ -34,8 +34,8 @@ const Hero = (): JSX.Element => {
   }, [])
 
   return (
-    <div className="mx-16 mt-24 mb-16 text-center">
-      <h1 className="text-5xl leading-normal md:text-7xl md:leading-normal font-medium">
+    <div className="mx-16 mt-44 mb-16 text-center">
+      <h1 className="text-5xl leading-normal md:text-7xl md:leading-tight font-medium">
         The Future of Education is <br />
         <span
           style={{ opacity }}
@@ -45,7 +45,7 @@ const Hero = (): JSX.Element => {
         </span>
       </h1>
 
-      <p className="mt-2 text-lg font-light">
+      <p className="mt-3 text-xl font-normal text-secondary-text-700">
         Breaking barriers to education through the power of open source.
       </p>
 

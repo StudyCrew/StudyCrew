@@ -10,7 +10,7 @@ import Navbar from './_components/Navbar'
 export default function LandingPage() {
   return (
     <>
-      <main>
+      <main className='bg-[#FDFDFE]'>
         <SectionProvider>
           <section className="fixed top-0 left-0 right-0 z-50">
             <Navbar />
