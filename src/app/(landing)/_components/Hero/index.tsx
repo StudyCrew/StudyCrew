@@ -14,9 +14,8 @@ const Hero = (): JSX.Element => {
         Breaking barriers to education through the power of open source.
       </p>
 
-      <div className="md:mt-11 mt-7 flex md:flex-row flex-col md:gap-5 gap-2 justify-center align-middle">
-        <HeroButtons />
-      </div>
+      <HeroButtons />
+      
     </div>
   )
 }
