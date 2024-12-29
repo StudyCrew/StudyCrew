@@ -14,7 +14,7 @@ const Mission = (props: any): JSX.Element => {
       <ChevronGradientSVG {...props} />
       <ChevronWhiteSVG {...props} />
       <SecondChevronGradientSVG {...props} />
-      <div className="bg-gradient-to-r from-primary-500 to-gradient-500 h-full relative flex flex-col justify-center z-1 top-36">
+      <div className="bg-gradient-to-r from-primary-500 to-gradient-500 h-full relative flex flex-col justify-center z-10 md:top-[125px] top-[110px]">
         <div className="flex flex-col md:flex-row items-center mt-32 gap-8 px-32">
           <div className="lg:w-1/2 flex justify-center md:justify-start mb-8">
             <div className="text-2xl lg:mb-8 mr-8">

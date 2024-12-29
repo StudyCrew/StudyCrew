@@ -7,7 +7,7 @@ export const ChevronGradientSVG = (
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 2628 376"
     fill="none"
-    className="absolute w-full h-[200px] z-20"
+    className="absolute w-full md:h-[175px] h-[150px] z-20"
     {...props}
     preserveAspectRatio="none"
   >
@@ -40,7 +40,7 @@ export const ChevronWhiteSVG = (
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 2628 376"
     fill="none"
-    className="w-full absolute h-[200px] z-10 top-[50px]"
+    className="w-full absolute md:h-[175px] h-[150px] z-20 md:top-[45px] top-[40px]"
     {...props}
     preserveAspectRatio="none"
   >
@@ -73,7 +73,7 @@ export const SecondChevronGradientSVG = (
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 2628 376"
     fill="none"
-    className="absolute w-full h-[200px] top-24 z-20"
+    className="absolute w-full md:h-[175px] h-[150px] md:top-[80px] top-[72px] z-20"
     {...props}
     preserveAspectRatio="none"
   >
