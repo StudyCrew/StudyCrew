@@ -15,7 +15,6 @@ const Hero = (): JSX.Element => {
       </p>
 
       <HeroButtons />
-      
     </div>
   )
 }
