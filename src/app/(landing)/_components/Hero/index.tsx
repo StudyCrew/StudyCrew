@@ -46,7 +46,7 @@ const Hero = (): JSX.Element => {
       </h1>
 
       <p className="mt-2 text-lg font-light">
-        Opening doors to new learning experiences for everyone.
+        Breaking barriers to education through the power of open source.
       </p>
 
       <div className="mt-8 flex flex-col md:flex-row gap-2 justify-center align-middle">
