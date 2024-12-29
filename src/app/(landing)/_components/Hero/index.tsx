@@ -43,8 +43,8 @@ const Hero = (): JSX.Element => {
   }, [])
 
   return (
-    <div className="mx-16 mt-44 mb-16 text-center">
-      <h1 className="text-5xl leading-normal md:text-7xl md:leading-tight font-medium">
+    <div className="md:mx-16 mx-7 mt-28 md:mt-44 mb-16 text-center">
+      <h1 className="text-5xl leading-snug md:text-7xl md:leading-tight font-medium">
         The Future of Education is <br />
         <span
           style={{ opacity }}
@@ -54,11 +54,11 @@ const Hero = (): JSX.Element => {
         </span>
       </h1>
 
-      <p className="mt-4 text-xl font-normal text-secondary-text-700">
+      <p className="mt-4 md:text-xl text-lg font-normal text-secondary-text-700 leading-snug">
         Breaking barriers to education through the power of open source.
       </p>
 
-      <div className="mt-12 flex flex-row gap-5 justify-center align-middle">
+      <div className="md:mt-11 mt-7 flex md:flex-row flex-col md:gap-5 gap-2 justify-center align-middle">
         <Button onClick={handleLearnMoreClick} variant="primary" size="big">
           Learn More
           <FaChevronDown className="inline ml-2" />

@@ -15,7 +15,7 @@ const Button: React.FC<ButtonProps> = (props: ButtonProps): JSX.Element => {
     size === 'big'
       ? 'text-lg py-2 px-5'
       : size === 'small'
-        ? 'text-sm py-2 px-4'
+        ? 'text-sm py-1 px-2'
         : 'text-base py-2.5 px-5'
 
   const className = `${baseClassName} ${variantClassName} ${sizeClassName}`
