@@ -14,7 +14,6 @@
 
   h1,
   h2,
-  h3,
   h4,
   h5,
   h6 {
@@ -67,7 +66,7 @@ h3 {
 
 h2 {
   font-weight: 500;
-  font-size: 50px;
+  font-size: 46px;
 }
 
 h2 span {
