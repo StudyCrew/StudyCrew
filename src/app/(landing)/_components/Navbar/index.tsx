@@ -31,11 +31,12 @@ const Navbar: React.FC<NavbarProps> = ({ setIsMenuOpen }) => {
     <nav className="flex flex-col w-screen fixed z-100 bg-white top-0 left-0 md:grid md:grid-cols-2 border py-3">
       {/* Logo */}
       <div className="ml-32">
-        <div className="flex items-center gap-3 hover:cursor-pointer" onClick={() => handleNavLinkClick('hero')}>
+        <div
+          className="flex items-center gap-3 hover:cursor-pointer"
+          onClick={() => handleNavLinkClick('hero')}
+        >
           <Image alt="Logo" src={Logo as string} className="h-9 w-auto" />
-          <h6 className="text-lg font-semibold">
-            StudyCrew
-          </h6>
+          <h6 className="text-lg font-semibold">StudyCrew</h6>
         </div>
       </div>
 
