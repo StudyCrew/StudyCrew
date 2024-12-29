@@ -15,24 +15,21 @@ const Mission = (props: any): JSX.Element => {
       <ChevronWhiteSVG {...props} />
       <SecondChevronGradientSVG {...props} />
       <div className="bg-gradient-to-r from-primary-500 to-gradient-500 h-full relative flex flex-col justify-center z-10 md:top-[125px] top-[110px]">
-        <div className="flex flex-col md:flex-row items-center mt-32 gap-8 px-32">
-          <div className="lg:w-1/2 flex justify-center md:justify-start mb-8">
+        <div className="mx-32 grid grid-cols-2 mt-32 gap-16 align-center">
+          <div className="flex justify-center md:justify-start mb-8">
             <div className="text-2xl lg:mb-8 mr-8">
               <h3 className="text-zircon-50">OUR MISSION</h3>
               <h2 className="text-zircon-50 slogan mb-4 leading-12">
                 We support education for all.
               </h2>
               <p className="text-white">
-                StudyCrew is committed to making education accessible,
-                collaborative, and engaging through innovative learning
-                platforms. Our vision is to provide every student with the
-                resources and community they need to reach their full potential.
+                We are dedicated to making education more accessible, collaborative, and engaging through the development of an open-source online learning platform. This platform will support students on their learning journey and empower them to explore their passions together. Our vision is to provide every student with the resources and community they need to achieve their full potential.
               </p>
             </div>
           </div>
-          <div className="md:flex md:justify-end md:my-8 hidden">
+          <div className="md:flex hidden justify-end">
             <Image
-              width={600}
+              height={600}
               alt="Mission Logos"
               src={LOGO_GROUP_SVG as string}
             />
