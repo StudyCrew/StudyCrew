@@ -1,31 +1,31 @@
 'use client'
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react'
 
-const words = ['Collaborative', 'Accessible', 'Engaging'];
+const words = ['Collaborative', 'Accessible', 'Engaging']
 
 const HeroWord = (): JSX.Element => {
-  const [currentWord, setCurrentWord] = useState('Collaborative');
-  const [opacity, setOpacity] = useState(1);
+  const [currentWord, setCurrentWord] = useState('Collaborative')
+  const [opacity, setOpacity] = useState(1)
 
   useEffect(() => {
     const changeWord = (): void => {
       setCurrentWord((prevWord) => {
-        const nextIndex = (words.indexOf(prevWord) + 1) % words.length;
-        return words[nextIndex];
-      });
-      setOpacity(1);
-    };
+        const nextIndex = (words.indexOf(prevWord) + 1) % words.length
+        return words[nextIndex]
+      })
+      setOpacity(1)
+    }
 
     const interval = setInterval(() => {
-      setOpacity(0);
-      setTimeout(changeWord, 200);
-    }, 3500);
+      setOpacity(0)
+      setTimeout(changeWord, 200)
+    }, 3500)
 
     return () => {
-      clearInterval(interval);
-    };
-  }, []);
+      clearInterval(interval)
+    }
+  }, [])
 
   return (
     <span
@@ -34,7 +34,7 @@ const HeroWord = (): JSX.Element => {
     >
       {currentWord}
     </span>
-  );
-};
+  )
+}
 
-export default HeroWord;
+export default HeroWord

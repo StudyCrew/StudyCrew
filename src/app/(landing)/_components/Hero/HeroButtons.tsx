@@ -1,20 +1,19 @@
-'use client';
+'use client'
 
-import React from 'react';
-import { FaChevronDown, FaChevronRight } from 'react-icons/fa';
-import Button from '@/app/(landing)/_components/Button';
+import React from 'react'
+import { FaChevronDown, FaChevronRight } from 'react-icons/fa'
+import Button from '@/app/(landing)/_components/Button'
 
 const handleLearnMoreClick = (): void => {
-const learnMoreSection = document.getElementById('mission');
-if (learnMoreSection) {
-    learnMoreSection.scrollIntoView({ behavior: 'smooth' });
+  const learnMoreSection = document.getElementById('mission')
+  if (learnMoreSection) {
+    learnMoreSection.scrollIntoView({ behavior: 'smooth' })
+  }
 }
-};
 
 const handleViewOnGitHubClick = (): void => {
-window.open('https://github.com/StudyCrew/StudyCrew', '_blank');
-};
-
+  window.open('https://github.com/StudyCrew/StudyCrew', '_blank')
+}
 
 const HeroButtons = () => {
   return (
@@ -29,7 +28,7 @@ const HeroButtons = () => {
         <FaChevronRight className="inline ml-2" />
       </Button>
     </div>
-  );
-};
+  )
+}
 
-export default HeroButtons;
+export default HeroButtons

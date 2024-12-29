@@ -1,19 +1,8 @@
-import React from 'react';
-import HeroButtons from './HeroButtons';
-import HeroWord from './HeroWord';
+import React from 'react'
+import HeroButtons from './HeroButtons'
+import HeroWord from './HeroWord'
 
 const Hero = (): JSX.Element => {
-  const handleLearnMoreClick = (): void => {
-    const learnMoreSection = document.getElementById('mission');
-    if (learnMoreSection) {
-      learnMoreSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
-  const handleViewOnGitHubClick = (): void => {
-    window.open('https://github.com/StudyCrew/StudyCrew', '_blank');
-  };
-
   return (
     <div className="md:mx-16 mx-7 mt-28 md:mt-44 mb-16 text-center">
       <h1 className="text-5xl leading-snug md:text-7xl md:leading-tight font-medium">
@@ -26,10 +15,10 @@ const Hero = (): JSX.Element => {
       </p>
 
       <div className="md:mt-11 mt-7 flex md:flex-row flex-col md:gap-5 gap-2 justify-center align-middle">
-        <HeroButtons/>
+        <HeroButtons />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Hero;
+export default Hero
