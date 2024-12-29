@@ -14,7 +14,7 @@ export default function LandingPage() {
       <main>
         <SectionProvider>
           <section className="fixed top-0 left-0 right-0 z-50">
-            <Navbar/>
+            <Navbar />
           </section>
         </SectionProvider>
         <section id="hero" className="mt-32">

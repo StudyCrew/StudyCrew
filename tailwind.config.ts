@@ -26,6 +26,9 @@ const tailwindConfig = {
         1: '1',
         200: '200'
       },
+      fontFamily: {
+        'dm-sans': ['DM Sans', 'sans-serif'],
+      },
       rounded: {
         10: '10'
       },
