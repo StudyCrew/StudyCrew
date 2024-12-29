@@ -6,6 +6,7 @@ import Features from './_components/Features'
 import Development from './_components/Development'
 import { SectionProvider } from './_components/SectionContext'
 import Header from './_components/Header'
+import Navbar from './_components/Navbar'
 
 export default function LandingPage() {
   return (
@@ -13,7 +14,7 @@ export default function LandingPage() {
       <main>
         <SectionProvider>
           <section className="fixed top-0 left-0 right-0 z-50">
-            <Header />
+            <Navbar/>
           </section>
         </SectionProvider>
         <section id="hero" className="mt-32">
@@ -28,10 +29,10 @@ export default function LandingPage() {
         <section id="project" className="mt-32">
           <Project />
         </section>
-        <section id="development" className="mt-32">
+        <section id="development" className="mt-96">
           <Development />
         </section>
-        <section id="footer" className="mt-32">
+        <section id="footer" className="mt-96">
           <Footer />
         </section>
       </main>

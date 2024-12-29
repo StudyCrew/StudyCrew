@@ -19,7 +19,7 @@ const Header = () => {
   }, [isMenuOpen])
 
   return (
-    <header className="bg-white">
+    <header className="">
       <div
         className="hamburger-menu"
         onClick={() => setIsMenuOpen(!isMenuOpen)}
