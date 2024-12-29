@@ -28,18 +28,15 @@ const Mission = (props: any): JSX.Element => {
                 We are dedicated to making education more accessible,
                 collaborative, and engaging through the development of an
                 open-source online learning platform. This platform will support
-                students on their learning journey and empower them to
-                explore their passions together. Our vision is to provide every
-                student with the resources and community they need to achieve
-                their full potential.
+                students on their learning journey and empower them to explore
+                their passions together. Our vision is to provide every student
+                with the resources and community they need to achieve their full
+                potential.
               </p>
             </div>
           </div>
           <div className="md:flex hidden justify-end">
-            <Image
-              alt="Mission Logos"
-              src={LOGO_GROUP_SVG as string}
-            />
+            <Image alt="Mission Logos" src={LOGO_GROUP_SVG as string} />
           </div>
         </div>
       </div>

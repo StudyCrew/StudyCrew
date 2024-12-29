@@ -23,10 +23,10 @@ const HeroButtons = () => {
         <FaChevronDown className="inline ml-2" />
       </Button>
 
-        <Button onClick={handleViewOnGitHubClick} variant="outline" size="big">
-          View on GitHub
-          <FaChevronRight className="inline ml-2" />
-        </Button>
+      <Button onClick={handleViewOnGitHubClick} variant="outline" size="big">
+        View on GitHub
+        <FaChevronRight className="inline ml-2" />
+      </Button>
     </div>
   )
 }

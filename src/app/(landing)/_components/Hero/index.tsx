@@ -14,7 +14,7 @@ const Hero = (): JSX.Element => {
         Breaking barriers to education through the power of open source.
       </p>
 
-      <HeroButtons/>
+      <HeroButtons />
     </div>
   )
 }
