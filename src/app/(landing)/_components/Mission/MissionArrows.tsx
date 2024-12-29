@@ -73,7 +73,7 @@ export const SecondChevronGradientSVG = (
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 2628 376"
     fill="none"
-    className="absolute w-full h-[200px] top-[100px] z-20"
+    className="absolute w-full h-[200px] top-24 z-20"
     {...props}
     preserveAspectRatio="none"
   >
