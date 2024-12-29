@@ -1,44 +1,45 @@
-'use client';
+'use client'
 
-import React, { useState, useRef, useEffect } from 'react';
-import Image from 'next/image';
-import { useSection } from '../SectionContext';
-import Logo from 'public/assets/LogoIcon.svg';
-import { FaBars } from 'react-icons/fa';
+import React, { useState, useRef, useEffect } from 'react'
+import Image from 'next/image'
+import { useSection } from '../SectionContext'
+import Logo from 'public/assets/LogoIcon.svg'
+import { FaBars } from 'react-icons/fa'
 
 const Navbar: React.FC = () => {
-  const { activeSection, setActiveSection } = useSection();
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [menuTop, setMenuTop] = useState(0);
-  const navbarRef = useRef<HTMLDivElement>(null);
+  const { activeSection, setActiveSection } = useSection()
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [menuTop, setMenuTop] = useState(0)
+  const navbarRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     if (navbarRef.current) {
-      setMenuTop(navbarRef.current.clientHeight);
+      setMenuTop(navbarRef.current.clientHeight)
     }
-  }, []);
+  }, [])
 
-  const isActive = (section: string) => (activeSection === section ? 'text-primary-500' : '');
+  const isActive = (section: string) =>
+    activeSection === section ? 'text-primary-500' : ''
 
   const handleNavLinkClick = (sectionId: string) => {
-    setIsMenuOpen(false);
-    const element = document.getElementById(sectionId);
+    setIsMenuOpen(false)
+    const element = document.getElementById(sectionId)
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setActiveSection(sectionId);
+      element.scrollIntoView({ behavior: 'smooth' })
+      setActiveSection(sectionId)
     }
-  };
+  }
 
   const navLinks = [
     { id: 'mission', label: 'Mission' },
     { id: 'features', label: 'Features' },
     { id: 'project', label: 'Project' },
-    { id: 'development', label: 'Development' },
-  ];
+    { id: 'development', label: 'Development' }
+  ]
 
-  const navLinkStyle = `text-md font-semibold color-primary-950 transition duration-200 ease-in-out hover:text-primary-500`;
-  const navLinkStyleDesktop = `w-full text-center ${navLinkStyle}`;
-  const navLinkStyleMobile = `ml-7 text-left ${navLinkStyle}`;
+  const navLinkStyle = `text-md font-semibold color-primary-950 transition duration-200 ease-in-out hover:text-primary-500`
+  const navLinkStyleDesktop = `w-full text-center ${navLinkStyle}`
+  const navLinkStyleMobile = `ml-7 text-left ${navLinkStyle}`
 
   return (
     <div>
@@ -98,7 +99,7 @@ const Navbar: React.FC = () => {
         </div>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar
