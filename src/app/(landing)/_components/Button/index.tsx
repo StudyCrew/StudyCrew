@@ -1,18 +1,24 @@
 import React from 'react'
-
 import { type ButtonProps } from './types'
-
-import './style.css'
 
 const Button: React.FC<ButtonProps> = (props: ButtonProps): JSX.Element => {
   const { onClick, variant = 'primary', size, children } = props
 
-  let className = 'button'
+  // Define Tailwind classes based on props
+  const baseClassName =
+    'rounded-md font-semibold transition-all duration-200 ease-in-out'
+  const variantClassName =
+    variant === 'outline'
+      ? 'bg-transparent text-primary-500 border-2 border-primary-500 hover:bg-primary-100'
+      : 'bg-primary-500 text-white hover:bg-primary-700'
+  const sizeClassName =
+    size === 'big'
+      ? 'text-lg py-2 px-5'
+      : size === 'small'
+        ? 'text-sm py-1 px-2'
+        : 'text-base py-2.5 px-5'
 
-  if (variant === 'outline') className += ' button-outline'
-  if (size === 'big') className += ' button-big'
-  if (size === 'small') className += ' button-small'
-  if (size === 'big-outline') className += ' button-big-outline'
+  const className = `${baseClassName} ${variantClassName} ${sizeClassName}`
 
   return (
     <button className={className} onClick={onClick}>
