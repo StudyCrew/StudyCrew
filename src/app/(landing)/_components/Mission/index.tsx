@@ -1,10 +1,14 @@
-import React from 'react';
-import Image from 'next/image';
+import React from 'react'
+import Image from 'next/image'
 
-import { ChevronGradientSVG, ChevronWhiteSVG, SecondChevronGradientSVG } from './LogoGraphic';
-import LOGO_GROUP_SVG from 'public/assets/mission/LogoGroup.svg' assert { type: 'svg' };
+import {
+  ChevronGradientSVG,
+  ChevronWhiteSVG,
+  SecondChevronGradientSVG
+} from './MissionArrows'
+import LOGO_GROUP_SVG from 'public/assets/mission/LogoGroup.svg' assert { type: 'svg' }
 
-import './style.css';
+import './style.css'
 
 const Mission = (props: any): JSX.Element => {
   return (
@@ -31,7 +35,6 @@ const Mission = (props: any): JSX.Element => {
           <div className="md:flex md:justify-end md:my-8 hidden">
             <Image
               width={600}
-              height={600}
               alt="Mission Logos"
               src={LOGO_GROUP_SVG as string}
             />
@@ -39,7 +42,7 @@ const Mission = (props: any): JSX.Element => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Mission;
+export default Mission

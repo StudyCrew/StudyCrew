@@ -1,6 +1,8 @@
-import React from 'react';
+import React from 'react'
 
-export const ChevronGradientSVG = (props: React.SVGProps<SVGSVGElement>): JSX.Element => (
+export const ChevronGradientSVG = (
+  props: React.SVGProps<SVGSVGElement>
+): JSX.Element => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 2628 376"
@@ -30,9 +32,11 @@ export const ChevronGradientSVG = (props: React.SVGProps<SVGSVGElement>): JSX.El
       </linearGradient>
     </defs>
   </svg>
-);
+)
 
-export const ChevronWhiteSVG = (props: React.SVGProps<SVGSVGElement>): JSX.Element => (
+export const ChevronWhiteSVG = (
+  props: React.SVGProps<SVGSVGElement>
+): JSX.Element => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 2628 376"
@@ -62,9 +66,11 @@ export const ChevronWhiteSVG = (props: React.SVGProps<SVGSVGElement>): JSX.Eleme
       </linearGradient>
     </defs>
   </svg>
-);
+)
 
-export const SecondChevronGradientSVG = (props: React.SVGProps<SVGSVGElement>): JSX.Element => (
+export const SecondChevronGradientSVG = (
+  props: React.SVGProps<SVGSVGElement>
+): JSX.Element => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 2628 376"
@@ -94,4 +100,4 @@ export const SecondChevronGradientSVG = (props: React.SVGProps<SVGSVGElement>): 
       </linearGradient>
     </defs>
   </svg>
-);
+)
