@@ -5,7 +5,6 @@ import Project from './_components/Project'
 import Features from './_components/Features'
 import Development from './_components/Development'
 import { SectionProvider } from './_components/SectionContext'
-import Header from './_components/Header'
 import Navbar from './_components/Navbar'
 
 export default function LandingPage() {
