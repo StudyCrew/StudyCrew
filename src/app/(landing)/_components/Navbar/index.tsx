@@ -1,55 +1,56 @@
-'use client'
+'use client';
 
-import React, { useState, useRef, useEffect } from 'react'
-import Image from 'next/image'
-import { useSection } from '../SectionContext'
-import Logo from 'public/assets/LogoIcon.svg'
-import { FaBars } from 'react-icons/fa'
+import React, { useState, useRef, useEffect } from 'react';
+import Image from 'next/image';
+import { useSection } from '../SectionContext';
+import Logo from 'public/assets/LogoIcon.svg';
+import { FaBars } from 'react-icons/fa';
 
-type NavbarProps = {
-  setIsMenuOpen?: (isOpen: boolean) => void
-}
-
-const Navbar = () => {
-  const { activeSection, setActiveSection } = useSection()
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [menuTop, setMenuTop] = useState(0)
-  const navbarRef = useRef<HTMLDivElement>(null)
+const Navbar: React.FC = () => {
+  const { activeSection, setActiveSection } = useSection();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [menuTop, setMenuTop] = useState(0);
+  const navbarRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (navbarRef.current) {
-      setMenuTop(navbarRef.current.clientHeight)
+      setMenuTop(navbarRef.current.clientHeight);
     }
-  }, [navbarRef.current?.clientHeight])
+  }, []);
 
-  const isActive = (name: string): string =>
-    activeSection === name ? 'text-primary-500' : ''
+  const isActive = (section: string) => (activeSection === section ? 'text-primary-500' : '');
 
   const handleNavLinkClick = (sectionId: string) => {
-    setIsMenuOpen?.(false)
-    const element = document.getElementById(sectionId)
+    setIsMenuOpen(false);
+    const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
-      setActiveSection(sectionId)
+      element.scrollIntoView({ behavior: 'smooth' });
+      setActiveSection(sectionId);
     }
-  }
+  };
 
-  const navLinkStyle = `w-full text-center color-primary-950 text-md font-semibold
-    transition-colors transition-mb duration-200 ease-in-out transition-border duration-200 ease-in-out hover:text-primary-500`
+  const navLinks = [
+    { id: 'mission', label: 'Mission' },
+    { id: 'features', label: 'Features' },
+    { id: 'project', label: 'Project' },
+    { id: 'development', label: 'Development' },
+  ];
 
-  const navLinkStyleMobile = `text-left color-primary-950 ml-7 text-md font-semibold
-  transition-colors transition-mb duration-200 ease-in-out transition-border duration-200 ease-in-out hover:text-primary-500`
+  const navLinkStyle = `text-md font-semibold color-primary-950 transition duration-200 ease-in-out hover:text-primary-500`;
+  const navLinkStyleDesktop = `w-full text-center ${navLinkStyle}`;
+  const navLinkStyleMobile = `ml-7 text-left ${navLinkStyle}`;
 
   return (
     <div>
+      {/* Navbar */}
       <nav
         ref={navbarRef}
-        className="flex items-center justify-between w-screen fixed z-50 bg-white top-0 left-0 md:grid md:grid-cols-2 border-b border-gray-200 py-3"
+        className="fixed top-0 left-0 z-50 w-screen bg-white border-b border-gray-200 py-3 flex items-center justify-between md:grid md:grid-cols-2"
       >
         {/* Logo */}
-        <div className="md:ml-32 ml-7">
+        <div className="ml-7 md:ml-32">
           <div
-            className="flex items-center gap-3 hover:cursor-pointer"
+            className="flex items-center gap-3 cursor-pointer"
             onClick={() => handleNavLinkClick('hero')}
           >
             <Image alt="Logo" src={Logo as string} className="h-9 w-auto" />
@@ -57,75 +58,47 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Nav Links */}
-        <div className="md:grid hidden grid-cols-4 mr-32 gap-auto justify-end text-right items-center">
-          <div
-            className={`${isActive('mission')} ${navLinkStyle} hover:cursor-pointer`}
-            onClick={() => handleNavLinkClick('mission')}
-          >
-            Mission
-          </div>
-          <div
-            className={`${isActive('features')} ${navLinkStyle} hover:cursor-pointer`}
-            onClick={() => handleNavLinkClick('features')}
-          >
-            Features
-          </div>
-
-          <div
-            className={`${isActive('project')} ${navLinkStyle} hover:cursor-pointer`}
-            onClick={() => handleNavLinkClick('project')}
-          >
-            Project
-          </div>
-
-          <div
-            className={`${isActive('development')} ${navLinkStyle} hover:cursor-pointer`}
-            onClick={() => handleNavLinkClick('development')}
-          >
-            Development
-          </div>
+        {/* Desktop Navigation Links */}
+        <div className="hidden md:grid grid-cols-4 gap-auto mr-32 text-right items-center">
+          {navLinks.map(({ id, label }) => (
+            <div
+              key={id}
+              className={`${isActive(id)} ${navLinkStyleDesktop} cursor-pointer`}
+              onClick={() => handleNavLinkClick(id)}
+            >
+              {label}
+            </div>
+          ))}
         </div>
 
+        {/* Hamburger Menu */}
         <div
-          className="hamburger-menu mr-7 md:hidden visible"
+          className="mr-7 md:hidden visible cursor-pointer"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           <FaBars />
         </div>
       </nav>
+
+      {/* Mobile Navigation Menu */}
       {isMenuOpen && (
-        <div className="grid grid-cols-1 gap-2 relative bg-white py-3 border-b border-gray-200 z-40 text-left" style={{ top: menuTop }}>
-          <div
-            className={`${isActive('mission')} ${navLinkStyleMobile} hover:cursor-pointer`}
-            onClick={() => handleNavLinkClick('mission')}
-          >
-            Mission
-          </div>
-          <div
-            className={`${isActive('features')} ${navLinkStyleMobile} hover:cursor-pointer`}
-            onClick={() => handleNavLinkClick('features')}
-          >
-            Features
-          </div>
-
-          <div
-            className={`${isActive('project')} ${navLinkStyleMobile} hover:cursor-pointer`}
-            onClick={() => handleNavLinkClick('project')}
-          >
-            Project
-          </div>
-
-          <div
-            className={`${isActive('development')} ${navLinkStyleMobile} hover:cursor-pointer`}
-            onClick={() => handleNavLinkClick('development')}
-          >
-            Development
-          </div>
+        <div
+          className="z-40 bg-white border-b border-gray-200 py-6 grid grid-cols-1 gap-2 relative text-left"
+          style={{ top: menuTop }}
+        >
+          {navLinks.map(({ id, label }) => (
+            <div
+              key={id}
+              className={`${isActive(id)} ${navLinkStyleMobile} cursor-pointer`}
+              onClick={() => handleNavLinkClick(id)}
+            >
+              {label}
+            </div>
+          ))}
         </div>
       )}
     </div>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
