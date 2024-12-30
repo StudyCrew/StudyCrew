@@ -171,31 +171,61 @@ const Features: React.FC<any> = (): JSX.Element => {
         )}
 
         {!isMobile && (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 w-full">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 w-full h-[350px]">
             {/* Left Column: Main Feature */}
-            {currentStage.cards
-              .filter((card) => card.main) 
-              .map(({ title, description, image }, i: number) => (
-                <div className="flex bg-primary-100 flex-col py-4 px-5 rounded-xl" key={`main-feature-${i}`}>
-                  <h3 className="text-2xl font-bold text-primary-950">{title}</h3>
-                  <p className="mt-2 text-lg text-primary-950 leading-tight">{description}</p>
-                  <Image className="w-full rounded-md" src={image} alt={title} />
-                </div>
-              ))}
-
-            {/* Right Column: Other Features */}
-            <div className="flex flex-col gap-4 bg-primary-100">
+            <div className="flex flex-col bg-primary-100 py-4 px-5 rounded-xl">
               {currentStage.cards
-                .filter((card) => !card.main) 
-                .map(({ title, description }, i: number) => (
-                  <div
-                    className="p-4 border border-gray-300 rounded-lg bg-white shadow-md"
-                    key={`other-feature-${i}`}
-                  >
-                    <h3 className="text-lg font-semibold text-gray-800">{title}</h3>
-                    <p className="mt-1 text-sm text-gray-600">{description}</p>
+                .filter((card) => card.main)
+                .map(({ title, description, image, bullet_points }, i: number) => (
+                  <div key={`main-feature-${i}`} className="flex flex-col">
+                    {/* Title */}
+                    <h3 className="text-2xl font-bold text-primary-950">{title}</h3>
+
+                    {/* Description */}
+                    <p className="mt-2 text-lg text-primary-950 leading-snug">
+                      {description}
+                    </p>
+
+                    {/* Image and Bullet Points */}
+                    <div className="flex mt-4 gap-4 w-full">
+                      <div className="w-1/2">
+                        <Image className="rounded-md w-full" src={image} alt={title} />
+                      </div>
+
+                      <div className="w-1/2 flex flex-col justify-center">
+                        {bullet_points?.map(({ icon: Icon, text }, idx) => (
+                          <div
+                            key={`bullet-point-${idx}`}
+                            className="flex items-center gap-2 mb-2 bg-white rounded w-full py-1"
+                          >
+                            <div className="text-primary-950 text-2xl ml-2">
+                              <Icon weight="duotone" />
+                            </div>
+                            <span className="text-primary-950 text-lg font-medium mr-2">
+                              {text}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
                   </div>
                 ))}
+            </div>
+
+            {/* Right Column: Other Features */}
+            <div className="flex flex-col gap-4 bg-primary-100 overflow-y-auto py-4 px-5 rounded-xl">
+              <h3 className="text-2xl font-bold text-primary-950">Additional Functionalities</h3>
+                {currentStage.cards
+                  .filter((card) => !card.main)
+                  .map(({ title, description }, i: number) => (
+                    <div
+                      key={`other-feature-${i}`}
+                      className="py-4 px-5 rounded-lg bg-white"
+                    >
+                      <h3 className="text-xl font-medium text-gray-800">{title}</h3>
+                      <p className="mt-1 text-lg text-gray-600 leading-snug">{description}</p>
+                    </div>
+                  ))}
             </div>
           </div>
         )}
