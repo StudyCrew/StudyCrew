@@ -1,16 +1,6 @@
-import NOTES_SVG from 'public/assets/features/notes.svg' assert { type: 'svg' }
-import PROFILE_SVG from 'public/assets/features/profile.svg' assert { type: 'svg' }
 import TUTORING_SVG from 'public/assets/features/tutoring.svg' assert { type: 'svg' }
-import AI_TUTOR_SVG from 'public/assets/features/ai_tutor.svg' assert { type: 'svg' }
-import FLASH_CARDS_SVG from 'public/assets/features/flashcards.svg' assert { type: 'svg' }
 import STUDY_GROUPS_SVG from 'public/assets/features/study_groups.svg' assert { type: 'svg' }
 import LEARNING_PATHS_SVG from 'public/assets/features/learning_paths.svg' assert { type: 'svg' }
-import VIRTUAL_EVENTS_SVG from 'public/assets/features/virtual_events.svg' assert { type: 'svg' }
-import PERSONAL_DASHBOARD_SVG from 'public/assets/features/personal_dashboard.svg' assert { type: 'svg' }
-import MOBILE_APPLICATION_SVG from 'public/assets/features/mobile_application.svg' assert { type: 'svg' }
-import MULTILINGUAL_SUPPORT_SVG from 'public/assets/features/multilingual_support.svg' assert { type: 'svg' }
-import USER_FEEDBACK_SVG from 'public/assets/features/user_feedback.svg' assert { type: 'svg' }
-import COURSES_SVG from 'public/assets/features/courses.svg' assert { type: 'svg' }
 
 import { FeaturesStageID, type FeaturesStage } from './types'
 import {
@@ -23,6 +13,7 @@ import {
   DeviceMobile,
   Exam,
   File,
+  Globe,
   Handshake,
   Heart,
   Link,
@@ -32,6 +23,7 @@ import {
   UserCircle,
   UsersFour,
   UsersThree,
+  VideoCamera,
   VideoConference
 } from '@phosphor-icons/react'
 
@@ -39,7 +31,7 @@ export const MOBILE_WIDTH_BREAKPOINT = 950
 
 export const FEATURES_STAGE_ONE: FeaturesStage = {
   id: FeaturesStageID.StageOne,
-  title: 'Stage 1',
+  title: 'Version 1',
   icon: UsersFour,
   limit: 6,
   description: 'Foundational Phase',
@@ -58,7 +50,7 @@ export const FEATURES_STAGE_ONE: FeaturesStage = {
         },
         {
           icon: SealQuestion,
-          text: 'Group Chat'
+          text: 'Q&A Board'
         },
         {
           icon: File,
@@ -85,7 +77,7 @@ export const FEATURES_STAGE_ONE: FeaturesStage = {
 
 export const FEATURES_STAGE_TWO: FeaturesStage = {
   id: FeaturesStageID.StageTwo,
-  title: 'Stage 2',
+  title: 'Version 2',
   icon: ArrowsOut,
   limit: 6,
   description: 'Expansion Phase',
@@ -131,7 +123,7 @@ export const FEATURES_STAGE_TWO: FeaturesStage = {
 
 export const FEATURES_STAGE_THREE: FeaturesStage = {
   id: FeaturesStageID.StageThree,
-  title: 'Stage 3',
+  title: 'Version 3',
   icon: Rocket,
   limit: 3,
   description: 'Futuristic Learning',
@@ -139,6 +131,7 @@ export const FEATURES_STAGE_THREE: FeaturesStage = {
     {
       main: true,
       image: TUTORING_SVG as string,
+      icon: VideoConference,
       title: 'Tutoring',
       description:
         'Group tutoring is an effective way to learn and build a strong community of learners. We aim to offer volunteer-based tutoring, allowing everyone to join the sessions for free.',
@@ -148,7 +141,7 @@ export const FEATURES_STAGE_THREE: FeaturesStage = {
           text: 'Group Tutoring'
         },
         {
-          icon: VideoConference,
+          icon: VideoCamera,
           text: 'Live Sessions'
         },
         {
@@ -166,7 +159,7 @@ export const FEATURES_STAGE_THREE: FeaturesStage = {
     },
     {
       main: false,
-      image: VIRTUAL_EVENTS_SVG as string,
+      icon: Globe,
       title: 'Multilingual Support',
       description:
         'We aim to offer our platform in multiple languages to increase accessibility.'
