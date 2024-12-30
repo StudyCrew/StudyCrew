@@ -145,50 +145,61 @@ const Features: React.FC<any> = (): JSX.Element => {
         </p>
       </div>
 
-      <div
-        className="flex-col align-middle justify-center gap-2.5 mt-8"
-      >
+      <div className="flex-col align-middle justify-center gap-2.5 mt-8">
         {!isMobile && (
           <div className="flex gap-4 w-full justify-center mb-4">
-            {FEATURES_STAGES.map(({ id, title, description, icon: Icon }, i: number) => (
-              <div
-                key={`stage-${i}-${id}`}
-                onClick={onStageClick.bind(null, id)}
-                className={cn('px-4 py-2 rounded-full flex gap-2 items-center border border-primary-500 cursor-pointer hover:bg-primary-50 transition-all duration-200 ease-in-out', {
-                  'bg-primary-100': id === currentStageID,
-                })}
-              >
-                <div className="text-primary-500 text-2xl">
-                  <Icon />
+            {FEATURES_STAGES.map(
+              ({ id, title, description, icon: Icon }, i: number) => (
+                <div
+                  key={`stage-${i}-${id}`}
+                  onClick={onStageClick.bind(null, id)}
+                  className={cn(
+                    'px-4 py-2 rounded-full flex gap-2 items-center border border-primary-500 cursor-pointer hover:bg-primary-50 transition-all duration-200 ease-in-out',
+                    {
+                      'bg-primary-100': id === currentStageID
+                    }
+                  )}
+                >
+                  <div className="text-primary-500 text-2xl">
+                    <Icon />
+                  </div>
+                  <div className="text-xl font-medium">{title}</div>
                 </div>
-                <div className="text-xl font-medium">{title}</div>
-              </div>
-            ))}
+              )
+            )}
           </div>
         )}
 
         {!isMobile && (
-          <div className="owl-carousel-wrapper">
-            <div className="owl-carousel">
-              <div
-                className="cards"
-                style={{
-                  transform: `translateX(${cardWidth}px`
-                }}
-              >
-                {currentStage.cards.map(
-                  ({ title, description, image }, i: number) => (
-                    <div className="card" key={`stage-card-${i}`}>
-                      <Image className="card-image" src={image} alt={title} />
-                      <h3 className="card-title">{title}</h3>
-                      <p className="card-description">{description}</p>
-                    </div>
-                  )
-                )}
-              </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 w-full">
+            {/* Left Column: Main Feature */}
+            {currentStage.cards
+              .filter((card) => card.main) 
+              .map(({ title, description, image }, i: number) => (
+                <div className="flex bg-primary-100 flex-col py-4 px-5 rounded-xl" key={`main-feature-${i}`}>
+                  <h3 className="text-2xl font-bold text-primary-950">{title}</h3>
+                  <p className="mt-2 text-lg text-primary-950 leading-tight">{description}</p>
+                  <Image className="w-full rounded-md" src={image} alt={title} />
+                </div>
+              ))}
+
+            {/* Right Column: Other Features */}
+            <div className="flex flex-col gap-4 bg-primary-100">
+              {currentStage.cards
+                .filter((card) => !card.main) 
+                .map(({ title, description }, i: number) => (
+                  <div
+                    className="p-4 border border-gray-300 rounded-lg bg-white shadow-md"
+                    key={`other-feature-${i}`}
+                  >
+                    <h3 className="text-lg font-semibold text-gray-800">{title}</h3>
+                    <p className="mt-1 text-sm text-gray-600">{description}</p>
+                  </div>
+                ))}
             </div>
           </div>
         )}
+
 
         {isMobile &&
           FEATURES_STAGES.map(

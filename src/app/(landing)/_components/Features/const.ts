@@ -25,30 +25,35 @@ export const FEATURES_STAGE_ONE: FeaturesStage = {
   description: 'Foundational Phase',
   cards: [
     {
+      main: true,
       image: STUDY_GROUPS_SVG as string,
       title: 'Study Groups',
       description:
         'Join our Study Groups: a space for collaborative learning. Engage in group chats, share resources, tackle questions together, and discover study partners. Tailored for students, by students.'
     },
     {
+      main: false,
       image: TUTORING_SVG as string,
       title: 'Tutoring',
       description:
         'Discover free tutoring sessions on diverse topics. This is a place where tutors and learners come together to dive deep into subjects, gain clarity, and boost your confidence.'
     },
     {
+      main: false,
       image: LEARNING_PATHS_SVG as string,
       title: 'Learning Paths',
       description:
         'Discover Learning Paths: Curated journeys through top-notch content. Engage with organized resources, enjoy community-crafted paths, and benefit from integrated study groups.'
     },
     {
+      main: false,
       image: PERSONAL_DASHBOARD_SVG as string,
       title: 'Personal Dashboard',
       description:
         'Your hub for insights and access. Dive into tailored overviews, navigate to desired resources, and gain clarity on your learning journey. All your educational tools, in one cohesive space.'
     },
     {
+      main: false,
       image: PROFILE_SVG as string,
       title: 'User Profile',
       description:
@@ -65,30 +70,35 @@ export const FEATURES_STAGE_TWO: FeaturesStage = {
   description: 'Expansion Phase',
   cards: [
     {
+      main: true,
       image: MOBILE_APPLICATION_SVG as string,
       title: 'Mobile Application',
       description:
         'A curated journey into diverse subjects. Engage with structured content, gain hands-on experience, and progress at your own pace.The courses will be in video format, with interactive and collaborative elements added'
     },
     {
+      main: false,
       image: AI_TUTOR_SVG as string,
       title: 'AI Tutor',
       description:
         'Explore a new way of learning with our AI Chatbot that assists your learning experience. Dive deep into subjects, gain insights, and elevate your study effectiveness with our always available study companion.'
     },
     {
+      main: false,
       image: NOTES_SVG as string,
       title: 'Notes',
       description:
         'A personalized space for your insights. Jot down key takeaways, organize your thoughts, and revisit them anytime. Tailored for reflective learning and effortless recall.'
     },
     {
+      main: false,
       image: FLASH_CARDS_SVG as string,
       title: 'Flashcards',
       description:
         'Master your studies with flashcards and spaced repetition. Easily create, share, and review flashcards, making learning more efficient and fun for everyone. '
     },
     {
+      main: false,
       image: MULTILINGUAL_SUPPORT_SVG as string,
       title: 'Multilingual Support',
       description:
@@ -105,18 +115,21 @@ export const FEATURES_STAGE_THREE: FeaturesStage = {
   description: 'Futuristic Learning',
   cards: [
     {
+      main: true,
       image: USER_FEEDBACK_SVG as string,
       title: 'User Feedback',
       description:
         'We will incorporate your feedback in stage three to introduce new features that make education more accessible, collaborative, and engaging.'
     },
     {
+      main: false,
       image: COURSES_SVG as string,
       title: 'Courses',
       description:
         'A curated journey into diverse subjects. Engage with structured content, gain hands-on experience, and progress at your own pace. The courses will be in video format, with interactive and collaborative elements added.'
     },
     {
+      main: false,
       image: VIRTUAL_EVENTS_SVG as string,
       title: 'Virtual Events',
       description:

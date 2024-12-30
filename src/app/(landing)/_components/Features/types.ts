@@ -1,6 +1,7 @@
-import React from "react"
+import React from 'react'
 
 export interface FeaturesStageCard {
+  main: boolean
   image: string
   title: string
   description: string
@@ -15,7 +16,7 @@ export enum FeaturesStageID {
 export interface FeaturesStage {
   id: FeaturesStageID
   title: string
-  icon: React.ComponentType,
+  icon: React.ComponentType
   limit: number
   description: string
   cards: FeaturesStageCard[]
