@@ -44,8 +44,8 @@ const tailwindConfig = {
           500: '#322E90'
         },
         primary: {
-          50: '#EEF6FF',
-          100: '#D9EAFF',
+          50: '#F7FAFF',
+          100: '#F2F7FF',
           200: '#BCDBFF',
           300: '#8EC6FF',
           400: '#59A5FF',
