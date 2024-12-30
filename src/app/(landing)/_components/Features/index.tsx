@@ -135,29 +135,33 @@ const Features: React.FC<any> = (): JSX.Element => {
     <div className="features mx-32">
       <div className="text-center">
         <h2 className="text-5xl">
-          Our <span className="bg-gradient-to-r from-primary-500 to-gradient-500 bg-clip-text text-transparent">Features</span>
+          Our{' '}
+          <span className="bg-gradient-to-r from-primary-500 to-gradient-500 bg-clip-text text-transparent">
+            Features
+          </span>
         </h2>
-        <p className="mt-2 md:text-xl text-lg font-normal text-secondary-text-700">Discover powerful tools that help you study.</p>
+        <p className="mt-2 md:text-xl text-lg font-normal text-secondary-text-700">
+          Discover powerful tools that help you study.
+        </p>
       </div>
 
       <div
-        className={cn('align-middle justify-end gap-2.5 mt-12 mx-0', {
-          flex: !isMobile,
-          'flex-column': isMobile
-        })}
+        className="flex-col align-middle justify-center gap-2.5 mt-8"
       >
         {!isMobile && (
-          <div className="stages">
-            {FEATURES_STAGES.map(({ id, title, description }, i: number) => (
+          <div className="flex gap-4 w-full justify-center mb-4">
+            {FEATURES_STAGES.map(({ id, title, description, icon: Icon }, i: number) => (
               <div
                 key={`stage-${i}-${id}`}
                 onClick={onStageClick.bind(null, id)}
-                className={cn('stage', {
-                  'active-stage': id === currentStageID
+                className={cn('px-4 py-2 rounded-full flex gap-2 items-center border border-primary-500 cursor-pointer hover:bg-primary-50 transition-all duration-200 ease-in-out', {
+                  'bg-primary-100': id === currentStageID,
                 })}
               >
-                <h3>{title}</h3>
-                <p>{description}</p>
+                <div className="text-primary-500 text-2xl">
+                  <Icon />
+                </div>
+                <div className="text-xl font-medium">{title}</div>
               </div>
             ))}
           </div>

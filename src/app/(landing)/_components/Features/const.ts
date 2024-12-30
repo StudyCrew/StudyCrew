@@ -13,12 +13,14 @@ import USER_FEEDBACK_SVG from 'public/assets/features/user_feedback.svg' assert 
 import COURSES_SVG from 'public/assets/features/courses.svg' assert { type: 'svg' }
 
 import { FeaturesStageID, type FeaturesStage } from './types'
+import { ArrowsOut, Rocket, UsersFour } from '@phosphor-icons/react'
 
 export const MOBILE_WIDTH_BREAKPOINT = 950
 
 export const FEATURES_STAGE_ONE: FeaturesStage = {
   id: FeaturesStageID.StageOne,
   title: 'Stage 1',
+  icon: UsersFour,
   limit: 6,
   description: 'Foundational Phase',
   cards: [
@@ -58,6 +60,7 @@ export const FEATURES_STAGE_ONE: FeaturesStage = {
 export const FEATURES_STAGE_TWO: FeaturesStage = {
   id: FeaturesStageID.StageTwo,
   title: 'Stage 2',
+  icon: ArrowsOut,
   limit: 6,
   description: 'Expansion Phase',
   cards: [
@@ -97,6 +100,7 @@ export const FEATURES_STAGE_TWO: FeaturesStage = {
 export const FEATURES_STAGE_THREE: FeaturesStage = {
   id: FeaturesStageID.StageThree,
   title: 'Stage 3',
+  icon: Rocket,
   limit: 3,
   description: 'Futuristic Learning',
   cards: [
