@@ -21,7 +21,7 @@ const Mission = (props: any): JSX.Element => {
               <h3 className="text-zircon-50 md:text-xl text-lg font-semibold">
                 OUR MISSION
               </h3>
-              <h2 className="text-white md:mb-4 mb-3 md:text-5xl text-4xl leading-none md:mt-0 mt-[-10px]">
+              <h2 className="text-white md:mb-4 mb-3 md:text-5xl text-4xl leading-none md:mt-0">
                 We support education for all.
               </h2>
               <p className="text-zircon-50 md:text-lg text-base">
