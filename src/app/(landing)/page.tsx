@@ -22,7 +22,7 @@ export default function LandingPage() {
         <section id="mission" className="relative">
           <Mission />
         </section>
-        <section id="features" className="mt-64">
+        <section id="features" className="mt-60">
           <Features />
         </section>
         <section id="project" className="mt-32">

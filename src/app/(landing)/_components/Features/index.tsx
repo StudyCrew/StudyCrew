@@ -133,11 +133,11 @@ const Features: React.FC<any> = (): JSX.Element => {
 
   return (
     <div className="features mx-32">
-      <div className="features-head">
-        <h2>
-          Our <span>Features</span>
+      <div className="text-center">
+        <h2 className="text-5xl">
+          Our <span className="bg-gradient-to-r from-primary-500 to-gradient-500 bg-clip-text text-transparent">Features</span>
         </h2>
-        <p className="des">Discover powerful tools that help you study.</p>
+        <p className="mt-2 md:text-xl text-lg font-normal text-secondary-text-700">Discover powerful tools that help you study.</p>
       </div>
 
       <div
