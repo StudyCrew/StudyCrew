@@ -6,7 +6,7 @@ export interface FeaturesStageCard {
   icon?: React.ComponentType
   title: string
   description: string
-  bullet_points?: Array<{ icon: React.ComponentType; text: string }>;
+  bullet_points?: Array<{ icon: React.ComponentType; text: string }>
 }
 
 export enum FeaturesStageID {

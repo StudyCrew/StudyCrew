@@ -13,7 +13,27 @@ import USER_FEEDBACK_SVG from 'public/assets/features/user_feedback.svg' assert 
 import COURSES_SVG from 'public/assets/features/courses.svg' assert { type: 'svg' }
 
 import { FeaturesStageID, type FeaturesStage } from './types'
-import { ArrowsOut, Browser, Chalkboard, Chat, Chats, ChatsTeardrop, DeviceMobile, Exam, File, Handshake, Heart, Link, Path, Rocket, SealQuestion, UserCircle, UsersFour, UsersThree, VideoConference } from '@phosphor-icons/react'
+import {
+  ArrowsOut,
+  Browser,
+  Chalkboard,
+  Chat,
+  Chats,
+  ChatsTeardrop,
+  DeviceMobile,
+  Exam,
+  File,
+  Handshake,
+  Heart,
+  Link,
+  Path,
+  Rocket,
+  SealQuestion,
+  UserCircle,
+  UsersFour,
+  UsersThree,
+  VideoConference
+} from '@phosphor-icons/react'
 
 export const MOBILE_WIDTH_BREAKPOINT = 950
 
@@ -75,7 +95,8 @@ export const FEATURES_STAGE_TWO: FeaturesStage = {
       image: LEARNING_PATHS_SVG as string,
       icon: Path,
       title: 'Learning Paths',
-      description: 'Learning paths guide users with organized online resources and exercises on specific topics. Students can discuss them in Study Groups and answer each other’s questions.',
+      description:
+        'Learning paths guide users with organized online resources and exercises on specific topics. Students can discuss them in Study Groups and answer each other’s questions.',
       bullet_points: [
         {
           icon: Link,
@@ -119,7 +140,8 @@ export const FEATURES_STAGE_THREE: FeaturesStage = {
       main: true,
       image: TUTORING_SVG as string,
       title: 'Tutoring',
-      description: 'Group tutoring is an effective way to learn and build a strong community of learners. We aim to offer volunteer-based tutoring, allowing everyone to join the sessions for free.',
+      description:
+        'Group tutoring is an effective way to learn and build a strong community of learners. We aim to offer volunteer-based tutoring, allowing everyone to join the sessions for free.',
       bullet_points: [
         {
           icon: Chalkboard,
@@ -146,7 +168,8 @@ export const FEATURES_STAGE_THREE: FeaturesStage = {
       main: false,
       image: VIRTUAL_EVENTS_SVG as string,
       title: 'Multilingual Support',
-      description: 'We aim to offer our platform in multiple languages to increase accessibility.'
+      description:
+        'We aim to offer our platform in multiple languages to increase accessibility.'
     }
   ]
 }
