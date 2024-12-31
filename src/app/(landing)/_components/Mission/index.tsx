@@ -15,14 +15,14 @@ const Mission = (props: any): JSX.Element => {
       <ChevronWhiteSVG {...props} />
       <SecondChevronGradientSVG {...props} />
       <div className="md:px-32 px-7 md:pb-20 pb-11 bg-gradient-to-r from-primary-500 to-gradient-500 relative flex flex-col justify-center z-10 md:top-[125px] top-[110px]">
-        <div className="md:grid md:grid-cols-2 md:gap-16 md:mt-32 mt-24 align-left">
+        <div className="md:grid md:grid-cols-2 md:gap-16 md:mt-32 mt-28 align-left">
           <div className="flex justify-center md:justify-start mb-8">
             <div>
               <h3 className="text-zircon-50 md:text-xl text-lg font-semibold">
                 OUR MISSION
               </h3>
-              <h2 className="text-white md:mb-4 mb-3 md:text-5xl text-4xl leading-none md:mt-0">
-                We support education for all.
+              <h2 className="text-white md:mb-4 mb-3 md:text-5xl text-4xl leading-none mt-2">
+                We Support Education for All
               </h2>
               <p className="text-zircon-50 md:text-lg text-base">
                 We are dedicated to making education more accessible,
