@@ -77,7 +77,7 @@ const Features: React.FC<any> = (): JSX.Element => {
         </p>
       </div>
 
-      <div className="flex-col align-middle justify-center gap-2.5 mt-8">
+      <div className="flex-col gap-2.5 mt-8">
         <div className="flex flex-col md:flex-row gap-4 w-full justify-center">
           {/* Dropdown for Mobile */}
           <div className="md:hidden flex justify-center w-full">
@@ -116,22 +116,25 @@ const Features: React.FC<any> = (): JSX.Element => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 w-full md:h-[325px] h-auto my-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 w-full md:min-h-[325px] my-8">
           {/* Left Column: Main Feature */}
           <div className="flex flex-col bg-primary-100 py-4 px-5 rounded-xl">
             {currentStage.cards
               .filter((card) => card.main)
               .map(
-                ({ title, description, image, icon: Icon, bullet_points }, i: number) => (
+                (
+                  { title, description, image, icon: Icon, bullet_points },
+                  i: number
+                ) => (
                   <div key={`main-feature-${i}`} className="flex flex-col">
                     {/* Title */}
                     <h3 className="md:text-2xl text-xl md:font-bold font-medium text-primary-950">
-                    <div className="flex gap-2 items-center">
-                      <div className="text-primary-950 md:text-3xl text-2xl">
-                        <Icon weight="duotone"/>
+                      <div className="flex gap-2 items-center">
+                        <div className="text-primary-950 md:text-3xl text-2xl">
+                          <Icon weight="duotone" />
+                        </div>
+                        <div>{title}</div>
                       </div>
-                      <div>{title}</div>
-                    </div>
                     </h3>
 
                     {/* Description */}
@@ -184,7 +187,7 @@ const Features: React.FC<any> = (): JSX.Element => {
                 >
                   <div className="flex gap-2 items-center">
                     <div className="text-primary-950 text-2xl">
-                      <Icon weight="duotone"/>
+                      <Icon weight="duotone" />
                     </div>
                     <div className="text-xl font-medium">{title}</div>
                   </div>
