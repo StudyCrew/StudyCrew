@@ -5,20 +5,14 @@ import PROJECT_IMAGE from 'public/assets/project-image.webp'
 
 const Project = (): JSX.Element => {
   return (
-    <div className="flex bg-gradient-to-r from-primary-500 to-gradient-500">
+    <div className="grid grid-cols-2 bg-gradient-to-r from-primary-500 to-gradient-500">
       <div className="flex flex-col gap-2 md:pl-32 pr-8 py-14">
-        <h2 className="text-lg font-normal text-zircon-50">Our Project</h2>
-        <h3 className="text-5xl font-semibold m-0 text-zircon-50">
-          Transforming Education Together.
-        </h3>
+        <h3 className="text-lg font-normal text-zircon-50">Our Project</h3>
+        <h2 className="text-5xl font-semibold m-0 text-zircon-50">
+          Transforming Education Together
+        </h2>
         <p className="text-zircon-50">
-          Dedicated to transforming the educational landscape, our platform
-          prioritizes accessibility, collaboration, and engagement. We are
-          committed to ensure quality education is in everyone’s reach.
-          Together, we’re constructing a platform that emphasizes collaborative
-          learning. Embracing the spirit of collective knowledge and
-          democratizing learning, our project is open-source, ensuring
-          continuous innovation and community-driven enhancements.
+          StudyCrew is led by students dedicated to improving education for everyone. The project vision, feature plans, and prototypes are closely aligned with the needs of students. The StudyCrew platform is developed as an open-source project, allowing developers from around the world to view and contribute to our codebase.
         </p>
       </div>
 

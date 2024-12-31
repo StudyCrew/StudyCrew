@@ -22,7 +22,7 @@ const Mission = (props: any): JSX.Element => {
                 OUR MISSION
               </h3>
               <h2 className="text-white md:mb-4 mb-3 md:text-5xl text-4xl leading-none mt-2">
-                We support education for all.
+                We Support Education for All
               </h2>
               <p className="text-zircon-50 md:text-lg text-base">
                 We are dedicated to making education more accessible,
