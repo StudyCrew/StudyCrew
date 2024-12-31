@@ -28,10 +28,10 @@ export default function LandingPage() {
         <section id="project" className="md:mt-32 mt-20">
           <Project />
         </section>
-        <section id="development" className="mt-96">
+        <section id="development" className="mt-32">
           <Development />
         </section>
-        <section id="footer" className="mt-96">
+        <section id="footer" className="mt-32">
           <Footer />
         </section>
       </main>
