@@ -7,7 +7,9 @@ const Project = (): JSX.Element => {
   return (
     <div className="grid md:grid-cols-2 grid-cols-1 bg-gradient-to-r from-primary-500 to-gradient-500">
       <div className="flex flex-col md:pl-32 pl-7 md:pr-8 pr-7 md:py-20 py-11">
-        <h3 className="text-zircon-50 md:text-xl text-lg font-semibold">OUR PROJECT</h3>
+        <h3 className="text-zircon-50 md:text-xl text-lg font-semibold">
+          OUR PROJECT
+        </h3>
         <h2 className="text-white md:mb-4 mb-3 md:text-5xl text-4xl leading-none mt-2">
           Transforming Education Together
         </h2>
@@ -27,7 +29,7 @@ const Project = (): JSX.Element => {
           alt="Project representation"
         />
         <blockquote className="absolute bottom-0 left-0 flex flex-col gap-2 px-7 py-20 bg-white/70 backdrop-blur md:text-lg">
-          <p className='text-primary-950'>
+          <p className="text-primary-950">
             “Every student deserves a dynamic and engaging educational
             experience. Let&apos;s build it together.”
           </p>
