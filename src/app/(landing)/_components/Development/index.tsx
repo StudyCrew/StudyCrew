@@ -14,8 +14,8 @@ const Development = (): JSX.Element => {
         <h2 className="text-5xl">
           <span className="bg-gradient-to-r from-primary-500 to-gradient-500 bg-clip-text text-transparent">
             Development
-          </span>
-          {' '}Process
+          </span>{' '}
+          Process
         </h2>
         <p className="mt-2 md:text-xl text-lg font-normal text-secondary-text-700">
           StudyCrew is built by an open-source community of developers.
