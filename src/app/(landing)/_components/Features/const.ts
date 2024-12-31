@@ -7,7 +7,6 @@ import {
   ArrowsOut,
   Browser,
   Chalkboard,
-  Chat,
   Chats,
   ChatsTeardrop,
   DeviceMobile,
@@ -26,8 +25,6 @@ import {
   VideoCamera,
   VideoConference
 } from '@phosphor-icons/react'
-
-export const MOBILE_WIDTH_BREAKPOINT = 950
 
 export const FEATURES_STAGE_ONE: FeaturesStage = {
   id: FeaturesStageID.StageOne,
