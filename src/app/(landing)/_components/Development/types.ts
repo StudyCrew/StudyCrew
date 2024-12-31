@@ -4,4 +4,5 @@ export interface DevelopmentCardProps {
   children: ReactNode
   title: string
   icon: React.ComponentType
+  last?: boolean
 }
