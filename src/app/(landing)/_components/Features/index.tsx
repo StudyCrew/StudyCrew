@@ -116,7 +116,7 @@ const Features: React.FC<any> = (): JSX.Element => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 w-full md:min-h-[325px] my-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 md:gap-16 gap-5 w-full md:min-h-[325px] my-8">
           {/* Left Column: Main Feature */}
           <div className="flex flex-col bg-primary-100 py-4 px-5 rounded-xl">
             {currentStage.cards

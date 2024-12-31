@@ -5,14 +5,18 @@ import PROJECT_IMAGE from 'public/assets/project-image.webp'
 
 const Project = (): JSX.Element => {
   return (
-    <div className="grid grid-cols-2 bg-gradient-to-r from-primary-500 to-gradient-500">
-      <div className="flex flex-col gap-2 md:pl-32 pr-8 py-14">
-        <h3 className="text-lg font-normal text-zircon-50">Our Project</h3>
-        <h2 className="text-5xl font-semibold m-0 text-zircon-50">
+    <div className="grid md:grid-cols-2 grid-cols-1 bg-gradient-to-r from-primary-500 to-gradient-500">
+      <div className="flex flex-col md:pl-32 pl-7 md:pr-8 pr-7 md:py-20 py-11">
+        <h3 className="text-zircon-50 md:text-xl text-lg font-semibold">OUR PROJECT</h3>
+        <h2 className="text-white md:mb-4 mb-3 md:text-5xl text-4xl leading-none mt-2">
           Transforming Education Together
         </h2>
-        <p className="text-zircon-50">
-          StudyCrew is led by students dedicated to improving education for everyone. The project vision, feature plans, and prototypes are closely aligned with the needs of students. The StudyCrew platform is developed as an open-source project, allowing developers from around the world to view and contribute to our codebase.
+        <p className="text-zircon-50 md:text-lg text-base">
+          StudyCrew is led by students dedicated to improving education for
+          everyone. The project vision, feature plans, and prototypes are
+          closely aligned with the needs of students. The StudyCrew platform is
+          developed as an open-source project, allowing developers from around
+          the world to view and contribute to our codebase.
         </p>
       </div>
 
@@ -22,13 +26,13 @@ const Project = (): JSX.Element => {
           className="w-full h-full object-cover"
           alt="Project representation"
         />
-        <blockquote className="absolute bottom-0 left-0 flex flex-col gap-2 p-12 bg-white/65 backdrop-blur-lg">
-          <p>
+        <blockquote className="absolute bottom-0 left-0 flex flex-col gap-2 px-7 py-20 bg-white/70 backdrop-blur md:text-lg">
+          <p className='text-primary-950'>
             “Every student deserves a dynamic and engaging educational
             experience. Let&apos;s build it together.”
           </p>
-          <cite className="text-lg text-secondary-text-700">
-            - Jacob, Founder of StudyCrew
+          <cite className="t text-secondary-text-700">
+            - Jacob Heldt, Founder of StudyCrew
           </cite>
         </blockquote>
       </div>
