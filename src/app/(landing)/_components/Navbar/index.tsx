@@ -49,10 +49,7 @@ const Navbar: React.FC = () => {
       >
         {/* Logo */}
         <div className="ml-7 md:ml-32">
-          <Link
-            className="flex items-center gap-3 cursor-pointer"
-            href="/"
-          >
+          <Link className="flex items-center gap-3 cursor-pointer" href="/">
             <Image alt="Logo" src={Logo as string} className="h-9 w-auto" />
             <h6 className="text-lg font-semibold">StudyCrew</h6>
           </Link>
@@ -60,7 +57,10 @@ const Navbar: React.FC = () => {
 
         {/* Desktop Navigation Links */}
         <div className="hidden md:grid grid-cols-4 gap-auto mr-32 text-right items-center">
-          <Navigation linkClassName={`${navLinkStyleDesktop} cursor-pointer`} isActiveClassName="text-primary-500"/>
+          <Navigation
+            linkClassName={`${navLinkStyleDesktop} cursor-pointer`}
+            isActiveClassName="text-primary-500"
+          />
         </div>
 
         {/* Hamburger Menu */}
@@ -78,7 +78,10 @@ const Navbar: React.FC = () => {
           className="z-40 bg-white border-b border-gray-200 py-6 grid grid-cols-1 gap-2 relative text-left"
           style={{ top: menuTop }}
         >
-          <Navigation linkClassName={`${navLinkStyleMobile} cursor-pointer`} isActiveClassName="text-primary-500"/>
+          <Navigation
+            linkClassName={`${navLinkStyleMobile} cursor-pointer`}
+            isActiveClassName="text-primary-500"
+          />
         </div>
       )}
     </div>

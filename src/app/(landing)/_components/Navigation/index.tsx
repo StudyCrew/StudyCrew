@@ -8,13 +8,15 @@ interface NavigationProps {
   isActiveClassName?: string
 }
 
-const Navigation: React.FC<NavigationProps> = ({ linkClassName = '', isActiveClassName = '' }) => {
+const Navigation: React.FC<NavigationProps> = ({
+  linkClassName = '',
+  isActiveClassName = ''
+}) => {
   const { activeSection, setActiveSection } = useSection()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  
+
   const isActive = (section: string) =>
     activeSection === section ? `${isActiveClassName}` : ''
-
 
   const handleNavLinkClick = (sectionId: string) => {
     setIsMenuOpen(false)
