@@ -5,7 +5,7 @@ import { FaYoutube, FaLinkedin, FaFacebookF, FaInstagram } from 'react-icons/fa'
 import LOGO_SVG from 'public/assets/Logo.svg' assert { type: 'svg' }
 
 import { type FooterProps } from './types'
-import FooterNavigation from './FooterNavigation'
+import Navigation from '../Navigation'
 
 const Footer: React.FC<FooterProps> = (props: FooterProps): JSX.Element => {
   const { setActivePage, missionRef, featuresRef, projectRef } = props
@@ -72,7 +72,9 @@ const Footer: React.FC<FooterProps> = (props: FooterProps): JSX.Element => {
 
         <div className="lg:mr-16 py-6 flex-column text-center lg:text-left">
           <h3 className="font-bold mt-0 mb-2">Navigation</h3>
-          <FooterNavigation />
+          <div className="hidden md:grid grid-row gap-auto mr-32 text-right items-center">
+            <Navigation />
+          </div>
         </div>
 
         <div className="lg:mr-16 py-6 text-center lg:text-left">
