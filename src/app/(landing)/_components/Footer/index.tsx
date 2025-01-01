@@ -1,45 +1,14 @@
-'use client'
-
 import Image from 'next/image'
-import React, { useState, useCallback } from 'react'
+import React from 'react'
 import { FaYoutube, FaLinkedin, FaFacebookF, FaInstagram } from 'react-icons/fa'
 
-import { scrollToRef } from '@/hooks'
 import LOGO_SVG from 'public/assets/Logo.svg' assert { type: 'svg' }
 
 import { type FooterProps } from './types'
+import FooterNavigation from './FooterNavigation'
 
 const Footer: React.FC<FooterProps> = (props: FooterProps): JSX.Element => {
   const { setActivePage, missionRef, featuresRef, projectRef } = props
-
-  const [waitlistEmail, setWaitlistEmail] = useState<string>('')
-  const [waitlistErrorMessage, setWaitlistErrorMessage] = useState<string>('')
-  const [ageAbove16, setAgeAbove16] = useState<boolean>(false)
-
-  const onChangeWaitlistEmail = useCallback(
-    (e: React.ChangeEvent<HTMLInputElement>) => {
-      setWaitlistEmail(e.target.value)
-    },
-    [setWaitlistEmail]
-  )
-
-  const handleNavLinkClick = (name: string): void => {
-    let ref
-    switch (name) {
-      case 'mission':
-        ref = missionRef
-        break
-      case 'features':
-        ref = featuresRef
-        break
-      case 'project':
-        ref = projectRef
-        break
-      default:
-        return
-    }
-    scrollToRef(ref)
-  }
 
   return (
     <div className="bg-zircon-50">
@@ -103,80 +72,7 @@ const Footer: React.FC<FooterProps> = (props: FooterProps): JSX.Element => {
 
         <div className="lg:mr-16 py-6 flex-column text-center lg:text-left">
           <h3 className="font-bold mt-0 mb-2">Navigation</h3>
-          <ul className="flex-column">
-            <li className="hover:underline hover:cursor-pointer">
-              <a
-                href="#"
-                className="text-black hover:underline hover:cursor-pointer hover:text-black visited:text-black no-underline"
-                onClick={() => {
-                  handleNavLinkClick('mission')
-                  setActivePage('mission')
-                }}
-              >
-                Mission
-              </a>
-            </li>
-            <li className="hover:underline hover:cursor-pointer">
-              <a
-                href="#"
-                className="text-black hover:underline hover:cursor-pointer hover:text-black visited:text-black no-underline"
-                onClick={() => {
-                  handleNavLinkClick('features')
-                  setActivePage('features')
-                }}
-              >
-                Features
-              </a>
-            </li>
-            <li className="hover:underline hover:cursor-pointer">
-              <a
-                href="#"
-                className="text-black hover:underline hover:cursor-pointer hover:text-black visited:text-black no-underline"
-                onClick={() => {
-                  handleNavLinkClick('project')
-                  setActivePage('project')
-                }}
-              >
-                Project
-              </a>
-            </li>
-            <li className="hover:underline hover:cursor-pointer">
-              <a
-                href="#"
-                className="text-black hover:underline hover:cursor-pointer hover:text-black visited:text-black no-underline"
-                onClick={() => {
-                  handleNavLinkClick('signup')
-                  setActivePage('signup')
-                }}
-              >
-                Sign Up
-              </a>
-            </li>
-            <li className="hover:underline hover:cursor-pointer">
-              <a
-                href="#"
-                className="text-black hover:underline hover:cursor-pointer hover:text-black visited:text-black no-underline"
-                onClick={() => {
-                  handleNavLinkClick('team')
-                  setActivePage('team')
-                }}
-              >
-                Team
-              </a>
-            </li>
-            <li className="hover:underline hover:cursor-pointer">
-              <a
-                href="#"
-                className="text-black hover:underline hover:cursor-pointer hover:text-black visited:text-black no-underline"
-                onClick={() => {
-                  handleNavLinkClick('faq')
-                  setActivePage('faq')
-                }}
-              >
-                FAQ
-              </a>
-            </li>
-          </ul>
+          <FooterNavigation />
         </div>
 
         <div className="lg:mr-16 py-6 text-center lg:text-left">
