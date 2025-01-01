@@ -5,6 +5,8 @@ import Image from 'next/image'
 import { useSection } from '../SectionContext'
 import Logo from 'public/assets/LogoIcon.svg'
 import { FaBars } from 'react-icons/fa'
+import Navigation from '../Navigation'
+import Link from 'next/link'
 
 const Navbar: React.FC = () => {
   const { activeSection, setActiveSection } = useSection()
@@ -17,9 +19,6 @@ const Navbar: React.FC = () => {
       setMenuTop(navbarRef.current.clientHeight)
     }
   }, [])
-
-  const isActive = (section: string) =>
-    activeSection === section ? 'text-primary-500' : ''
 
   const handleNavLinkClick = (sectionId: string) => {
     setIsMenuOpen(false)
@@ -50,26 +49,18 @@ const Navbar: React.FC = () => {
       >
         {/* Logo */}
         <div className="ml-7 md:ml-32">
-          <div
-            className="flex items-center gap-3 cursor-pointer"
-            onClick={() => handleNavLinkClick('hero')}
-          >
+          <Link className="flex items-center gap-3 cursor-pointer" href="/">
             <Image alt="Logo" src={Logo as string} className="h-9 w-auto" />
             <h6 className="text-lg font-semibold">StudyCrew</h6>
-          </div>
+          </Link>
         </div>
 
         {/* Desktop Navigation Links */}
         <div className="hidden md:grid grid-cols-4 gap-auto mr-32 text-right items-center">
-          {navLinks.map(({ id, label }) => (
-            <div
-              key={id}
-              className={`${isActive(id)} ${navLinkStyleDesktop} cursor-pointer`}
-              onClick={() => handleNavLinkClick(id)}
-            >
-              {label}
-            </div>
-          ))}
+          <Navigation
+            linkClassName={`${navLinkStyleDesktop} cursor-pointer`}
+            isActiveClassName="text-primary-500"
+          />
         </div>
 
         {/* Hamburger Menu */}
@@ -87,15 +78,10 @@ const Navbar: React.FC = () => {
           className="z-40 bg-white border-b border-gray-200 py-6 grid grid-cols-1 gap-2 relative text-left"
           style={{ top: menuTop }}
         >
-          {navLinks.map(({ id, label }) => (
-            <div
-              key={id}
-              className={`${isActive(id)} ${navLinkStyleMobile} cursor-pointer`}
-              onClick={() => handleNavLinkClick(id)}
-            >
-              {label}
-            </div>
-          ))}
+          <Navigation
+            linkClassName={`${navLinkStyleMobile} cursor-pointer`}
+            isActiveClassName="text-primary-500"
+          />
         </div>
       )}
     </div>
