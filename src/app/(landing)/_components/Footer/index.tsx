@@ -39,8 +39,12 @@ const Footer = (): JSX.Element => {
                   target="_blank"
                   className="flex gap-2 items-center font-medium"
                 >
-                  <Image src={GITHUB_LOGO} className="md:h-5 h-7 w-auto" alt="GitHub Logo"/>
-                  <span className='hidden md:block'>GitHub</span>
+                  <Image
+                    src={GITHUB_LOGO}
+                    className="md:h-5 h-7 w-auto"
+                    alt="GitHub Logo"
+                  />
+                  <span className="hidden md:block">GitHub</span>
                 </a>
               </li>
               <li>
@@ -50,8 +54,12 @@ const Footer = (): JSX.Element => {
                   target="_blank"
                   className="flex gap-2 items-center font-medium"
                 >
-                  <Image src={LINKEDIN_LOGO} className="md:h-5 h-7 w-auto" alt="LinkedIn Logo"/>
-                  <span className='hidden md:block'>LinkedIn</span>
+                  <Image
+                    src={LINKEDIN_LOGO}
+                    className="md:h-5 h-7 w-auto"
+                    alt="LinkedIn Logo"
+                  />
+                  <span className="hidden md:block">LinkedIn</span>
                 </a>
               </li>
               <li>
@@ -66,7 +74,7 @@ const Footer = (): JSX.Element => {
                     className="md:h-5 h-7 w-auto"
                     alt="Instagram Logo"
                   />
-                  <span className='hidden md:block'>Instagram</span>
+                  <span className="hidden md:block">Instagram</span>
                 </a>
               </li>
             </ul>
