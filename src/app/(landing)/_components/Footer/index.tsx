@@ -3,6 +3,9 @@ import React from 'react'
 import { FaYoutube, FaLinkedin, FaFacebookF, FaInstagram } from 'react-icons/fa'
 
 import LOGO from 'public/assets/LogoIcon.svg' assert { type: 'svg' }
+import GITHUB_LOGO from 'public/assets/Footer/github_logo.svg' assert { type: 'svg' }
+import LINKEDIN_LOGO from 'public/assets/Footer/linkedin_logo.png'
+import INSTAGRAM_LOGO from 'public/assets/Footer/instagram_logo.svg' assert { type: 'svg' }
 
 import Navigation from '../Navigation'
 
@@ -28,55 +31,48 @@ const Footer = (): JSX.Element => {
 
         {/* Right section */}
         <div className="flex flex-col text-center lg:text-left w-full gap-2.5 my-auto">
-          <div className='w-full flex justify-between'>
-
+          <div className="w-full flex justify-between">
             <div className="flex gap-3">
-              <Navigation linkClassName='text-lg font-medium'/>
+              <Navigation linkClassName="text-lg font-medium" />
             </div>
 
-            <ul className="flex">
-              <li className="mr-4">
+            <ul className="flex gap-4">
+              <li>
                 <a
-                  href="https://www.facebook.com/profile.php?id=61555998230454"
+                  href="https://github.com/StudyCrew/StudyCrew"
                   rel="noreferrer"
                   target="_blank"
+                  className="flex gap-2 items-center font-medium"
                 >
-                  <FaFacebookF size={20} />
-                </a>
-              </li>
-              <li className="mr-4">
-                <a
-                  href="https://www.youtube.com/channel/UCpeI7Q-WPZ88Uv1KCqs814Q"
-                  rel="noreferrer"
-                  target="_blank"
-                >
-                  <FaYoutube size={20} />
-                </a>
-              </li>
-              <li className="mr-4">
-                <a
-                  href="https://www.instagram.com/studycrew.world/"
-                  rel="noreferrer"
-                  target="_blank"
-                >
-                  <FaInstagram size={20} />
+                  <Image src={GITHUB_LOGO as string} className='h-5 w-auto'/>GitHub
                 </a>
               </li>
               <li>
                 <a
-                  href="https://www.linkedin.com/company/studycrewofficial"
+                  href="https://www.linkedin.com/company/studycrewofficial/?viewAsMember=true"
                   rel="noreferrer"
                   target="_blank"
+                  className="flex gap-2 items-center font-medium"
                 >
-                  <FaLinkedin size={20} />
+                  <Image src={LINKEDIN_LOGO as string} className='h-5 w-auto'/>LinkedIn
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.instagram.com/studycrew.world/?utm_source=ig_web_button_share_sheet"
+                  rel="noreferrer"
+                  target="_blank"
+                  className="flex gap-2 items-center font-medium"
+                >
+                  <Image src={INSTAGRAM_LOGO as string} className='h-5 w-auto'/>Instagram
                 </a>
               </li>
             </ul>
           </div>
 
-          <div className='w-full h-[1px] bg-gradient-to-r from-primary-500 to-gradient-500'></div>
+          <div className="w-full h-[1px] bg-gradient-to-r from-primary-500 to-gradient-500"></div>
 
-          <div className='text-sm font-light'>
+          <div className="text-sm font-light">
             This homepage was designed by Kian Bonci and the StudyCrew team.
           </div>
         </div>
