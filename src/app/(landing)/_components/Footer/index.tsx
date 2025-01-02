@@ -2,9 +2,9 @@ import Image from 'next/image'
 import React from 'react'
 
 import LOGO from 'public/assets/LogoIcon.svg' assert { type: 'svg' }
-import GITHUB_LOGO from 'public/assets/Footer/github_logo.svg' assert { type: 'svg' }
-import LINKEDIN_LOGO from 'public/assets/Footer/linkedin_logo.png'
-import INSTAGRAM_LOGO from 'public/assets/Footer/instagram_logo.svg' assert { type: 'svg' }
+import GITHUB_LOGO from 'public/assets/landing_page/github_logo.svg' assert { type: 'svg' }
+import LINKEDIN_LOGO from 'public/assets/landing_page/linkedin_logo.png'
+import INSTAGRAM_LOGO from 'public/assets/landing_page/instagram_logo.svg' assert { type: 'svg' }
 
 import Navigation from '../Navigation'
 

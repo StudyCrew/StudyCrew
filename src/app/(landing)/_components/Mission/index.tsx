@@ -6,7 +6,7 @@ import {
   ChevronWhiteSVG,
   SecondChevronGradientSVG
 } from './MissionArrows'
-import LOGO_GROUP_SVG from 'public/assets/mission/LogoGroup.svg' assert { type: 'svg' }
+import LOGO_GROUP_SVG from 'public/assets/landing_page/logo_group.svg' assert { type: 'svg' }
 
 const Mission = (props: any): JSX.Element => {
   return (
