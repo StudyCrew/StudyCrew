@@ -147,7 +147,9 @@ const Features: React.FC<any> = (): JSX.Element => {
                       <div className="md:w-1/2 w-0 md:flex hidden">
                         <Image
                           className="rounded-md md:h-32"
-                          src={image || '/assets/landing_page/project-image.webp'}
+                          src={
+                            image || '/assets/landing_page/project-image.webp'
+                          }
                           alt={title}
                         />
                       </div>
