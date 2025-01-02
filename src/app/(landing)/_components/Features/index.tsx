@@ -131,7 +131,7 @@ const Features: React.FC<any> = (): JSX.Element => {
                     <h3 className="md:text-2xl text-xl md:font-bold font-medium text-primary-950">
                       <div className="flex gap-2 items-center">
                         <div className="text-primary-950 md:text-3xl text-2xl">
-                          <Icon weight="duotone" />
+                          {Icon && <Icon weight="duotone" />}
                         </div>
                         <div>{title}</div>
                       </div>
@@ -147,7 +147,7 @@ const Features: React.FC<any> = (): JSX.Element => {
                       <div className="md:w-1/2 w-0 md:flex hidden">
                         <Image
                           className="rounded-md md:h-32"
-                          src={image}
+                          src={image || '/assets/landing_page/project-image.webp'}
                           alt={title}
                         />
                       </div>
@@ -159,7 +159,7 @@ const Features: React.FC<any> = (): JSX.Element => {
                             className="flex items-center gap-2 mb-2 bg-white rounded w-full py-1"
                           >
                             <div className="text-primary-950 text-2xl ml-2">
-                              <Icon weight="duotone" />
+                              {Icon && <Icon weight="duotone" />}
                             </div>
                             <span className="text-primary-950 md:text-lg text-base font-medium mr-2">
                               {text}
@@ -187,7 +187,7 @@ const Features: React.FC<any> = (): JSX.Element => {
                 >
                   <div className="flex gap-2 items-center">
                     <div className="text-primary-950 text-2xl">
-                      <Icon weight="duotone" />
+                      {Icon && <Icon weight="duotone" />}
                     </div>
                     <div className="text-xl font-medium">{title}</div>
                   </div>
