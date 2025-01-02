@@ -1,6 +1,6 @@
-import TUTORING_SVG from 'public/assets/features/tutoring.svg' assert { type: 'svg' }
-import STUDY_GROUPS_SVG from 'public/assets/features/study_groups.svg' assert { type: 'svg' }
-import LEARNING_PATHS_SVG from 'public/assets/features/learning_paths.svg' assert { type: 'svg' }
+import TUTORING_SVG from 'public/assets/landing_page/tutoring.svg' assert { type: 'svg' }
+import STUDY_GROUPS_SVG from 'public/assets/landing_page/study_groups.svg' assert { type: 'svg' }
+import LEARNING_PATHS_SVG from 'public/assets/landing_page/learning_paths.svg' assert { type: 'svg' }
 
 import { FeaturesStageID, type FeaturesStage } from './types'
 import {
