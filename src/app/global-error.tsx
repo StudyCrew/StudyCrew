@@ -1,3 +1,5 @@
+'use client'
+
 import NextError from 'next/error'
 import React from 'react'
 
