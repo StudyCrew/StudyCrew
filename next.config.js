@@ -2,42 +2,22 @@
 
 const nextConfig = {
   experimental: {
-    serverComponentsExternalPackages: ['mongoose']
+    serverComponentsExternalPackages: []
   },
   eslint: {
     ignoreDuringBuilds: true
   },
-  images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'img.clerk.com'
-      },
-      {
-        protocol: 'https',
-        hostname: 'images.clerk.dev'
-      }
-    ]
-  }
+  headers: async () => [
+    {
+      source: '/(.*)',
+      headers: [
+        {
+          key: 'X-Robots-Tag',
+          value: 'index, follow'
+        }
+      ]
+    }
+  ]
 }
 
 module.exports = nextConfig
-
-const { withSentryConfig } = require('@sentry/nextjs')
-
-module.exports = withSentryConfig(
-  module.exports,
-  {
-    silent: true,
-    org: 'studycrew',
-    project: 'studycrew'
-  },
-  {
-    widenClientFileUpload: true,
-    transpileClientSDK: true,
-    tunnelRoute: '/monitoring',
-    hideSourceMaps: true,
-    disableLogger: true,
-    automaticVercelMonitors: true
-  }
-)
