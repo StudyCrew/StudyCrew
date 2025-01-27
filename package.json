@@ -101,7 +101,7 @@
     "eslint-plugin-sonarjs": "^2.0.4",
     "eslint-plugin-unicorn": "^55.0.0",
     "eslint-plugin-write-good-comments": "^0.2.0",
-    "husky": "^9.1.5",
+    "husky": "^9.1.7",
     "lint-staged": "^15.2.9",
     "postcss": "8.4.41",
     "postcss-simple-vars": "^7.0.1",
