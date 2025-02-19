@@ -103,7 +103,7 @@
     "eslint-plugin-write-good-comments": "^0.2.0",
     "husky": "^9.1.5",
     "lint-staged": "^15.2.9",
-    "postcss": "8.4.41",
+    "postcss": "8.5.3",
     "postcss-simple-vars": "^7.0.1",
     "prettier": "^3.3.3",
     "remark": "^15.0.1"
