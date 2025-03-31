@@ -27,7 +27,7 @@ interface Variant3Data {
 }
 
 interface NotificationCardProps {
-  variant: 'platform' | 'grpQuestion' | 'grpMaterial'
+  variant: 'PlatformUpdate' | 'GrpQuestion' | 'GrpMaterial'
   variant1Data?: Variant1Data
   variant2Data?: Variant2Data
   variant3Data?: Variant3Data
@@ -39,9 +39,10 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
   variant2Data,
   variant3Data
 }) => {
+  console.log('variant', variant)
   return (
     <>
-      {variant === 'platform' && variant1Data && (
+      {variant === 'PlatformUpdate' && variant1Data && (
         <div
           className={`${variant1Data.size === 'small' ? 'w-[280px]' : 'w-[462px]'} flex flex-col`}
         >
@@ -69,7 +70,7 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
           </div>
         </div>
       )}
-      {variant === 'grpQuestion' && variant2Data && (
+      {variant === 'GrpQuestion' && variant2Data && (
         <div
           className={`${variant2Data.size === 'small' ? 'w-[280px]' : 'w-[462px]'} flex flex-col`}
         >
@@ -114,7 +115,7 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
           </div>
         </div>
       )}
-      {variant === 'grpMaterial' && variant3Data && (
+      {variant === 'GrpMaterial' && variant3Data && (
         <div
           className={`${variant3Data.size === 'small' ? 'w-[280px]' : 'w-[462px]'} flex flex-col`}
         >
