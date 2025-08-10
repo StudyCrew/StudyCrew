@@ -29,9 +29,13 @@ const tailwindConfig = {
       },
       zIndex: {
         1: '1',
-        3:'3',
-        5: '5',
-        200: '200',
+        200: '200'
+      },
+      fontFamily: {
+        'dm-sans': ['DM Sans', 'sans-serif'],
+      },
+      rounded: {
+        10: '10'
       },
       translate: {
         icon: '5%'
@@ -156,14 +160,14 @@ const tailwindConfig = {
         light:"#666d79",
         
         gradient: {
-          500: '#8338ec'
+          500: '#322E90'
         },
 
         tooltipcolor: '#1D2939',
 
         primary: {
-          50: '#EEF6FF',
-          100: '#D9EAFF',
+          50: '#F7FAFF',
+          100: '#F2F7FF',
           200: '#BCDBFF',
           300: '#8EC6FF',
           400: '#59A5FF',

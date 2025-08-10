@@ -14,11 +14,9 @@
 
   h1,
   h2,
-  h3,
   h4,
   h5,
-  h6,
-  button {
+  h6 {
     @apply font-serif;
   }
 }
@@ -29,7 +27,7 @@
 
 :root {
   --primary-color: #3a86ff;
-  --primary-gradient-color: #8338ec;
+  --primary-gradient-color: #322e90;
   --light-background-color: #f2f7ff;
   --primary-text-color: #0c1b33;
   --secondary-text-color: #434c59;
@@ -68,7 +66,7 @@ h3 {
 
 h2 {
   font-weight: 500;
-  font-size: 50px;
+  font-size: 46px;
 }
 
 h2 span {

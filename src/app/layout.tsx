@@ -1,36 +1,42 @@
-import { Toaster } from '@/components/ui/toaster'
-import { GoogleAnalytics } from '@next/third-parties/google'
-import _isEmpty from 'lodash/isEmpty'
-import type { Metadata, Viewport } from 'next'
+import React from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
-import React, { PropsWithChildren } from 'react'
+import type { Metadata, Viewport } from 'next'
 
 import '@/app/globals.css'
-import metadataConfig from '@/config/metadata'
-
-const { GOOGLE_ANALYTICS_ID } = process.env
 
 export const viewport: Viewport = {
   themeColor: '#3A86FF'
 }
 
-export const metadata: Metadata = metadataConfig
+export const metadata: Metadata = {
+  title: 'StudyCrew',
+  description: 'Making education more accessible, collaborative, and engaging.',
+  applicationName: 'StudyCrew',
+  manifest: '/manifest.json',
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'default',
+    title: 'StudyCrew'
+  },
+  formatDetection: {
+    telephone: false
+  }
+}
 
-export default function RootLayout({ children }: PropsWithChildren) {
+interface LayoutProps {
+  children: React.ReactNode
+}
+
+const RootLayout = ({ children }: LayoutProps): JSX.Element => {
   return (
     <html lang="en">
       <Head>
         <Link rel="shortcut icon" href="/public/assets/favicon.ico" />
       </Head>
-      <body>
-        {children}
-        <Toaster />
-      </body>
-
-      {process.browser && !_isEmpty(GOOGLE_ANALYTICS_ID) && (
-        <GoogleAnalytics gaId={GOOGLE_ANALYTICS_ID} />
-      )}
+      <body>{children}</body>
     </html>
   )
 }
+
+export default RootLayout

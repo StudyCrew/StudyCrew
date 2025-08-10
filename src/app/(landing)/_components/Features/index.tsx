@@ -1,22 +1,17 @@
+'use client'
+
 import cn from 'clsx'
 import Image from 'next/image'
-import _isNil from 'lodash/isNil'
-import { useWindowSize } from '@uidotdev/usehooks'
 import React, { useMemo, useState, useCallback } from 'react'
-import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'
 
 import { type FeaturesStage, FeaturesStageID } from './types'
 import {
   FEATURES_STAGES,
   FEATURES_STAGE_ONE,
   FEATURES_STAGE_TWO,
-  FEATURES_STAGE_THREE,
-  MOBILE_WIDTH_BREAKPOINT
+  FEATURES_STAGE_THREE
 } from './const'
 
-import './style.css'
-
-// TODO: Extract
 const getStageForID = (id: FeaturesStageID): FeaturesStage => {
   switch (id) {
     case FeaturesStageID.StageOne:
@@ -34,19 +29,11 @@ const getStageForID = (id: FeaturesStageID): FeaturesStage => {
 }
 
 const Features: React.FC<any> = (): JSX.Element => {
-  const { width: windowWidth } = useWindowSize()
-  const isMobile =
-    !_isNil(windowWidth) && windowWidth <= MOBILE_WIDTH_BREAKPOINT
-
-  const [cardWidth, setCardWidth] = useState<number>(0)
   const [stageOpenStatuses, setStageOpenStatuses] = useState<boolean[]>([
     false,
     false,
     false
   ])
-
-  // prettier-ignore
-  const [stageActiveCardIndexes, setStageActiveCardIndexes] = useState<number[]>([0, 0, 0])
 
   const [currentStageID, setCurrentStageID] = useState<FeaturesStageID>(
     FeaturesStageID.StageOne
@@ -60,7 +47,6 @@ const Features: React.FC<any> = (): JSX.Element => {
   const onStageClick = useCallback(
     (id: FeaturesStageID): void => {
       setCurrentStageID(id as FeaturesStageID)
-      setCardWidth(0)
 
       const nextStageOpenStatuses = [...stageOpenStatuses]
 
@@ -77,175 +63,143 @@ const Features: React.FC<any> = (): JSX.Element => {
     [stageOpenStatuses]
   )
 
-  const onNextStageCardClick = useCallback(
-    (id: FeaturesStageID): void => {
-      const nextStageActiveCardIndexes = [...stageActiveCardIndexes]
-
-      if (
-        id === FeaturesStageID.StageOne &&
-        nextStageActiveCardIndexes[0] < currentStage.cards.length - 1
-      ) {
-        nextStageActiveCardIndexes[0] += 1
-      } else if (
-        id === FeaturesStageID.StageTwo &&
-        nextStageActiveCardIndexes[1] < currentStage.cards.length - 1
-      ) {
-        nextStageActiveCardIndexes[1] += 1
-      } else if (
-        id === FeaturesStageID.StageThree &&
-        nextStageActiveCardIndexes[2] < currentStage.cards.length - 1
-      ) {
-        nextStageActiveCardIndexes[2] += 1
-      }
-
-      setStageActiveCardIndexes(nextStageActiveCardIndexes)
-    },
-    [stageActiveCardIndexes]
-  )
-
-  const onPrevStageCardClick = useCallback(
-    (id: FeaturesStageID): void => {
-      const nextStageActiveCardIndexes = [...stageActiveCardIndexes]
-
-      if (
-        id === FeaturesStageID.StageOne &&
-        nextStageActiveCardIndexes[0] > 0
-      ) {
-        nextStageActiveCardIndexes[0] -= 1
-      } else if (
-        id === FeaturesStageID.StageTwo &&
-        nextStageActiveCardIndexes[1] > 0
-      ) {
-        nextStageActiveCardIndexes[1] -= 1
-      } else if (
-        id === FeaturesStageID.StageThree &&
-        nextStageActiveCardIndexes[2] > 0
-      ) {
-        nextStageActiveCardIndexes[2] -= 1
-      }
-
-      setStageActiveCardIndexes(nextStageActiveCardIndexes)
-    },
-    [stageActiveCardIndexes]
-  )
-
   return (
-    <div className="features">
-      <div className="features-head">
-        <h2>
-          Our <span>Features</span>
+    <div className="md:mx-32 mx-7">
+      <div className="text-center">
+        <h2 className="text-5xl">
+          Our{' '}
+          <span className="bg-gradient-to-r from-primary-500 to-gradient-500 bg-clip-text text-transparent">
+            Features
+          </span>
         </h2>
-        <p className="des">Discover powerful tools that help you study.</p>
+        <p className="mt-2 md:text-xl text-lg font-normal text-secondary-text-700">
+          The features we plan to offer in different versions of StudyCrew.
+        </p>
       </div>
 
-      <div
-        className={cn('align-middle justify-end gap-2.5 mt-12 mx-0', {
-          flex: !isMobile,
-          'flex-column': isMobile
-        })}
-      >
-        {!isMobile && (
-          <div className="stages">
-            {FEATURES_STAGES.map(({ id, title, description }, i: number) => (
+      <div className="flex-col gap-2.5 mt-8">
+        <div className="flex flex-col md:flex-row gap-4 w-full justify-center">
+          {/* Dropdown for Mobile */}
+          <div className="md:hidden flex justify-center w-full">
+            <select
+              value={currentStageID}
+              onChange={(e) => onStageClick(e.target.value as FeaturesStageID)}
+              className="px-4 py-2 rounded-md text-lg border border-primary-500 text-primary-950 bg-primary-100 cursor-pointer w-40 font-medium"
+            >
+              {FEATURES_STAGES.map(({ id, title }, i) => (
+                <option key={i} value={id} className="bg-primary-500">
+                  {title}
+                </option>
+              ))}
+            </select>
+          </div>
+
+          {/* Desktop Stage Buttons */}
+          <div className="hidden md:flex gap-4 w-full justify-center">
+            {FEATURES_STAGES.map(({ id, title, icon: Icon }, i: number) => (
               <div
                 key={`stage-${i}-${id}`}
-                onClick={onStageClick.bind(null, id)}
-                className={cn('stage', {
-                  'active-stage': id === currentStageID
-                })}
+                onClick={() => onStageClick(id)}
+                className={cn(
+                  'px-4 py-2 rounded-full flex gap-2 items-center border border-primary-500 cursor-pointer hover:bg-primary-50 transition-all duration-200 ease-in-out',
+                  {
+                    'bg-primary-100': id === currentStageID
+                  }
+                )}
               >
-                <h3>{title}</h3>
-                <p>{description}</p>
+                <div className="text-primary-500 text-2xl">
+                  <Icon />
+                </div>
+                <div className="text-xl font-medium">{title}</div>
               </div>
             ))}
           </div>
-        )}
+        </div>
 
-        {!isMobile && (
-          <div className="owl-carousel-wrapper">
-            <div className="owl-carousel">
-              <div
-                className="cards"
-                style={{
-                  transform: `translateX(${cardWidth}px`
-                }}
-              >
-                {currentStage.cards.map(
-                  ({ title, description, image }, i: number) => (
-                    <div className="card" key={`stage-card-${i}`}>
-                      <Image className="card-image" src={image} alt={title} />
-                      <h3 className="card-title">{title}</h3>
-                      <p className="card-description">{description}</p>
-                    </div>
-                  )
-                )}
-              </div>
-            </div>
-          </div>
-        )}
+        <div className="grid grid-cols-1 md:grid-cols-2 md:gap-16 gap-5 w-full md:min-h-[325px] my-8">
+          {/* Left Column: Main Feature */}
+          <div className="flex flex-col bg-primary-100 py-4 px-5 rounded-xl">
+            {currentStage.cards
+              .filter((card) => card.main)
+              .map(
+                (
+                  { title, description, image, icon: Icon, bullet_points },
+                  i: number
+                ) => (
+                  <div key={`main-feature-${i}`} className="flex flex-col">
+                    {/* Title */}
+                    <h3 className="md:text-2xl text-xl md:font-bold font-medium text-primary-950">
+                      <div className="flex gap-2 items-center">
+                        <div className="text-primary-950 md:text-3xl text-2xl">
+                          {Icon && <Icon weight="duotone" />}
+                        </div>
+                        <div>{title}</div>
+                      </div>
+                    </h3>
 
-        {isMobile &&
-          FEATURES_STAGES.map(
-            ({ id, title, description, cards }, i: number) => (
-              <div key={`stage-${i}-${id}`} className="mobile-stage-wrapper">
-                <div className="stage" onClick={onStageClick.bind(null, id)}>
-                  <h3>{title}</h3>
-                  <p>{description}</p>
-                </div>
+                    {/* Description */}
+                    <p className="mt-2 md:text-lg text-base text-secondary-text-800 leading-snug">
+                      {description}
+                    </p>
 
-                {stageOpenStatuses[i] && (
-                  <div className="card-wrapper flex" key={`stage-card-${i}`}>
-                    <div
-                      onClick={onPrevStageCardClick.bind(null, id)}
-                      className={cn('flex stage-nav', {
-                        disabled: stageActiveCardIndexes[i] === 0
-                      })}
-                    >
-                      <FaChevronLeft size={48} />
-                    </div>
-
-                    <div className="card-inner-wrapper">
-                      <div className="card">
+                    {/* Image and Bullet Points */}
+                    <div className="flex mt-4 gap-4 w-full md:h-40 h-auto">
+                      <div className="md:w-1/2 w-0 md:flex hidden">
                         <Image
-                          className="card-image"
-                          src={cards[stageActiveCardIndexes[i]].image}
-                          alt={cards[stageActiveCardIndexes[i]].title}
+                          className="rounded-md md:h-32"
+                          src={
+                            image || '/assets/landing_page/project-image.webp'
+                          }
+                          alt={title}
                         />
-
-                        <h3 className="card-title">
-                          {cards[stageActiveCardIndexes[i]].title}
-                        </h3>
-
-                        <p className="card-description">
-                          {cards[stageActiveCardIndexes[i]].description}
-                        </p>
                       </div>
 
-                      <ul className="flex stage-nav-dots">
-                        {cards.map((_, cardI: number) => (
-                          <li
-                            key={cardI}
-                            className={cn('stage-nav-dot', {
-                              active: cardI === stageActiveCardIndexes[i]
-                            })}
-                          />
+                      <div className="md:w-1/2 w-full flex flex-col h-auto">
+                        {bullet_points?.map(({ icon: Icon, text }, idx) => (
+                          <div
+                            key={`bullet-point-${idx}`}
+                            className="flex items-center gap-2 mb-2 bg-white rounded w-full py-1"
+                          >
+                            <div className="text-primary-950 text-2xl ml-2">
+                              {Icon && <Icon weight="duotone" />}
+                            </div>
+                            <span className="text-primary-950 md:text-lg text-base font-medium mr-2">
+                              {text}
+                            </span>
+                          </div>
                         ))}
-                      </ul>
-                    </div>
-
-                    <div
-                      onClick={onNextStageCardClick.bind(null, id)}
-                      className={cn('flex stage-nav', {
-                        disabled: stageActiveCardIndexes[i] === cards.length - 1
-                      })}
-                    >
-                      <FaChevronRight size={48} />
+                      </div>
                     </div>
                   </div>
-                )}
-              </div>
-            )
-          )}
+                )
+              )}
+          </div>
+
+          {/* Right Column: Other Features */}
+          <div className="flex flex-col gap-4 md:bg-primary-100 md:py-4 md:px-5 md:rounded-xl">
+            <h3 className="text-2xl font-bold text-primary-950 md:block hidden">
+              Additional Functionalities
+            </h3>
+            {currentStage.cards
+              .filter((card) => !card.main)
+              .map(({ title, description, icon: Icon }, i: number) => (
+                <div
+                  key={`other-feature-${i}`}
+                  className="py-4 px-5 rounded-lg md:bg-white bg-primary-100"
+                >
+                  <div className="flex gap-2 items-center">
+                    <div className="text-primary-950 text-2xl">
+                      {Icon && <Icon weight="duotone" />}
+                    </div>
+                    <div className="text-xl font-medium">{title}</div>
+                  </div>
+                  <p className="mt-1 md:text-lg text-base text-secondary-text-800 leading-snug">
+                    {description}
+                  </p>
+                </div>
+              ))}
+          </div>
+        </div>
       </div>
     </div>
   )

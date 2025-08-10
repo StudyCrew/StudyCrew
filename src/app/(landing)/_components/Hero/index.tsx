@@ -1,64 +1,20 @@
-import { FaChevronDown } from 'react-icons/fa'
-import React, { useState, useEffect } from 'react'
-import Button from '@/app/(landing)/_components/Button'
-import { type HeroProps } from './types'
+import React from 'react'
+import HeroButtons from './HeroButtons'
+import HeroWord from './HeroWord'
 
-const words = ['Collaborative', 'Accessible', 'Engaging']
-
-const Hero: React.FC<HeroProps> = (props: HeroProps): JSX.Element => {
-  const { handleLearnMoreClick, handleJoinWaitlistClick } = props
-  const [currentWord, setCurrentWord] = useState('Collaborative')
-  const [opacity, setOpacity] = useState(1)
-
-  useEffect(() => {
-    const changeWord = (): void => {
-      setCurrentWord((prevWord) => {
-        const nextIndex = (words.indexOf(prevWord) + 1) % words.length
-        return words[nextIndex]
-      })
-      setOpacity(1)
-    }
-
-    const interval = setInterval(() => {
-      setOpacity(0)
-      setTimeout(changeWord, 200)
-    }, 3500)
-
-    return () => {
-      clearInterval(interval)
-    }
-  }, [])
-
+const Hero = (): JSX.Element => {
   return (
-    <div className="mx-16 mt-24 mb-16 text-center">
-      <h1 className="text-5xl leading-normal md:text-7xl md:leading-normal font-medium">
+    <div className="md:mx-16 mx-7 mt-28 md:mt-44 mb-16 text-center">
+      <h1 className="text-5xl leading-snug md:text-7xl md:leading-tight font-medium">
         The Future of Education is <br />
-        <span
-          style={{ opacity }}
-          className="transition-opacity duration-500 animate-[fade-in_0.5s_linear] bg-gradient-to-r from-primary-500 to-gradient-500 bg-clip-text text-transparent"
-        >
-          {currentWord}
-        </span>
+        <HeroWord />
       </h1>
 
-      <p className="mt-2 text-lg font-light">
-        Opening doors to new learning experiences for everyone.
+      <p className="mt-4 md:text-xl text-lg font-normal text-secondary-text-700 leading-snug">
+        Breaking barriers to education through the power of open source.
       </p>
 
-      <div className="mt-8 flex flex-col md:flex-row gap-2 justify-center align-middle">
-        <Button onClick={handleJoinWaitlistClick} size="big">
-          Join Waitlist
-          <FaChevronDown className="inline ml-2" />
-        </Button>
-        <Button
-          onClick={handleLearnMoreClick}
-          variant="outline"
-          size="big-outline"
-        >
-          Learn More
-          <FaChevronDown className="inline ml-2" />
-        </Button>
-      </div>
+      <HeroButtons />
     </div>
   )
 }
