@@ -1,6 +1,9 @@
 # Contributing to StudyCrew
 
-Thank you for considering contributing to StudyCrew! We welcome contributions of all kinds, including bug reports, feature requests, and code contributions.
+> **⚠️ This repository has been archived**  
+> This project is no longer actively maintained.
+> No new issues, pull requests, or updates will be made.
+> Dependencies will not be updated and may be outdated.
 
 ## Table of Contents
 
@@ -55,8 +58,8 @@ Thank you for considering contributing to StudyCrew! We welcome contributions of
     For authentication, StudyCrew utilizes Supabase. To set up your local instance, you'll need a Supabase account. Once you've created an account, obtain your credentials and place them in the env.local file:
 
     ```env
-    NEXT_PUBLIC_SUPABASE_URL=https://iqbtyidkfhmqokxopxhf.supabase.co
-    NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlxYnR5aWRrZmhtcW9reG9weGhmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjA0NTI4NDgsImV4cCI6MjAzNjAyODg0OH0.eo6MVgRbXbdpdUlj4YQo4NJ6D0kE2HRQaLO4VOAOMd4
+    NEXT_PUBLIC_SUPABASE_URL=https://your-supabase-instance.supabase.co
+    NEXT_PUBLIC_SUPABASE_ANON_KEY=your-public-anon-key
     ```
 
 3. **Start the development server:**
@@ -148,16 +151,9 @@ To stop the container, run `docker stop studycrew_test` or `docker stop studycre
 
 ## Development Resources
 
-- **Design Guidelines:** [Figma Documentation](https://www.figma.com/file/BJG9JmbThqdp8p8IWs7gNG/StudyCrew-Prototypes-(Copy)?type=design&node-id=8%3A98&mode=design&t=uwHVDf3Ihi12lro3-1)
 - **Next.js Documentation:** [https://nextjs.org/docs](https://nextjs.org/docs)
 - **Tailwind Documentation:** [https://tailwindcss.com/](https://tailwindcss.com/)
-- **Shadcn-UI Documentation:** [https://ui.shadcn.com/](https://ui.shadcn.com/)
 - **pnpm Documentation:** [https://pnpm.io](https://pnpm.io)
-
-## Community
-
-- **Discord Channel:** Join our community on [Discord](https://discord.gg/Q93eWC8k)
-- **Issue Tracker:** Report bugs or request features on our [GitHub Issues](https://github.com/StudyCrew/StudyCrew/issues)
 
 ## Code of Conduct
 

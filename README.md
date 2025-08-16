@@ -1,9 +1,9 @@
 # StudyCrew (Archived)
 
-> **⚠️ This repository will be archived soon**  
-> This project is no longer actively maintained.  
-> No new issues, pull requests, or updates will be made.  
-> Dependencies are no longer updated. 
+> **⚠️ This repository has been archived**  
+> This project is no longer actively maintained.
+> No new issues, pull requests, or updates will be made.
+> Dependencies will not be updated and may be outdated.
 
 ## Background
 The StudyCrew open-source repository was created with the goal of building an accessible online education platform. Unfortunately, this project was not completed due to development challenges and declining activity in the repository.
